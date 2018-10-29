@@ -13,6 +13,11 @@ Rails.application.configure do
   end
   config.active_storage.service = :local
   config.action_mailer.raise_delivery_errors = true
+  config.after_initialize do
+    Bullet.enable = true
+    Bullet.bullet_logger = true
+    Bullet.rails_logger = true
+  end
   config.action_mailer.delivery_method = :file
   config.action_mailer.perform_caching = false
   config.active_support.deprecation = :log

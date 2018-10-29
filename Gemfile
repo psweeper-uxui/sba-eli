@@ -47,3 +47,16 @@ group :test do
 end
 
 gem "suspenders", group: [:development, :test]
+
+gem 'spring-commands-rspec', group: :development
+gem 'rspec-rails', '~> 3.6', group: [:development, :test]
+gem 'shoulda-matchers', group: :test
+gem 'factory_bot_rails', group: [:development, :test]
+gem 'capybara-selenium', group: :test
+gem 'chromedriver-helper', group: :test
+gem 'bullet', group: [:development, :test]
+gem 'delayed_job_active_record'
+gem 'bourbon', '~> 5.0'
+gem 'neat', '~> 2.1'
+gem 'high_voltage'
+gem 'simple_form'
