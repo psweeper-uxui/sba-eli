@@ -1,11 +1,16 @@
-source "https://rubygems.org"
+source 'https://rubygems.org'
+git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-git_source(:github) do |repo_name|
-  repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
-  "https://github.com/#{repo_name}.git"
-end
+ruby '2.5.3'
 
-ruby "2.5.3"
+# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
+gem 'rails', '~> 5.2.1'
+# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
+# gem 'jbuilder', '~> 2.5'
+# Use Redis adapter to run Action Cable in production
+# gem 'redis', '~> 4.0'
+# Use ActiveModel has_secure_password
+# gem 'bcrypt', '~> 3.1.7'
 
 gem "autoprefixer-rails"
 gem "honeybadger"
@@ -13,39 +18,34 @@ gem "jquery-rails"
 gem "pg"
 gem "puma"
 gem "rack-canonical-host"
-gem "rails", "~> 5.2.0"
 gem "recipient_interceptor"
 gem "sass-rails", "~> 5.0"
 gem "skylight"
 gem "sprockets", ">= 3.0.0"
 gem "title"
 gem "uglifier"
-gem "bootsnap", require: false
 gem "rubocop", require: false
 
-group :development do
-  gem "listen"
-  gem "rack-mini-profiler", require: false
-  gem "spring"
-  gem "web-console"
-end
+# Reduces boot times through caching; required in config/boot.rb
+gem 'bootsnap', '>= 1.1.0', require: false
+
+# Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
+# gem 'rack-cors'
 
 group :development, :test do
-  gem "awesome_print"
-  gem "bundler-audit", ">= 0.5.0", require: false
-  gem "dotenv-rails"
-  gem "pry-byebug"
-  gem "pry-rails"
+  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end
 
-group :test do
-  gem "formulaic"
-  gem "launchy"
-  gem "simplecov", require: false
-  gem "timecop"
-  gem "webmock"
+group :development do
+  gem 'listen', '>= 3.0.5', '< 3.2'
+  # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
+  gem 'spring'
+  gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'rspec'
 end
 
+gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem "suspenders", group: [:development, :test]
 
 gem 'spring-commands-rspec', group: :development
