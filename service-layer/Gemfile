@@ -16,11 +16,21 @@ gem 'puma', '~> 3.11'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
-# Use ActiveStorage variant
-# gem 'mini_magick', '~> 4.8'
-
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
+gem "autoprefixer-rails"
+gem "honeybadger"
+gem "jquery-rails"
+gem "pg"
+gem "puma"
+gem "rack-canonical-host"
+gem "rails", "~> 5.2.0"
+gem "recipient_interceptor"
+gem "sass-rails", "~> 5.0"
+gem "skylight"
+gem "sprockets", ">= 3.0.0"
+gem "title"
+gem "uglifier"
+gem "bootsnap", require: false
+gem "rubocop", require: false
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
@@ -41,6 +51,18 @@ group :development do
   gem 'rspec'
 end
 
-
-# Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+gem "suspenders", group: [:development, :test]
+
+gem 'spring-commands-rspec', group: :development
+gem 'rspec-rails', '~> 3.6', group: [:development, :test]
+gem 'shoulda-matchers', group: :test
+gem 'factory_bot_rails', group: [:development, :test]
+gem 'capybara-selenium', group: :test
+gem 'chromedriver-helper', group: :test
+gem 'bullet', group: [:development, :test]
+gem 'delayed_job_active_record'
+gem 'bourbon', '~> 5.0'
+gem 'neat', '~> 2.1'
+gem 'high_voltage'
+gem 'simple_form'
