@@ -1,0 +1,15 @@
+Defaults: &defaults
+  canvas_client_id: <%= ENV["CANVAS_CLIENT_ID"] %>
+  canvas_client_secret: <%= ENV["CANVAS_CLIENT_SECRET"] %>
+  canvas_host: <%= ENV["CANVAS_HOST"] %>
+  canvas_uri: <%= ENV["CANVAS_URI"] %>
+
+development:
+  <<: *defaults
+
+test:
+  <<: *defaults
+
+production:
+  <<: *defaults
+
