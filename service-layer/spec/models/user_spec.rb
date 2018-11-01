@@ -73,7 +73,7 @@ RSpec.describe User, type: :model do
     describe User, "#user_id" do
       it "does not allow an empty user id" do
         tmp = FactoryBot.build(:user)
-        tmp.user_id = nil
+        expect{tmp.user_id = nil}.to raise_error
       end
     end
   end
@@ -82,7 +82,7 @@ RSpec.describe User, type: :model do
     describe User, "#first_name" do
       it "does not allow an empty first name" do
         tmp = FactoryBot.build(:user)
-        tmp.first_name = nil
+        expect{tmp.first_name = nil}.to raise_error
       end
     end
   end
@@ -91,7 +91,7 @@ RSpec.describe User, type: :model do
     describe User, "#last_name" do
       it "does not allow an empty last name" do
         tmp = FactoryBot.build(:user)
-        tmp.last_name = nil
+        expect{tmp.last_name = nil}.to raise_error
       end
     end
   end
@@ -100,17 +100,17 @@ RSpec.describe User, type: :model do
     describe User, "#email" do
       it "does not allow an empty email" do
         tmp = FactoryBot.build(:user)
-        tmp.email = nil
+        expect{tmp.email = nil}.to raise_error
       end
 
       it "does not allow an email without an '@'" do
         tmp = FactoryBot.build(:user)
-        tmp.email = "testattest.com"
+        expect{tmp.email = "testattest.com"}.to raise_error
       end
 
       it "does not allow an email with special characters" do
         tmp = FactoryBot.build(:user)
-        tmp.email = "test<at>test.com"
+        expect{tmp.email = "test<at>test.com"}.to raise_error
       end
     end
   end
