@@ -1,4 +1,5 @@
 require_relative 'boot'
+require_relative "../app/lib/middleware/oauth_state_middleware"
 
 require "rails"
 # Pick the frameworks you want:
@@ -31,5 +32,21 @@ module SbaEli
     # Middleware like session, flash, cookies can be added back manually.
     # Skip views, helpers and assets when generating a new resource.
     config.api_only = true
+
+    config.session_store :cookie_store, key: '_interslice_session'
+    config.middleware.use ActionDispatch::Cookies # Required for all session management
+    config.middleware.use ActionDispatch::Session::CookieStore, config.session_options    
+
+    # Middleware that can restore state after an OAuth request    
+    config.middleware.insert_before 0, OauthStateMiddleware             
   end
+end
+
+Rails.application.config.middleware.use OmniAuth::Builder do
+  provider :canvas, APP_CONFIG['canvas_client_id'], APP_CONFIG['canvas_client_secret'],
+  {
+    :client_options => {
+      :site => APP_CONFIG['canvas_host']
+    }
+  }
 end

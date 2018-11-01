@@ -30,8 +30,11 @@ gem install bundler
 bundle install
 bundle exec rails db:create
 bundle exec rails db:migrate
+bundle exec figaro install
 ```
 
+Figaro should create a `config/application.yml` file.
+Copy `config/application.yml.example` to `config/application.yml` and fill in the environment variables with your own canvas configuration
 If `bundle install` fails due to the pg gem run:
 ```bash 
 gem install pg -- --with-pg-config=//Applications/Postgres.app/Contents/Versions/11/bin/pg_config
