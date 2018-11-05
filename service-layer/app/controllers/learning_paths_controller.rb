@@ -1,24 +1,32 @@
 class LearningPathsController < ApplicationController
   def index
-    response= HTTParty.get(ENV["CANVAS_HOST"] + "/api/v1/courses",
-      headers: { "Authorization" => "Bearer " + session["omniauth.auth"]["credentials"].token })
-
-    @learning_paths = response.body
+    @learning_paths = LearningPath.new(session_token).all
     render json: @learning_paths, status: 200
   end
 
   def show
-    response= HTTParty.get(ENV["CANVAS_HOST"] + "/api/v1/courses/" + params[:id],
-      headers: { "Authorization" => "Bearer " + session["omniauth.auth"]["credentials"].token })
-
-    @learning_path = response.body
+    @learning_path = LearningPath.new(session_token).find(params[:id])
     render json: @learning_path, status: 200
   end
 
-  def destroy
-    response= HTTParty.delete(ENV["CANVAS_HOST"] + "/api/v1/courses/" + params[:id],
-      headers: { "Authorization" => "Bearer " + session["omniauth.auth"]["credentials"].token })
+  def update
+    @learning_path = LearningPath.new(session_token).update(params[:id], learning_path_params)
+    render json: @learning_path
+  end
 
-    head :no_content
+  def destroy
+    LearningPath.new(session_token).destroy(params[:id])
+  end
+
+  private
+
+  def session_token
+    # session["omniauth.auth"]["credentials"].token
+
+    # Use Developer Token for now for testing. No need to authenticate through Oauth.
+    ENV["CANVAS_TOKEN"]
+  end
+
+  def learning_path_params
   end
 end
