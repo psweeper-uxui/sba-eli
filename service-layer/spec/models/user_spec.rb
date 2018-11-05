@@ -1,4 +1,5 @@
 require 'rails_helper'
+require 'shoulda-matchers'
 
 RSpec.describe User, type: :model do
 
@@ -7,38 +8,18 @@ RSpec.describe User, type: :model do
     expect(user).to be_valid
   end
 
-  context "When passing valid parameters to the user" do
-    tmp = FactoryBot.build(:user)
+  context "Validations" do
+    #test id unique
+    it { should validate_presence_of(:user_id) }
+    it { should validate_presence_of(:first_name) }
+    it { should validate_presence_of(:last_name) }
+    #test email format
+    it { should validate_presence_of(:email) }
+    it { should validate_presence_of(:profile_picture) }
+    it { should validate_presence_of(:linked_in) }
+    it { should validate_presence_of(:zipcode) }
+    it { should validate_not_zero(:percent_ownership) }
 
-    it "has a user id" do
-      expect(tmp.user_id).to be_present
-      #test uniqueness of the id
-    end
-
-    it "has a user's first name" do
-      expect(tmp.first_name).to be_present
-    end
-
-    it "has a user's last name" do
-      expect(tmp.last_name).to be_present
-    end
-
-    it "has a valid email" do
-      expect(tmp.email).to be_present
-      #check for @ symbol
-    end
-
-    it "has a profile picture" do
-      expect(tmp.profile_picture).to be_present
-    end
-
-    it "has a LinkedIn URL" do
-      expect(tmp.linked_in).to be_present
-    end
-
-    it "has a zip code" do
-      expect(tmp.zipcode).to be_present
-    end
 
     it "has a percent ownership" do
       expect(tmp.percent_ownership).to be_an_between(0, 100)
@@ -59,7 +40,6 @@ RSpec.describe User, type: :model do
     it "has an increased employee amount goal" do
       expect(tmp.goal_increase_employee_amount).to be > 0
     end
-
     # race
     # ethnicity
     # company
