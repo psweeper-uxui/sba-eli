@@ -7,76 +7,34 @@ class LearningEventController < ApplicationController
     include Response
     include HTTParty        
         
-    def index               
-        #Need a check for session, this will error out without going through /auth/canvas path first
-        @response = HTTParty.get("#{$api_uri}/courses/1/modules", {
-            headers: {"Authorization" => "Bearer " + session["omniauth.auth"]["credentials"].token  }                    
-        })                      
-                         
-        #json_response({ test: "Bearer " + cookies[:_interslice_session]})
-        json_response(@response.parsed_response)
+    def index            
+        @learning_events = LearningEvent.new(session_token).all(params[:course_id])
+        render json: @learning_events, status:200        
     end
 
     def show
-        @id = params[:id]
-        @course_id = 1
-
-        @response = HTTParty.get("#{$api_uri}/courses/#{@course_id}/modules/#{@id}", {
-            headers: {"Authorization" => "Bearer " + session["omniauth.auth"]["credentials"].token  }                    
-        })
-
-        json_response(@response.parsed_response)
+        @learning_event = LearningEvent.new(session_token).find(params[:course_id], params[:id])
+        render json: @learning_event, status:200
     end
 
-    def create        
-        #Need better way to pass this
-        @course_id = 1
-
-        @response = HTTParty.post("#{$api_uri}/courses/#{@course_id}/modules/", {
-            headers: {"Authorization" => "Bearer " + session["omniauth.auth"]["credentials"].token  },
-            body: {
-                course_id: "1",                                
-                'module[name]':  params.fetch(:name, "Test Module 6"),
-                'module[unlock_at]': params.fetch(:unlock_at, ""),                                
-                'module[position]': params.fetch(:position, ""),                                
-                'module[require_sequential_progress]': params.fetch(:require_sequential_progress, ""),  
-                'module[prerequisite_module_ids][]': params.fetch(:prerequisite_module_ids, ""),                                
-                'module[publish_final_grade]': params.fetch(:publish_final_grade, "")                             
-            }                    
-        })
-
-        json_response(@response.parsed_response)
+    def create                
+        @learning_event = LearningEvent.new(session_token).create(params[:course_id], params)
+        render json: @learning_event, status:200
     end
 
     def update
-        @course_id = 1        
-
-        @response = HTTParty.put("#{$api_uri}/courses/#{@course_id}/modules/", {
-            headers: {"Authorization" => "Bearer " + session["omniauth.auth"]["credentials"].token  },
-            body: {
-                id: params.fetch(:module_id, ""),
-                course_id: params.fetch(:course_id, "1"),                                
-                'module[name]':  params.fetch(:name, ""),
-                'module[unlock_at]': params.fetch(:unlock_at, ""),                                
-                'module[position]': params.fetch(:position, ""),                                
-                'module[require_sequential_progress]': params.fetch(:require_sequential_progress, ""),  
-                'module[prerequisite_module_ids][]': params.fetch(:prerequisite_module_ids, ""),                                
-                'module[publish_final_grade]': params.fetch(:publish_final_grade, "")                             
-            }                    
-        })
-
-        json_response(@response.parsed_response)
+        @learning_event = LearningEvent.new(session_token).update(params[:course_id], params[:id], params)
+        render json: @learning_event, status:200
     end
 
     def destroy
-        @course_id = 1        
+        @learning_event = LearningEvent.new(session_token).destroy(params[:course_id], params[:id])
+        render json: @learning_event, status:200
+    end
 
-        @response = HTTParty.delete("#{$api_uri}/courses/#{@course_id}/modules/", {
-            headers: {"Authorization" => "Bearer " + session["omniauth.auth"]["credentials"].token  },
-            body: {
-                id: params.fetch(:module_id, ""),
-                course_id: params.fetch(:course_id, "1")                                            
-            }                    
-        })
+    def session_token
+        # session["omniauth.auth"]["credentials"].token
+        # Use Developer Token for now for testing. No need to authenticate through Oauth.
+        ENV["CANVAS_TOKEN"]
     end
 end
