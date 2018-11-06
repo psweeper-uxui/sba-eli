@@ -1,7 +1,8 @@
 # Add configuration values here, as shown below.
 # Replace values with real values
 
-CANVAS_CLIENT_ID: "1234"
-CANVAS_CLIENT_SECRET: "5678"
+CANVAS_TOKEN: "canvas_token_here"
+CANVAS_ACCOUNT_ID: "1"
+CANVAS_NAMESPACE: "sba-eli-service"
 CANVAS_HOST: "htttp://example.canvas.com/"
 CANVAS_URI: "http://localhost:3000/auth/canvas/callback"
