@@ -49,49 +49,4 @@ RSpec.describe User, type: :model do
     end
   end
 
-  context "When passing invalid data to the user id" do
-    describe User, "#user_id" do
-      it "does not allow an empty user id" do
-        tmp = FactoryBot.build(:user)
-        expect{tmp.user_id = nil}.to raise_error
-      end
-    end
-  end
-
-  context "When passing invalid data to the first name" do
-    describe User, "#first_name" do
-      it "does not allow an empty first name" do
-        tmp = FactoryBot.build(:user)
-        expect{tmp.first_name = nil}.to raise_error
-      end
-    end
-  end
-
-  context "When passing invalid data to the last name" do
-    describe User, "#last_name" do
-      it "does not allow an empty last name" do
-        tmp = FactoryBot.build(:user)
-        expect{tmp.last_name = nil}.to raise_error
-      end
-    end
-  end
-
-  context "When passing invalid data to the email" do
-    describe User, "#email" do
-      it "does not allow an empty email" do
-        tmp = FactoryBot.build(:user)
-        expect{tmp.email = nil}.to raise_error
-      end
-
-      it "does not allow an email without an '@'" do
-        tmp = FactoryBot.build(:user)
-        expect{tmp.email = "testattest.com"}.to raise_error
-      end
-
-      it "does not allow an email with special characters" do
-        tmp = FactoryBot.build(:user)
-        expect{tmp.email = "test<at>test.com"}.to raise_error
-      end
-    end
-  end
 end
