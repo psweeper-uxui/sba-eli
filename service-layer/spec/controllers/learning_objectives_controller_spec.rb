@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe LearningEventController, type: :controller do
+RSpec.describe LearningObjectivesController, type: :controller do
     describe "GET /learning_event" do
         it "renders json of all of the learning events" do
             get :index

@@ -1,4 +1,4 @@
-class LearningEvent
+class LearningObjective
     include HTTParty
     base_uri ENV["CANVAS_HOST"] + "/api/v1"
 
