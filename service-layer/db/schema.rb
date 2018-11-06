@@ -15,23 +15,6 @@ ActiveRecord::Schema.define(version: 2018_10_30_191653) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "companies", force: :cascade do |t|
-    t.boolean "in_business"
-    t.string "company_id"
-    t.string "name"
-    t.string "naics", array: true
-    t.integer "num_employees"
-    t.string "website"
-    t.bigint "industries_id", array: true
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["company_id"], name: "index_companies_on_company_id"
-    t.index ["in_business"], name: "index_companies_on_in_business"
-    t.index ["industries_id"], name: "index_companies_on_industries_id"
-    t.index ["naics"], name: "index_companies_on_naics"
-    t.index ["name"], name: "index_companies_on_name"
-  end
-
   create_table "delayed_jobs", force: :cascade do |t|
     t.integer "priority", default: 0, null: false
     t.integer "attempts", default: 0, null: false
