@@ -43,8 +43,8 @@ group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]
   gem "factory_bot_rails"
   gem "rspec-rails", "~> 3.6"
-  gem "spring-commands-rspec", group: :development
-  gem "suspenders", group: [:development, :test]
+  gem "spring-commands-rspec"
+  gem "suspenders"
 end
 
 group :development do
@@ -60,5 +60,6 @@ group :test do
   gem "chromedriver-helper"
   gem "shoulda-matchers"
   gem "faker"
+  gem "vcr"
   gem "webmock"
 end
