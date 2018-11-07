@@ -5,7 +5,7 @@ class LearningEventsController < ApplicationController
 	end
 
 	def show
-		@learning_event = LearningEvent.new(session_token).find(params[:course_id], params[:id]))
+		@learning_event = LearningEvent.new(session_token).find(params[:course_id], params[:id])
 		render json: @learning_events, status: 200
 	end
 

@@ -5,5 +5,6 @@ Rails.application.routes.draw do
   resources :users
   resources :learning_objectives
   resources :learning_paths
+  resources :learning_events
 end
 

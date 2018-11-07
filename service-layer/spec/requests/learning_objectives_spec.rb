@@ -3,7 +3,7 @@ require "rails_helper"
 describe "LearningObjectives" do
     describe "GET /learning_objectives" do
         it "gets a list of all learning objectives" do
-            VCR.use_cassette("learning_objectives/get_learning_objectives") do
+            VCR.use_cassette("learning_objectives/get_learning_objectives", match_requests_on: [:method]) do
                 course_id = 1
                 get "/learning_objectives?course_id=#{course_id}"
                 json = JSON.parse(response.body)
@@ -17,7 +17,7 @@ describe "LearningObjectives" do
 
     describe "GET learning_objectives/:id" do
         it "gets a single learning objective" do
-            VCR.use_cassette("learning_objectives/get_learning_objective") do
+            VCR.use_cassette("learning_objectives/get_learning_objective", match_requests_on: [:method]) do
                 course_id = 1
                 lo_id = 11
                 get "/learning_objectives/#{lo_id}?course_id=#{course_id}"
@@ -31,7 +31,7 @@ describe "LearningObjectives" do
 
     describe "POST learning_objectives" do
         it "creates a single learning objective" do
-            VCR.use_cassette("learning_objectives/create_learning_objective") do
+            VCR.use_cassette("learning_objectives/create_learning_objective", match_requests_on: [:method]) do
                 course_id = 1
                 
                 post "/learning_objectives?course_id=#{course_id}", :params => { name: 'Rspec Test Module Name'}
@@ -45,7 +45,7 @@ describe "LearningObjectives" do
 
     describe "DELETE learning_objectives/:id" do
         it "deletes a single learning objective" do
-            VCR.use_cassette("learning_objectives/delete_learning_objective") do
+            VCR.use_cassette("learning_objectives/delete_learning_objective", match_requests_on: [:method]) do
                 course_id = 1
                 lo_id = 23
                 delete "/learning_objectives/#{lo_id}?course_id=#{course_id}"
@@ -59,7 +59,7 @@ describe "LearningObjectives" do
 
     describe "PUT learning_objectives/:id" do
         it "updates a single learning objective" do
-            VCR.use_cassette("learning_objectives/update_learning_objective") do
+            VCR.use_cassette("learning_objectives/update_learning_objective", match_requests_on: [:method]) do
                 course_id = 1
                 lo_id = 16
                 put "/learning_objectives/#{lo_id}?course_id=#{course_id}", :params => { name: 'Rspec Test Updated Module Name'}

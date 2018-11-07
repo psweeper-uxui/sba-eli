@@ -3,7 +3,7 @@ require "rails_helper"
 describe "LearningPaths" do
   describe "GET /learning_paths" do
     it "gets a list of all courses" do
-      VCR.use_cassette("learning_paths/get_learning_paths") do
+      VCR.use_cassette("learning_paths/get_learning_paths", match_requests_on: [:method]) do
         get "/learning_paths"
 
         json = JSON.parse(response.body)
@@ -17,7 +17,7 @@ describe "LearningPaths" do
 
   describe "GET /learning_paths/:id" do
     it "gets a single learning path" do
-      VCR.use_cassette("learning_paths/get_lp") do
+      VCR.use_cassette("learning_paths/get_lp", match_requests_on: [:method]) do
         learning_path_id = 1
 
         get "/learning_paths/#{learning_path_id}"
@@ -32,7 +32,7 @@ describe "LearningPaths" do
 
   describe "DELETE /learning_paths/:id" do
     it "deletes a learning path" do
-      VCR.use_cassette("learning_paths/delete_lp") do
+      VCR.use_cassette("learning_paths/delete_lp", match_requests_on: [:method]) do
         learning_path_id = 3
         delete "/learning_paths/#{learning_path_id}"
 
