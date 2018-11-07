@@ -15,8 +15,16 @@ ActiveRecord::Schema.define(version: 2018_10_30_191653) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "oauth_states", force: :cascade do |t|
+    t.string "state"
+    t.text "payload"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["state"], name: "index_oauth_states_on_state"
+  end
+
   create_table "users", force: :cascade do |t|
-    t.string "user_id"
+    t.string "user_id", null: false
     t.string "first_name"
     t.string "last_name"
     t.string "email"
@@ -40,14 +48,6 @@ ActiveRecord::Schema.define(version: 2018_10_30_191653) do
     t.index ["last_name"], name: "index_users_on_last_name"
     t.index ["race_id"], name: "index_users_on_race_id"
     t.index ["user_id"], name: "index_users_on_user_id"
-  end
-
-  create_table "oauth_states", force: :cascade do |t|
-    t.string "state"
-    t.text "payload"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["state"], name: "index_oauth_states_on_state"
   end
 
 end
