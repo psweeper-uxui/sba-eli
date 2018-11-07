@@ -1,0 +1,66 @@
+---
+http_interactions:
+- request:
+    method: delete
+    uri: http://ec2-100-24-107-33.compute-1.amazonaws.com//api/v1/courses/1/modules/23
+    body:
+      encoding: UTF-8
+      string: id=23&course_id=1
+    headers:
+      Authorization:
+      - Bearer nprxekGQGKGqfG7bTKjbfgQfarJX12zxHvb8V0u5B9rVoshsjapGtpOKWsw4C0xW
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 07 Nov 2018 14:42:57 GMT
+      Server:
+      - Apache/2.4.18 (Ubuntu)
+      X-Request-Cost:
+      - '0.28995557900000124'
+      X-Session-Id:
+      - c89bbd35784e31b4f4ea32155ebc5b04
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Context-Id:
+      - 3e2fd0cc-45af-4f94-b2da-7e1a8056ca6c
+      X-Rate-Limit-Remaining:
+      - '600.0'
+      X-Canvas-Meta:
+      - at=10000000000026;dk=10000000000003;o=context_modules_api;n=destroy;t=Course;i=1;b=868424;m=868424;u=0.19;y=0.01;d=0.10;
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Canvas-User-Id:
+      - '10000000000001'
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Runtime:
+      - '0.239462'
+      X-Content-Type-Options:
+      - nosniff
+      X-Powered-By:
+      - Phusion Passenger 5.3.5
+      Set-Cookie:
+      - _csrf_token=4whWqc2MluM4c%2FW2LX9tG6DBhVtdGLI3gDVWO%2Fq3%2FwKxUgLZvvXQk3sxoNdFKgdc7JXHbxwz%2FE70WRhdiuKzcQ%3D%3D;
+        path=/
+      - _normandy_session=blO9-URvhfaYYvx9JW3-cQ.9thdUQsN8w_IFMD2sTmOSbB52jKeGs8ygQMdf-DyRU46IDgs0noG5fNmDqMyoqrF7Uq5C7f8cG1NvkOObNqfrlMqXvzHnZXcxvbkCd_eYhGhf0qheKWkwiV4ANXndJwJ.JU-aJPM-HGiO7XGYR_ilwnO1N_w.W-L58Q;
+        path=/; HttpOnly
+      - log_session_id=c89bbd35784e31b4f4ea32155ebc5b04; path=/
+      Etag:
+      - W/"9cbb4db0c53deef02e034fd0ef0791a6"
+      Status:
+      - 200 OK
+      Transfer-Encoding:
+      - chunked
+      Content-Type:
+      - application/json; charset=utf-8
+    body:
+      encoding: UTF-8
+      string: '{"id":23,"position":0,"name":"Rspec Test Module Name","unlock_at":null,"require_sequential_progress":false,"publish_final_grade":false,"prerequisite_module_ids":[],"published":false,"items_count":0,"items_url":"http://ec2-100-24-107-33.compute-1.amazonaws.com/api/v1/courses/1/modules/23/items"}'
+    http_version: 
+  recorded_at: Wed, 07 Nov 2018 14:43:09 GMT
+recorded_with: VCR 4.0.0

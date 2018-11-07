@@ -1,0 +1,66 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://ec2-100-24-107-33.compute-1.amazonaws.com//api/v1/courses/1/modules/11
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Bearer gwMCIcYPoUt7QrpWPe1g6DzLYjj3VW027IcYka3y6JuVOntsztuHMQoi9MEVkUcf
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 07 Nov 2018 14:04:33 GMT
+      Server:
+      - Apache/2.4.18 (Ubuntu)
+      X-Request-Cost:
+      - '0.03552517100000114'
+      X-Session-Id:
+      - d10995b57e81aaae996b4af1cf491c8e
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Context-Id:
+      - 8aa3e518-597c-4d96-ad7e-d1805004053e
+      X-Rate-Limit-Remaining:
+      - '600.0'
+      X-Canvas-Meta:
+      - at=10000000000026;dk=10000000000003;o=context_modules_api;n=show;t=Course;i=1;b=868424;m=868424;u=0.03;y=0.00;d=0.01;
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Canvas-User-Id:
+      - '10000000000001'
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Runtime:
+      - '0.049997'
+      X-Content-Type-Options:
+      - nosniff
+      X-Powered-By:
+      - Phusion Passenger 5.3.5
+      Set-Cookie:
+      - _csrf_token=ZcVE%2FV78VxpDth%2BBx1ND%2FZLnFX1r5G4TBeKK2uF13wIinSiadbcWLheCZeaCODXS4K9wHiKANlFuiseo2AaHMg%3D%3D;
+        path=/
+      - _normandy_session=HfaIU0CMPeVI_XgwZDv4xw.RovKsaBe-QwaEvneKttxNjkItLejAZvyJsCuTK_1_M9J6OkBc8if7B9o-op-Nq5IzLPBfxEmcHIE-4uYH5oirPpk9hKmObEEOmAJyhmW5rxEC9GrC1yLBgBWoiGrlGb6.-jFKQh7J-MpvTcZCKzsR-sjL65Q.W-Lw8Q;
+        path=/; HttpOnly
+      - log_session_id=d10995b57e81aaae996b4af1cf491c8e; path=/
+      Etag:
+      - W/"18861f9481b2eb9db7c5bc9b720cc3cd"
+      Status:
+      - 200 OK
+      Transfer-Encoding:
+      - chunked
+      Content-Type:
+      - application/json; charset=utf-8
+    body:
+      encoding: UTF-8
+      string: '{"id":11,"name":"Test Module Name Updated","position":12,"unlock_at":null,"require_sequential_progress":false,"publish_final_grade":false,"prerequisite_module_ids":[],"published":false,"items_count":0,"items_url":"http://ec2-100-24-107-33.compute-1.amazonaws.com/api/v1/courses/1/modules/11/items"}'
+    http_version: 
+  recorded_at: Wed, 07 Nov 2018 14:04:44 GMT
+recorded_with: VCR 4.0.0
