@@ -59,6 +59,7 @@ group :test do
   gem "capybara-selenium"
   gem "chromedriver-helper"
   gem "shoulda-matchers"
+  gem "faker"
   gem "vcr"
   gem "webmock"
 end

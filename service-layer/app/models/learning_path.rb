@@ -14,6 +14,11 @@ class LearningPath
     self.class.get("/courses/#{id}", @options).body
   end
 
+  def create(account_id, lp_params)
+    options = @options.meger!(body: lp_params)
+    self.class.post("/accounts/#{account_id}\/courses", options)
+  end
+
   def update(id, lp_params)
     options = @options.merge!(body: lp_params)
     self.class.put("/courses/#{id}", options)
