@@ -10,12 +10,12 @@ class LearningPathsController < ApplicationController
   end
 
   def create
-    @learning_path = LearningPath.new(session_token).create(params[:id], learning_path_params)
+    @learning_path = LearningPath.new(session_token).create(params[:id], params)
     render json: @learning_path
   end
 
   def update
-    @learning_path = LearningPath.new(session_token).update(params[:id], learning_path_params)
+    @learning_path = LearningPath.new(session_token).update(params[:id], params)
     render json: @learning_path
   end
 
