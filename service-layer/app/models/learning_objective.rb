@@ -1,6 +1,6 @@
 class LearningObjective
     include HTTParty
-    base_uri ENV["CANVAS_HOST"] + "/api/v1"
+    base_uri ENV["CANVAS_HOST"] + "api/v1"
 
     def initialize(token)
         @options = { headers: { "Authorization" => "Bearer " + token } }
