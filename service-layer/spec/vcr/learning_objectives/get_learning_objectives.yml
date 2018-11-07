@@ -1,0 +1,81 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://ec2-100-24-107-33.compute-1.amazonaws.com//api/v1/courses/1/modules
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Bearer gwMCIcYPoUt7QrpWPe1g6DzLYjj3VW027IcYka3y6JuVOntsztuHMQoi9MEVkUcf
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 07 Nov 2018 13:45:14 GMT
+      Server:
+      - Apache/2.4.18 (Ubuntu)
+      X-Request-Cost:
+      - '0.07246146099999871'
+      X-Session-Id:
+      - 26e9dd93e46c6631e94904c32f9941d1
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Context-Id:
+      - 40ac20c4-a7ae-46d7-b87e-b91bcaaab3c4
+      X-Rate-Limit-Remaining:
+      - '600.0'
+      X-Canvas-Meta:
+      - at=10000000000026;dk=10000000000003;o=context_modules_api;n=index;t=Course;i=1;b=868424;m=868424;u=0.06;y=0.00;d=0.01;
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Canvas-User-Id:
+      - '10000000000001'
+      Link:
+      - <http://ec2-100-24-107-33.compute-1.amazonaws.com/api/v1/courses/1/modules?page=1&per_page=10>;
+        rel="current",<http://ec2-100-24-107-33.compute-1.amazonaws.com/api/v1/courses/1/modules?page=2&per_page=10>;
+        rel="next",<http://ec2-100-24-107-33.compute-1.amazonaws.com/api/v1/courses/1/modules?page=1&per_page=10>;
+        rel="first",<http://ec2-100-24-107-33.compute-1.amazonaws.com/api/v1/courses/1/modules?page=2&per_page=10>;
+        rel="last"
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Runtime:
+      - '0.079510'
+      X-Content-Type-Options:
+      - nosniff
+      X-Powered-By:
+      - Phusion Passenger 5.3.5
+      Set-Cookie:
+      - _csrf_token=MF8cAlf5LKEGleTJAt7oFQu8SeBayfAhhiAvfIHjNe5gEHZaGbZj7nPjrIZjnaItOo48rBacm2XjaUtNsYVl2Q%3D%3D;
+        path=/
+      - _normandy_session=XtoJFvqFmdLIus8-YE5KhA.ep1I2_-9q0iTEKBDMrzSc4qBzY6nCJMx7OQ9YOte1sZTMnlEaeNJdNpoOZlYZlQAiZGj3wq9nNE8zA5B3yIOmbis9l7sVoI0i3VYLEP6p1FeCTsPrCjVPuYUFOuVtslO.LLwkKzSCdLflEI4uobbHnYRiH5I.W-Lsag;
+        path=/; HttpOnly
+      - log_session_id=26e9dd93e46c6631e94904c32f9941d1; path=/
+      Etag:
+      - W/"6eb5d903486006b590cba8f365347f7a"
+      Status:
+      - 200 OK
+      Transfer-Encoding:
+      - chunked
+      Content-Type:
+      - application/json; charset=utf-8
+    body:
+      encoding: UTF-8
+      string: '[{"id":19,"name":"Update Postman Name 19","position":0,"unlock_at":null,"require_sequential_progress":false,"publish_final_grade":false,"prerequisite_module_ids":[],"published":false,"items_count":0,"items_url":"http://ec2-100-24-107-33.compute-1.amazonaws.com/api/v1/courses/1/modules/19/items"},{"id":12,"name":"Update
+        Postman name 2","position":6,"unlock_at":null,"require_sequential_progress":false,"publish_final_grade":false,"prerequisite_module_ids":[],"published":false,"items_count":0,"items_url":"http://ec2-100-24-107-33.compute-1.amazonaws.com/api/v1/courses/1/modules/12/items"},{"id":16,"name":"Test
+        Module Postman","position":7,"unlock_at":null,"require_sequential_progress":false,"publish_final_grade":false,"prerequisite_module_ids":[],"published":false,"items_count":0,"items_url":"http://ec2-100-24-107-33.compute-1.amazonaws.com/api/v1/courses/1/modules/16/items"},{"id":15,"name":"Test
+        Module Postman","position":8,"unlock_at":null,"require_sequential_progress":false,"publish_final_grade":false,"prerequisite_module_ids":[],"published":false,"items_count":0,"items_url":"http://ec2-100-24-107-33.compute-1.amazonaws.com/api/v1/courses/1/modules/15/items"},{"id":10,"name":"Update
+        Test Module Name 2","position":10,"unlock_at":null,"require_sequential_progress":false,"publish_final_grade":false,"prerequisite_module_ids":[],"published":false,"items_count":0,"items_url":"http://ec2-100-24-107-33.compute-1.amazonaws.com/api/v1/courses/1/modules/10/items"},{"id":11,"name":"Test
+        Module Name Updated","position":12,"unlock_at":null,"require_sequential_progress":false,"publish_final_grade":false,"prerequisite_module_ids":[],"published":false,"items_count":0,"items_url":"http://ec2-100-24-107-33.compute-1.amazonaws.com/api/v1/courses/1/modules/11/items"},{"id":9,"name":"Test
+        Module 6","position":13,"unlock_at":null,"require_sequential_progress":false,"publish_final_grade":false,"prerequisite_module_ids":[],"published":false,"items_count":0,"items_url":"http://ec2-100-24-107-33.compute-1.amazonaws.com/api/v1/courses/1/modules/9/items"},{"id":8,"name":"Test
+        Module 6","position":14,"unlock_at":null,"require_sequential_progress":false,"publish_final_grade":false,"prerequisite_module_ids":[],"published":false,"items_count":0,"items_url":"http://ec2-100-24-107-33.compute-1.amazonaws.com/api/v1/courses/1/modules/8/items"},{"id":7,"name":"Test
+        Module 6","position":15,"unlock_at":null,"require_sequential_progress":false,"publish_final_grade":false,"prerequisite_module_ids":[],"published":false,"items_count":0,"items_url":"http://ec2-100-24-107-33.compute-1.amazonaws.com/api/v1/courses/1/modules/7/items"},{"id":1,"name":"Test
+        Module","position":17,"unlock_at":null,"require_sequential_progress":false,"publish_final_grade":false,"prerequisite_module_ids":[],"published":true,"items_count":3,"items_url":"http://ec2-100-24-107-33.compute-1.amazonaws.com/api/v1/courses/1/modules/1/items"}]'
+    http_version: 
+  recorded_at: Wed, 07 Nov 2018 13:45:25 GMT
+recorded_with: VCR 4.0.0
