@@ -36,7 +36,10 @@ describe "LearningPaths" do
         learning_path_id = 3
         delete "/learning_paths/#{learning_path_id}"
 
+        json = JSON.parse(response.body)
+
         expect(response).to be_successful
+        expect(json["delete"]).to eq(true)
       end
     end
   end

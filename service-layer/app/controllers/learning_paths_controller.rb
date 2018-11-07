@@ -20,7 +20,8 @@ class LearningPathsController < ApplicationController
   end
 
   def destroy
-    LearningPath.new(session_token).destroy(params[:id])
+    @learning_path = LearningPath.new(session_token).destroy(params[:id])
+    render json: @learning_path
   end
 
   private
