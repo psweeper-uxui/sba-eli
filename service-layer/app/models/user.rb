@@ -63,6 +63,6 @@ class User
   end
 
   def canvas_custom_data_url(user_id)
-    "/#{canvas_user_url(user_id)}/custom_data/"
+    "/users/#{user_id}/custom_data/"
   end
 end
