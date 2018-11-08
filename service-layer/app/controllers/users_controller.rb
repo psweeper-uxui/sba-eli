@@ -1,18 +1,19 @@
 class UsersController < ApplicationController
+  require 'json'
+
+  def initialize
+    @user = User.new(session_token)
+  end
 
   def index
-    @user = User.new(session_token).all
-    render json: @user, status: 200
+    render json: @user.all, status: 200
   end
 
   def show
-    @user = User.new(session_token).read_user(params[:id])
-    render json: @user, status: 200
-  end
+    user_data = JSON.parse(@user.read_user(params[:id]))
+    custom_data = JSON.parse(@user.read_user_custom_data(params[:id]))
 
-  def show_custom
-    @user = User.new(session_token).read_user_custom_data(params[:id])
-    render json: @user, status: 200
+    render json: user_data.merge(custom_data), status: 200
   end
 
   def create
@@ -31,8 +32,9 @@ class UsersController < ApplicationController
   end
 
   def destroy
-    User.new(session_token).destroy_custom_data(params[:id])
-    User.new(session_token).destroy(params[:id])
+    custom_data = JSON.parse(@user.destroy_custom_data(params[:id]))
+    user_data = JSON.parse(@user.destroy(params[:id]))
+    render json: user_data.merge(custom_data)
   end
 
   private
