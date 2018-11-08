@@ -4,5 +4,5 @@
 CANVAS_TOKEN: "canvas_token_here"
 CANVAS_ACCOUNT_ID: "1"
 CANVAS_NAMESPACE: "sba-eli-service"
-CANVAS_HOST: "htttp://example.canvas.com/"
+CANVAS_HOST: "http://example.canvas.com/"
 CANVAS_URI: "http://localhost:3000/auth/canvas/callback"
