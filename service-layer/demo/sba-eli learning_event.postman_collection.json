@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "8b6f770e-1eb4-4e78-bfa9-5fd23da97eb6",
+		"_postman_id": "5ca2b040-ee3f-4010-9465-80f007f5ca6f",
 		"name": "sba-eli learning_event",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -81,76 +81,6 @@
 			"response": []
 		},
 		{
-			"name": "create",
-			"request": {
-				"auth": {
-					"type": "oauth2",
-					"oauth2": [
-						{
-							"key": "addTokenTo",
-							"value": "header",
-							"type": "string"
-						}
-					]
-				},
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "formdata",
-					"formdata": [
-						{
-							"key": "name",
-							"value": "Test Module Postman Objective",
-							"type": "text"
-						},
-						{
-							"key": "unlock_at",
-							"value": "",
-							"type": "text"
-						},
-						{
-							"key": "position",
-							"value": "",
-							"type": "text"
-						},
-						{
-							"key": "require_sequential_progress",
-							"value": "",
-							"type": "text"
-						},
-						{
-							"key": "prerequisite_module_ids",
-							"value": "",
-							"type": "text"
-						},
-						{
-							"key": "publish_final_grade",
-							"value": "",
-							"type": "text"
-						}
-					]
-				},
-				"url": {
-					"raw": "http://localhost:3000/learning_objectives?course_id=1",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"learning_objectives"
-					],
-					"query": [
-						{
-							"key": "course_id",
-							"value": "1"
-						}
-					]
-				}
-			},
-			"response": []
-		},
-		{
 			"name": "delete",
 			"request": {
 				"method": "DELETE",
@@ -160,14 +90,14 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "http://localhost:3000/learning_objectives/:id?course_id=1",
+					"raw": "http://localhost:3000/learning_events/:id?course_id=1",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "3000",
 					"path": [
-						"learning_objectives",
+						"learning_events",
 						":id"
 					],
 					"query": [
@@ -180,73 +110,6 @@
 						{
 							"key": "id",
 							"value": "22"
-						}
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "update",
-			"request": {
-				"method": "PUT",
-				"header": [],
-				"body": {
-					"mode": "formdata",
-					"formdata": [
-						{
-							"key": "name",
-							"value": "Update Postman Name 19",
-							"type": "text"
-						},
-						{
-							"key": "unlock_at",
-							"value": "",
-							"type": "text"
-						},
-						{
-							"key": "position",
-							"value": "",
-							"type": "text"
-						},
-						{
-							"key": "require_sequential_progress",
-							"value": "",
-							"type": "text"
-						},
-						{
-							"key": "prerequisite_module_ids",
-							"value": "",
-							"type": "text"
-						},
-						{
-							"key": "publish_final_grade",
-							"value": "",
-							"type": "text"
-						}
-					]
-				},
-				"url": {
-					"raw": "http://localhost:3000/learning_objectives/:id?course_id=1",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"learning_objectives",
-						":id"
-					],
-					"query": [
-						{
-							"key": "course_id",
-							"value": "1"
-						}
-					],
-					"variable": [
-						{
-							"key": "id",
-							"value": "19"
 						}
 					]
 				}
