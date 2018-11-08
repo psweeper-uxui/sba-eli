@@ -30,6 +30,25 @@ describe "LearningPaths" do
     end
   end
 
+  describe "UPDATE /learning_paths/:id" do
+    it "updates a learning path" do
+      VCR.use_cassette("learning_paths/update_lp") do
+        learning_path_id = 2
+
+        params = {
+          name: "foo",
+        }
+
+        put "/learning_paths/#{learning_path_id}", params: params
+
+        json = JSON.parse(response.body)
+
+        expect(response).to be_successful
+        expect(json["name"]).to eq("foo")
+      end
+    end
+  end
+
   describe "DELETE /learning_paths/:id" do
     it "deletes a learning path" do
       VCR.use_cassette("learning_paths/delete_lp") do
