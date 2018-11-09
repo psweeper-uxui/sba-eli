@@ -1,0 +1,130 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://ec2-34-205-29-33.compute-1.amazonaws.com//api/v1/users/16
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Bearer SpTqHFpgsZavL2CcexDWsEr6IaJa8vypaDxvNDWwTBmGK22GxTYZLYXmpJCbNvDB
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 09 Nov 2018 15:56:05 GMT
+      Server:
+      - Apache/2.4.18 (Ubuntu)
+      X-Request-Cost:
+      - '0.025332202999999574'
+      X-Session-Id:
+      - fde59d08765078d69639273918816fd5
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Context-Id:
+      - a6fc6e41-4a50-484b-b46a-af527cd94128
+      X-Rate-Limit-Remaining:
+      - '600.0'
+      X-Canvas-Meta:
+      - at=10000000000012;dk=10000000000002;o=users;n=api_show;b=887052;m=887052;u=0.02;y=0.01;d=0.01;
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Canvas-User-Id:
+      - '10000000000001'
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Runtime:
+      - '0.052034'
+      X-Content-Type-Options:
+      - nosniff
+      X-Powered-By:
+      - Phusion Passenger 5.3.5
+      Set-Cookie:
+      - _csrf_token=gJ1ZYeMQbK9YhQZTA7RKlSS0tIY8Www%2BpFDvivju4NPo%2FA8kuSAK9jH3axhawCmmbOD6xHVubm%2FhKpvjz9ejnw%3D%3D;
+        path=/
+      - _normandy_session=tUK1K_ICVFRLhWLxzIdCag.wIwVS_1yO2EPuvMK70TLytb--he7hNoY8xc45wZDz3JNIhQT9pdTMYBN0Agrg71Mos5SWL5cM3TH8XVXrkqf_E5_M7-V4aKyQVI-cn3hhDi9WT7A9PaIxV3K16OTw5UM.sJ9ggQl-3vDcEPFpNJTeC4u5Ops.W-WuFQ;
+        path=/; HttpOnly
+      - log_session_id=fde59d08765078d69639273918816fd5; path=/
+      Etag:
+      - W/"46d9d49a1d773a28efd5347257f06b0e"
+      Status:
+      - 200 OK
+      Transfer-Encoding:
+      - chunked
+      Content-Type:
+      - application/json; charset=utf-8
+    body:
+      encoding: UTF-8
+      string: '{"id":16,"name":"Brand New User","created_at":"2018-11-06T08:49:42-07:00","sortable_name":"New
+        User, Brand","short_name":"B","sis_user_id":null,"integration_id":null,"sis_import_id":null,"login_id":"email+1234@gmail.com","email":"email+1234@gmail.com","locale":null,"permissions":{"can_update_name":true,"can_update_avatar":false}}'
+    http_version: 
+  recorded_at: Fri, 09 Nov 2018 15:55:28 GMT
+- request:
+    method: get
+    uri: http://ec2-34-205-29-33.compute-1.amazonaws.com//api/v1/users/16/custom_data/?ns=sba-eli-service
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Bearer SpTqHFpgsZavL2CcexDWsEr6IaJa8vypaDxvNDWwTBmGK22GxTYZLYXmpJCbNvDB
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 09 Nov 2018 15:56:05 GMT
+      Server:
+      - Apache/2.4.18 (Ubuntu)
+      X-Request-Cost:
+      - '0.023893386999999572'
+      X-Session-Id:
+      - c96ae2951a579274c59c3780c9eb1eaf
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Context-Id:
+      - fd10a4da-8a35-4b2b-877e-0b10ba85cf51
+      X-Rate-Limit-Remaining:
+      - '600.0'
+      X-Canvas-Meta:
+      - at=10000000000012;dk=10000000000002;o=custom_data;n=get_data;t=User;i=16;b=887052;m=887052;u=0.02;y=0.00;d=0.00;
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Canvas-User-Id:
+      - '10000000000001'
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Runtime:
+      - '0.038767'
+      X-Content-Type-Options:
+      - nosniff
+      X-Powered-By:
+      - Phusion Passenger 5.3.5
+      Set-Cookie:
+      - _csrf_token=5gwsm%2BB0mQZKmnmqKMyVCfoS72MQ8bzJcdJpKE737GmXQGOugzrjQwfrAOVc%2BPlkgmSOKnSb9bE6gyAeK4K%2BQg%3D%3D;
+        path=/
+      - _normandy_session=dpfG6k1tGJC_F64aMXRCFA.75JH-btRCzhw6B5to0c7SrcEly9f4fJD7sJ3AWbbVdddrvQBmLK3znqQldtg2isIBf42KAhMbBrGqlMx2kFs4ksiXcwopKyqY5Gk4CrYNP_PvGNd3btXQuUTZjvrazwi.v9b-mq67ZSyw1Al150sX_2iJ_js.W-WuFQ;
+        path=/; HttpOnly
+      - log_session_id=c96ae2951a579274c59c3780c9eb1eaf; path=/
+      Etag:
+      - W/"7ba62f889ab461d7643bf78f93a48a72"
+      Status:
+      - 200 OK
+      Transfer-Encoding:
+      - chunked
+      Content-Type:
+      - application/json; charset=utf-8
+    body:
+      encoding: UTF-8
+      string: '{"data":{"race":"yes","fruit":"pear","color":"purple"}}'
+    http_version: 
+  recorded_at: Fri, 09 Nov 2018 15:55:28 GMT
+recorded_with: VCR 4.0.0
