@@ -29,6 +29,35 @@ describe UsersController do
     end
   end
 
+  describe "POST /users/" do
+    it "creates a single user" do
+      VCR.use_cassette("users/create_user") do
+
+        params = "{
+          \"user\": {
+            \"name\":\"Brand New APIUser\",
+            \"sortable_name\": \"New APIUser, Brand\",
+            \"short_name\":\"B\",
+            \"email\": \"email+1234@gmail.com\"
+          },
+          \"pseudonym\":{
+            \"unique_id\": \"email123asdf@gmail.com\"
+          }
+        }"
+        headers "CONTENT_TYPE", "application/json"
+        post "/users/", params: params
+
+        json = JSON.parse(response.body)
+
+        expect(response).to be_successful
+        expect(json["name"]).to eq("Brand New APIUser")
+        expect(json["sortable_name"]).to eq("New APIUser, Brand")
+        expect(json["short_name"]).to eq("B")
+        expect(json["login_id"]).to eq("email123asdf@gmail.com")
+      end
+    end
+  end
+
   describe "UPDATE /users/:id" do
     it "updates a user" do
       VCR.use_cassette("users/update_user") do
