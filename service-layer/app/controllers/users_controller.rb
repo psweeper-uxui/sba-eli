@@ -18,8 +18,7 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(session_token).create_user(user_body_request)
-    render json: @user
-  end
+
 
     #custom_data = JSON.parse(@user.user_custom_data(params[:id], custom_data_request))
     #if custom_data.has_key? 'data'
