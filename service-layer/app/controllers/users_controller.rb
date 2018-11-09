@@ -48,14 +48,14 @@ class UsersController < ApplicationController
   def user_body_request
     {
         'user' => {
-            'name': "Test User",
-            'sortable_name': "User, Test",
-            'short_name': "Test",
+            'name': 'Test User',
+            'sortable_name': 'User, Test',
+            'short_name': 'Test',
             'birthdate': nil,
-            'email': "email+1234@gmail.com"
+            'email': 'email+1234@gmail.com'
         },
         'pseudonym': {
-            'unique_id': "email+1234@gmail.com"
+            'unique_id': 'email+12322423@gmail.com'
         }
     }
   end
@@ -64,13 +64,13 @@ class UsersController < ApplicationController
   def user_body_update_request
     {
         'user' => {
-            'name': "Test D User",
-            'sortable_name': "User, Test D",
-            'short_name': "T",
+            'name': 'Test D User',
+            'sortable_name': 'User, Test D',
+            'short_name': 'T',
             'birthdate': nil,
-            'email': "email+1234@gmail.com",
+            'email': 'email+1234@gmail.com',
             'avatar': {
-                'url': "https://picsum.photos/200"
+                'url': 'https://picsum.photos/200'
             }
         }
     }
@@ -81,23 +81,63 @@ class UsersController < ApplicationController
         'ns': ENV['CANVAS_NAMESPACE'],
         'data' => {
             'user' => {
-                'linked_in': "http://www.google.com",
-                'zipcode': "06320",
+                'linked_in': 'http://www.google.com',
+                'zipcode': '06320',
                 'percent_ownership': 97,
                 'goal_percent_revenue': 12,
                 'goal_revenue_amount': 1000,
                 'goal_percent_increase_employees': 15,
                 'goal_increase_employee_amount': 160,
-                'race': ["race1", "race2"],
-                'ethnicity': "yes"
+                'race': ['race1', 'race2'],
+                'ethnicity': 'yes'
             },
             'company' => {
-                'company_id': "12312",
-                'company_name': "New Company",
-                'industry': ["one", "two", "three"],
-                'naics': ["1234", "123123", "8976"],
+                'company_id': '12312',
+                'company_name': 'New Company',
+                'industry': ['one', 'two', 'three'],
+                'naics': ['1234', '123123', '8976'],
                 'num_employees': 40,
-                'website': "http://www.website.com"
+                'website': 'http://www.website.com'
+            }
+        }
+    }
+  end
+
+  def example_body
+    {
+        "user_data": {
+            "user" => {
+                "name": "Kelly S",
+                "sortable_name": "S, Kelly",
+                "short_name": "Kelly",
+                "email": "email+3446@gmail.com"
+            },
+            "pseudonym" => {
+                "unique_id": "email+789@gmail.com"
+            }
+        },
+        "custom_data": {
+            "ns": ENV['CANVAS_NAMESPACE'],
+            "data" => {
+                "user" => {
+                    "linked_in": "http://www.google.com",
+                    "zipcode": "06320",
+                    "percent_ownership": 97,
+                    "goal_percent_revenue": 12,
+                    "goal_revenue_amount": 1000,
+                    "goal_percent_increase_employees": 15,
+                    "goal_increase_employee_amount": 160,
+                    "race": ["race1", "race2"],
+                    "ethnicity": "yes"
+                },
+                "company" => {
+                    "company_id": "12312",
+                    "company_name": "New Company",
+                    "industry": ["one", "two", "three"],
+                    "naics": ["1234", "123123", "8976"],
+                    "num_employees": 40,
+                    "website": "http://www.website.com"
+                }
             }
         }
     }
