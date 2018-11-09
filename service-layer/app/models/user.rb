@@ -50,7 +50,7 @@ class User
   end
 
   def destroy_custom_data(user_id)
-    self.class.delete(canvas_custom_data_url(user_id), @options).body
+    self.class.delete(canvas_custom_data_url(user_id) + "?ns=#{ENV['CANVAS_NAMESPACE']}", @options).body
   end
 
   private
