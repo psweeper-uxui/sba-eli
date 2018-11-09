@@ -21,14 +21,19 @@ class UsersController < ApplicationController
     render json: @user
   end
 
-  def update
-    @user = User.new(session_token).update_user(params[:id], user_body_update_request)
-    render json: @user
+    #custom_data = JSON.parse(@user.user_custom_data(params[:id], custom_data_request))
+    #if custom_data.has_key? 'data'
+    #@user_data.merge(custom_data)
+    # end
+
+    render json: tmp, status: 200
   end
 
-  def custom
-    @user = User.new(session_token).user_custom_data(params[:id], custom_data_request)
-    render json: @user
+  def update
+    post_body = ActiveSupport::JSON.decode(request.body.read)
+    user_data = @user.update_user(params[:id], post_body["user_data"])
+    custom_data = @user.user_custom_data(params[:id], post_body["custom_data"])
+    render json: user_data.merge!(custom_data)
   end
 
   def destroy
