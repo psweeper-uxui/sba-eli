@@ -29,7 +29,8 @@ class User
   end
 
   def create_user(user_body)
-    options = @options.merge!(body: user_body)
+    body = JSON.parse(user_body.string)
+    options = @options.merge!(body: body)
     self.class.post(canvas_accounts_url, options)
   end
 

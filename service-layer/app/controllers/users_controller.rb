@@ -1,9 +1,6 @@
 class UsersController < ApplicationController
   require 'json'
-
-  def initialize
-    @user = User.new(session_token)
-  end
+  before_action :instantiate_http
 
   def index
     render json: @user.all, status: 200
@@ -17,19 +14,12 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.new(session_token).create_user(user_body_request)
-
-
-    #custom_data = JSON.parse(@user.user_custom_data(params[:id], custom_data_request))
-    #if custom_data.has_key? 'data'
-    #@user_data.merge(custom_data)
-    # end
-
-    render json: tmp, status: 200
+    @user = @user.create_user(request.body)
+    render json: @user
   end
 
   def update
-    post_body = ActiveSupport::JSON.decode(request.body.read)
+    post_body = JSON.parse(request.body.string)
     user_data = @user.update_user(params[:id], post_body["user_data"])
     custom_data = @user.user_custom_data(params[:id], post_body["custom_data"])
     render json: user_data.merge!(custom_data)
@@ -48,8 +38,11 @@ class UsersController < ApplicationController
     ENV["CANVAS_TOKEN"]
   end
 
-=begin
-  def example_body
+  def instantiate_http
+    @user = User.new(session_token)
+  end
+
+  def user_body_request
     {
         "user_data": {
             "user" => {
@@ -88,5 +81,4 @@ class UsersController < ApplicationController
         }
     }
   end
-=end
 end
