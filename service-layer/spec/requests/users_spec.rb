@@ -83,16 +83,16 @@ describe UsersController do
     end
   end
 
-  describe "DELETE /learning_paths/:id" do
-    it "deletes a learning path" do
-      VCR.use_cassette("learning_paths/delete_lp") do
-        learning_path_id = 3
-        delete "/learning_paths/#{learning_path_id}"
+  describe "DELETE /users/:id" do
+    it "deletes a user and their custom data" do
+      VCR.use_cassette("users/delete_user") do
+        user_id = 10
+        delete "/users/#{user_id}"
 
         json = JSON.parse(response.body)
 
         expect(response).to be_successful
-        expect(json["delete"]).to eq(true)
+        expect(json["data"]).not_to be_nil
       end
     end
   end
