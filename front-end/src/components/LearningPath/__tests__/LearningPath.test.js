@@ -1,5 +1,5 @@
 import React from 'react';
-import LearningPath from './LearningPath';
+import LearningPath from '../LearningPath';
 import { shallow, mount } from 'enzyme';
 
 describe('LearningPath', () => {
