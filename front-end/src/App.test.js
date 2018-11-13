@@ -4,7 +4,7 @@ import App from './App';
 import { shallow, mount } from 'enzyme';
 
 describe('App', () => {
-  it('should render a correctly', () => {
+  it('should render App correctly', () => {
     const wrapper = shallow(<App />);
 
     expect(wrapper).toMatchSnapshot();
@@ -14,9 +14,6 @@ describe('App', () => {
     const wrapper = shallow(<App />);
 
     expect(wrapper.find('div').length).toEqual(1);
-  });
-
-  it('should route to dashboard', () => {
   });
 });
 
