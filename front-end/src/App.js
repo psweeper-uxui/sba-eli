@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import SignUpForm from './SignUpForm';
-import Navigation from "./components/Navigation";
-import Dashboard from "./components/Dashboard";
+import Navigation from "./components/Navigation/Navigation";
+import Dashboard from "./components/Dashboard/Dashboard";
 import Error from "./components/Error";
 
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
@@ -22,4 +22,4 @@ class App extends Component {
   }
 };
 
-export default App; 
+export default App;
