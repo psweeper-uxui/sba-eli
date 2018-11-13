@@ -58,6 +58,26 @@ describe UsersController do
         expect(json["name"]).to eq("Brand New APIUser")
       end
     end
+
+    it "gets creates custom data for a user" do
+      VCR.use_cassette("users/create_user_custom") do
+        user_id = 41
+
+        params = {
+            "ns": ENV['CANVAS_NAMESPACE'],
+            "data": {
+                "race": "yes",
+                "fruit": "apple",
+                "color": "purple"
+            }
+        }
+        tmp = Canvas::User.new(ENV['CANVAS_TOKEN']).user_custom_data(user_id, params).body
+        tmp_json = JSON.parse(tmp)
+
+        expect(tmp).to_not be_nil
+        expect(tmp_json['data']['fruit']).to eq('apple')
+      end
+    end
   end
 
   describe "UPDATE /users/:id" do

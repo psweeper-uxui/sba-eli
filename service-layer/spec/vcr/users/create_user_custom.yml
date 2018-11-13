@@ -1,0 +1,66 @@
+---
+http_interactions:
+- request:
+    method: put
+    uri: http://ec2-34-205-29-33.compute-1.amazonaws.com//api/v1/users/41/custom_data/
+    body:
+      encoding: UTF-8
+      string: ns=sba-eli-service&data[race]=yes&data[fruit]=apple&data[color]=purple
+    headers:
+      Authorization:
+      - Bearer SpTqHFpgsZavL2CcexDWsEr6IaJa8vypaDxvNDWwTBmGK22GxTYZLYXmpJCbNvDB
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Date:
+      - Tue, 13 Nov 2018 21:18:27 GMT
+      Server:
+      - Apache/2.4.18 (Ubuntu)
+      X-Request-Cost:
+      - '0.048350475999992044'
+      X-Session-Id:
+      - 17e50efeb850453d9ef5a67a432a211d
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Context-Id:
+      - 7c119a5e-356d-4c96-b126-c4e5e03c504e
+      X-Rate-Limit-Remaining:
+      - '600.0'
+      X-Canvas-Meta:
+      - at=10000000000012;dk=10000000000002;o=custom_data;n=set_data;t=User;i=41;b=1076536;m=1076536;u=0.04;y=0.01;d=0.01;
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Canvas-User-Id:
+      - '10000000000001'
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Runtime:
+      - '0.059489'
+      X-Content-Type-Options:
+      - nosniff
+      X-Powered-By:
+      - Phusion Passenger 5.3.5
+      Set-Cookie:
+      - _csrf_token=R%2B%2FEdMGSscmXU1Ns2gzynb9L3a%2FHNVWXtvaitsw8rKk3nJ0gpqLagscRCzqxfZ3c2g2l5rF3MNjwwNf0n2Tc3A%3D%3D;
+        path=/
+      - _normandy_session=7sl-6aBo4zYE2xNy_MydIQ.5oPfuPYn1R0Hk2Vekzya1tjrfyKk7a0VXDy_yWer40Yxp-4GZtWvQU4IkDYu9rWCI1u8i4YdcFlanf__6vOkhnsvtRaJek-K-J9k5CeFKtpvn0xDB08bxgg2SZ3C7Lnv.7eMbF6SsOyHQw7ncqjywWsR1bh8.W-s_ow;
+        path=/; HttpOnly
+      - log_session_id=17e50efeb850453d9ef5a67a432a211d; path=/
+      Etag:
+      - W/"a73699faaa822414d59467c8fa555267"
+      Status:
+      - 201 Created
+      Transfer-Encoding:
+      - chunked
+      Content-Type:
+      - application/json; charset=utf-8
+    body:
+      encoding: UTF-8
+      string: '{"data":{"race":"yes","fruit":"apple","color":"purple"}}'
+    http_version: 
+  recorded_at: Tue, 13 Nov 2018 21:17:39 GMT
+recorded_with: VCR 4.0.0
