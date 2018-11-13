@@ -29,7 +29,8 @@ class User
   end
 
   def create_user(user_body)
-    options = @options.merge!(body: user_body)
+    body = JSON.parse(user_body.string)
+    options = @options.merge!(body: body)
     self.class.post(canvas_accounts_url, options)
   end
 
@@ -49,7 +50,7 @@ class User
   end
 
   def destroy_custom_data(user_id)
-    self.class.delete(canvas_custom_data_url(user_id), @options).body
+    self.class.delete(canvas_custom_data_url(user_id) + "?ns=#{ENV['CANVAS_NAMESPACE']}", @options).body
   end
 
   private
@@ -63,6 +64,6 @@ class User
   end
 
   def canvas_custom_data_url(user_id)
-    "/#{canvas_user_url(user_id)}/custom_data/"
+    "/users/#{user_id}/custom_data/"
   end
 end
