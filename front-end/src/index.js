@@ -1,10 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import SemanticUI from 'semantic-ui-react';
+
 import './index.css';
-import SignUpForm from './SignUpForm';
+import App from './App';
 import * as serviceWorker from './serviceWorker';
 
-ReactDOM.render(<SignUpForm />, document.getElementById('root'));
+ReactDOM.render(<App />, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
