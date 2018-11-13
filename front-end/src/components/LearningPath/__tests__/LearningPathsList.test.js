@@ -1,5 +1,5 @@
 import React from 'react';
-import LearningPathsList from './LearningPathsList';
+import LearningPathsList from '../LearningPathsList';
 import { shallow, mount } from 'enzyme';
 
 describe('LearningPathsList', () => {

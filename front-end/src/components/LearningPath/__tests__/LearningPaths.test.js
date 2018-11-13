@@ -1,5 +1,5 @@
 import React from 'react';
-import LearningPaths from './LearningPaths';
+import LearningPaths from '../LearningPaths';
 import { shallow } from 'enzyme';
 
 describe('LearningPaths', () => {
