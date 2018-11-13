@@ -35,6 +35,9 @@ gem "uglifier"
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", ">= 1.1.0", require: false
 
+# The official AWS SDK for Ruby. Provides both resource oriented interfaces and API clients for AWS services.
+gem 'aws-sdk', '~> 3.0', '>= 3.0.1'
+
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 # gem 'rack-cors'
 
