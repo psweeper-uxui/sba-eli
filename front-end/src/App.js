@@ -1,34 +1,29 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
 import {Input, Container} from 'semantic-ui-react';
 var AmazonCognitoIdentity = require('amazon-cognito-identity-js');
-var CognitoUserPool = AmazonCognitoIdentity.CognitoUserPool;
 
 var poolData = {
   UserPoolId : 'us-east-1_B8LlfTU7W', // Your user pool id here
-  ClientId : '37hn48jb834jmhcgrjoehddt0j' // Your client id here
+  ClientId : '76jcq337aei27va9q9gtaep0dh' // Your client id here
 };
  var userPool = new AmazonCognitoIdentity.CognitoUserPool(poolData);
 
 class SignUpForm extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      email: '',
-      password: '',
-    };
-  }
+  state = {
+    email: '',
+    password: '',
+  };
 
-  handleEmailChange(e) {
+  handleEmailChange = (e) => {
     this.setState({email: e.target.value});
   }
 
-  handlePasswordChange(e) {
+  handlePasswordChange = (e) => {
     this.setState({password: e.target.value});
   }
 
-  handleSubmit(e) {
+  handleSubmit = (e) => {
     e.preventDefault();
     const email = this.state.email.trim();
     const password = this.state.password.trim();
@@ -44,7 +39,7 @@ class SignUpForm extends React.Component {
         return;
       }
       console.log('user name is ' + result.user.getUsername());
-      console.log('call result: ' + result);
+      console.log('call result: ', result);
     });
   }
 
@@ -52,16 +47,16 @@ class SignUpForm extends React.Component {
     return (
       <Container>
         <form onSubmit={this.handleSubmit.bind(this)}>
-        <Input type="text"
-               value={this.state.email}
-               placeholder="Email"
-               onChange={this.handleEmailChange.bind(this)}/> <br />
-        <Input type="password"
-               value={this.state.password}
-               placeholder="Password"
-               onChange={this.handlePasswordChange.bind(this)}/><br />
-        <Input type="submit"/>
-      </form>
+          <Input type="text"
+                 value={this.state.email}
+                 placeholder="Email"
+                 onChange={this.handleEmailChange.bind(this)}/> <br />
+          <Input type="password"
+                 value={this.state.password}
+                 placeholder="Password"
+                 onChange={this.handlePasswordChange.bind(this)}/><br />
+          <Input type="submit"/>
+        </form>
       </Container>
       
     );
