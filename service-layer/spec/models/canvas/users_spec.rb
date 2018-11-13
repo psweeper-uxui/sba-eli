@@ -36,9 +36,6 @@ describe UsersController do
     end
   end
 
-
-
-
   describe "POST /users/" do
     it "creates a single user" do
       VCR.use_cassette("users/create_user") do
@@ -76,7 +73,7 @@ describe UsersController do
             "email": "email+123456@gmail.com"
           }
         }
-        tmp = Canvas::User.new(ENV['CANVAS_TOKEN']).update_user(16, params).body
+        tmp = Canvas::User.new(ENV['CANVAS_TOKEN']).update_user(user_id, params).body
         json = JSON.parse(tmp)
 
         expect(json).to_not be_nil
