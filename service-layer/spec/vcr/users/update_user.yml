@@ -1,0 +1,68 @@
+---
+http_interactions:
+- request:
+    method: put
+    uri: http://ec2-34-205-29-33.compute-1.amazonaws.com//api/v1/users/16
+    body:
+      encoding: UTF-8
+      string: user[name]=Different%20name%20for%20APIUser&user[sortable_name]=New%20APIUser%2C%20Brand&user[short_name]=B&user[email]=email%2B123456%40gmail.com
+    headers:
+      Authorization:
+      - Bearer SpTqHFpgsZavL2CcexDWsEr6IaJa8vypaDxvNDWwTBmGK22GxTYZLYXmpJCbNvDB
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 13 Nov 2018 20:53:52 GMT
+      Server:
+      - Apache/2.4.18 (Ubuntu)
+      X-Request-Cost:
+      - '0.07507919300000228'
+      X-Session-Id:
+      - 5498b78e0983b2170453288b48a599f9
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Context-Id:
+      - c53c4950-a4c2-4cd7-a36b-28f74494ee7a
+      X-Rate-Limit-Remaining:
+      - '600.0'
+      X-Canvas-Meta:
+      - at=10000000000012;dk=10000000000002;o=users;n=update;b=1076536;m=1076536;u=0.06;y=0.00;d=0.02;
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Canvas-User-Id:
+      - '10000000000001'
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Runtime:
+      - '0.093709'
+      X-Content-Type-Options:
+      - nosniff
+      X-Powered-By:
+      - Phusion Passenger 5.3.5
+      Set-Cookie:
+      - _csrf_token=BfJeLacbpDO0iIzhDpxnasTSG4%2BxOnuSjKcIQVyk5QVRwjd5027geIfKv9ho3RQrh5dBzf90I8PE71kCHfCAMQ%3D%3D;
+        path=/
+      - _normandy_session=NlXFq7H3g20muKtjpvG_ow+DBmoNOyQ8BomA_loDroiLdIAH2oG07NFUtvyiOoUe6jl-4y03OF_SRCdRYpmIxjlTCT_5L-2i8fe_oTFpWj93EdpC8hl0YdJjbgafW55GytQDDYaVr2j9n4pRlIEzAKLNCIqmVixXIva9cgQkaKHTMluM-xyUm3W7KLGYpgRjl2DrMdSCJDznzZHV6t2v535lllvLLcS7WGk1f2DJ3CybGRDXie-0wt_JPMdKlRRfrQ.UOxrE9nhS3A2v_EWsufjJNDuPIo.W-s54Q;
+        path=/; HttpOnly
+      - log_session_id=5498b78e0983b2170453288b48a599f9; path=/
+      Etag:
+      - W/"d8d17a46cdd1e67b2821f928c0e46580"
+      Status:
+      - 200 OK
+      Transfer-Encoding:
+      - chunked
+      Content-Type:
+      - application/json; charset=utf-8
+    body:
+      encoding: UTF-8
+      string: '{"id":16,"name":"Different name for APIUser","created_at":"2018-11-06T10:49:42-05:00","sortable_name":"New
+        APIUser, Brand","short_name":"B","sis_user_id":null,"integration_id":null,"sis_import_id":null,"email":"email+123456@gmail.com","locale":null,"time_zone":"Mountain
+        Time (US \u0026 Canada)"}'
+    http_version: 
+  recorded_at: Tue, 13 Nov 2018 20:53:04 GMT
+recorded_with: VCR 4.0.0

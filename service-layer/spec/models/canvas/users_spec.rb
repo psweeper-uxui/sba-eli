@@ -10,7 +10,6 @@ describe UsersController do
         expect(tmp).to_not be_nil
         expect(tmp_json.size).to eq(10)
         expect(tmp_json[0]["name"]).to eq("Brand New User")
-        puts(tmp.inspect)
       end
     end
   end
@@ -18,83 +17,70 @@ describe UsersController do
   describe "GET /users/:id" do
     it "gets a single user" do
       VCR.use_cassette("users/16") do
-        user_id = 16
-        get "/users/#{user_id}"
+        tmp = Canvas::User.new(ENV['CANVAS_TOKEN']).read_user(16)
+        tmp_json = JSON.parse(tmp)
 
-        json = JSON.parse(response.body)
+        expect(tmp).to_not be_nil
+        expect(tmp_json['email']).to eq('email+3446@gmail.com')
+      end
+    end
 
-        expect(response).to be_successful
-        expect(json["name"]).to eq("Brand New User")
+    it "gets custom data for a user" do
+      VCR.use_cassette("users/16_custom") do
+        tmp = Canvas::User.new(ENV['CANVAS_TOKEN']).read_user_custom_data(16)
+        tmp_json = JSON.parse(tmp)
+
+        expect(tmp).to_not be_nil
+        expect(tmp_json['data']['color']).to eq('purple')
       end
     end
   end
+
+
+
 
   describe "POST /users/" do
     it "creates a single user" do
       VCR.use_cassette("users/create_user") do
 
-        params = "{
-          \"user\": {
-            \"first_name\":\"John\",
-            \"last_name\": \"Doe\",
-            \"short_name\":\"J\",
-            \"email\": \"email+1234@gmail.com\",
-            \"password\": \"ChangeME123\",
-            \"password_confirmation\": \"ChangeME123\",
-
+        params = {
+          "user": {
+            "name":"Brand New APIUser",
+            "sortable_name": "New APIUser, Brand",
+            "short_name":"B",
+            "email": "email+12345@gmail.com"
+          },
+          "pseudonym":{
+            "unique_id": "email+12345@gmail.com"
           }
-        }"
-        headers "CONTENT_TYPE", "application/json"
-        post "/users/", params: params
+        }
+        tmp = Canvas::User.new(ENV['CANVAS_TOKEN']).create_user(params).body
+        json = JSON.parse(tmp)
 
-        json = JSON.parse(response.body)
-
-        expect(response).to be_successful
-=begin
-        expect(json["name"]).to eq("John")
-        expect(json["sortable_name"]).to eq("New APIUser, Brand")
-        expect(json["short_name"]).to eq("B")
-        expect(json["login_id"]).to eq("email123asdf@gmail.com")
-=end
+        expect(json).to_not be_nil
+        expect(json["name"]).to eq("Brand New APIUser")
       end
     end
   end
 
   describe "UPDATE /users/:id" do
-    xit "updates a user" do
+    it "updates a user" do
       VCR.use_cassette("users/update_user") do
         user_id = 16
 
-        params = "{
-                   \"first_name\":\"John\",
-                   \"last_name\":\"Doe\",
-                   \"email\":\"email+1@gmail.com\",
-                   \"linked_in\":\"http://www.google.com\",
-                   \"zipcode\":\"06320\",
-                   \"percent_ownership\":97,
-                   \"goal_percent_revenue\":12,
-                   \"goal_revenue_amount\":1000,
-                   \"goal_percent_increase_employees\":15,
-                   \"goal_increase_employee_amount\":160,
-                   \"race\":[\"race1\",\"race2\"],
-                   \"ethnicity\":\"yes\",
-                   \"company\":{
-                       \"company_id\":\"12312\",
-                       \"company_name\":\"NewCompany\",
-                       \"industry\":[\"one\",\"two\",\"three\"],
-                       \"naics\":[\"1234\",\"123123\",\"8976\"],
-                       \"num_employees\":40,
-                       \"website\":\"http://www.website.com\"
-                     }
-                  }"
+        params = {
+          "user": {
+            "name":"Different name for APIUser",
+            "sortable_name": "New APIUser, Brand",
+            "short_name":"B",
+            "email": "email+123456@gmail.com"
+          }
+        }
+        tmp = Canvas::User.new(ENV['CANVAS_TOKEN']).update_user(16, params).body
+        json = JSON.parse(tmp)
 
-        headers "CONTENT_TYPE", "application/json"
-        put "/users/#{user_id}", params: params
-
-        json = JSON.parse(response.body)
-
-        expect(response).to be_successful
-        expect(json["name"]).to eq("foo")
+        expect(json).to_not be_nil
+        expect(json["name"]).to eq("Different name for APIUser")
       end
     end
   end

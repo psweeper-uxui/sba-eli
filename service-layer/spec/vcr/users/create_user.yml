@@ -1,0 +1,67 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://ec2-34-205-29-33.compute-1.amazonaws.com//api/v1/accounts/1/users/
+    body:
+      encoding: UTF-8
+      string: user[name]=Brand%20New%20APIUser&user[sortable_name]=New%20APIUser%2C%20Brand&user[short_name]=B&user[email]=email%2B12345%40gmail.com&pseudonym[unique_id]=email%2B12345%40gmail.com
+    headers:
+      Authorization:
+      - Bearer SpTqHFpgsZavL2CcexDWsEr6IaJa8vypaDxvNDWwTBmGK22GxTYZLYXmpJCbNvDB
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 13 Nov 2018 20:55:48 GMT
+      Server:
+      - Apache/2.4.18 (Ubuntu)
+      X-Request-Cost:
+      - '0.09698707099998408'
+      X-Session-Id:
+      - 82eb82a12d859858abd07b026151fce3
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Context-Id:
+      - 81e77cbd-c397-4e2f-9876-b87959561b18
+      X-Rate-Limit-Remaining:
+      - '600.0'
+      X-Canvas-Meta:
+      - at=10000000000012;dk=10000000000002;o=users;n=create;t=Account;i=1;b=1076536;m=1076536;u=0.08;y=0.00;d=0.02;
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Canvas-User-Id:
+      - '10000000000001'
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Runtime:
+      - '0.106712'
+      X-Content-Type-Options:
+      - nosniff
+      X-Powered-By:
+      - Phusion Passenger 5.3.5
+      Set-Cookie:
+      - _csrf_token=pUM0MEFWOnctBE%2BIkbFb7o5xco4oB7ezZQBUgIoN9PvSAmFhbhNQFlxTd7jd8z7c4Tgmzx5q4%2BYvbwDN326z1A%3D%3D;
+        path=/
+      - _normandy_session=vQEjKRjEkZCsxKj-IBI28g.LAZ4pdJbuHK0NQqK9MT1IxaIMQhQulUTI-QW5NOI0UgJaKPX7JQixYHRGr1AqXvvnhmVDBkwViZIH6YUgvviyIhJMZrnHcrPwoHeEo0l1Iwsqkg2SQznv6S9sAYuN80H.3vre3VDKodzOA6VsL6o7pHjN6jE.W-s6VA;
+        path=/; HttpOnly
+      - log_session_id=82eb82a12d859858abd07b026151fce3; path=/
+      Etag:
+      - W/"d5a16a4819559a4103c93bcf8d53f8d7"
+      Status:
+      - 200 OK
+      Transfer-Encoding:
+      - chunked
+      Content-Type:
+      - application/json; charset=utf-8
+    body:
+      encoding: UTF-8
+      string: '{"id":41,"name":"Brand New APIUser","created_at":"2018-11-13T15:55:48-05:00","sortable_name":"New
+        APIUser, Brand","short_name":"B","sis_user_id":null,"integration_id":null,"sis_import_id":null,"login_id":"email+12345@gmail.com","locale":null}'
+    http_version: 
+  recorded_at: Tue, 13 Nov 2018 20:54:59 GMT
+recorded_with: VCR 4.0.0

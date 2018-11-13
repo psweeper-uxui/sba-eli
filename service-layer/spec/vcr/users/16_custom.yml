@@ -1,0 +1,66 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://ec2-34-205-29-33.compute-1.amazonaws.com//api/v1/users/16/custom_data/?ns=sba-eli-service
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Bearer SpTqHFpgsZavL2CcexDWsEr6IaJa8vypaDxvNDWwTBmGK22GxTYZLYXmpJCbNvDB
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 13 Nov 2018 19:52:28 GMT
+      Server:
+      - Apache/2.4.18 (Ubuntu)
+      X-Request-Cost:
+      - '0.03379383800000114'
+      X-Session-Id:
+      - c7c059f5c5fe2ce297446abe39c1ccc1
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Context-Id:
+      - 05436ed8-a7c7-457f-8cca-22628fcf3cef
+      X-Rate-Limit-Remaining:
+      - '600.0'
+      X-Canvas-Meta:
+      - at=10000000000012;dk=10000000000002;o=custom_data;n=get_data;t=User;i=16;b=937504;m=937504;u=0.03;y=0.00;d=0.00;
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Canvas-User-Id:
+      - '10000000000001'
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Runtime:
+      - '0.040276'
+      X-Content-Type-Options:
+      - nosniff
+      X-Powered-By:
+      - Phusion Passenger 5.3.5
+      Set-Cookie:
+      - _csrf_token=oFCni0vobsCAPE9EPkZpyLxWYkrbX6DdSI6qmqjnZzXzMtHSP4stjskMJip4LArj9DhTL6EMmbB8%2BMjemd4tXw%3D%3D;
+        path=/
+      - _normandy_session=FFavrs6qCI7JG8l0hQeREA.CsGB54ecQMT5cocRdv1XRrC0QvT_JGPtbRk7OwROqL74_S2kw1GSpzHm66gWw4MF1YSdiFv2190Vq6Y3Zp9vh9vhGBiWGvBmSirmP3jePpZnWE8SILb21GXidTA5IJit.OqbOv23u3icdXvvc3MlGPzM5HK8.W-srfA;
+        path=/; HttpOnly
+      - log_session_id=c7c059f5c5fe2ce297446abe39c1ccc1; path=/
+      Etag:
+      - W/"cbc2e7acba9eac350f15cdc27ea8aafe"
+      Status:
+      - 200 OK
+      Transfer-Encoding:
+      - chunked
+      Content-Type:
+      - application/json; charset=utf-8
+    body:
+      encoding: UTF-8
+      string: '{"data":{"fruit":"pear","color":"purple"}}'
+    http_version: 
+  recorded_at: Tue, 13 Nov 2018 19:51:40 GMT
+recorded_with: VCR 4.0.0
