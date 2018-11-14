@@ -103,15 +103,13 @@ describe UsersController do
   end
 
   describe "DELETE /users/:id" do
-    xit "deletes a user and their custom data" do
+    it "deletes a user and their custom data" do
       VCR.use_cassette("users/delete_user") do
-        user_id = 10
-        delete "/users/#{user_id}"
-
+        user_id = 40
+        response = Canvas::User.destroy(user_id)
         json = JSON.parse(response.body)
 
-        expect(response).to be_successful
-        expect(json["data"]).not_to be_nil
+        expect(response).to_not be_nil
       end
     end
   end
