@@ -43,8 +43,7 @@ class UserCreationService
 =end
 
     # Create user in Canvas
-    canvas_user = Canvas::User.new(ENV["CANVAS_TOKEN"])
-    response = canvas_user.create_user(build_canvas_json)
+    response = Canvas::User.create_user(build_canvas_json)
 
     Rails.logger.debug response
 
