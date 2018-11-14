@@ -15,5 +15,6 @@ describe('LearningPath', () => {
     const wrapper = shallow(<LearningPath match={match}/>);
 
     expect(wrapper.find('div').length).toEqual(1);
+    expect(wrapper.find("h1").length).toEqual(1);
   });
 });
