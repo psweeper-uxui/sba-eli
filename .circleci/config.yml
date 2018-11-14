@@ -29,29 +29,35 @@ jobs:
       - run:
           name: install dependencies
           command: |
-            bundle install --gemfile=./service-layer/Gemfile --path vendor/bundle
+            cd ./service-layer
+            bundle install --path vendor/bundle
 
       - save_cache:
           paths:
             - .service-layer/vendor/bundle
           key: v1-dependencies-{{ checksum "service-layer/Gemfile.lock" }}
 
+      - run:
+          name: rubocop
+          command: |
+            cd ./service-layer
+            bundle exec rubocop
       # Database setup
       #- run: bundle exec rake db:create
       #- run: bundle exec rake db:schema:load
 
       # run tests!
-      - run:
-          name: run tests
-          command: |
-            mkdir /tmp/test-results
-            TEST_FILES="$(circleci tests glob "service-layer/spec/**/*_spec.rb" | circleci tests split --split-by=timings)"
-
-            bundle exec rspec --format progress \
-                            --format RspecJunitFormatter \
-                            --out /tmp/test-results/rspec.xml \
-                            --format progress \
-                            $TEST_FILES
+#      - run:
+#          name: run tests
+#          command: |
+#            mkdir /tmp/test-results
+#            TEST_FILES="$(circleci tests glob "service-layer/spec/**/*_spec.rb" | circleci tests split --split-by=timings)"
+#            cd ./service-layer
+#            bundle exec rspec --format progress \
+#                            --format RspecJunitFormatter \
+#                            --out /tmp/test-results/rspec.xml \
+#                            --format progress \
+#                            $TEST_FILES
 
       # collect reports
       - store_test_results:
