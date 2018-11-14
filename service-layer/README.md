@@ -55,7 +55,8 @@ bin/rails app:rebuild
 ```
 
 This command will kill all Postgres connections, drop the database, recreate the
-database, run migrations, seed the database and prepare the test database.
+database, run migrations, seed the database and prepare the test database. Only
+works in development.
 
 ## Testing
 
