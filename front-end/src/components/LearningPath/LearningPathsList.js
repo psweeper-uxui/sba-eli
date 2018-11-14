@@ -1,26 +1,37 @@
-import React from 'react'
+import React from 'react';
+import axios from 'axios';
 import LearningPathsItem from './LearningPathsItem';
 
-const LearningPathsList = () => {
-  const items = [
-    {id: 1, name: 'Course 1'},
-    {id: 2, name: 'Course 2'},
-    {id: 3, name: 'Course 3'},
-    {id: 4, name: 'Course 4'},
-  ]
-  const itemsList = items.map(item => {
-    return(
-      <LearningPathsItem key={item.id} item={item} />
-    )
-  });
+class LearningPathsList extends React.Component {
+  constructor(props) {
+    super(props);
 
-  return(
-    <div>
-      <ul>
-        {itemsList}
-      </ul>
-    </div>
-  )
+    this.state = {
+      learningPaths: []
+    }
+  }
+  
+
+  componentDidMount() {
+    axios.get(`http://localhost:3000/learning_paths`)
+      .then(res => {
+        const learningPaths = res.data;
+        this.setState({ learningPaths })
+      })
+  }
+
+  render() {
+    return(
+      <div>
+        <ul>
+          {this.state.learningPaths.map(c => <LearningPathsItem key={c.id} name={c.name}/>)}
+        </ul>
+      </div>
+    )
+  }
+  
+
 }
 
 export default LearningPathsList;
+

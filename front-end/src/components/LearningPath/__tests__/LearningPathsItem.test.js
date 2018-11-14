@@ -12,7 +12,7 @@ describe('LearningPathsItem', () => {
   
   it('should render a <li>', () => {
     const item = { id: 1, name: "LP 1" }
-    const wrapper = shallow(<LearningPathsItem item={item} />); 
+    const wrapper = shallow(<LearningPathsItem key={item.id} name={item.name} />); 
 
     expect(wrapper.find('li').length).toEqual(1);
     expect(

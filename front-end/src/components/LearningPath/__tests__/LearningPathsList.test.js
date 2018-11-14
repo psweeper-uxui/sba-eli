@@ -22,7 +22,15 @@ describe('LearningPathsList', () => {
   });
   
   it('should render a 4 <li>', () => {
+    const lps = [
+      { id: 1, name: "Course 1" },
+      { id: 2, name: "Course 2" },
+      { id: 3, name: "Course 3" },
+      { id: 4, name: "Course 4" },
+    ]
+
     const wrapper = mount(<LearningPathsList/>);
+    wrapper.setState({learningPaths: lps})
 
     expect(wrapper.find('li').length).toEqual(4);
   });

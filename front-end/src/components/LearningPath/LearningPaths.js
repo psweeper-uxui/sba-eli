@@ -1,13 +1,21 @@
 import React from 'react';
 import LearningPathsList from './LearningPathsList';
 
-const LearningPaths = () => {
-  return(
-    <div>
-      Learning Paths
-      <LearningPathsList /> 
-    </div>
-  )
+class LearningPaths extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state  = {}
+  }
+
+  render () {
+    return(
+      <div>
+        Learning Paths
+        <LearningPathsList /> 
+      </div>
+    )
+  }
 }
 
 export default LearningPaths;
