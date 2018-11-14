@@ -24,7 +24,7 @@ class LearningPathsList extends React.Component {
     return(
       <div>
         <ul>
-          {this.state.learningPaths.map(c => <LearningPathsItem key={c.id} name={c.name}/>)}
+          {this.state.learningPaths.map(c => <LearningPathsItem key={c.id} id={c.id} name={c.name} />)}
         </ul>
       </div>
     )
