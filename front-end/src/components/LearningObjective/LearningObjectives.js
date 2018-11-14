@@ -3,14 +3,13 @@ import LearningObjectivesList from './LearningObjectivesList';
 
 export default class LearningObjectives extends React.Component {
     constructor(props) {
-        super(props);                          
-    }    
-
-    render() {
-        console.log("LOs");
+        //get course_id
+        super(props);
+    }
+    render() {        
         return(            
             <div>
-                <LearningObjectivesList />
+                <LearningObjectivesList course_id={this.props.course_id} />
             </div>
         )
     }

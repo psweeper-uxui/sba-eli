@@ -3,25 +3,26 @@ import { Header } from 'semantic-ui-react';
 
 export default class LearningObjective extends React.Component {
     constructor(props) {
-        super(props);
-        this.match = props.match; 
+        super(props);         
         
         this.state = {
             learningObjective: {}
         }     
     }
 
-    componentDidMount() {
-        this.learningObjectiveObject().then(result => this.setState({
-            learningObjective: result
-        }));
+    async componentDidMount() {
+        const learningObjective = await this.learningObjectiveObject();
+        this.setState({ learningObjective });        
     }
 
-    learningObjectiveObject() {             
-        return fetch("http://localhost:3000/learning_objectives/" + this.match.params.id + "?course_id=1")
-        .then(data => {
-            return data.json();
-        })              
+    async learningObjectiveObject() {             
+        const res = await fetch(
+            "http://localhost:3000/learning_objectives/" +
+            this.props.match.params.id + 
+            "?course_id=1"
+        )
+        
+        return await res.json();              
     }
 
     render() {
