@@ -9,7 +9,7 @@ class UserCreationService
                 :password_confirmation,
                 :user
 
-  validates :first_name, :last_name, presence: true
+  validates :first_name, :last_name, :password_confirmation, presence: true
   validates :email, presence: true, email: true
   validates :password, password_complexity: true
   validates_confirmation_of :password
@@ -18,11 +18,11 @@ class UserCreationService
     return false unless valid?
 
     # Create the user in Cognito
-    client = Aws::CognitoIdentityProvider::Client.new(
-      region: "us-east-1",
-      access_key_id: ENV['AWS_ACCESS_KEY_ID'],
-      secret_access_key: ENV['AWS_SECRET_ACCESS_KEY']
-    )
+    #client = Aws::CognitoIdentityProvider::Client.new(
+    #  region: "us-east-1",
+    #  access_key_id: ENV['AWS_ACCESS_KEY_ID'],
+    #  secret_access_key: ENV['AWS_SECRET_ACCESS_KEY']
+    #)
 
 =begin
     client.sign_up({

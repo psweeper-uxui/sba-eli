@@ -4,7 +4,7 @@ describe UsersController do
   describe "GET /users" do
     it "gets a list of all users" do
       VCR.use_cassette("users") do
-        tmp = Canvas::User.new(ENV['CANVAS_TOKEN']).all
+        tmp = Canvas::User.all
         tmp_json = JSON.parse(tmp)
 
         expect(tmp).to_not be_nil
@@ -17,7 +17,7 @@ describe UsersController do
   describe "GET /users/:id" do
     it "gets a single user" do
       VCR.use_cassette("users/16") do
-        tmp = Canvas::User.new(ENV['CANVAS_TOKEN']).read_user(16)
+        tmp = Canvas::User.read_user(16)
         tmp_json = JSON.parse(tmp)
 
         expect(tmp).to_not be_nil
@@ -27,7 +27,7 @@ describe UsersController do
 
     it "gets custom data for a user" do
       VCR.use_cassette("users/16_custom") do
-        tmp = Canvas::User.new(ENV['CANVAS_TOKEN']).read_user_custom_data(16)
+        tmp = Canvas::User.read_user_custom_data(16)
         tmp_json = JSON.parse(tmp)
 
         expect(tmp).to_not be_nil
@@ -51,7 +51,7 @@ describe UsersController do
             "unique_id": "email+12345@gmail.com"
           }
         }
-        tmp = Canvas::User.new(ENV['CANVAS_TOKEN']).create_user(params).body
+        tmp = Canvas::User.create_user(params).body
         json = JSON.parse(tmp)
 
         expect(json).to_not be_nil
@@ -71,7 +71,7 @@ describe UsersController do
                 "color": "purple"
             }
         }
-        tmp = Canvas::User.new(ENV['CANVAS_TOKEN']).user_custom_data(user_id, params).body
+        tmp = Canvas::User.user_custom_data(user_id, params).body
         tmp_json = JSON.parse(tmp)
 
         expect(tmp).to_not be_nil
@@ -93,7 +93,7 @@ describe UsersController do
             "email": "email+123456@gmail.com"
           }
         }
-        tmp = Canvas::User.new(ENV['CANVAS_TOKEN']).update_user(user_id, params).body
+        tmp = Canvas::User.update_user(user_id, params).body
         json = JSON.parse(tmp)
 
         expect(json).to_not be_nil
