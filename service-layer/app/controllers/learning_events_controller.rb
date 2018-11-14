@@ -9,11 +9,6 @@ class LearningEventsController < ApplicationController
 		render json: @learning_events, status: 200
 	end
 
-	def update
-		@learning_event = LearningEvent.new(session_token).update(params[:course_id], params[:id], learning_event_params)
-		render json: @learning_event
-	end
-
 	def destroy
 		LearningEvent.new(session_token).destroy(params[:course_id], params[:id])
 	end

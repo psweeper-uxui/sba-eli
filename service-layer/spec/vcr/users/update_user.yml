@@ -1,0 +1,128 @@
+---
+http_interactions:
+- request:
+    method: put
+    uri: http://ec2-34-205-29-33.compute-1.amazonaws.com//api/v1/users/16
+    body:
+      encoding: UTF-8
+      string: user[name]=foo&user[sortable_name]=S%2CKelly&user[short_name]=Kelly&user[email]=email%2B3446%40gmail.com&pseudonym[unique_id]=email%2B789%40gmail.com
+    headers:
+      Authorization:
+      - Bearer SpTqHFpgsZavL2CcexDWsEr6IaJa8vypaDxvNDWwTBmGK22GxTYZLYXmpJCbNvDB
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 09 Nov 2018 19:52:44 GMT
+      Server:
+      - Apache/2.4.18 (Ubuntu)
+      X-Request-Cost:
+      - '0.08689382200000029'
+      X-Session-Id:
+      - '04709c9a509178c00d0ac6f18cc2b274'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Context-Id:
+      - 81dcac50-bb9a-4d12-9dba-4da562c63c5c
+      X-Rate-Limit-Remaining:
+      - '600.0'
+      X-Canvas-Meta:
+      - at=10000000000012;dk=10000000000002;o=users;n=update;b=887052;m=887052;u=0.07;y=0.01;d=0.02;
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Canvas-User-Id:
+      - '10000000000001'
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Runtime:
+      - '0.103213'
+      X-Content-Type-Options:
+      - nosniff
+      X-Powered-By:
+      - Phusion Passenger 5.3.5
+      Set-Cookie:
+      - _csrf_token=T6nA4LIEceAHmT%2Blmm4QjC97JKk%2BluXlvumDRk2iqWJ2mIaWyFADsTXveJHUAlzBFyxUmnD11tzs3vkgDvX9Gg%3D%3D;
+        path=/
+      - _normandy_session=hcgOsWSd8_yqPeSl5-nmAA+_EFSDSIVsedF3ctq1Ug95f-6uVzq3Qk5cWy076PfkQ-DTIhEqxHDlMdvgE3FACVkLXSYPPMWxYF-ZrwVj6KKONd2xzOiQNOpW7vIlhREH0k5jIFTToP3NUb7q-PD2t8BImDyz5XOLNM6HDKTU6t3S8KughO_sdObLzVz_XFFauGjLDGnr8m-b0HdH-z54iqem8UCjLnPdRDcprc-YMOOYvr6AOKoxvUjU4Y-c5I9PEY.7bILnaxlArH6l6sLM-CB6GUF0xw.W-XljA;
+        path=/; HttpOnly
+      - log_session_id=04709c9a509178c00d0ac6f18cc2b274; path=/
+      Etag:
+      - W/"243de44b9b1216ab56c303bb7793d6a9"
+      Status:
+      - 200 OK
+      Transfer-Encoding:
+      - chunked
+      Content-Type:
+      - application/json; charset=utf-8
+    body:
+      encoding: UTF-8
+      string: '{"id":16,"name":"foo","created_at":"2018-11-06T08:49:42-07:00","sortable_name":"S,Kelly","short_name":"Kelly","sis_user_id":null,"integration_id":null,"sis_import_id":null,"login_id":"email+1234@gmail.com","email":"email+3446@gmail.com","locale":null,"time_zone":"Mountain
+        Time (US \u0026 Canada)"}'
+    http_version: 
+  recorded_at: Fri, 09 Nov 2018 19:52:07 GMT
+- request:
+    method: put
+    uri: http://ec2-34-205-29-33.compute-1.amazonaws.com//api/v1/users/16/custom_data/
+    body:
+      encoding: UTF-8
+      string: data[user][linked_in]=http%3A%2F%2Fwww.google.com&data[user][zipcode]=06320&data[user][percent_ownership]=97&data[user][goal_percent_revenue]=12&data[user][goal_revenue_amount]=1000&data[user][goal_percent_increase_employees]=15&data[user][goal_increase_employee_amount]=160&data[user][race][]=race1&data[user][race][]=race2&data[user][ethnicity]=yes&data[company][company_id]=12312&data[company][company_name]=NewCompany&data[company][industry][]=one&data[company][industry][]=two&data[company][industry][]=three&data[company][naics][]=1234&data[company][naics][]=123123&data[company][naics][]=8976&data[company][num_employees]=40&data[company][website]=http%3A%2F%2Fwww.website.com
+    headers:
+      Authorization:
+      - Bearer SpTqHFpgsZavL2CcexDWsEr6IaJa8vypaDxvNDWwTBmGK22GxTYZLYXmpJCbNvDB
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Date:
+      - Fri, 09 Nov 2018 19:52:44 GMT
+      Server:
+      - Apache/2.4.18 (Ubuntu)
+      X-Request-Cost:
+      - '0.022817092000003127'
+      X-Session-Id:
+      - 765e36eb5568de0087082b9031d6fd10
+      Cache-Control:
+      - no-cache
+      X-Request-Context-Id:
+      - a300f0b8-450b-467e-a38a-36514fb1aa6a
+      X-Rate-Limit-Remaining:
+      - '600.0'
+      X-Canvas-Meta:
+      - at=10000000000012;dk=10000000000002;b=887052;m=887052;u=0.02;y=0.00;d=0.00;
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Canvas-User-Id:
+      - '10000000000001'
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      X-Runtime:
+      - '0.037535'
+      X-Content-Type-Options:
+      - nosniff
+      X-Powered-By:
+      - Phusion Passenger 5.3.5
+      Set-Cookie:
+      - _csrf_token=qPQLetn6sTAnz4GX66Ld7E88oME5eaeVd%2B3NKYuwj%2BrfrGI4tMzFU1Cj%2BfDd44SeG0n2o0gA3eQHqpkQ%2FInf2A%3D%3D;
+        path=/
+      - _normandy_session=CvBrTiGkv_UGMPS3S5UF7g.OeBmXOmC5Sft1grd_JNWL_QdyCQ4mZIFiBvEbBwbfQq3uqkHxSS164SR7UXhTidNd0_eosbpqX8hiHfYi5QWllab7biPYcMYSOBH1uyTTUp-CsEXcBxd_t6zG6t_BRoT.L1m4NRBkLLcZCKX7_X5qki1D96o.W-XljQ;
+        path=/; HttpOnly
+      - log_session_id=765e36eb5568de0087082b9031d6fd10; path=/
+      Status:
+      - 400 Bad Request
+      Connection:
+      - close
+      Transfer-Encoding:
+      - chunked
+      Content-Type:
+      - application/json; charset=utf-8
+    body:
+      encoding: UTF-8
+      string: '{"message":"invalid namespace"}'
+    http_version: 
+  recorded_at: Fri, 09 Nov 2018 19:52:07 GMT
+recorded_with: VCR 4.0.0
