@@ -1,0 +1,68 @@
+---
+http_interactions:
+- request:
+    method: put
+    uri: http://ec2-100-24-107-33.compute-1.amazonaws.com/api/v1/courses/1/modules/1/items/3
+    body:
+      encoding: UTF-8
+      string: '{"module_item":{"title":"Updated Rspec Title"},"course_id":"1","module_id":"1","controller":"learning_events","action":"update","id":"3"}'
+    headers:
+      Authorization:
+      - Bearer ilZiJyoHXsuRFcMo0QU3wH1O54LoJsBvqcE7zbNnKo8TvKOegTnbAEr4Ne1MBdzX
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 15 Nov 2018 21:23:03 GMT
+      Server:
+      - Apache/2.4.18 (Ubuntu)
+      X-Request-Cost:
+      - '0.08392163699999318'
+      X-Session-Id:
+      - 37ea96d4659e429b01e398c519e6ce1b
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Context-Id:
+      - f8339bc2-bd84-4257-be0c-db126b025625
+      X-Rate-Limit-Remaining:
+      - '600.0'
+      X-Canvas-Meta:
+      - at=10000000000027;dk=10000000000002;o=context_module_items_api;n=update;t=Course;i=1;b=1050008;m=1050008;u=0.07;y=0.00;d=0.01;
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Canvas-User-Id:
+      - '10000000000001'
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Runtime:
+      - '0.094013'
+      X-Content-Type-Options:
+      - nosniff
+      X-Powered-By:
+      - Phusion Passenger 5.3.5
+      Set-Cookie:
+      - _csrf_token=vZH%2B25WvAqBjG60TqU7KdNKsxKibQ3X4q%2B2DP37wGwz01K%2By2pc10AFU5VnhBJMhnuCc6d00R5b7j8kUDJtObw%3D%3D;
+        path=/
+      - _normandy_session=7YDjcgOj6fJAKV3gfw6JzA.dtJvQwYXCmdm8ebPeobVKbqWmEorwVqJz1cjOx3Qx3vsnAwYxyL6GYskkpyYVCY1dqzXem1gYUZ3qdvlwfgmetnfVe81RbuQBS6CabOl3DOe5wi-iv5_fi4V6yQbMF8X.c9LHfM6WBsLC1BtxS-P3bo2M060.W-3juA;
+        path=/; HttpOnly
+      - log_session_id=37ea96d4659e429b01e398c519e6ce1b; path=/
+      Etag:
+      - W/"d527ab1b13cedf43f9772798232d0e9c"
+      Status:
+      - 200 OK
+      Transfer-Encoding:
+      - chunked
+      Content-Type:
+      - application/json; charset=utf-8
+    body:
+      encoding: UTF-8
+      string: '{"id":3,"title":"Updated Rspec Title","position":3,"indent":0,"type":"Page","module_id":1,"html_url":"http://ec2-100-24-107-33.compute-1.amazonaws.com/courses/1/modules/items/3","page_url":"updated-rspec-title","url":"http://ec2-100-24-107-33.compute-1.amazonaws.com/api/v1/courses/1/pages/updated-rspec-title","published":true}'
+    http_version: 
+  recorded_at: Thu, 15 Nov 2018 21:23:20 GMT
+recorded_with: VCR 4.0.0
