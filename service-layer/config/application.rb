@@ -1,4 +1,4 @@
-require_relative 'boot'
+require_relative "boot"
 require_relative "../app/lib/middleware/oauth_state_middleware"
 
 require "rails"
@@ -15,7 +15,7 @@ require "action_cable/engine"
 require "rails/test_unit/railtie"
 
 # Require the gems listed in Gemfile, including any gems
-# you've limited to :test, :development, or :production.
+# you"ve limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
 module SbaEli
@@ -33,30 +33,24 @@ module SbaEli
     # Skip views, helpers and assets when generating a new resource.
     config.api_only = true
 
-    config.session_store :cookie_store, key: '_interslice_session'
+    config.session_store :cookie_store, key: "_interslice_session"
     config.middleware.use ActionDispatch::Cookies # Required for all session management
-    config.middleware.use ActionDispatch::Session::CookieStore, config.session_options    
+    config.middleware.use ActionDispatch::Session::CookieStore, config.session_options
 
-    # Middleware that can restore state after an OAuth request    
-    config.middleware.insert_before 0, OauthStateMiddleware             
-
-=begin
-    # Config Rack Cors.
-    config.middleware.insert_before 0, Rack::Cors do
-      allow do
-        origins '*'
-        resource '*', headers: :any, methods: [:get, :post, :options]
-      end
-    end
-=end
+    # Middleware that can restore state after an OAuth request
+    config.middleware.insert_before 0, OauthStateMiddleware
   end
 end
 
 Rails.application.config.middleware.use OmniAuth::Builder do
-  provider :canvas, APP_CONFIG['canvas_client_id'], APP_CONFIG['canvas_client_secret'],
-  {
-    :client_options => {
-      :site => APP_CONFIG['canvas_host']
-    }
+  client_options = {
+    client_options: {
+      site: APP_CONFIG["canvas_host"],
+    },
   }
+
+  provider :canvas,
+    APP_CONFIG["canvas_client_id"],
+    APP_CONFIG["canvas_client_secret"],
+    client_options
 end
