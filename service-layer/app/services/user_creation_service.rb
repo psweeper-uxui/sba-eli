@@ -18,29 +18,31 @@ class UserCreationService
     return false unless valid?
 
     # Create the user in Cognito
-    #client = Aws::CognitoIdentityProvider::Client.new(
-    #  region: "us-east-1",
-    #  access_key_id: ENV['AWS_ACCESS_KEY_ID'],
-    #  secret_access_key: ENV['AWS_SECRET_ACCESS_KEY']
-    #)
+    client = Aws::CognitoIdentityProvider::Client.new(
+      region: ENV['AWS_REGION'],
+      access_key_id: ENV['AWS_ACCESS_KEY_ID'],
+      secret_access_key: ENV['AWS_SECRET_ACCESS_KEY']
+    )
 
-=begin
-    client.sign_up({
-      client_id: "ClientIdType", # required
-      username: "UsernameType", # required
-      password: "PasswordType", # required
-      user_attributes: [
-        {
-          name: "FirstName", # required
-          value: first_name,
-        },
-        {
-          name: "LastName", # required
-          value: last_name,
-        }
-      ]
-    })
-=end
+    begin
+      cognito_response = client.sign_up({
+        client_id: ENV['AWS_COGNITO_CLIENT_ID'],
+        username: email,
+        password: password,
+        user_attributes: [
+          {
+            name: "email",
+            value: email
+          }
+        ]
+      })
+    rescue Aws::CognitoIdentityProvider::Errors::UsernameExistsException
+      errors.add(:email, "already exists.")
+      return false
+    end
+
+    # TODO: We're going to want to save the user_sub from the
+    # cognito response as a custom attribute in canvas
 
     # Create user in Canvas
     response = Canvas::User.create_user(build_canvas_json)
