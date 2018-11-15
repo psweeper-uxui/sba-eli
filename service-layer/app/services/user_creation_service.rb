@@ -17,25 +17,8 @@ class UserCreationService
   def create
     return false unless valid?
 
-    # Create the user in Cognito
-    client = Aws::CognitoIdentityProvider::Client.new(
-      region: ENV['AWS_REGION'],
-      access_key_id: ENV['AWS_ACCESS_KEY_ID'],
-      secret_access_key: ENV['AWS_SECRET_ACCESS_KEY']
-    )
-
     begin
-      cognito_response = client.sign_up({
-        client_id: ENV['AWS_COGNITO_CLIENT_ID'],
-        username: email,
-        password: password,
-        user_attributes: [
-          {
-            name: "email",
-            value: email
-          }
-        ]
-      })
+      cognito_response = CognitoService.sign_up(email, password)
     rescue Aws::CognitoIdentityProvider::Errors::UsernameExistsException
       errors.add(:email, "already exists.")
       return false
@@ -46,21 +29,12 @@ class UserCreationService
 
     # Create user in Canvas
     response = Canvas::User.create_user(build_canvas_json)
-
-    Rails.logger.debug response
-
-    # Create the user in Local database
-    self.user = User.create!(
-      user_id: response.body["id"],
-      first_name: first_name,
-      last_name: last_name,
-      email: email
-    )
+    self.user = User.from_canvas_json(response)
 
     return true
   end
 
-  #private
+  private
 
   def build_canvas_json
     {

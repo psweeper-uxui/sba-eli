@@ -32,12 +32,33 @@
 #  index_users_on_user_id       (user_id)
 #
 
-class User < ApplicationRecord
+class User
 
-  validates :first_name,
-            :last_name,
-            :email,
-            presence: true
+  attr_accessor :id,
+                :name,
+                :sortable_name,
+                :short_name,
+                :login_id
 
-  validates :email, email: true
+
+  def locale=(value)
+    @locale=value
+  end
+
+  def locale
+    @locale
+  end
+
+  class << self
+    def from_canvas_json(json)
+      user = User.new
+      user.id = json["id"]
+      user.name = json["name"]
+      user.sortable_name = json["sortable_name"]
+      user.short_name = json["short_name"]
+      user.login_id = json["login_id"]
+      user
+    end
+  end
+
 end

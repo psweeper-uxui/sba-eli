@@ -1,3 +1,5 @@
+require 'uri'
+
 module Canvas
   module User
     include Canvas::Base
@@ -7,6 +9,10 @@ module Canvas
 
     def self.all
       get(canvas_accounts_url, base_options).body
+    end
+
+    def self.fetch_by_email(email)
+      get("/accounts/#{ENV['CANVAS_ACCOUNT_ID']}/users?search_term=#{URI.encode(email)}", base_options).body
     end
 
     def self.read_user(user_id)
