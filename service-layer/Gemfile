@@ -29,7 +29,7 @@ gem "sass-rails", "~> 5.0"
 gem "skylight"
 gem "sprockets", ">= 3.0.0"
 gem "title"
-gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+gem "tzinfo-data", platforms: %I[mingw mswin x64_mingw jruby]
 gem "uglifier"
 gem "rack-cors", require: "rack/cors"
 
@@ -41,7 +41,7 @@ gem "bootsnap", ">= 1.1.0", require: false
 
 group :development, :test do
   gem "bullet"
-  gem "byebug", platforms: [:mri, :mingw, :x64_mingw]
+  gem "byebug", platforms: %I[mri mingw x64_mingw]
   gem "factory_bot_rails"
   gem "rspec-rails", "~> 3.6"
   gem "spring-commands-rspec"

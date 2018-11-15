@@ -32,7 +32,6 @@ describe UsersController do
   describe "POST /users/" do
     it "creates a single user" do
       VCR.use_cassette("users/create_user") do
-
         params = "{
           \"user\": {
             \"name\":\"Brand New APIUser\",
