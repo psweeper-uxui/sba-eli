@@ -1,8 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import SemanticUI from 'semantic-ui-react';
+
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+
+require('dotenv').config();
 
 ReactDOM.render(<App />, document.getElementById('root'));
 
