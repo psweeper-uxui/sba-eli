@@ -1,26 +1,28 @@
 class LearningPathsController < ApplicationController
+  before_action :instantiate_learning_path
+
   def index
-    @learning_paths = LearningPath.new(session_token).all
+    @learning_paths = @learning_path.all
     render json: @learning_paths, status: 200
   end
 
   def show
-    @learning_path = LearningPath.new(session_token).find(params[:id])
+    @learning_path = @learning_path.find(params[:id])
     render json: @learning_path, status: 200
   end
 
   def create
-    @learning_path = LearningPath.new(session_token).create(params[:id], params)
+    @learning_path = @learning_path.create(params[:id], params)
     render json: @learning_path
   end
 
   def update
-    @learning_path = LearningPath.new(session_token).update(params[:id], params)
+    @learning_path = @learning_path.update(params[:id], params)
     render json: @learning_path
   end
 
   def destroy
-    @learning_path = LearningPath.new(session_token).destroy(params[:id])
+    @learning_path = @learning_path.destroy(params[:id])
     render json: @learning_path
   end
 
@@ -33,5 +35,8 @@ class LearningPathsController < ApplicationController
     ENV["CANVAS_TOKEN"]
   end
 
-  def learning_path_params; end
+  def instantiate_learning_path
+    @learning_path = LearningPath.new(session_token)
+  end
+
 end
