@@ -1,13 +1,15 @@
 require 'rails_helper'
 
+include CognitoFactory
+
 describe "UserCreationService" do
   subject {
     UserCreationService.new(
       first_name: "Jane",
       last_name: "Doe",
       email: "jane.doe@example.com",
-      password: "changeME123",
-      password_confirmation: "changeME123"
+      password: "changeME123!",
+      password_confirmation: "changeME123!"
     )
   }
 
@@ -39,5 +41,31 @@ describe "UserCreationService" do
     subject.password_confirmation = "123ChangeME"
     expect(subject).to_not be_valid
   end
+
+  context do
+    it "fails to create a user if the email is already registered" do
+      subject.email = "john.doe@doe.com"
+      VCR.use_cassette("failed_user_creation") do
+        expect(subject.create).to be_falsey
+      end
+    end
+  end
+
+  context do
+    before :context do
+      Aws.config[:cognitoidentityprovider] = {
+        stub_responses: {
+          setup_user: sign_up_user("jane.doe@example.com")
+        }
+      }
+    end
+    it "creates a new user" do
+      VCR.use_cassette("successful_user_creation") do
+        expect(subject.create).to be_truthy
+      end
+    end
+  end
+
+
 
 end

@@ -1,0 +1,67 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://ec2-100-24-107-33.compute-1.amazonaws.com//api/v1/accounts/1/users/
+    body:
+      encoding: UTF-8
+      string: user[name]=Jane%20Doe&user[sortable_name]=Doe%2C%20Jane&user[short_name]=&user[email]=jane.doe%40example.com&pseudonym[unique_id]=jane.doe%40example.com
+    headers:
+      Authorization:
+      - Bearer ilZiJyoHXsuRFcMo0QU3wH1O54LoJsBvqcE7zbNnKo8TvKOegTnbAEr4Ne1MBdzX
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 15 Nov 2018 03:48:11 GMT
+      Server:
+      - Apache/2.4.18 (Ubuntu)
+      X-Request-Cost:
+      - '0.6606549200000148'
+      X-Session-Id:
+      - 1ae5bf1a1ff2250efca95cf90f879f09
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Context-Id:
+      - 828f0629-43c9-4403-89c4-d775b4d6bc1f
+      X-Rate-Limit-Remaining:
+      - '600.0'
+      X-Canvas-Meta:
+      - at=10000000000027;dk=10000000000002;o=users;n=create;t=Account;i=1;b=1049416;m=1049416;u=0.64;y=0.02;d=0.02;
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Canvas-User-Id:
+      - '10000000000001'
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Runtime:
+      - '0.691918'
+      X-Content-Type-Options:
+      - nosniff
+      X-Powered-By:
+      - Phusion Passenger 5.3.5
+      Set-Cookie:
+      - _csrf_token=ngahbXZn919OibG%2BsWZIVIAVg2zzSdaQf49FH%2FmxPXfQNZdcI1G1OQjb1ZXYMHk143zBK5wkstYGuhxdrppxQw%3D%3D;
+        path=/
+      - _normandy_session=Oyu7Nx5R-xhBcf1sibmGOA.ydNRl2gU45Ukk4AeThZlG2slY4oqDiAMGtZHkeqRQHg7YXPtp-UtlAGYEIbZxZaNiEbdK6K1optONh_cmUVyU0LlDagYcSrh3URTZlsioAqxLyqyq5ohmDGcaJIuJQ-8.rZt6AtqxcvGvLGMKBXF49ps9wb8.W-zsfA;
+        path=/; HttpOnly
+      - log_session_id=1ae5bf1a1ff2250efca95cf90f879f09; path=/
+      Etag:
+      - W/"3d080708811d5b21d0553bccf6830e2e"
+      Status:
+      - 200 OK
+      Transfer-Encoding:
+      - chunked
+      Content-Type:
+      - application/json; charset=utf-8
+    body:
+      encoding: UTF-8
+      string: '{"id":12,"name":"Jane Doe","created_at":"2018-11-14T20:48:12-07:00","sortable_name":"Doe,
+        Jane","short_name":"Jane Doe","sis_user_id":null,"integration_id":null,"sis_import_id":null,"login_id":"jane.doe@example.com","locale":null}'
+    http_version: 
+  recorded_at: Thu, 15 Nov 2018 03:48:28 GMT
+recorded_with: VCR 4.0.0
