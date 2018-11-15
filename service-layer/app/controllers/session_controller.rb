@@ -7,7 +7,7 @@ class SessionController < ApplicationController
   def create
     begin
       response = CognitoService.authenticate(params[:email], params[:password])
-      canvas_user_response = CanvasUser.fetch_by_email(params[:email])
+      canvas_user_response = CanvasUser.fetch_by_email(params[:email]).first
       sign_in User.from_canvas_json(canvas_user_response)
     rescue
       return_forbidden
