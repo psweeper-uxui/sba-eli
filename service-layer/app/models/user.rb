@@ -2,17 +2,11 @@ class User
   include HTTParty
   base_uri "#{ENV['CANVAS_HOST']}/api/v1/"
 
-=begin
- validates :user_id, presence: true, uniqueness: true
-  validates :first_name, presence: true
-  validates :last_name, presence: true
-=end
-
   def initialize(session)
     @options = {
-        headers: {
-            "Authorization" => "Bearer " + session
-        }
+      headers: {
+        "Authorization" => "Bearer " + session,
+      },
     }
   end
 
@@ -25,7 +19,8 @@ class User
   end
 
   def read_user_custom_data(user_id)
-    self.class.get("#{canvas_custom_data_url(user_id)}?ns=#{ENV['CANVAS_NAMESPACE']}", @options).body
+    path = "#{canvas_custom_data_url(user_id)}?ns=#{ENV['CANVAS_NAMESPACE']}"
+    self.class.get(path, @options).body
   end
 
   def create_user(user_body)
@@ -50,7 +45,8 @@ class User
   end
 
   def destroy_custom_data(user_id)
-    self.class.delete(canvas_custom_data_url(user_id) + "?ns=#{ENV['CANVAS_NAMESPACE']}", @options).body
+    path = canvas_custom_data_url(user_id) + "?ns=#{ENV['CANVAS_NAMESPACE']}"
+    self.class.delete(path, @options).body
   end
 
   private
