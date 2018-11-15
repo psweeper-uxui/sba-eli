@@ -1,6 +1,6 @@
 ENV["RACK_ENV"] = "test"
 
-require File.expand_path("../../config/environment", __FILE__)
+require File.expand_path("../../config/environment", __dir__)
 abort("DATABASE_URL environment variable is set") if ENV["DATABASE_URL"]
 
 require "rspec/rails"
@@ -20,7 +20,7 @@ end
 
 VCR.configure do |config|
   config.default_cassette_options = {
-    :match_requests_on => [:method]
+    match_requests_on: [:method],
   }
 end
 
