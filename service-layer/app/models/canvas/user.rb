@@ -34,7 +34,7 @@ module Canvas
     end
 
     def self.destroy(user_id)
-      delete(canvas_accounts_url + user_id, base_options).body
+      delete("#{canvas_accounts_url}#{user_id}", base_options)
     end
 
     def self.destroy_custom_data(user_id)
