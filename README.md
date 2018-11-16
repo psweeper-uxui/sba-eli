@@ -1,4 +1,5 @@
-# SBA-ELI 
+# SBA-ELI
+[![CircleCI](https://circleci.com/gh/FearlessSolutions/sba-eli/tree/master.svg?style=svg)](https://circleci.com/gh/FearlessSolutions/sba-eli/tree/master)
 
 This application is for the SBA ELI program.
 
