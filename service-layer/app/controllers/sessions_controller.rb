@@ -2,7 +2,8 @@ class SessionsController < ApplicationController
   include SecurityConcern
   include Response
 
-  skip_before_action :authenticate_request, :valid_session?, only: :create
+  skip_before_action :authenticate_request, only: :create
+  before_action :valid_session?, only: [:destroy]
 
   def create
     begin

@@ -4,7 +4,7 @@ module SecurityConcern
   SESSION_KEY = :id
 
   included do
-    before_action :authenticate_request, :valid_session?
+    before_action :authenticate_request
   end
 
   def authenticate_request
