@@ -1,4 +1,5 @@
 import React from 'react';
+import { List } from 'semantic-ui-react';
 import LearningObjectivesItem from '../LearningObjectivesItem';
 import { shallow } from 'enzyme';
 
@@ -10,10 +11,10 @@ describe('LearningObjectivesItem', () => {
     expect(wrapper).toMatchSnapshot();
   });
   
-  it('should render a <li>', () => {
+  it('should render a <List.Item>', () => {
     const item = { id: 1, name: "LO 1" }
     const wrapper = shallow(<LearningObjectivesItem item={item} />); 
 
-    expect(wrapper.find('li').length).toEqual(1);
+    expect(wrapper.find(List.Item).length).toEqual(1);
   });
 });

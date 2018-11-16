@@ -3,12 +3,8 @@ import axios from 'axios';
 import LearningObjectivesList from '../LearningObjective/LearningObjectivesList'
 
 class LearningPath extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      learningPath: []
-    }
+  state = {
+    learningPath: {} 
   }
 
   componentDidMount() {
@@ -17,7 +13,7 @@ class LearningPath extends React.Component {
   }
 
   fetchLearningPath(id) {
-    const url = process.env.REACT_AOO_SERVICE_HOST + "/learning_paths" + id
+    const url = process.env.REACT_APP_SERVICE_HOST + "/learning_paths/" + id
     
     axios.get(url)
       .then(res => {
@@ -32,6 +28,7 @@ class LearningPath extends React.Component {
     return(
       <div>
         <h1>{this.state.learningPath.name}</h1>
+        <h3>Learning Objectives</h3>
         <LearningObjectivesList course_id= { courseId }/>
       </div>
     )

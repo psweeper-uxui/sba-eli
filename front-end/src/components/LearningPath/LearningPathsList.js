@@ -1,14 +1,11 @@
 import React from 'react';
 import axios from 'axios';
+import { List } from 'semantic-ui-react';
 import LearningPathsItem from './LearningPathsItem';
 
 class LearningPathsList extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      learningPaths: []
-    }
+  state = {
+    learningPaths: []
   }
 
   componentDidMount() {
@@ -31,12 +28,15 @@ class LearningPathsList extends React.Component {
   render() {
     let result = <h3>There are no learning paths available to view at this time</h3>
     if (this.state.learningPaths.length > 0) {
-      result = <ul> {this.state.learningPaths.map(c => <LearningPathsItem key={c.id} id={c.id} name={c.name}/>)} </ul>
+      result = this.state.learningPaths.map(c => <LearningPathsItem key={c.id} id={c.id} name={c.name}/>)
     }
 
     return(
       <div>
-        {result}
+        <List>
+          {result}
+        </List>
+
       </div>
     )
   }
