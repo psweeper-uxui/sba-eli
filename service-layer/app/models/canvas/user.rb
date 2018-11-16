@@ -27,7 +27,10 @@ module Canvas
     end
 
     def self.read_user_custom_data(user_id)
-      response = get("#{canvas_custom_data_url(user_id)}?ns=#{ENV['CANVAS_NAMESPACE']}", base_options).body
+      response = get(
+        "#{canvas_custom_data_url(user_id)}?ns=#{ENV['CANVAS_NAMESPACE']}",
+        base_options,
+      ).body
       JSON.parse response
     end
 
@@ -53,7 +56,10 @@ module Canvas
     end
 
     def self.destroy_custom_data(user_id)
-      response = delete(canvas_custom_data_url(user_id) + "?ns=#{ENV['CANVAS_NAMESPACE']}", base_options).body
+      response = delete(
+        canvas_custom_data_url(user_id) + "?ns=#{ENV['CANVAS_NAMESPACE']}",
+        base_options,
+      ).body
       JSON.parse response
     end
 
