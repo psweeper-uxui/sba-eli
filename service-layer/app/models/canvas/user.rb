@@ -12,7 +12,7 @@ module Canvas
     end
 
     def self.fetch_by_email(email)
-      get("/accounts/#{ENV['CANVAS_ACCOUNT_ID']}/users?search_term=#{URI.encode(email)}", base_options).body
+      JSON.parse(get("/accounts/#{ENV['CANVAS_ACCOUNT_ID']}/users?search_term=#{URI.encode(email)}", base_options).body).first
     end
 
     def self.read_user(user_id)

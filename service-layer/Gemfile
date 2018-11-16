@@ -29,7 +29,7 @@ gem "sass-rails", "~> 5.0"
 gem "skylight", '~> 3.1.1'
 gem "sprockets", ">= 3.0.0"
 gem "title", '~> 0.0.7'
-gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+gem "tzinfo-data", platforms: %I[mingw mswin x64_mingw jruby]
 gem "uglifier", '~> 4.1.19'
 gem 'rack-cors', '~> 1.0', '>= 1.0.2', require: "rack/cors"
 
@@ -44,7 +44,7 @@ gem 'aws-sdk', '~> 3.0', '>= 3.0.1'
 
 group :development, :test do
   gem "bullet"
-  gem "byebug", platforms: [:mri, :mingw, :x64_mingw]
+  gem "byebug", platforms: %I[mri mingw x64_mingw]
   gem "factory_bot_rails"
   gem "rspec-rails", "~> 3.6"
   gem "spring-commands-rspec"

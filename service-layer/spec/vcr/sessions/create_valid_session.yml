@@ -1,0 +1,121 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://cognito-idp.us-east-1.amazonaws.com/
+    body:
+      encoding: UTF-8
+      string: '{"ClientId":"76jcq337aei27va9q9gtaep0dh","AuthFlow":"USER_PASSWORD_AUTH","AuthParameters":{"USERNAME":"nick.watson@claritybizsol.com","PASSWORD":"changeME123!"}}'
+    headers:
+      Content-Type:
+      - application/x-amz-json-1.1
+      Accept-Encoding:
+      - ''
+      User-Agent:
+      - aws-sdk-ruby3/3.38.0 ruby/2.5.3 x86_64-darwin18 aws-sdk-cognitoidentityprovider/1.10.0
+      X-Amz-Target:
+      - AWSCognitoIdentityProviderService.InitiateAuth
+      Host:
+      - cognito-idp.us-east-1.amazonaws.com
+      X-Amz-Date:
+      - 20181116T131456Z
+      X-Amz-Content-Sha256:
+      - 1e42ff44227601d03be435a5db0d903febff792cf1898929380cf2d8321613a0
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=AKIAJZGHKIZ5E5OPMZBQ/20181116/us-east-1/cognito-idp/aws4_request,
+        SignedHeaders=content-type;host;x-amz-content-sha256;x-amz-date;x-amz-target,
+        Signature=8ff91950e4e4ff5eec1c65d7207b32e742aa42882b071ede912749a768edc3b2
+      Content-Length:
+      - '161'
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 16 Nov 2018 13:14:57 GMT
+      Content-Type:
+      - application/x-amz-json-1.1
+      Content-Length:
+      - '3862'
+      Connection:
+      - keep-alive
+      X-Amzn-Requestid:
+      - 9d2d0560-e9a1-11e8-a25b-25773144c8c5
+    body:
+      encoding: UTF-8
+      string: '{"AuthenticationResult":{"AccessToken":"eyJraWQiOiJwK1dzc3V3aStOdVVETUc0M05aNE45OVNCNDZcL3czYlU4SWxJMFZESXcrdz0iLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiI2MDY2MmI2OC0zMWU5LTQ1MzctOWYwMi0xMDVjOTYyNTBjMWQiLCJldmVudF9pZCI6IjlkMmQwNTYwLWU5YTEtMTFlOC1hMjViLTI1NzczMTQ0YzhjNSIsInRva2VuX3VzZSI6ImFjY2VzcyIsInNjb3BlIjoiYXdzLmNvZ25pdG8uc2lnbmluLnVzZXIuYWRtaW4iLCJhdXRoX3RpbWUiOjE1NDIzNzQwOTcsImlzcyI6Imh0dHBzOlwvXC9jb2duaXRvLWlkcC51cy1lYXN0LTEuYW1hem9uYXdzLmNvbVwvdXMtZWFzdC0xX0I4TGxmVFU3VyIsImV4cCI6MTU0MjM3NzY5NywiaWF0IjoxNTQyMzc0MDk3LCJqdGkiOiI4ZDU3OWFjYi1kM2RkLTRmM2YtOWQ0YS1mODAyMjAzMzhmNTMiLCJjbGllbnRfaWQiOiI3NmpjcTMzN2FlaTI3dmE5cTlndGFlcDBkaCIsInVzZXJuYW1lIjoibmljay53YXRzb25AY2xhcml0eWJpenNvbC5jb20ifQ.CHLxJFSayqJLInbkXBGlaCLI-i5iUcAwwEFyDSUzIhUiKmTT9P619u9KVC56tYfGsyy74odOykigUmNZkD9ucKPcT_ufWeZymVWGtoEUCjWSNMiRW9Bq28e4QgB3c1i-wiFWjpOzsWoO04y1m34G6jSomw8v_sBbqNbm-YtG8R91jGyVuv3YHALQHoqoqXPmMDH7lRSIRZenF-6NexPFQZz_eoXBQ8jKKuLCUlIeA4LN050PfSfPgg8H_ZYX8ZYXXESzfZsA1ODKeB8j3tOmnAJmhISjkSlbo2H2tLghiHdZ5cHBbGmLv46vWmCmGBlQP63qNl75mSJ1MNEz7Uu7bQ","ExpiresIn":3600,"IdToken":"eyJraWQiOiI3ZWFqVHR6RjVZeU5nZkQ0VzkxM1l5a1pFQWxuakt4djBEbzFCZmxJR3N3PSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiI2MDY2MmI2OC0zMWU5LTQ1MzctOWYwMi0xMDVjOTYyNTBjMWQiLCJhdWQiOiI3NmpjcTMzN2FlaTI3dmE5cTlndGFlcDBkaCIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJldmVudF9pZCI6IjlkMmQwNTYwLWU5YTEtMTFlOC1hMjViLTI1NzczMTQ0YzhjNSIsInRva2VuX3VzZSI6ImlkIiwiYXV0aF90aW1lIjoxNTQyMzc0MDk3LCJpc3MiOiJodHRwczpcL1wvY29nbml0by1pZHAudXMtZWFzdC0xLmFtYXpvbmF3cy5jb21cL3VzLWVhc3QtMV9COExsZlRVN1ciLCJjb2duaXRvOnVzZXJuYW1lIjoibmljay53YXRzb25AY2xhcml0eWJpenNvbC5jb20iLCJleHAiOjE1NDIzNzc2OTcsImlhdCI6MTU0MjM3NDA5NywiZW1haWwiOiJuaWNrLndhdHNvbkBjbGFyaXR5Yml6c29sLmNvbSJ9.sX3I2CWULgf71dnyJWx3gUgb-cK-3vI_bg1KZD6DRs3h9WlU70RxdDE_M3we41bWGIBU3YRlmkYmd5OyW9JDlF_yNZZM9H17octSnYEQkKfHQlUtqPPS1rt6QbRjUzHB_gdrseO-ZOeEI4r-IkWYWZi7mQM0V60mTVScn8fpdHkc2cGwU-7dudrpIIQrDA_GijtTnKqp-xCux7MwMHhk7jI3TG7_apIFtaZgoc5RCfmmwwRNrU1vTTjAoBec_2KjyEhhJq4mqiT6VvCpYiUT5IRSOzcTxi6HIQBgpioXsbZX8fLe4u-_0t2HfPAPUeuKry2EcBU3DkJVl-2Iq3EjHA","RefreshToken":"eyJjdHkiOiJKV1QiLCJlbmMiOiJBMjU2R0NNIiwiYWxnIjoiUlNBLU9BRVAifQ.nwxOs-B8oJkc2Jo16j6F4l2dc40PMRnf37yHXKGJ7HTv-MVu0rFxQGtCDtnPElpfxX2ut4R1e4uFiNxnt9b5CMrhuOgUzkkiDwc7QXdHD_K9hPhyfuHPB7zumxi8Lrz7Gs7XcFtFzz0jNtpNPLISZML5pzF7T19t-3LlcMMk9R19jI7FYBONDfWwAwhu9_8iGWfaInyQSNqOTF3dQleqyIyweefdQdVVKlpfO4v6IlYf0Obc-iVqEzU9x79APRRNsS4Ew3a1LBoQAtDPPvZag6jT1O6DjPNttLFshJbLCtg4K3lkaDAuXYed8RUMORX35WM9_HN3fxT8r05ZqwmUvg.V6ZjBGv8Azq5ZnpO.AEIUIHBnfM4JTKAKY1sMQVpOiffL3-deQxtxM4CypqU_snTl9ngfKvUQn6DYcq5QTVga5LlxwAyYEr6xDlX32jKt3s4CvCRzQ9VpBw8o-Xj43MNvF1QoZwdlOZuhMYrPnTn3nJxGzvaw8LJa1dxi44R7klcLhwq8z3ezQTX2QfBeNF5olzVOy5FRr4VBFk4HM_AxqzFoyoSbx0WRgEg_VbETNVDQj6FMzA8mQI5pQU4Ixiuu3cWjNWJZpd_vShUCgKIpT5u722AoeVoUtsPbB4oUelYohKvvdsxJgDnO2AQ5rqQzsWiNqamvB5cmcLLg-Lec4QCxePwqv0URB2hulVW3SbSJv5YGEzGpfODrWGTwfyj4dPq7ZmJqntRr8m2tdp-YXrFGaZR5en14-6KdxnseEGMmfh-GwFDf8tDIS8uAff5DQZCzLf-cMDpeElR3nisKl2971PgYgQZ0IvhXOhfjwwLalyJlKxtNiyMRbL83jaqMYNEudybp4pyAjwlxSY31at-01263xjwhopXMgNpnp9uvqkpb3DUh_HBOX740vwJQer4iuU6L-FFw3hSwhKvBaCRd71kJEgYQ0f7TF-Qa1rFCIHFCDfoN92_ropGKQEBm7WhWqT0Sv1fdHqo1LHS7D2ayFVtJTL315ses8BUPx6aVNDof1Dg598PAOLSNYP0h5N_5zUCKOxawMXA9peAkuSAysstzYXQAAx-tnY1wNT6tzRMADfxk2TFWQIAYwVacoLnQK6a08TY03rR9zBb8Yl4p9DR1FMsAvUI0Vf3kjD6jktXE7lOE3UYqZD5Rxfca5_Hicl6OjySk0sBuCfyMwSnqYXvurg077Zgdc_bR2y6_EhlkvHPmUbmVd7XofN-kb8Df6dibjBKOBj3c7X0JqkORGf3LbfOUUNjKotRnhY38AgZTZkJuGUau7hBEa9DqMf0B-gPSq6KwC9WqJTXkoB2eFgK9YZqpkQ7XhXkq61Kr2j4OqbugUGolGZqiEpKpWRxZIgP8oFQlaQ1Rg3JzUSvCLfYFjiaH02IhKi_95LnVlpUwjfilf_q4OKtn7uZJaRuLdx6rjArWfTZvRi43NKaYakMNEbwyC9cNe1h2E6O59hoFtrn_s4nYv6OLXXEja20ZGlc43NFbIcvZmvuGsQtN9YEbIDIvahDGzcat7Nv4lFKsBx80FBwM7XswVPW3cZGWFifqIzzUG99JMhf2-d1apHRTlYC5Xc6-IBgR4U4Vis8QuTEWjDZGesJVxPTnYE02QFyZD4h32iwBJVuFXyOtmvOJ2rY5MLfGtAdj-wESXqT83WsuEDdbSFvimg.sn7MugqFIBQCVRVZsj9tCQ","TokenType":"Bearer"},"ChallengeParameters":{}}'
+    http_version: 
+  recorded_at: Fri, 16 Nov 2018 13:14:57 GMT
+- request:
+    method: get
+    uri: http://ec2-100-24-107-33.compute-1.amazonaws.com//api/v1/accounts/1/users?search_term=nick.watson@claritybizsol.com
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Bearer ilZiJyoHXsuRFcMo0QU3wH1O54LoJsBvqcE7zbNnKo8TvKOegTnbAEr4Ne1MBdzX
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 16 Nov 2018 13:14:40 GMT
+      Server:
+      - Apache/2.4.18 (Ubuntu)
+      X-Request-Cost:
+      - '0.036603580000001135'
+      X-Session-Id:
+      - dbbe30627c5dca2e063c824fcb3ecf02
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Context-Id:
+      - 4859fd76-433c-4c77-a18e-86cab5f03adf
+      X-Rate-Limit-Remaining:
+      - '600.0'
+      X-Canvas-Meta:
+      - at=10000000000027;dk=10000000000002;o=users;n=index;t=Account;i=1;b=847944;m=847944;u=0.03;y=0.00;d=0.01;
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Canvas-User-Id:
+      - '10000000000001'
+      Link:
+      - <http://ec2-100-24-107-33.compute-1.amazonaws.com/api/v1/accounts/1/users?search_term=nick.watson%40claritybizsol.com&page=1&per_page=10>;
+        rel="current",<http://ec2-100-24-107-33.compute-1.amazonaws.com/api/v1/accounts/1/users?search_term=nick.watson%40claritybizsol.com&page=1&per_page=10>;
+        rel="first",<http://ec2-100-24-107-33.compute-1.amazonaws.com/api/v1/accounts/1/users?search_term=nick.watson%40claritybizsol.com&page=1&per_page=10>;
+        rel="last"
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Runtime:
+      - '0.052005'
+      X-Content-Type-Options:
+      - nosniff
+      X-Powered-By:
+      - Phusion Passenger 5.3.5
+      Set-Cookie:
+      - _csrf_token=%2Bj1oXln%2BKXXGhF%2FGRAv1ZIxKj%2B6qN%2B4pUJbKyvNUEHa1CyFpA7dAH633MPMraMUn63jOu59mpBEJ0oKStmwhJg%3D%3D;
+        path=/
+      - _normandy_session=nNU7Q306We7Yw7ijpRV5_w.V3ZubvEkX0CFGs5izR6uiQ22rT-9xJgGtC3BQ6hTv6-GsUfbWkjO7ij51anEHwIqcsKVTQf4rE82JLiKHj8Pmie2NIrpbWAKrFtftROmbyLkqtQwYiJfGIjFDy6sq23O.tUMmmVqRn-4t_sUqmoRudE6lNKM.W-7CwA;
+        path=/; HttpOnly
+      - log_session_id=dbbe30627c5dca2e063c824fcb3ecf02; path=/
+      Etag:
+      - W/"7d54165c2134ef5b3e0c39df415d5e3c"
+      Status:
+      - 200 OK
+      Transfer-Encoding:
+      - chunked
+      Content-Type:
+      - application/json; charset=utf-8
+    body:
+      encoding: UTF-8
+      string: '[{"id":14,"name":"Nick Watson","created_at":"2018-11-16T05:35:20-07:00","sortable_name":"Watson,
+        Nick","short_name":"Nick Watson","sis_user_id":null,"integration_id":null,"sis_import_id":null,"login_id":"nick.watson@claritybizsol.com"}]'
+    http_version: 
+  recorded_at: Fri, 16 Nov 2018 13:14:57 GMT
+recorded_with: VCR 4.0.0
