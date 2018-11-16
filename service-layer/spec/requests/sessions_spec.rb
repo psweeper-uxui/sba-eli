@@ -23,7 +23,7 @@ describe "Sessions" do
     end
 
     it "returns a 403 with an invalid username" do
-      VCR.use_cassette("sessions/invalid_password") do
+      VCR.use_cassette("sessions/invalid_username") do
         params = { email: "jack@black.com", password: valid_password }
         post uri, params: params
         expect(response).to have_http_status(:forbidden)

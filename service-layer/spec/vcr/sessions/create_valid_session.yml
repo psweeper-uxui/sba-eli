@@ -18,13 +18,13 @@ http_interactions:
       Host:
       - cognito-idp.us-east-1.amazonaws.com
       X-Amz-Date:
-      - 20181116T131456Z
+      - 20181116T190235Z
       X-Amz-Content-Sha256:
       - 1e42ff44227601d03be435a5db0d903febff792cf1898929380cf2d8321613a0
       Authorization:
       - AWS4-HMAC-SHA256 Credential=AKIAJZGHKIZ5E5OPMZBQ/20181116/us-east-1/cognito-idp/aws4_request,
         SignedHeaders=content-type;host;x-amz-content-sha256;x-amz-date;x-amz-target,
-        Signature=8ff91950e4e4ff5eec1c65d7207b32e742aa42882b071ede912749a768edc3b2
+        Signature=8c6a1b740da02092dcb2e63fd3415b03538fd6052736fda1c017d08d95708ed1
       Content-Length:
       - '161'
       Accept:
@@ -35,7 +35,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Fri, 16 Nov 2018 13:14:57 GMT
+      - Fri, 16 Nov 2018 19:02:35 GMT
       Content-Type:
       - application/x-amz-json-1.1
       Content-Length:
@@ -43,15 +43,15 @@ http_interactions:
       Connection:
       - keep-alive
       X-Amzn-Requestid:
-      - 9d2d0560-e9a1-11e8-a25b-25773144c8c5
+      - 2da8ef24-e9d2-11e8-a08b-ffae2b14856f
     body:
       encoding: UTF-8
-      string: '{"AuthenticationResult":{"AccessToken":"eyJraWQiOiJwK1dzc3V3aStOdVVETUc0M05aNE45OVNCNDZcL3czYlU4SWxJMFZESXcrdz0iLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiI2MDY2MmI2OC0zMWU5LTQ1MzctOWYwMi0xMDVjOTYyNTBjMWQiLCJldmVudF9pZCI6IjlkMmQwNTYwLWU5YTEtMTFlOC1hMjViLTI1NzczMTQ0YzhjNSIsInRva2VuX3VzZSI6ImFjY2VzcyIsInNjb3BlIjoiYXdzLmNvZ25pdG8uc2lnbmluLnVzZXIuYWRtaW4iLCJhdXRoX3RpbWUiOjE1NDIzNzQwOTcsImlzcyI6Imh0dHBzOlwvXC9jb2duaXRvLWlkcC51cy1lYXN0LTEuYW1hem9uYXdzLmNvbVwvdXMtZWFzdC0xX0I4TGxmVFU3VyIsImV4cCI6MTU0MjM3NzY5NywiaWF0IjoxNTQyMzc0MDk3LCJqdGkiOiI4ZDU3OWFjYi1kM2RkLTRmM2YtOWQ0YS1mODAyMjAzMzhmNTMiLCJjbGllbnRfaWQiOiI3NmpjcTMzN2FlaTI3dmE5cTlndGFlcDBkaCIsInVzZXJuYW1lIjoibmljay53YXRzb25AY2xhcml0eWJpenNvbC5jb20ifQ.CHLxJFSayqJLInbkXBGlaCLI-i5iUcAwwEFyDSUzIhUiKmTT9P619u9KVC56tYfGsyy74odOykigUmNZkD9ucKPcT_ufWeZymVWGtoEUCjWSNMiRW9Bq28e4QgB3c1i-wiFWjpOzsWoO04y1m34G6jSomw8v_sBbqNbm-YtG8R91jGyVuv3YHALQHoqoqXPmMDH7lRSIRZenF-6NexPFQZz_eoXBQ8jKKuLCUlIeA4LN050PfSfPgg8H_ZYX8ZYXXESzfZsA1ODKeB8j3tOmnAJmhISjkSlbo2H2tLghiHdZ5cHBbGmLv46vWmCmGBlQP63qNl75mSJ1MNEz7Uu7bQ","ExpiresIn":3600,"IdToken":"eyJraWQiOiI3ZWFqVHR6RjVZeU5nZkQ0VzkxM1l5a1pFQWxuakt4djBEbzFCZmxJR3N3PSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiI2MDY2MmI2OC0zMWU5LTQ1MzctOWYwMi0xMDVjOTYyNTBjMWQiLCJhdWQiOiI3NmpjcTMzN2FlaTI3dmE5cTlndGFlcDBkaCIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJldmVudF9pZCI6IjlkMmQwNTYwLWU5YTEtMTFlOC1hMjViLTI1NzczMTQ0YzhjNSIsInRva2VuX3VzZSI6ImlkIiwiYXV0aF90aW1lIjoxNTQyMzc0MDk3LCJpc3MiOiJodHRwczpcL1wvY29nbml0by1pZHAudXMtZWFzdC0xLmFtYXpvbmF3cy5jb21cL3VzLWVhc3QtMV9COExsZlRVN1ciLCJjb2duaXRvOnVzZXJuYW1lIjoibmljay53YXRzb25AY2xhcml0eWJpenNvbC5jb20iLCJleHAiOjE1NDIzNzc2OTcsImlhdCI6MTU0MjM3NDA5NywiZW1haWwiOiJuaWNrLndhdHNvbkBjbGFyaXR5Yml6c29sLmNvbSJ9.sX3I2CWULgf71dnyJWx3gUgb-cK-3vI_bg1KZD6DRs3h9WlU70RxdDE_M3we41bWGIBU3YRlmkYmd5OyW9JDlF_yNZZM9H17octSnYEQkKfHQlUtqPPS1rt6QbRjUzHB_gdrseO-ZOeEI4r-IkWYWZi7mQM0V60mTVScn8fpdHkc2cGwU-7dudrpIIQrDA_GijtTnKqp-xCux7MwMHhk7jI3TG7_apIFtaZgoc5RCfmmwwRNrU1vTTjAoBec_2KjyEhhJq4mqiT6VvCpYiUT5IRSOzcTxi6HIQBgpioXsbZX8fLe4u-_0t2HfPAPUeuKry2EcBU3DkJVl-2Iq3EjHA","RefreshToken":"eyJjdHkiOiJKV1QiLCJlbmMiOiJBMjU2R0NNIiwiYWxnIjoiUlNBLU9BRVAifQ.nwxOs-B8oJkc2Jo16j6F4l2dc40PMRnf37yHXKGJ7HTv-MVu0rFxQGtCDtnPElpfxX2ut4R1e4uFiNxnt9b5CMrhuOgUzkkiDwc7QXdHD_K9hPhyfuHPB7zumxi8Lrz7Gs7XcFtFzz0jNtpNPLISZML5pzF7T19t-3LlcMMk9R19jI7FYBONDfWwAwhu9_8iGWfaInyQSNqOTF3dQleqyIyweefdQdVVKlpfO4v6IlYf0Obc-iVqEzU9x79APRRNsS4Ew3a1LBoQAtDPPvZag6jT1O6DjPNttLFshJbLCtg4K3lkaDAuXYed8RUMORX35WM9_HN3fxT8r05ZqwmUvg.V6ZjBGv8Azq5ZnpO.AEIUIHBnfM4JTKAKY1sMQVpOiffL3-deQxtxM4CypqU_snTl9ngfKvUQn6DYcq5QTVga5LlxwAyYEr6xDlX32jKt3s4CvCRzQ9VpBw8o-Xj43MNvF1QoZwdlOZuhMYrPnTn3nJxGzvaw8LJa1dxi44R7klcLhwq8z3ezQTX2QfBeNF5olzVOy5FRr4VBFk4HM_AxqzFoyoSbx0WRgEg_VbETNVDQj6FMzA8mQI5pQU4Ixiuu3cWjNWJZpd_vShUCgKIpT5u722AoeVoUtsPbB4oUelYohKvvdsxJgDnO2AQ5rqQzsWiNqamvB5cmcLLg-Lec4QCxePwqv0URB2hulVW3SbSJv5YGEzGpfODrWGTwfyj4dPq7ZmJqntRr8m2tdp-YXrFGaZR5en14-6KdxnseEGMmfh-GwFDf8tDIS8uAff5DQZCzLf-cMDpeElR3nisKl2971PgYgQZ0IvhXOhfjwwLalyJlKxtNiyMRbL83jaqMYNEudybp4pyAjwlxSY31at-01263xjwhopXMgNpnp9uvqkpb3DUh_HBOX740vwJQer4iuU6L-FFw3hSwhKvBaCRd71kJEgYQ0f7TF-Qa1rFCIHFCDfoN92_ropGKQEBm7WhWqT0Sv1fdHqo1LHS7D2ayFVtJTL315ses8BUPx6aVNDof1Dg598PAOLSNYP0h5N_5zUCKOxawMXA9peAkuSAysstzYXQAAx-tnY1wNT6tzRMADfxk2TFWQIAYwVacoLnQK6a08TY03rR9zBb8Yl4p9DR1FMsAvUI0Vf3kjD6jktXE7lOE3UYqZD5Rxfca5_Hicl6OjySk0sBuCfyMwSnqYXvurg077Zgdc_bR2y6_EhlkvHPmUbmVd7XofN-kb8Df6dibjBKOBj3c7X0JqkORGf3LbfOUUNjKotRnhY38AgZTZkJuGUau7hBEa9DqMf0B-gPSq6KwC9WqJTXkoB2eFgK9YZqpkQ7XhXkq61Kr2j4OqbugUGolGZqiEpKpWRxZIgP8oFQlaQ1Rg3JzUSvCLfYFjiaH02IhKi_95LnVlpUwjfilf_q4OKtn7uZJaRuLdx6rjArWfTZvRi43NKaYakMNEbwyC9cNe1h2E6O59hoFtrn_s4nYv6OLXXEja20ZGlc43NFbIcvZmvuGsQtN9YEbIDIvahDGzcat7Nv4lFKsBx80FBwM7XswVPW3cZGWFifqIzzUG99JMhf2-d1apHRTlYC5Xc6-IBgR4U4Vis8QuTEWjDZGesJVxPTnYE02QFyZD4h32iwBJVuFXyOtmvOJ2rY5MLfGtAdj-wESXqT83WsuEDdbSFvimg.sn7MugqFIBQCVRVZsj9tCQ","TokenType":"Bearer"},"ChallengeParameters":{}}'
+      string: '{"AuthenticationResult":{"AccessToken":"eyJraWQiOiJwK1dzc3V3aStOdVVETUc0M05aNE45OVNCNDZcL3czYlU4SWxJMFZESXcrdz0iLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiI2MDY2MmI2OC0zMWU5LTQ1MzctOWYwMi0xMDVjOTYyNTBjMWQiLCJldmVudF9pZCI6IjJkYThlZjI0LWU5ZDItMTFlOC1hMDhiLWZmYWUyYjE0ODU2ZiIsInRva2VuX3VzZSI6ImFjY2VzcyIsInNjb3BlIjoiYXdzLmNvZ25pdG8uc2lnbmluLnVzZXIuYWRtaW4iLCJhdXRoX3RpbWUiOjE1NDIzOTQ5NTUsImlzcyI6Imh0dHBzOlwvXC9jb2duaXRvLWlkcC51cy1lYXN0LTEuYW1hem9uYXdzLmNvbVwvdXMtZWFzdC0xX0I4TGxmVFU3VyIsImV4cCI6MTU0MjM5ODU1NSwiaWF0IjoxNTQyMzk0OTU1LCJqdGkiOiI5ODI1MzllMy1iMmI3LTQwOWMtODNlOC0yYmNlNGQzYWU1ZjAiLCJjbGllbnRfaWQiOiI3NmpjcTMzN2FlaTI3dmE5cTlndGFlcDBkaCIsInVzZXJuYW1lIjoibmljay53YXRzb25AY2xhcml0eWJpenNvbC5jb20ifQ.Jd9LWnIy2_YBCZRBt90zjRDemxKTE_SUPkxwxrzWa7Rdkdrm1PtS_mDWgHSJsf0VDV7tWAMJGloUPb-dJLlkdst8aVH5Ohb8RFDZ7kZsFcVpcuMMNxOwj9JQN-7AlqBLvR3B49G1kD2_TlxdYO0BtNH5GxtwCd_SNLTfp_EBPgrLfA4WrKJCHm__2j0CHzCFg-WJGc2cjwkcsqz_JO6wtMKR0WiqVeYr9IWUNNyv_cEbZTKB_5etbaB5KYHXE7uklo3BOZdRqwmNqpOdO97ieSAb7cpAd6F75411eaeTRUgASg5oOVlQe9wzl9V2s76oY1lcXI_yfgRinFMrkxqC_A","ExpiresIn":3600,"IdToken":"eyJraWQiOiI3ZWFqVHR6RjVZeU5nZkQ0VzkxM1l5a1pFQWxuakt4djBEbzFCZmxJR3N3PSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiI2MDY2MmI2OC0zMWU5LTQ1MzctOWYwMi0xMDVjOTYyNTBjMWQiLCJhdWQiOiI3NmpjcTMzN2FlaTI3dmE5cTlndGFlcDBkaCIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJldmVudF9pZCI6IjJkYThlZjI0LWU5ZDItMTFlOC1hMDhiLWZmYWUyYjE0ODU2ZiIsInRva2VuX3VzZSI6ImlkIiwiYXV0aF90aW1lIjoxNTQyMzk0OTU1LCJpc3MiOiJodHRwczpcL1wvY29nbml0by1pZHAudXMtZWFzdC0xLmFtYXpvbmF3cy5jb21cL3VzLWVhc3QtMV9COExsZlRVN1ciLCJjb2duaXRvOnVzZXJuYW1lIjoibmljay53YXRzb25AY2xhcml0eWJpenNvbC5jb20iLCJleHAiOjE1NDIzOTg1NTUsImlhdCI6MTU0MjM5NDk1NSwiZW1haWwiOiJuaWNrLndhdHNvbkBjbGFyaXR5Yml6c29sLmNvbSJ9.PNoeTPLuf_e42DHdmswuzCvifAxQiUEPBHyhwRq82Tg0xNQ97VCp8CyYB8jmR91MsgGfGNxm0CaLNNLTUnPxB6pt2407NxNl_0eDP5QoT1pU8DWUrRSWylCYQd57xLsNhsM9sotY-wn6vNAnOL6viQXxQEHK55NM4TO5xo41dulpTZlmEoBbhSNaHUE4vhAqH_DifaZ2RIe_XyvAfbstEoaFT8ZLbpaMegEI5Uwp7EWwSiS_ZuoAZz5hOutQEQrOJ9flesEmBAYmcZKP2RNan3D8SRwooTBJI7lpX1BRQMh62aJP3Stn9H-B8jkCIK9lx2_APU79RHrdCEu-lPtqDQ","RefreshToken":"eyJjdHkiOiJKV1QiLCJlbmMiOiJBMjU2R0NNIiwiYWxnIjoiUlNBLU9BRVAifQ.dLBJ821sa8j-7dLjrt75Y-e60l-YzDOCzZ0nGEflRxiF3qyFERyUIt0Wf_59dhb9yK3UDkdhE1y55AVDbkxGq8eCQrX7beewMNha5aMqDz_ThpvZxEmthcwjcekxro6_UQ2A9qHcsibYAwC3QfULX8JgYb46iam5IpChKkR03Uc01_7IzobEhjXWYiAsxX2pENtPiW0Br4yBE1JftNa52Zk-KZFjsg4hx7zePLmHOBIG7IwJrx1VvIe6r9SWt6X5TjXa9H6xcXBawOwIDT0LE3-WHYm_oJ_0ze_r9jUyW8YdfRNAW487bpmh_ScOBqzBDTIszKnGMAxZ3br_S3oGnA.A4hEgaq60diw9ymv.CBRRZTuklBVBE3lUGdS9EjnOpg5rMsZtLnZEp_6okC0x-8SGXRrau0ok6auVYXHd-j8s3ys-A2nXy3DIzGvytiarJKr1hWTpjUfZeWX4vtu5zWG5CkSrY_RJjZNi8n67kUcPmKQWELg4u3wgjIn8e8w4-DWCjJXzzfscVtWmyoTbFkwC0KZ92pdWoajQOBN9L8JqZlVMQSFoPj2_t2ZKNsfnUuXUfsFZQnzaS_4MT0v3md0MIshAQ4WOIcXeV27kwgtWDzAlvxgML9XWERiSvf0MEA2sa1kYC1F0hvAcz1Clu9ACrxclhwnfLKSq2VqYTWKg29JrfyghVaJ_BbkSRvtNsJRXdGmDwhbk1PzFssuYhD1QXJv3d6arergN62-X1Rv97MCE_FadGBhEd7WLCj08SOMfg7bdruwgNo9JoL80owZ-DoCrl9c-SiSjjBTd4mq8P1lLuUghqvapBumS0OylViBX3Hgxj5zugTGzEPneEgiTZQQKviQwFrNNpfUYFcUrA-7h46lYuT3523GOLKT9TxTRMjW_a2itkswrzrPh5uBHk-VUAfXwB_7pr-dvoU7mcTQSTQcZpFBcWtq21RkN8uRFDimSDPqkRVkDC9m-UYoBNQFp5J-25k2VXvS9xl94pwc1BbiE36umk5WAhi3JaJaoB9l1fGrMLGNGDqRW0Ca7_-wDf1YmAcAorM1K9BlXedo_nH5lAwTOGckHTVAORPPrVpwt-vbTetMfqn10C0DWm7rD16U-Qa7eIHIJoBNaKtaJ79hDJyvW-S4TZmePwN-Hb0wiu28PuwRP-kXlYFKF7IwujNCuQM9GsNjTVAxrO8lZg5OBMQXqLLnTh1odtZ0-VWnNPeGHMktF3NrtK83eK70QOj9bgZM9ZReNP-u75qWiGRaYJ0KI5UlRQf-pjhr2eQghpdt44I8LT3p3GNkloMcE7nrpdaM9wlxEICzle_h-CnFA_nnpXYx7XyxSgWbbiDDGHhTsOsROr73q9HKTh-5ozAsFOK7ozEhKyOT436Pfaui7hwytiO94mB9sa11eZK_PJYzeFAWejFzAp7NBh-x9rcxYeSwdoAwMaDP8ELr2yyabwnpIygG5Yi01pL5t54o6hI1CIle72wrfcMNPuUbD0LhRW0dvXbaHLBon-II5jxWLJCgvTUWIQV43ICK8MgEWKIrsVM6SDQGEmqh4g_903GQO1FkFBHxVIIf59m5tVjuBEosAOdIw-ne5lk2UBo277CJbnsGwOK0QJU7TvZpOUCBx3Bjdh_BTM9W9gP91N3XawAWu3xY3R1XUE-z6w8RjeiiE6_YtySm6yw.u8oVCXi_n24Rmhs007pi2Q","TokenType":"Bearer"},"ChallengeParameters":{}}'
     http_version: 
-  recorded_at: Fri, 16 Nov 2018 13:14:57 GMT
+  recorded_at: Fri, 16 Nov 2018 19:02:35 GMT
 - request:
     method: get
-    uri: http://ec2-100-24-107-33.compute-1.amazonaws.com//api/v1/accounts/1/users?search_term=nick.watson@claritybizsol.com
+    uri: http://ec2-100-24-107-33.compute-1.amazonaws.com//api/v1/accounts/1/users/?search_term=nick.watson@claritybizsol.com
     body:
       encoding: US-ASCII
       string: ''
@@ -64,21 +64,21 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Fri, 16 Nov 2018 13:14:40 GMT
+      - Fri, 16 Nov 2018 19:02:18 GMT
       Server:
       - Apache/2.4.18 (Ubuntu)
       X-Request-Cost:
-      - '0.036603580000001135'
+      - '0.04675373899999915'
       X-Session-Id:
-      - dbbe30627c5dca2e063c824fcb3ecf02
+      - 781219468c302429d8cf0b4a42a2a89e
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Context-Id:
-      - 4859fd76-433c-4c77-a18e-86cab5f03adf
+      - 83b79e71-e1fa-4a4b-a5be-88d9674024a2
       X-Rate-Limit-Remaining:
       - '600.0'
       X-Canvas-Meta:
-      - at=10000000000027;dk=10000000000002;o=users;n=index;t=Account;i=1;b=847944;m=847944;u=0.03;y=0.00;d=0.01;
+      - at=10000000000027;dk=10000000000002;o=users;n=index;t=Account;i=1;b=913480;m=913480;u=0.04;y=0.00;d=0.01;
       X-Xss-Protection:
       - 1; mode=block
       X-Canvas-User-Id:
@@ -93,17 +93,17 @@ http_interactions:
       X-Frame-Options:
       - SAMEORIGIN
       X-Runtime:
-      - '0.052005'
+      - '0.058053'
       X-Content-Type-Options:
       - nosniff
       X-Powered-By:
       - Phusion Passenger 5.3.5
       Set-Cookie:
-      - _csrf_token=%2Bj1oXln%2BKXXGhF%2FGRAv1ZIxKj%2B6qN%2B4pUJbKyvNUEHa1CyFpA7dAH633MPMraMUn63jOu59mpBEJ0oKStmwhJg%3D%3D;
+      - _csrf_token=8xMSDbIuTxo8Xw3NA2ABqMVJAbXcQKoXfgjjeHf4uTKKSmhZim8YTEUyXagxCy6ejSRV2qpy605NfZMpPL%2F%2FVA%3D%3D;
         path=/
-      - _normandy_session=nNU7Q306We7Yw7ijpRV5_w.V3ZubvEkX0CFGs5izR6uiQ22rT-9xJgGtC3BQ6hTv6-GsUfbWkjO7ij51anEHwIqcsKVTQf4rE82JLiKHj8Pmie2NIrpbWAKrFtftROmbyLkqtQwYiJfGIjFDy6sq23O.tUMmmVqRn-4t_sUqmoRudE6lNKM.W-7CwA;
+      - _normandy_session=QFwA7rNSJfjnK0nKbeQ8hw.82BO9GJnMLi8e_KwF4m-Bs5AV_qMtWMW_DNB5xUqgteYqpmoVtajFhN6mje8A52pSwqYkVLXqmNZU9d5ZLVzNthR6Kmt39et0YHOY_bWYPMtq3Em_kXvVJDqJ_VP_3KA.z_BXkK9p1gt8kUuSVKj2pcblR2I.W-8UOg;
         path=/; HttpOnly
-      - log_session_id=dbbe30627c5dca2e063c824fcb3ecf02; path=/
+      - log_session_id=781219468c302429d8cf0b4a42a2a89e; path=/
       Etag:
       - W/"7d54165c2134ef5b3e0c39df415d5e3c"
       Status:
@@ -117,5 +117,5 @@ http_interactions:
       string: '[{"id":14,"name":"Nick Watson","created_at":"2018-11-16T05:35:20-07:00","sortable_name":"Watson,
         Nick","short_name":"Nick Watson","sis_user_id":null,"integration_id":null,"sis_import_id":null,"login_id":"nick.watson@claritybizsol.com"}]'
     http_version: 
-  recorded_at: Fri, 16 Nov 2018 13:14:57 GMT
+  recorded_at: Fri, 16 Nov 2018 19:02:35 GMT
 recorded_with: VCR 4.0.0

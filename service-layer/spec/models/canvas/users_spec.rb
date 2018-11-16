@@ -6,7 +6,6 @@ describe UsersController do
       VCR.use_cassette("users") do
         tmp = Canvas::User.all
         tmp_json = JSON.parse(tmp)
-
         expect(tmp).to_not be_nil
         expect(tmp_json.size).to eq(10)
         expect(tmp_json[0]["name"]).to eq("Brand New User")
@@ -19,7 +18,6 @@ describe UsersController do
       VCR.use_cassette("users/16") do
         tmp = Canvas::User.read_user(16)
         tmp_json = JSON.parse(tmp)
-
         expect(tmp).to_not be_nil
         expect(tmp_json["email"]).to eq("email+3446@gmail.com")
       end
@@ -29,7 +27,6 @@ describe UsersController do
       VCR.use_cassette("users/16_custom") do
         tmp = Canvas::User.read_user_custom_data(16)
         tmp_json = JSON.parse(tmp)
-
         expect(tmp).to_not be_nil
         expect(tmp_json["data"]["color"]).to eq("purple")
       end
@@ -39,7 +36,6 @@ describe UsersController do
   describe "POST /users/" do
     it "creates a single user" do
       VCR.use_cassette("users/create_user") do
-
         params = {
           "user": {
             "name": "Brand New APIUser",
@@ -47,13 +43,12 @@ describe UsersController do
             "short_name": "B",
             "email": "email+12345@gmail.com",
           },
-          "pseudonym":{
+          "pseudonym": {
             "unique_id": "email+12345@gmail.com",
-          }
+          },
         }
         tmp = Canvas::User.create_user(params).body
         json = JSON.parse(tmp)
-
         expect(json).to_not be_nil
         expect(json["name"]).to eq("Brand New APIUser")
       end
@@ -62,18 +57,16 @@ describe UsersController do
     it "gets creates custom data for a user" do
       VCR.use_cassette("users/create_user_custom") do
         user_id = 41
-
         params = {
-            "ns": ENV["CANVAS_NAMESPACE"],
-            "data": {
-                "race": "yes",
-                "fruit": "apple",
-                "color": "purple",
-            },
+          "ns": ENV["CANVAS_NAMESPACE"],
+          "data": {
+            "race": "yes",
+            "fruit": "apple",
+            "color": "purple",
+          },
         }
         tmp = Canvas::User.user_custom_data(user_id, params).body
         tmp_json = JSON.parse(tmp)
-
         expect(tmp).to_not be_nil
         expect(tmp_json["data"]["fruit"]).to eq("apple")
       end
@@ -84,7 +77,6 @@ describe UsersController do
     it "updates a user" do
       VCR.use_cassette("users/update_user") do
         user_id = 16
-
         params = {
           "user": {
             "name": "Different name for APIUser",
