@@ -1,33 +1,32 @@
 class UsersController < ApplicationController
   require "json"
-  before_action :instantiate_http
 
   def index
-    render json: @user.all, status: 200
+    render json: Canvas::User.all, status: 200
   end
 
   def show
-    user_data = JSON.parse(@user.read_user(params[:id]))
-    custom_data = JSON.parse(@user.read_user_custom_data(params[:id]))
+    user_data = Canvas::User.read_user(params[:id])
+    custom_data = Canvas::User.read_user_custom_data(params[:id])
 
     render json: user_data.merge(custom_data), status: 200
   end
 
   def create
-    @user = @user.create_user(request.body)
+    @user = Canvas::User.create_user(request.body)
     render json: @user
   end
 
   def update
     post_body = JSON.parse(request.body.string)
-    user_data = @user.update_user(params[:id], post_body["user_data"])
-    custom_data = @user.user_custom_data(params[:id], post_body["custom_data"])
+    user_data = Canvas::User.update_user(params[:id], post_body["user_data"])
+    custom_data = Canvas::User.user_custom_data(params[:id], post_body["custom_data"])
     render json: user_data.merge!(custom_data)
   end
 
   def destroy
-    custom_data = JSON.parse(@user.destroy_custom_data(params[:id]))
-    user_data = JSON.parse(@user.destroy(params[:id]))
+    custom_data = Canvas::User.destroy_custom_data(params[:id])
+    user_data = Canvas::User.destroy(params[:id])
     render json: user_data.merge(custom_data)
   end
 
@@ -36,10 +35,6 @@ class UsersController < ApplicationController
   # TODO: revisit when we're using different auth
   def session_token
     ENV["CANVAS_TOKEN"]
-  end
-
-  def instantiate_http
-    @user = Canvas::User.new
   end
 
   def user_body_request

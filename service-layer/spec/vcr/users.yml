@@ -2,62 +2,62 @@
 http_interactions:
 - request:
     method: get
-    uri: http://ec2-34-205-29-33.compute-1.amazonaws.com//api/v1/accounts/1/users/
+    uri: http://ec2-100-24-107-33.compute-1.amazonaws.com//api/v1/accounts/1/users/
     body:
       encoding: US-ASCII
       string: ''
     headers:
       Authorization:
-      - Bearer SpTqHFpgsZavL2CcexDWsEr6IaJa8vypaDxvNDWwTBmGK22GxTYZLYXmpJCbNvDB
+      - Bearer ilZiJyoHXsuRFcMo0QU3wH1O54LoJsBvqcE7zbNnKo8TvKOegTnbAEr4Ne1MBdzX
   response:
     status:
       code: 200
       message: OK
     headers:
       Date:
-      - Fri, 09 Nov 2018 15:47:45 GMT
+      - Fri, 16 Nov 2018 19:55:45 GMT
       Server:
       - Apache/2.4.18 (Ubuntu)
       X-Request-Cost:
-      - '0.08785247200000185'
+      - '0.07898230800000028'
       X-Session-Id:
-      - 0b175c50b57eba85ad6814342630ebba
+      - 69c4e04f56482f4afae60438430d564c
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Context-Id:
-      - 5aa009ea-cce4-407f-aaff-08f2d7798a1c
+      - 33201ade-f8d8-4de4-b1c8-bb3e67530b9c
       X-Rate-Limit-Remaining:
       - '600.0'
       X-Canvas-Meta:
-      - at=10000000000012;dk=10000000000002;o=users;n=index;t=Account;i=1;b=887052;m=887052;u=0.08;y=0.00;d=0.01;
+      - at=10000000000027;dk=10000000000002;o=users;n=index;t=Account;i=1;b=913480;m=913480;u=0.07;y=0.00;d=0.01;
       X-Xss-Protection:
       - 1; mode=block
       X-Canvas-User-Id:
       - '10000000000001'
       Link:
-      - <http://ec2-34-205-29-33.compute-1.amazonaws.com/api/v1/accounts/1/users?page=1&per_page=10>;
-        rel="current",<http://ec2-34-205-29-33.compute-1.amazonaws.com/api/v1/accounts/1/users?page=2&per_page=10>;
-        rel="next",<http://ec2-34-205-29-33.compute-1.amazonaws.com/api/v1/accounts/1/users?page=1&per_page=10>;
-        rel="first",<http://ec2-34-205-29-33.compute-1.amazonaws.com/api/v1/accounts/1/users?page=2&per_page=10>;
+      - <http://ec2-100-24-107-33.compute-1.amazonaws.com/api/v1/accounts/1/users?page=1&per_page=10>;
+        rel="current",<http://ec2-100-24-107-33.compute-1.amazonaws.com/api/v1/accounts/1/users?page=2&per_page=10>;
+        rel="next",<http://ec2-100-24-107-33.compute-1.amazonaws.com/api/v1/accounts/1/users?page=1&per_page=10>;
+        rel="first",<http://ec2-100-24-107-33.compute-1.amazonaws.com/api/v1/accounts/1/users?page=2&per_page=10>;
         rel="last"
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       X-Frame-Options:
       - SAMEORIGIN
       X-Runtime:
-      - '0.101065'
+      - '0.087993'
       X-Content-Type-Options:
       - nosniff
       X-Powered-By:
       - Phusion Passenger 5.3.5
       Set-Cookie:
-      - _csrf_token=R%2B8u0ovpWQVdhbKDUeYP8AzZY%2BvbTLdVyCHETNQEDB8Unkbi0qMMMhqzi%2BF6pUOlRowJjux0%2FBSeZbYEmzRcSw%3D%3D;
+      - _csrf_token=tMLqilBFxFn6G0P8wNz8rfz1PnWif0%2FtBpZY%2B1okOriN%2B6LEF32DKssqIo%2BynZPfkZEPM8URBrhj5GivM2Ze9w%3D%3D;
         path=/
-      - _normandy_session=taXJv5miqdEMt4I0J9kZYQ.ZVWeezog5fF7o-CHcfEgIe6l66jLU6tolV07jC98GK90e2fEQYBZBaXo5UuuYptp3a85AQdARK6kycr1VSYyNpMwIAJ2qTDwJYMRS4LnkTJalGXA45XkNeXY5tAGbdKt.1mcQQQpsPW2dKuWRnT944djyjBM.W-WsIQ;
+      - _normandy_session=_bOV1xlh-RLB3erqtJvOHQ.SJOyzxsxBw85nTiL7bSaiUACXkWqFRp61jqCO-dufQ7BIjLEc8FLNnw72DvkiU09-SxIfziuveGtyX_2K7PqF99_e8NhXLO1JS__sdqdfVqduMCBcExhVuhi23N0a_ZC.XetQjleZwKmWWvJ37L1shpcPG40.W-8gwQ;
         path=/; HttpOnly
-      - log_session_id=0b175c50b57eba85ad6814342630ebba; path=/
+      - log_session_id=69c4e04f56482f4afae60438430d564c; path=/
       Etag:
-      - W/"67522ec9cf82816cd57f5c8b31c1c0de"
+      - W/"079d43b8c51b620677c2316022ac60ae"
       Status:
       - 200 OK
       Transfer-Encoding:
@@ -66,18 +66,17 @@ http_interactions:
       - application/json; charset=utf-8
     body:
       encoding: UTF-8
-      string: '[{"id":16,"name":"Brand New User","created_at":"2018-11-06T08:49:42-07:00","sortable_name":"New
-        User, Brand","short_name":"B","sis_user_id":null,"integration_id":null,"sis_import_id":null,"login_id":"email+1234@gmail.com"},{"id":19,"name":"Brand
-        New User","created_at":"2018-11-07T23:21:33-07:00","sortable_name":"New User,
-        Brand","short_name":"B","sis_user_id":null,"integration_id":null,"sis_import_id":null,"login_id":"email+1231211111@gmail.com"},{"id":25,"name":"Kelly
-        S","created_at":"2018-11-08T06:59:09-07:00","sortable_name":"S, Kelly","short_name":"Kelly","sis_user_id":null,"integration_id":null,"sis_import_id":null,"login_id":"email+11111@gmail.com"},{"id":26,"name":"Kelly
-        S","created_at":"2018-11-08T07:02:06-07:00","sortable_name":"S, Kelly","short_name":"Kelly","sis_user_id":null,"integration_id":null,"sis_import_id":null,"login_id":"email+6@gmail.com"},{"id":27,"name":"Kelly
-        S","created_at":"2018-11-08T07:41:06-07:00","sortable_name":"S, Kelly","short_name":"Kelly","sis_user_id":null,"integration_id":null,"sis_import_id":null,"login_id":"email+789@gmail.com"},{"id":28,"name":"Kelly
-        S","created_at":"2018-11-09T08:30:44-07:00","sortable_name":"S, Kelly","short_name":"Kelly","sis_user_id":null,"integration_id":null,"sis_import_id":null,"login_id":"123556789798"},{"id":29,"name":"Kelly
-        S","created_at":"2018-11-09T08:31:25-07:00","sortable_name":"S, Kelly","short_name":"Kelly","sis_user_id":null,"integration_id":null,"sis_import_id":null,"login_id":"123556789798somethingelse"},{"id":30,"name":"Kelly
-        S","created_at":"2018-11-09T08:34:25-07:00","sortable_name":"S, Kelly","short_name":"Kelly","sis_user_id":null,"integration_id":null,"sis_import_id":null,"login_id":"123556789798somethingelseentirely"},{"id":31,"name":"Kelly
-        S","created_at":"2018-11-09T08:37:08-07:00","sortable_name":"S, Kelly","short_name":"Kelly","sis_user_id":null,"integration_id":null,"sis_import_id":null,"login_id":"1235567897989"},{"id":32,"name":"Kelly
-        S","created_at":"2018-11-09T08:37:56-07:00","sortable_name":"S, Kelly","short_name":"Kelly","sis_user_id":null,"integration_id":null,"sis_import_id":null,"login_id":"12355678979891"}]'
+      string: '[{"id":2,"name":"Test USer 1","created_at":"2018-11-09T09:25:41-07:00","sortable_name":"1,
+        Test USer","short_name":"Test USer 1","sis_user_id":null,"integration_id":null,"sis_import_id":null,"login_id":"testuser@test.com"},{"id":1,"name":"canvas@fearless.tech","created_at":"2018-10-22T08:51:52-06:00","sortable_name":"canvas@fearless.tech","short_name":"canvas@fearless.tech","sis_user_id":null,"integration_id":null,"sis_import_id":null,"login_id":"canvas@fearless.tech"},{"id":12,"name":"Jane
+        Doe","created_at":"2018-11-14T20:48:12-07:00","sortable_name":"Doe, Jane","short_name":"Jane
+        Doe","sis_user_id":null,"integration_id":null,"sis_import_id":null,"login_id":"jane.doe@example.com"},{"id":4,"name":"John
+        Doe","created_at":"2018-11-13T09:39:24-07:00","sortable_name":"Doe, John","short_name":"J","sis_user_id":null,"integration_id":null,"sis_import_id":null,"login_id":"email+1234@gmail.com"},{"id":5,"name":"John
+        Doe","created_at":"2018-11-13T09:43:23-07:00","sortable_name":"Doe, John","short_name":"J","sis_user_id":null,"integration_id":null,"sis_import_id":null,"login_id":"email+12345@gmail.com"},{"id":6,"name":"John
+        Doe","created_at":"2018-11-13T09:44:20-07:00","sortable_name":"Doe, John","short_name":"J","sis_user_id":null,"integration_id":null,"sis_import_id":null,"login_id":"email+12365@gmail.com"},{"id":7,"name":"John
+        Doe","created_at":"2018-11-13T09:45:34-07:00","sortable_name":"Doe, John","short_name":"J","sis_user_id":null,"integration_id":null,"sis_import_id":null,"login_id":"email+12375@gmail.com"},{"id":8,"name":"John
+        Doe","created_at":"2018-11-13T09:45:52-07:00","sortable_name":"Doe, John","short_name":"J","sis_user_id":null,"integration_id":null,"sis_import_id":null,"login_id":"email+12385@gmail.com"},{"id":9,"name":"John
+        Doe","created_at":"2018-11-13T09:47:28-07:00","sortable_name":"Doe, John","short_name":"J","sis_user_id":null,"integration_id":null,"sis_import_id":null,"login_id":"email+12485@gmail.com"},{"id":10,"name":"John
+        Doe","created_at":"2018-11-13T09:48:22-07:00","sortable_name":"Doe, John","short_name":"J","sis_user_id":null,"integration_id":null,"sis_import_id":null,"login_id":"email+12585@gmail.com"}]'
     http_version: 
-  recorded_at: Fri, 09 Nov 2018 15:47:07 GMT
+  recorded_at: Fri, 16 Nov 2018 19:56:02 GMT
 recorded_with: VCR 4.0.0

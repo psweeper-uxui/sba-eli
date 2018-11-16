@@ -8,7 +8,8 @@ module Canvas
     base_uri "#{canvas_host}/api/v1/"
 
     def self.all
-      get(canvas_accounts_url, base_options).body
+      response = get(canvas_accounts_url, base_options).body
+      JSON.parse response
     end
 
     def self.fetch_by_email(email)
@@ -21,11 +22,13 @@ module Canvas
     end
 
     def self.read_user(user_id)
-      get(canvas_user_url(user_id), base_options).body
+      response = get(canvas_user_url(user_id), base_options).body
+      JSON.parse response
     end
 
     def self.read_user_custom_data(user_id)
-      get("#{canvas_custom_data_url(user_id)}?ns=#{ENV['CANVAS_NAMESPACE']}", base_options).body
+      response = get("#{canvas_custom_data_url(user_id)}?ns=#{ENV['CANVAS_NAMESPACE']}", base_options).body
+      JSON.parse response
     end
 
     def self.create_user(user_body)
@@ -45,11 +48,13 @@ module Canvas
     end
 
     def self.destroy(user_id)
-      delete("#{canvas_accounts_url}#{user_id}", base_options)
+      response = delete("#{canvas_accounts_url}#{user_id}", base_options)
+      JSON.parse response
     end
 
     def self.destroy_custom_data(user_id)
-      delete(canvas_custom_data_url(user_id) + "?ns=#{ENV['CANVAS_NAMESPACE']}", base_options).body
+      response = delete(canvas_custom_data_url(user_id) + "?ns=#{ENV['CANVAS_NAMESPACE']}", base_options).body
+      JSON.parse response
     end
 
     def self.canvas_accounts_url
