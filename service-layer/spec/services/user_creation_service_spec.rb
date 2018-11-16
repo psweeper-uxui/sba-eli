@@ -1,17 +1,17 @@
-require 'rails_helper'
+require "rails_helper"
 
 include CognitoFactory
 
 describe "UserCreationService" do
-  subject {
+  subject do
     UserCreationService.new(
       first_name: "Jane",
       last_name: "Doe",
       email: "jane.doe@example.com",
       password: "changeME123!",
-      password_confirmation: "changeME123!"
+      password_confirmation: "changeME123!",
     )
-  }
+  end
 
   it "is valid with valid attributes" do
     expect(subject).to be_valid
@@ -55,8 +55,8 @@ describe "UserCreationService" do
     before :context do
       Aws.config[:cognitoidentityprovider] = {
         stub_responses: {
-          setup_user: sign_up_user("jane.doe@example.com")
-        }
+          setup_user: sign_up_user("jane.doe@example.com"),
+        },
       }
     end
     it "creates a new user" do
@@ -65,7 +65,4 @@ describe "UserCreationService" do
       end
     end
   end
-
-
-
 end

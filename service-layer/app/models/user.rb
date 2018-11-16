@@ -5,9 +5,8 @@ class User
                 :short_name,
                 :login_id
 
-
   def locale=(value)
-    @locale=value
+    @locale = value
   end
 
   def locale
@@ -25,5 +24,4 @@ class User
       user
     end
   end
-
 end

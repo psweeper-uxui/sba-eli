@@ -7,13 +7,13 @@ class SessionsController < ApplicationController
 
   def create
     begin
-      response = CognitoService.authenticate(params[:email], params[:password])
+      CognitoService.authenticate(params[:email], params[:password])
       canvas_user_response = Canvas::User.fetch_by_email(params[:email])
       sign_in User.from_canvas_json(canvas_user_response)
 
       render json: Current.user.to_json
     rescue
-      head :forbidden and return
+      head :forbidden && return
     end
   end
 
@@ -21,5 +21,4 @@ class SessionsController < ApplicationController
     sign_out
     head :ok
   end
-
 end

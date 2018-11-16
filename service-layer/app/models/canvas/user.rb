@@ -1,4 +1,4 @@
-require 'uri'
+require "uri"
 
 module Canvas
   module User
@@ -12,7 +12,12 @@ module Canvas
     end
 
     def self.fetch_by_email(email)
-      JSON.parse(get("/accounts/#{ENV['CANVAS_ACCOUNT_ID']}/users?search_term=#{URI.encode(email)}", base_options).body).first
+      JSON.parse(
+        get(
+          "#{canvas_accounts_url}?search_term=#{CGI.escape(email)}",
+          base_options,
+        ).body,
+      ).first
     end
 
     def self.read_user(user_id)
@@ -46,8 +51,6 @@ module Canvas
     def self.destroy_custom_data(user_id)
       delete(canvas_custom_data_url(user_id) + "?ns=#{ENV['CANVAS_NAMESPACE']}", base_options).body
     end
-
-    private
 
     def self.canvas_accounts_url
       "/accounts/#{ENV['CANVAS_ACCOUNT_ID']}/users/"

@@ -1,5 +1,3 @@
-require 'rails_helper'
+require "rails_helper"
 
-describe "User" do
-
-end
+describe "User" do; end

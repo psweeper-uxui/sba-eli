@@ -1,5 +1,4 @@
 class SignUpsController < ApplicationController
-
   def create
     new_account = UserCreationService.new(model_params)
 
@@ -12,14 +11,13 @@ class SignUpsController < ApplicationController
 
   private
 
-    def model_params
-      params.permit(
-        :first_name,
-        :last_name,
-        :email,
-        :password,
-        :password_confirmation
-      )
-    end
-
+  def model_params
+    params.permit(
+      :first_name,
+      :last_name,
+      :email,
+      :password,
+      :password_confirmation,
+    )
+  end
 end

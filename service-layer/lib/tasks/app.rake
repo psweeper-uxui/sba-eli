@@ -1,5 +1,4 @@
 namespace :app do
-
   ##
   # This task helps bootstrap a development environment by creating
   # migrating, seeding and preparing the test database
@@ -7,10 +6,10 @@ namespace :app do
   # bin/rails app:build
   #
   task  :build, [] => :environment do
-    Rake::Task['db:create'].execute
-    Rake::Task['db:migrate'].execute
-    Rake::Task['db:seed'].execute
-    Rake::Task['db:test:prepare'].execute
+    Rake::Task["db:create"].execute
+    Rake::Task["db:migrate"].execute
+    Rake::Task["db:seed"].execute
+    Rake::Task["db:test:prepare"].execute
   end
 
   ##
@@ -22,9 +21,16 @@ namespace :app do
   #
   task :rebuild, [] => :environment do
     raise "Not allowed to run on production" if Rails.env.production?
-    ActiveRecord::Base.connection.execute("SELECT pg_terminate_backend(pg_stat_activity.pid) FROM pg_stat_activity WHERE datname = current_database() AND pid <> pg_backend_pid();")
-    Rake::Task['db:drop'].execute
-    Rake::Task['app:build'].execute
+
+    sql = <<-SQL
+      SELECT pg_terminate_backend(pg_stat_activity.pid)
+      FROM pg_stat_activity
+      WHERE datname = current_database() AND pid <> pg_backend_pid();
+    SQL
+
+    ActiveRecord::Base.connection.execute(sql)
+    Rake::Task["db:drop"].execute
+    Rake::Task["app:build"].execute
   end
 
   ##
@@ -35,11 +41,10 @@ namespace :app do
   # bin/rails app:seed
   #
   task :seed, [] => :environment do
-    puts "*"*80
+    puts "*" * 80
     puts "* Seeding Database"
-    puts "*"*80
-    Rake::Task['db:seed'].execute
+    puts "*" * 80
+    Rake::Task["db:seed"].execute
     # Add extra seeding files here if needed.
   end
-
 end

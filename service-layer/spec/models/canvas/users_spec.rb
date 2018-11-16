@@ -21,7 +21,7 @@ describe UsersController do
         tmp_json = JSON.parse(tmp)
 
         expect(tmp).to_not be_nil
-        expect(tmp_json['email']).to eq('email+3446@gmail.com')
+        expect(tmp_json["email"]).to eq("email+3446@gmail.com")
       end
     end
 
@@ -31,7 +31,7 @@ describe UsersController do
         tmp_json = JSON.parse(tmp)
 
         expect(tmp).to_not be_nil
-        expect(tmp_json['data']['color']).to eq('purple')
+        expect(tmp_json["data"]["color"]).to eq("purple")
       end
     end
   end
@@ -42,13 +42,13 @@ describe UsersController do
 
         params = {
           "user": {
-            "name":"Brand New APIUser",
+            "name": "Brand New APIUser",
             "sortable_name": "New APIUser, Brand",
-            "short_name":"B",
-            "email": "email+12345@gmail.com"
+            "short_name": "B",
+            "email": "email+12345@gmail.com",
           },
           "pseudonym":{
-            "unique_id": "email+12345@gmail.com"
+            "unique_id": "email+12345@gmail.com",
           }
         }
         tmp = Canvas::User.create_user(params).body
@@ -64,18 +64,18 @@ describe UsersController do
         user_id = 41
 
         params = {
-            "ns": ENV['CANVAS_NAMESPACE'],
+            "ns": ENV["CANVAS_NAMESPACE"],
             "data": {
                 "race": "yes",
                 "fruit": "apple",
-                "color": "purple"
-            }
+                "color": "purple",
+            },
         }
         tmp = Canvas::User.user_custom_data(user_id, params).body
         tmp_json = JSON.parse(tmp)
 
         expect(tmp).to_not be_nil
-        expect(tmp_json['data']['fruit']).to eq('apple')
+        expect(tmp_json["data"]["fruit"]).to eq("apple")
       end
     end
   end
@@ -87,11 +87,11 @@ describe UsersController do
 
         params = {
           "user": {
-            "name":"Different name for APIUser",
+            "name": "Different name for APIUser",
             "sortable_name": "New APIUser, Brand",
-            "short_name":"B",
-            "email": "email+123456@gmail.com"
-          }
+            "short_name": "B",
+            "email": "email+123456@gmail.com",
+          },
         }
         tmp = Canvas::User.update_user(user_id, params).body
         json = JSON.parse(tmp)
@@ -107,7 +107,7 @@ describe UsersController do
       VCR.use_cassette("users/delete_user") do
         user_id = 40
         response = Canvas::User.destroy(user_id)
-        json = JSON.parse(response.body)
+        JSON.parse(response.body)
 
         expect(response).to_not be_nil
       end

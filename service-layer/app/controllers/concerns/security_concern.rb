@@ -34,5 +34,4 @@ module SecurityConcern
   def return_forbidden
     head 403 && return
   end
-
 end

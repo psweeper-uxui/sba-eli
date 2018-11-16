@@ -1,5 +1,5 @@
 begin
-  require 'hirb'
+  require "hirb"
 rescue LoadError
   # Missing goodies, bummer
 end

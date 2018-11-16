@@ -31,7 +31,7 @@ class UserCreationService
     response = Canvas::User.create_user(build_canvas_json)
     self.user = User.from_canvas_json(response)
 
-    return true
+    true
   end
 
   private
@@ -42,11 +42,11 @@ class UserCreationService
         "name": full_name,
         "sortable_name": sortable_name,
         "short_name": short_name,
-        "email": email
+        "email": email,
       },
       "pseudonym": {
-        "unique_id": email
-      }
+        "unique_id": email,
+      },
     }
   end
 
@@ -57,6 +57,4 @@ class UserCreationService
   def sortable_name
     "#{last_name}, #{first_name}"
   end
-
-
 end

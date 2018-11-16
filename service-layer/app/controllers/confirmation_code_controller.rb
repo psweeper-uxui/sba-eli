@@ -1,7 +1,6 @@
 class ConfirmationCodeController < ApplicationController
-
   before_action :valid_session?
-  
+
   def create
     begin
       email = Current.user.email
