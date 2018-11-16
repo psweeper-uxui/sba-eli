@@ -12,11 +12,19 @@ class LearningPathsList extends React.Component {
   }
 
   componentDidMount() {
-    //TODO: replace the static URL call
-    axios.get(`http://localhost:3000/learning_paths`)
+    this.fetchLearningPaths();
+  }
+
+  fetchLearningPaths() {
+    const url = process.env.REACT_APP_SERVICE_HOST + "/learning_paths"
+
+    axios.get(url)
       .then(res => {
         const learningPaths = res.data;
         this.setState({ learningPaths })
+      })
+      .catch(error => {
+        console.error(error)
       })
   }
 
@@ -35,4 +43,3 @@ class LearningPathsList extends React.Component {
 }
 
 export default LearningPathsList;
-
