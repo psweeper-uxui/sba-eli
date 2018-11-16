@@ -6,7 +6,6 @@ version: 2
 jobs:
   build:
     docker:
-      # specify the version you desire here
        - image: circleci/ruby:2.5.3-node-browsers
 
       # Specify service dependencies here if necessary
@@ -46,18 +45,18 @@ jobs:
       #- run: bundle exec rake db:create
       #- run: bundle exec rake db:schema:load
 
-      # run tests!
-#      - run:
-#          name: run tests
-#          command: |
-#            mkdir /tmp/test-results
-#            TEST_FILES="$(circleci tests glob "service-layer/spec/**/*_spec.rb" | circleci tests split --split-by=timings)"
-#            cd ./service-layer
-#            bundle exec rspec --format progress \
-#                            --format RspecJunitFormatter \
-#                            --out /tmp/test-results/rspec.xml \
-#                            --format progress \
-#                            $TEST_FILES
+      # run rspec
+      - run:
+          name: rspec
+          command: |
+            mkdir /tmp/test-results
+            TEST_FILES="$(circleci tests glob "service-layer/spec/**/*_spec.rb" | circleci tests split --split-by=timings)"
+            cd ./service-layer
+            bundle exec rspec --format progress \
+                            --format RspecJunitFormatter \
+                            --out /tmp/test-results/rspec.xml \
+                            --format progress \
+                            $TEST_FILES
 
       # collect reports
       - store_test_results:
