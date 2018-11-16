@@ -15,49 +15,49 @@ ShallowWrapper {
   Symbol(enzyme.__node__): Object {
     "instance": null,
     "key": undefined,
-    "nodeType": "host",
+    "nodeType": "class",
     "props": Object {
-      "children": <li>
+      "children": <ListItem>
         No data
-      </li>,
+      </ListItem>,
     },
     "ref": null,
     "rendered": Object {
       "instance": null,
       "key": undefined,
-      "nodeType": "host",
+      "nodeType": "class",
       "props": Object {
         "children": "No data",
       },
       "ref": null,
       "rendered": "No data",
-      "type": "li",
+      "type": [Function],
     },
-    "type": "ul",
+    "type": [Function],
   },
   Symbol(enzyme.__nodes__): Array [
     Object {
       "instance": null,
       "key": undefined,
-      "nodeType": "host",
+      "nodeType": "class",
       "props": Object {
-        "children": <li>
+        "children": <ListItem>
           No data
-        </li>,
+        </ListItem>,
       },
       "ref": null,
       "rendered": Object {
         "instance": null,
         "key": undefined,
-        "nodeType": "host",
+        "nodeType": "class",
         "props": Object {
           "children": "No data",
         },
         "ref": null,
         "rendered": "No data",
-        "type": "li",
+        "type": [Function],
       },
-      "type": "ul",
+      "type": [Function],
     },
   ],
   Symbol(enzyme.__options__): Object {

@@ -26,14 +26,50 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": Array [
-        "LearningPath ",
-        1,
+        <h1 />,
+        <h3>
+          Learning Objectives
+        </h3>,
+        <LearningObjectivesList
+          course_id={1}
+        />,
       ],
     },
     "ref": null,
     "rendered": Array [
-      "LearningPath ",
-      1,
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": undefined,
+        },
+        "ref": null,
+        "rendered": null,
+        "type": "h1",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "Learning Objectives",
+        },
+        "ref": null,
+        "rendered": "Learning Objectives",
+        "type": "h3",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "course_id": 1,
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
     ],
     "type": "div",
   },
@@ -44,14 +80,50 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": Array [
-          "LearningPath ",
-          1,
+          <h1 />,
+          <h3>
+            Learning Objectives
+          </h3>,
+          <LearningObjectivesList
+            course_id={1}
+          />,
         ],
       },
       "ref": null,
       "rendered": Array [
-        "LearningPath ",
-        1,
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": undefined,
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "h1",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Learning Objectives",
+          },
+          "ref": null,
+          "rendered": "Learning Objectives",
+          "type": "h3",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "course_id": 1,
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
       ],
       "type": "div",
     },

@@ -1,6 +1,7 @@
 import React from 'react';
+import { List } from 'semantic-ui-react';
 import LearningPathsItem from '../LearningPathsItem';
-import { shallow, mount } from 'enzyme';
+import { shallow } from 'enzyme';
 
 describe('LearningPathsItem', () => {
   it('should render correctly', () => {
@@ -12,13 +13,9 @@ describe('LearningPathsItem', () => {
   
   it('should render a <li>', () => {
     const item = { id: 1, name: "LP 1" }
-    const wrapper = shallow(<LearningPathsItem item={item} />); 
+    const wrapper = shallow(<LearningPathsItem key={item.id} name={item.name} />); 
 
-    expect(wrapper.find('li').length).toEqual(1);
-    expect(
-      wrapper.containsMatchingElement(
-        <li>Learning Path: LP 1</li>
-      )
-    ).toBeTruthy()
+    expect(wrapper.find(List.Item).length).toEqual(1);
+    expect(wrapper.find('a')).not.toBeNull();
   });
 });

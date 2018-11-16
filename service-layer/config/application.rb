@@ -48,6 +48,7 @@ Rails.application.config.middleware.use OmniAuth::Builder do
       site: APP_CONFIG["canvas_host"],
     },
   }
+
   provider :canvas,
     APP_CONFIG["canvas_client_id"],
     APP_CONFIG["canvas_client_secret"],

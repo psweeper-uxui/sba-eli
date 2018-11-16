@@ -22,37 +22,51 @@ ShallowWrapper {
   Symbol(enzyme.__node__): Object {
     "instance": null,
     "key": undefined,
-    "nodeType": "host",
+    "nodeType": "class",
     "props": Object {
-      "children": Array [
-        "Learning Path: ",
-        "LP 1",
-      ],
+      "children": <a
+        href="/learning_paths/undefined"
+      />,
     },
     "ref": null,
-    "rendered": Array [
-      "Learning Path: ",
-      "LP 1",
-    ],
-    "type": "li",
+    "rendered": Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": undefined,
+        "href": "/learning_paths/undefined",
+      },
+      "ref": null,
+      "rendered": null,
+      "type": "a",
+    },
+    "type": [Function],
   },
   Symbol(enzyme.__nodes__): Array [
     Object {
       "instance": null,
       "key": undefined,
-      "nodeType": "host",
+      "nodeType": "class",
       "props": Object {
-        "children": Array [
-          "Learning Path: ",
-          "LP 1",
-        ],
+        "children": <a
+          href="/learning_paths/undefined"
+        />,
       },
       "ref": null,
-      "rendered": Array [
-        "Learning Path: ",
-        "LP 1",
-      ],
-      "type": "li",
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": undefined,
+          "href": "/learning_paths/undefined",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": "a",
+      },
+      "type": [Function],
     },
   ],
   Symbol(enzyme.__options__): Object {
