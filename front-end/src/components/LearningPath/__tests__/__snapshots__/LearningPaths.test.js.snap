@@ -18,13 +18,25 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": Array [
-        "Learning Paths",
+        <h2>
+          Learning Paths
+        </h2>,
         <LearningPathsList />,
       ],
     },
     "ref": null,
     "rendered": Array [
-      "Learning Paths",
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "Learning Paths",
+        },
+        "ref": null,
+        "rendered": "Learning Paths",
+        "type": "h2",
+      },
       Object {
         "instance": null,
         "key": undefined,
@@ -44,13 +56,25 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": Array [
-          "Learning Paths",
+          <h2>
+            Learning Paths
+          </h2>,
           <LearningPathsList />,
         ],
       },
       "ref": null,
       "rendered": Array [
-        "Learning Paths",
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Learning Paths",
+          },
+          "ref": null,
+          "rendered": "Learning Paths",
+          "type": "h2",
+        },
         Object {
           "instance": null,
           "key": undefined,

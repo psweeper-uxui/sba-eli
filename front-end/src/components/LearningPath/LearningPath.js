@@ -7,7 +7,7 @@ class LearningPath extends React.Component {
     super(props);
 
     this.state = {
-      learningPath: []
+      learningPath: {} 
     }
   }
 
@@ -17,7 +17,7 @@ class LearningPath extends React.Component {
   }
 
   fetchLearningPath(id) {
-    const url = process.env.REACT_AOO_SERVICE_HOST + "/learning_paths" + id
+    const url = process.env.REACT_APP_SERVICE_HOST + "/learning_paths/" + id
     
     axios.get(url)
       .then(res => {
@@ -32,6 +32,7 @@ class LearningPath extends React.Component {
     return(
       <div>
         <h1>{this.state.learningPath.name}</h1>
+        <h3>Learning Objectives</h3>
         <LearningObjectivesList course_id= { courseId }/>
       </div>
     )
