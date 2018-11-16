@@ -24,24 +24,22 @@ ShallowWrapper {
     "key": undefined,
     "nodeType": "host",
     "props": Object {
-      "children": <Link
-        replace={false}
-        to="/learning_paths/undefined"
+      "children": <a
+        href="/learning_paths/undefined"
       />,
     },
     "ref": null,
     "rendered": Object {
       "instance": null,
       "key": undefined,
-      "nodeType": "class",
+      "nodeType": "host",
       "props": Object {
         "children": undefined,
-        "replace": false,
-        "to": "/learning_paths/undefined",
+        "href": "/learning_paths/undefined",
       },
       "ref": null,
       "rendered": null,
-      "type": [Function],
+      "type": "a",
     },
     "type": "li",
   },
@@ -51,24 +49,22 @@ ShallowWrapper {
       "key": undefined,
       "nodeType": "host",
       "props": Object {
-        "children": <Link
-          replace={false}
-          to="/learning_paths/undefined"
+        "children": <a
+          href="/learning_paths/undefined"
         />,
       },
       "ref": null,
       "rendered": Object {
         "instance": null,
         "key": undefined,
-        "nodeType": "class",
+        "nodeType": "host",
         "props": Object {
           "children": undefined,
-          "replace": false,
-          "to": "/learning_paths/undefined",
+          "href": "/learning_paths/undefined",
         },
         "ref": null,
         "rendered": null,
-        "type": [Function],
+        "type": "a",
       },
       "type": "li",
     },

@@ -1,7 +1,6 @@
 import React from 'react';
 import LearningPathsItem from '../LearningPathsItem';
-import { Router, Link } from 'react-router-dom';
-import { shallow, mount } from 'enzyme';
+import { shallow } from 'enzyme';
 
 describe('LearningPathsItem', () => {
   it('should render correctly', () => {
@@ -16,6 +15,6 @@ describe('LearningPathsItem', () => {
     const wrapper = shallow(<LearningPathsItem key={item.id} name={item.name} />); 
 
     expect(wrapper.find('li').length).toEqual(1);
-    expect(wrapper.find(Link)).not.toBeNull();
+    expect(wrapper.find('a')).not.toBeNull();
   });
 });

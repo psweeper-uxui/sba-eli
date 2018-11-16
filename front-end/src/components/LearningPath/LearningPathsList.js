@@ -10,28 +10,35 @@ class LearningPathsList extends React.Component {
       learningPaths: []
     }
   }
-  
 
   componentDidMount() {
-    axios.get(`http://localhost:3000/learning_paths`)
+    this.fetchLearningPaths();
+  }
+
+  fetchLearningPaths() {
+    const url = process.env.REACT_APP_SERVICE_HOST + "/learning_paths"
+
+    axios.get(url)
       .then(res => {
         const learningPaths = res.data;
         this.setState({ learningPaths })
       })
+      .catch(error => {
+        console.error(error)
+      })
   }
 
   render() {
+    const learningPathItems = this.state.learningPaths.map(c => <LearningPathsItem key={c.id} id={c.id} name={c.name} />)
+
     return(
       <div>
         <ul>
-          {this.state.learningPaths.map(c => <LearningPathsItem key={c.id} id={c.id} name={c.name} />)}
+          {learningPathItems}
         </ul>
       </div>
     )
   }
-  
-
 }
 
 export default LearningPathsList;
-

@@ -5,7 +5,7 @@ import { shallow, mount } from 'enzyme';
 describe('LearningPathsList', () => {
   it('should render correctly', () => {
     const wrapper = shallow(<LearningPathsList/>);
-    
+
     expect(wrapper).toMatchSnapshot();
   });
   
