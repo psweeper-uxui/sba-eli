@@ -1,0 +1,68 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://ec2-100-24-107-33.compute-1.amazonaws.com/api/v1/courses/1/modules/2/items/4
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Bearer ilZiJyoHXsuRFcMo0QU3wH1O54LoJsBvqcE7zbNnKo8TvKOegTnbAEr4Ne1MBdzX
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 15 Nov 2018 20:55:55 GMT
+      Server:
+      - Apache/2.4.18 (Ubuntu)
+      X-Request-Cost:
+      - '0.04465823600002047'
+      X-Session-Id:
+      - c5527311e87cd82cef336c6d5ed6bd31
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Context-Id:
+      - de84aaaf-faeb-4a61-8d14-910f7b09cf8d
+      X-Rate-Limit-Remaining:
+      - '600.0'
+      X-Canvas-Meta:
+      - at=10000000000027;dk=10000000000002;o=context_module_items_api;n=show;t=Course;i=1;b=1050008;m=1050008;u=0.04;y=0.00;d=0.00;
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Canvas-User-Id:
+      - '10000000000001'
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Runtime:
+      - '0.051548'
+      X-Content-Type-Options:
+      - nosniff
+      X-Powered-By:
+      - Phusion Passenger 5.3.5
+      Set-Cookie:
+      - _csrf_token=4KiPGI2U%2BexQQ7vwXgmndDpnNJGQyBa4jhs1SDLZzSKlmtttwaKK1GIi17RtSP4xTz9B2tj5YMvAL10xVumuRw%3D%3D;
+        path=/
+      - _normandy_session=E1Srvk7j12RKmlSCkIjwSA.Do-hnQE3dGOVhCcgKzV94Ov_AOQgRfhOGbSVj7-SEZBpGxr42XZJp5Jy0JEECs7EYrdDuEiYoYz6n9J0U22vgRmroNDsSrPp7r6N8rOtu6A854QWG2fw7_AZvGuZQEz7.hbRQSQxYhBqmxgzL11ohwMOeDyo.W-3dWw;
+        path=/; HttpOnly
+      - log_session_id=c5527311e87cd82cef336c6d5ed6bd31; path=/
+      Etag:
+      - W/"bd81f192d67abb48f3e24822857d399a"
+      Status:
+      - 200 OK
+      Transfer-Encoding:
+      - chunked
+      Content-Type:
+      - application/json; charset=utf-8
+    body:
+      encoding: UTF-8
+      string: '{"id":4,"title":"Postman Test Update Rename","position":0,"indent":0,"type":"SubHeader","module_id":2,"published":false}'
+    http_version: 
+  recorded_at: Thu, 15 Nov 2018 20:56:11 GMT
+recorded_with: VCR 4.0.0
