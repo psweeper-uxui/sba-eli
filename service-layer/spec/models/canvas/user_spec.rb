@@ -1,33 +1,30 @@
 require "rails_helper"
 
-describe UsersController do
-  describe "GET /users" do
+describe "Canvas::User" do
+  describe "GET /users/" do
     it "gets a list of all users" do
       VCR.use_cassette("users") do
-        tmp = Canvas::User.all
-        tmp_json = JSON.parse(tmp)
-        expect(tmp).to_not be_nil
+        tmp_json = Canvas::User.all
+        expect(tmp_json).to_not be_nil
         expect(tmp_json.size).to eq(10)
         expect(tmp_json[0]["name"]).to eq("Brand New User")
       end
     end
   end
 
-  describe "GET /users/:id" do
+  describe "GET /users/16" do
     it "gets a single user" do
       VCR.use_cassette("users/16") do
-        tmp = Canvas::User.read_user(16)
-        tmp_json = JSON.parse(tmp)
-        expect(tmp).to_not be_nil
+        tmp_json = Canvas::User.read_user(16)
+        expect(tmp_json).to_not be_nil
         expect(tmp_json["email"]).to eq("email+3446@gmail.com")
       end
     end
 
     it "gets custom data for a user" do
       VCR.use_cassette("users/16_custom") do
-        tmp = Canvas::User.read_user_custom_data(16)
-        tmp_json = JSON.parse(tmp)
-        expect(tmp).to_not be_nil
+        tmp_json = Canvas::User.read_user_custom_data(16)
+        expect(tmp_json).to_not be_nil
         expect(tmp_json["data"]["color"]).to eq("purple")
       end
     end
@@ -47,8 +44,7 @@ describe UsersController do
             "unique_id": "email+12345@gmail.com",
           },
         }
-        tmp = Canvas::User.create_user(params).body
-        json = JSON.parse(tmp)
+        json = Canvas::User.create_user(params)
         expect(json).to_not be_nil
         expect(json["name"]).to eq("Brand New APIUser")
       end
@@ -65,9 +61,8 @@ describe UsersController do
             "color": "purple",
           },
         }
-        tmp = Canvas::User.user_custom_data(user_id, params).body
-        tmp_json = JSON.parse(tmp)
-        expect(tmp).to_not be_nil
+        tmp_json = Canvas::User.user_custom_data(user_id, params)
+        expect(tmp_json).to_not be_nil
         expect(tmp_json["data"]["fruit"]).to eq("apple")
       end
     end
@@ -85,8 +80,7 @@ describe UsersController do
             "email": "email+123456@gmail.com",
           },
         }
-        tmp = Canvas::User.update_user(user_id, params).body
-        json = JSON.parse(tmp)
+        json = Canvas::User.update_user(user_id, params)
 
         expect(json).to_not be_nil
         expect(json["name"]).to eq("Different name for APIUser")
@@ -98,10 +92,8 @@ describe UsersController do
     it "deletes a user and their custom data" do
       VCR.use_cassette("users/delete_user") do
         user_id = 40
-        response = Canvas::User.destroy(user_id)
-        JSON.parse(response.body)
-
-        expect(response).to_not be_nil
+        json = Canvas::User.destroy(user_id)
+        expect(json).to_not be_nil
       end
     end
   end

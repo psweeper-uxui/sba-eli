@@ -36,22 +36,25 @@ module Canvas
 
     def self.create_user(user_body)
       options = base_options.merge!(body: user_body)
-      post(canvas_accounts_url, options)
+      response = post(canvas_accounts_url, options).body
+      JSON.parse response
     end
 
     def self.update_user(user_id, user_body)
       options = base_options.merge!(body: user_body)
-      put(canvas_user_url(user_id), options)
+      response = put(canvas_user_url(user_id), options).body
+      JSON.parse response
     end
 
     # both update and create
     def self.user_custom_data(user_id, custom_data_body)
       options = base_options.merge!(body: custom_data_body)
-      put(canvas_custom_data_url(user_id), options)
+      response = put(canvas_custom_data_url(user_id), options).body
+      JSON.parse response
     end
 
     def self.destroy(user_id)
-      response = delete("#{canvas_accounts_url}#{user_id}", base_options)
+      response = delete("#{canvas_accounts_url}#{user_id}", base_options).body
       JSON.parse response
     end
 
