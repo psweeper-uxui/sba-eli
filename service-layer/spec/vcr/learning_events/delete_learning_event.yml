@@ -1,0 +1,68 @@
+---
+http_interactions:
+- request:
+    method: delete
+    uri: http://ec2-100-24-107-33.compute-1.amazonaws.com/api/v1/courses/1/modules/2/items/8
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Bearer ilZiJyoHXsuRFcMo0QU3wH1O54LoJsBvqcE7zbNnKo8TvKOegTnbAEr4Ne1MBdzX
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 15 Nov 2018 21:17:11 GMT
+      Server:
+      - Apache/2.4.18 (Ubuntu)
+      X-Request-Cost:
+      - '0.05016744199999204'
+      X-Session-Id:
+      - 664a3bad328fafd322535dbb6a4c480e
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Context-Id:
+      - f2f90ada-2ad4-410f-8fad-7f52883b03fa
+      X-Rate-Limit-Remaining:
+      - '600.0'
+      X-Canvas-Meta:
+      - at=10000000000027;dk=10000000000002;o=context_module_items_api;n=destroy;t=Course;i=1;b=1050008;m=1050008;u=0.04;y=0.00;d=0.01;
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Canvas-User-Id:
+      - '10000000000001'
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Runtime:
+      - '0.067127'
+      X-Content-Type-Options:
+      - nosniff
+      X-Powered-By:
+      - Phusion Passenger 5.3.5
+      Set-Cookie:
+      - _csrf_token=Qg9M4651Ndcj7V4Wfp7JC79TOGN%2B4vp8C1HSPY57zWQNXgmn6iQFvGGPP3sZ3a1CxjR5SBq3kBp%2FMOJt7Sj1Vg%3D%3D;
+        path=/
+      - _normandy_session=odAkzAD5TC-Rnng0iteGnw.tLw7N3guuGwppTg_ynpAMuOsAY2F64uckydCf4DgaYelr_4JkKfcdkCRtg65AjnW7FZsg3zLlRsugMxiaVflcpZZLbHMvH0zg6yjN_jt46ZtC_Zz9C4mrZUxJTV-Py5n.OCuX7SKqIOYDY4dCwenQlAIdpXA.W-3iVw;
+        path=/; HttpOnly
+      - log_session_id=664a3bad328fafd322535dbb6a4c480e; path=/
+      Etag:
+      - W/"137bab6332fa2c3d529089e40c9b8cd2"
+      Status:
+      - 200 OK
+      Transfer-Encoding:
+      - chunked
+      Content-Type:
+      - application/json; charset=utf-8
+    body:
+      encoding: UTF-8
+      string: '{"id":8,"title":"Test Quiz To Delete","position":3,"indent":0,"type":"Quiz","module_id":2,"html_url":"http://ec2-100-24-107-33.compute-1.amazonaws.com/courses/1/modules/items/8","content_id":1,"url":"http://ec2-100-24-107-33.compute-1.amazonaws.com/api/v1/courses/1/quizzes/1","published":false}'
+    http_version: 
+  recorded_at: Thu, 15 Nov 2018 21:17:28 GMT
+recorded_with: VCR 4.0.0
