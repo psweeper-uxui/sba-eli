@@ -18,7 +18,7 @@ const Navigation = () => {
             <Route exact path="/learning_paths" component={LearningPaths}/>
             <Route exact path="/learning_paths/:id" component={LearningPath} />
             <Route exact path="/learning_objectives/" component={LearningObjectives} />
-            <Route exact path="/learning_objectives?course_id=:id" component={LearningObjective}/>
+            <Route exact path="/learning_objectives/:id" component={LearningObjective}/>
             <Route component={Error} />
           </Switch>
         </div>
