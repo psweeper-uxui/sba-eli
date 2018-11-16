@@ -1,13 +1,9 @@
 import React, { Component } from "react";
 
 export default class LearningEvent extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      learningEvent: {}
-    };
-  }
+  state = {
+    learningEvent: {}
+  };
 
   //TODO hook into service layer for event objects
   async componentDidMount() {
