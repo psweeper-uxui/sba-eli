@@ -33,6 +33,5 @@ class LearningPathsController < ApplicationController
     ENV["CANVAS_TOKEN"]
   end
 
-  def learning_path_params
-  end
+  def learning_path_params; end
 end

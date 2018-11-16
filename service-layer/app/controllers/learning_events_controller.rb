@@ -19,9 +19,9 @@ class LearningEventsController < ApplicationController
 		render json: @learning_event, status: 200
 	end
 
-	private
+  private
 
-	def session_token
-		ENV["CANVAS_TOKEN"]
-	end
+  def session_token
+    ENV["CANVAS_TOKEN"]
+  end
 end
