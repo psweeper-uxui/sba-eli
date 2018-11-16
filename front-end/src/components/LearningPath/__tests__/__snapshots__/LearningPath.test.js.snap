@@ -27,6 +27,9 @@ ShallowWrapper {
     "props": Object {
       "children": Array [
         <h1 />,
+        <h3>
+          Learning Objectives
+        </h3>,
         <LearningObjectivesList
           course_id={1}
         />,
@@ -44,6 +47,17 @@ ShallowWrapper {
         "ref": null,
         "rendered": null,
         "type": "h1",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "Learning Objectives",
+        },
+        "ref": null,
+        "rendered": "Learning Objectives",
+        "type": "h3",
       },
       Object {
         "instance": null,
@@ -67,6 +81,9 @@ ShallowWrapper {
       "props": Object {
         "children": Array [
           <h1 />,
+          <h3>
+            Learning Objectives
+          </h3>,
           <LearningObjectivesList
             course_id={1}
           />,
@@ -84,6 +101,17 @@ ShallowWrapper {
           "ref": null,
           "rendered": null,
           "type": "h1",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Learning Objectives",
+          },
+          "ref": null,
+          "rendered": "Learning Objectives",
+          "type": "h3",
         },
         Object {
           "instance": null,

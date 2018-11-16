@@ -3,12 +3,8 @@ import axios from 'axios';
 import LearningObjectivesList from '../LearningObjective/LearningObjectivesList'
 
 class LearningPath extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      learningPath: {} 
-    }
+  state = {
+    learningPath: {} 
   }
 
   componentDidMount() {
