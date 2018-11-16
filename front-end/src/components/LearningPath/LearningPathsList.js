@@ -10,9 +10,9 @@ class LearningPathsList extends React.Component {
       learningPaths: []
     }
   }
-  
 
   componentDidMount() {
+    //TODO: replace the static URL call
     axios.get(`http://localhost:3000/learning_paths`)
       .then(res => {
         const learningPaths = res.data;
@@ -29,8 +29,6 @@ class LearningPathsList extends React.Component {
       </div>
     )
   }
-  
-
 }
 
 export default LearningPathsList;

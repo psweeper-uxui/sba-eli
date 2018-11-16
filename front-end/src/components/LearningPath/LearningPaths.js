@@ -11,7 +11,7 @@ class LearningPaths extends React.Component {
   render () {
     return(
       <div>
-        Learning Paths
+        <h2>Learning Paths</h2>
         <LearningPathsList /> 
       </div>
     )
