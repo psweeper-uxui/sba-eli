@@ -22,25 +22,25 @@ ShallowWrapper {
   Symbol(enzyme.__node__): Object {
     "instance": null,
     "key": undefined,
-    "nodeType": "host",
+    "nodeType": "class",
     "props": Object {
       "children": "LO 1",
     },
     "ref": null,
     "rendered": "LO 1",
-    "type": "li",
+    "type": [Function],
   },
   Symbol(enzyme.__nodes__): Array [
     Object {
       "instance": null,
       "key": undefined,
-      "nodeType": "host",
+      "nodeType": "class",
       "props": Object {
         "children": "LO 1",
       },
       "ref": null,
       "rendered": "LO 1",
-      "type": "li",
+      "type": [Function],
     },
   ],
   Symbol(enzyme.__options__): Object {

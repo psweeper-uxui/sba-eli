@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import { List } from 'semantic-ui-react';
 import LearningPathsItem from './LearningPathsItem';
 
 class LearningPathsList extends React.Component {
@@ -32,9 +33,10 @@ class LearningPathsList extends React.Component {
 
     return(
       <div>
-        <ul>
-        {result}
-        </ul>
+        <List>
+          {result}
+        </List>
+
       </div>
     )
   }

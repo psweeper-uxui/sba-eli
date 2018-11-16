@@ -22,7 +22,7 @@ ShallowWrapper {
   Symbol(enzyme.__node__): Object {
     "instance": null,
     "key": undefined,
-    "nodeType": "host",
+    "nodeType": "class",
     "props": Object {
       "children": <a
         href="/learning_paths/undefined"
@@ -41,13 +41,13 @@ ShallowWrapper {
       "rendered": null,
       "type": "a",
     },
-    "type": "li",
+    "type": [Function],
   },
   Symbol(enzyme.__nodes__): Array [
     Object {
       "instance": null,
       "key": undefined,
-      "nodeType": "host",
+      "nodeType": "class",
       "props": Object {
         "children": <a
           href="/learning_paths/undefined"
@@ -66,7 +66,7 @@ ShallowWrapper {
         "rendered": null,
         "type": "a",
       },
-      "type": "li",
+      "type": [Function],
     },
   ],
   Symbol(enzyme.__options__): Object {
