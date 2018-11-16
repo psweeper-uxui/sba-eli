@@ -3,12 +3,8 @@ import axios from 'axios';
 import LearningPathsItem from './LearningPathsItem';
 
 class LearningPathsList extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      learningPaths: []
-    }
+  state = {
+    learningPaths: []
   }
 
   componentDidMount() {
