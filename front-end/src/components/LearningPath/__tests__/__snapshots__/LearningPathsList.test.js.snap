@@ -17,7 +17,9 @@ ShallowWrapper {
     "key": undefined,
     "nodeType": "host",
     "props": Object {
-      "children": <ul />,
+      "children": <h3>
+        There are no learning paths available to view at this time
+      </h3>,
     },
     "ref": null,
     "rendered": Object {
@@ -25,11 +27,11 @@ ShallowWrapper {
       "key": undefined,
       "nodeType": "host",
       "props": Object {
-        "children": Array [],
+        "children": "There are no learning paths available to view at this time",
       },
       "ref": null,
-      "rendered": Array [],
-      "type": "ul",
+      "rendered": "There are no learning paths available to view at this time",
+      "type": "h3",
     },
     "type": "div",
   },
@@ -39,7 +41,9 @@ ShallowWrapper {
       "key": undefined,
       "nodeType": "host",
       "props": Object {
-        "children": <ul />,
+        "children": <h3>
+          There are no learning paths available to view at this time
+        </h3>,
       },
       "ref": null,
       "rendered": Object {
@@ -47,11 +51,11 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "children": Array [],
+          "children": "There are no learning paths available to view at this time",
         },
         "ref": null,
-        "rendered": Array [],
-        "type": "ul",
+        "rendered": "There are no learning paths available to view at this time",
+        "type": "h3",
       },
       "type": "div",
     },
