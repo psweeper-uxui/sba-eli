@@ -1,0 +1,106 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://cognito-idp.us-east-1.amazonaws.com/
+    body:
+      encoding: UTF-8
+      string: '{"ClientId":"76jcq337aei27va9q9gtaep0dh","Username":"jack@jill.com","Password":"changeME123!","UserAttributes":[{"Name":"email","Value":"jack@jill.com"}]}'
+    headers:
+      Content-Type:
+      - application/x-amz-json-1.1
+      Accept-Encoding:
+      - ''
+      User-Agent:
+      - aws-sdk-ruby3/3.38.0 ruby/2.5.3 x86_64-darwin18 aws-sdk-cognitoidentityprovider/1.10.0
+      X-Amz-Target:
+      - AWSCognitoIdentityProviderService.SignUp
+      Content-Length:
+      - '154'
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 16 Nov 2018 13:34:41 GMT
+      Content-Type:
+      - application/x-amz-json-1.1
+      Content-Length:
+      - '175'
+      Connection:
+      - keep-alive
+      X-Amzn-Requestid:
+      - 5eba835f-e9a4-11e8-ab3e-bb4a5df5ad66
+    body:
+      encoding: UTF-8
+      string: '{"CodeDeliveryDetails":{"AttributeName":"email","DeliveryMedium":"EMAIL","Destination":"j***@j***.com"},"UserConfirmed":false,"UserSub":"e96ad390-7fc6-4051-82fd-53d29471e34f"}'
+    http_version: 
+  recorded_at: Fri, 16 Nov 2018 13:34:41 GMT
+- request:
+    method: post
+    uri: http://ec2-100-24-107-33.compute-1.amazonaws.com//api/v1/accounts/1/users/
+    body:
+      encoding: UTF-8
+      string: user[name]=Jack%20Jill&user[sortable_name]=Jill%2C%20Jack&user[short_name]=&user[email]=jack%40jill.com&pseudonym[unique_id]=jack%40jill.com
+    headers:
+      Authorization:
+      - Bearer ilZiJyoHXsuRFcMo0QU3wH1O54LoJsBvqcE7zbNnKo8TvKOegTnbAEr4Ne1MBdzX
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 16 Nov 2018 13:34:24 GMT
+      Server:
+      - Apache/2.4.18 (Ubuntu)
+      X-Request-Cost:
+      - '0.15278474700000655'
+      X-Session-Id:
+      - b97a8e3186b76899e70d7b2004ada13c
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Context-Id:
+      - 86c30ac3-b152-44b4-ae86-df66f873cbb7
+      X-Rate-Limit-Remaining:
+      - '600.0'
+      X-Canvas-Meta:
+      - at=10000000000027;dk=10000000000002;o=users;n=create;t=Account;i=1;b=847944;m=913480;u=0.11;y=0.01;d=0.04;
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Canvas-User-Id:
+      - '10000000000001'
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Runtime:
+      - '0.149509'
+      X-Content-Type-Options:
+      - nosniff
+      X-Powered-By:
+      - Phusion Passenger 5.3.5
+      Set-Cookie:
+      - _csrf_token=hKuQY4ef9dbPcjH7VX7OjrmHSD0E48sAlJM3xKx0ZXy3hOMRvtW3gK0fSb8ZJ%2Fe338AxUVG1qkrwxAWO1iRSPg%3D%3D;
+        path=/
+      - _normandy_session=L_B6Gw_-0LX6RjL1Jx_6zg.gy-3kfienOk-I7WokHA5dHxZnDSFqZqea6xzDNgl-jc9-Q5O-EUPIg3pisnaNc6zY-r9QepiwDq0lBZCp6kbR3eSTXdCf3ZAmu1TShQBTQtvESF1XozhfBD6nkPDpWET.r2W-A3GaV5cI8lae0qlKfkqA3bE.W-7HYA;
+        path=/; HttpOnly
+      - log_session_id=b97a8e3186b76899e70d7b2004ada13c; path=/
+      Etag:
+      - W/"f5fbfcdf65ac0b7b5749dd50ea17a762"
+      Status:
+      - 200 OK
+      Transfer-Encoding:
+      - chunked
+      Content-Type:
+      - application/json; charset=utf-8
+    body:
+      encoding: UTF-8
+      string: '{"id":15,"name":"Jack Jill","created_at":"2018-11-16T06:34:24-07:00","sortable_name":"Jill,
+        Jack","short_name":"Jack Jill","sis_user_id":null,"integration_id":null,"sis_import_id":null,"login_id":"jack@jill.com","locale":null}'
+    http_version: 
+  recorded_at: Fri, 16 Nov 2018 13:34:41 GMT
+recorded_with: VCR 4.0.0

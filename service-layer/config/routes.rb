@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
-  get "/auth/:provider/callback", to: "session#create"
-  get "/session/refresh", to: "session#refresh_token"
-
-  resources :users
-  resources :learning_objectives
-  resources :learning_paths
+  resource :cofirmation_code, only: :create
   resources :learning_events
+  resources :learning_paths
+  resources :learning_objectives
+  resource :session, only: %I[create destroy]
+  resource :sign_up, only: :create
+  resources :users
 end
