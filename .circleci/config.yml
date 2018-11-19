@@ -22,6 +22,11 @@ jobs:
           PGHOST: 127.0.0.1
           PGUSER: sbaeli
           RAILS_ENV: test
+          AWS_REGION: us-east-1
+          AWS_ACCESS_KEY_ID: sbaeli
+          AWS_SECRET_ACCESS_KEY: sbaeli
+          AWS_COGNITO_USER_POOL_ID: sbaeli
+          AWS_COGNITO_CLIENT_ID: sbaeli
       - image: circleci/postgres:9.4
         environment:
           POSTGRES_USER: sbaeli
