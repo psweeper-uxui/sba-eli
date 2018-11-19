@@ -43,7 +43,11 @@ ShallowWrapper {
           <Route
             component={[Function]}
             exact={true}
-            path="/learning_objectives?course_id=:id"
+            path="/learning_objectives/:id"
+          />
+          <Route
+            exact={true}
+            path="/learning_event/:id"
           />
           <Route
             component={[Function]}
@@ -83,7 +87,11 @@ ShallowWrapper {
             <Route
               component={[Function]}
               exact={true}
-              path="/learning_objectives?course_id=:id"
+              path="/learning_objectives/:id"
+            />
+            <Route
+              exact={true}
+              path="/learning_event/:id"
             />
             <Route
               component={[Function]}
@@ -131,7 +139,11 @@ ShallowWrapper {
               <Route
                 component={[Function]}
                 exact={true}
-                path="/learning_objectives?course_id=:id"
+                path="/learning_objectives/:id"
+              />,
+              <Route
+                exact={true}
+                path="/learning_event/:id"
               />,
               <Route
                 component={[Function]}
@@ -199,7 +211,19 @@ ShallowWrapper {
               "props": Object {
                 "component": [Function],
                 "exact": true,
-                "path": "/learning_objectives?course_id=:id",
+                "path": "/learning_objectives/:id",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "exact": true,
+                "path": "/learning_event/:id",
               },
               "ref": null,
               "rendered": null,
@@ -256,7 +280,11 @@ ShallowWrapper {
             <Route
               component={[Function]}
               exact={true}
-              path="/learning_objectives?course_id=:id"
+              path="/learning_objectives/:id"
+            />
+            <Route
+              exact={true}
+              path="/learning_event/:id"
             />
             <Route
               component={[Function]}
@@ -296,7 +324,11 @@ ShallowWrapper {
               <Route
                 component={[Function]}
                 exact={true}
-                path="/learning_objectives?course_id=:id"
+                path="/learning_objectives/:id"
+              />
+              <Route
+                exact={true}
+                path="/learning_event/:id"
               />
               <Route
                 component={[Function]}
@@ -344,7 +376,11 @@ ShallowWrapper {
                 <Route
                   component={[Function]}
                   exact={true}
-                  path="/learning_objectives?course_id=:id"
+                  path="/learning_objectives/:id"
+                />,
+                <Route
+                  exact={true}
+                  path="/learning_event/:id"
                 />,
                 <Route
                   component={[Function]}
@@ -412,7 +448,19 @@ ShallowWrapper {
                 "props": Object {
                   "component": [Function],
                   "exact": true,
-                  "path": "/learning_objectives?course_id=:id",
+                  "path": "/learning_objectives/:id",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "exact": true,
+                  "path": "/learning_event/:id",
                 },
                 "ref": null,
                 "rendered": null,
