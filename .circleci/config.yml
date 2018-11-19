@@ -10,7 +10,7 @@ jobs:
       - run:
           name: Make service layer the base directory
           command: |
-            mv ./service-layer/* ./
+            cp -r ./service-layer/. ./
             rm -rf ./service-layer ./front-end
       - run: bundle install --path vendor/bundle
       - run: bundle exec rubocop
