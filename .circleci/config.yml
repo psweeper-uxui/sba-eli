@@ -14,7 +14,7 @@ jobs:
             rm -rf ./service-layer ./front-end
       - restore_cache:
           keys:
-            - v1-dependencies-{{ checksum "Gemfile.lock" }}
+            - v1-dependencies-{{ .Branch }}-{{ checksum "Gemfile.lock" }}
             - v1-dependencies-
       - run: bundle install --path vendor/bundle
       - run: bundle exec rubocop
