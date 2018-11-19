@@ -1,0 +1,75 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://ec2-100-24-107-33.compute-1.amazonaws.com/api/v1/courses/1/modules/1/items
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Bearer ilZiJyoHXsuRFcMo0QU3wH1O54LoJsBvqcE7zbNnKo8TvKOegTnbAEr4Ne1MBdzX
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 15 Nov 2018 20:54:14 GMT
+      Server:
+      - Apache/2.4.18 (Ubuntu)
+      X-Request-Cost:
+      - '0.036390121000001135'
+      X-Session-Id:
+      - ab9ea4a274f52136cb90b056b7e99fc1
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Context-Id:
+      - 5d3636b2-a835-440f-8513-569d06dcfc29
+      X-Rate-Limit-Remaining:
+      - '600.0'
+      X-Canvas-Meta:
+      - at=10000000000027;dk=10000000000002;o=context_module_items_api;n=index;t=Course;i=1;b=1050008;m=1050008;u=0.03;y=0.01;d=0.01;
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Canvas-User-Id:
+      - '10000000000001'
+      Link:
+      - <http://ec2-100-24-107-33.compute-1.amazonaws.com/api/v1/courses/1/modules/1/items?page=1&per_page=10>;
+        rel="current",<http://ec2-100-24-107-33.compute-1.amazonaws.com/api/v1/courses/1/modules/1/items?page=1&per_page=10>;
+        rel="first",<http://ec2-100-24-107-33.compute-1.amazonaws.com/api/v1/courses/1/modules/1/items?page=1&per_page=10>;
+        rel="last"
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Runtime:
+      - '0.055671'
+      X-Content-Type-Options:
+      - nosniff
+      X-Powered-By:
+      - Phusion Passenger 5.3.5
+      Set-Cookie:
+      - _csrf_token=mIBd2UwX0KxZ1I%2BLi%2BM34SyDzVsDsOJqKIVtfrErgcCgxG%2B7LXSg6gC%2FpLnAjwKuePWKLyiDkD5q1QFLyGCwgw%3D%3D;
+        path=/
+      - _normandy_session=e9VDvUJzDd-nVatP-53o9w.o-ki7RujeRm3pKwWMwUwzXcBhEQbqLDCiv4vb0Z8oEu1-sHol0VF0Rpy8alaxlyK6ED6JZa1U2eCfTmAVQNSwe-kmtx5SabwZTyKEVOheCKBjWh3qKuKWxDU73GpHlD1.tXs6_tfHxWht-J1Heuvs_f8IcTU.W-3c9g;
+        path=/; HttpOnly
+      - log_session_id=ab9ea4a274f52136cb90b056b7e99fc1; path=/
+      Etag:
+      - W/"dff30ccb322097308a8b112e40ebf86e"
+      Status:
+      - 200 OK
+      Transfer-Encoding:
+      - chunked
+      Content-Type:
+      - application/json; charset=utf-8
+    body:
+      encoding: UTF-8
+      string: '[{"id":1,"title":"Test Assignment","position":1,"indent":0,"type":"Assignment","module_id":1,"html_url":"http://ec2-100-24-107-33.compute-1.amazonaws.com/courses/1/modules/items/1","content_id":1,"url":"http://ec2-100-24-107-33.compute-1.amazonaws.com/api/v1/courses/1/assignments/1","published":true},{"id":2,"title":"Test
+        Page 1","position":2,"indent":0,"type":"Page","module_id":1,"html_url":"http://ec2-100-24-107-33.compute-1.amazonaws.com/courses/1/modules/items/2","page_url":"test-page-1","url":"http://ec2-100-24-107-33.compute-1.amazonaws.com/api/v1/courses/1/pages/test-page-1","published":true},{"id":3,"title":"Test
+        Page 2","position":3,"indent":0,"type":"Page","module_id":1,"html_url":"http://ec2-100-24-107-33.compute-1.amazonaws.com/courses/1/modules/items/3","page_url":"test-page-2","url":"http://ec2-100-24-107-33.compute-1.amazonaws.com/api/v1/courses/1/pages/test-page-2","published":true}]'
+    http_version: 
+  recorded_at: Thu, 15 Nov 2018 20:54:30 GMT
+recorded_with: VCR 4.0.0

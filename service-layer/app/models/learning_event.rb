@@ -3,24 +3,27 @@ class LearningEvent
   base_uri ENV["CANVAS_HOST"] + "/api/v1"
 
   def initialize(session)
-    @options = { headers: { "Authorization" => "Bearer " + session } }
+    @options = { 
+      headers: { 
+        "Authorization" => "Bearer " + session, 
+        "Content-Type" => "application/json" 
+    }}
   end
 
-  def all(course_id)
-    self.class.get("/courses/#{course_id}/pages", @options).body
+  def all(course_id, module_id)
+    self.class.get("/courses/#{course_id}/modules/#{module_id}/items", @options).body
   end
 
-  def find(course_id, page_id)
-    self.class.get("/courses/#{course_id}/pages/#{page_id}", @options).body
+  def find(course_id, module_id, id)
+    self.class.get("/courses/#{course_id}/modules/#{module_id}/items/#{id}", @options).body
   end
 
-  def update(course_id, id, lp_params)
-    options = @options.merge!(body: lp_params)
-    self.class.put("/courses/#{course_id}/pages/#{id}", options)
+  def update(course_id, module_id, id, le_params)  
+    options = @options.merge!(body: le_params.to_json)
+    self.class.put("/courses/#{course_id}/modules/#{module_id}/items/#{id}", options).body
   end
 
-  def destroy(course_id, id)
-    options = @options.merge!(body: { "event": "delete" })
-    self.class.delete("/courses/#{course_id}/pages/#{id}", options)
+  def destroy(course_id, module_id, id)    
+    self.class.delete("/courses/#{course_id}/modules/#{module_id}/items/#{id}", @options)
   end
 end
