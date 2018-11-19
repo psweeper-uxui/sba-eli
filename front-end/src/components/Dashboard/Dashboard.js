@@ -1,9 +1,13 @@
 import React from 'react';
 import '../../App.css';
+import LearningPaths from '../LearningPath/LearningPaths';
 
 const Dashboard = () => {
-    return (
-      <div>Dashboard</div>
+  return (
+    <div>
+      <h1>Dashboard</h1>
+      <LearningPaths />
+    </div>
 	)
 }
 

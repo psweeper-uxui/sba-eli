@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from 'axios';
-import { List } from 'semantic-ui-react';
+import { Card } from 'semantic-ui-react';
 import LearningPathsItem from './LearningPathsItem';
 
 class LearningPathsList extends React.Component {
@@ -33,9 +33,9 @@ class LearningPathsList extends React.Component {
 
     return(
       <div>
-        <List>
+        <Card.Group>
           {result}
-        </List>
+        </Card.Group>
 
       </div>
     )

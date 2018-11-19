@@ -1,10 +1,13 @@
 import React from 'react'
-import { List } from 'semantic-ui-react';
-import {BrowserRouter as Router, Route, Link} from "react-router-dom"
+import { Card } from 'semantic-ui-react';
 
 const LearningPathsItem = (props) => {
   return(
-    <List.Item><a href={`/learning_paths/${props.id}`}>{props.name}</a></List.Item>
+    <Card>
+      <Card.Content>
+        <Card.Header><a href={`/learning_paths/${props.id}`}>{props.name}</a></Card.Header>
+      </Card.Content>
+    </Card>
   )
 }
 

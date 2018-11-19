@@ -17,10 +17,36 @@ ShallowWrapper {
     "key": undefined,
     "nodeType": "host",
     "props": Object {
-      "children": "Dashboard",
+      "children": Array [
+        <h1>
+          Dashboard
+        </h1>,
+        <LearningPaths />,
+      ],
     },
     "ref": null,
-    "rendered": "Dashboard",
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "Dashboard",
+        },
+        "ref": null,
+        "rendered": "Dashboard",
+        "type": "h1",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {},
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+    ],
     "type": "div",
   },
   Symbol(enzyme.__nodes__): Array [
@@ -29,10 +55,36 @@ ShallowWrapper {
       "key": undefined,
       "nodeType": "host",
       "props": Object {
-        "children": "Dashboard",
+        "children": Array [
+          <h1>
+            Dashboard
+          </h1>,
+          <LearningPaths />,
+        ],
       },
       "ref": null,
-      "rendered": "Dashboard",
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Dashboard",
+          },
+          "ref": null,
+          "rendered": "Dashboard",
+          "type": "h1",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {},
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+      ],
       "type": "div",
     },
   ],

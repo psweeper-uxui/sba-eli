@@ -1,5 +1,5 @@
 import React from 'react';
-import { List } from 'semantic-ui-react';
+import { Card } from 'semantic-ui-react';
 import LearningPathsList from '../LearningPathsList';
 import { shallow, mount } from 'enzyme';
 
@@ -31,12 +31,12 @@ describe('LearningPathsList', () => {
       wrapper.setState({learningPaths: lps})
     })  
 
-    it('should render a <List>', () => {
-      expect(wrapper.find(List).length).toEqual(1);
+    it('should render a <Card.Group>', () => {
+      expect(wrapper.find(Card.Group).length).toEqual(1);
     });
     
-    it('should render a 4 <li>', () => {
-      expect(wrapper.find(List.Item).length).toEqual(4);
+    it('should render a 4 <Card>s', () => {
+      expect(wrapper.find(Card).length).toEqual(4);
     });
   })
 });
