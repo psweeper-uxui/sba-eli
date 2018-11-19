@@ -12,14 +12,13 @@ jobs:
           command: |
             cp -r ./service-layer/. ./
             rm -rf ./service-layer ./front-end
-      - restore_cache:
-          keys:
-            - v1-dependencies-{{ .Branch }}-{{ checksum "Gemfile.lock" }}
-            #- v1-dependencies-
+      #- restore_cache:
+      #    keys:
+      #      - v1-dependencies-{{ checksum "Gemfile.lock" }}
       - run: bundle install --path vendor/bundle
       - run: bundle exec rubocop
       - save_cache:
-          key: v1-dependencies-{{ .Branch }}-{{ checksum "Gemfile.lock" }}
+          key: v1-dependencies-{{ checksum "Gemfile.lock" }}
           paths:
             - vendor/bundle
 
