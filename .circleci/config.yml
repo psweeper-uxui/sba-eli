@@ -15,11 +15,11 @@ jobs:
       - restore_cache:
           keys:
             - v1-dependencies-{{ .Branch }}-{{ checksum "Gemfile.lock" }}
-            - v1-dependencies-
+            #- v1-dependencies-
       - run: bundle install --path vendor/bundle
       - run: bundle exec rubocop
       - save_cache:
-          key: v1-dependencies-{{ checksum "Gemfile.lock" }}
+          key: v1-dependencies-{{ .Branch }}-{{ checksum "Gemfile.lock" }}
           paths:
             - vendor/bundle
 
