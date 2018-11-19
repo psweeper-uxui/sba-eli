@@ -21,7 +21,7 @@ jobs:
       - run: bundle exec rubocop
       - save_cache:
           paths:
-            - .vendor/bundle
+            - ./vendor/bundle
           key: v1-dependencies-{{ checksum "Gemfile.lock" }}
       # collect reports
       - store_test_results:
