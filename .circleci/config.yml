@@ -77,4 +77,4 @@ workflows:
   rubocop_and_rspec:
     jobs:
       - rubocop
-      - rspec
+      #- rspec
