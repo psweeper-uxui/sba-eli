@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
-import {Dropdown, Menu} from 'semantic-ui-react'
-import {BrowserRouter as Router, Route, Link} from 'react-router-dom'
+import {Link} from 'react-router-dom'
+import {Menu} from 'semantic-ui-react'
+import NavigationDropdownItem from "./NavigationDropdownItem";
 
 export default class NavigationMenu extends Component {
   state = {}
@@ -10,12 +11,18 @@ export default class NavigationMenu extends Component {
   })
 
   render() {
+    const lps = ['Jake', 'Jon', 'Thruster'];
+
+    var lp_nav = lps.map(function (lp) {
+      return <NavigationDropdownItem items={lp} path='/learning_paths/1' name={lp} />
+    })
+
     const {activeItem} = this.state
 
     return (
         <Menu vertical>
 
-          <Menu.Item as={ Link }
+          <Menu.Item as={Link}
                      to='/'
                      name='dashboard'
                      active={activeItem === 'dashboard'}
@@ -23,20 +30,16 @@ export default class NavigationMenu extends Component {
             Dashboard
           </Menu.Item>
 
-          <Menu.Item as={ Link }
+          <Menu.Item as={Link}
                      to='/learning_paths'
                      name='learning_paths'
                      active={activeItem === 'learning_paths'}
                      onClick={this.handleItemClick}>
             Learning Paths
           </Menu.Item>
-
-          <Dropdown item text='Learning Objectives'>
-            <Dropdown.Menu>
-              <Dropdown.Item as={ Link } to='/learning_objectives/LO1' text='LO 1'/>
-              <Dropdown.Item as={ Link } to='/learning_objectives/LO2' text='LO 2'/>
-            </Dropdown.Menu>
-          </Dropdown>
+          <Menu.Menu>
+            {lp_nav}
+          </Menu.Menu>
         </Menu>
     )
   }

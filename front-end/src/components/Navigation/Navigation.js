@@ -1,6 +1,6 @@
 import React from 'react';
 import '../../App.css';
-import {BrowserRouter as Router, Route, Switch, Link} from 'react-router-dom'
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 import LearningPath from "../LearningPath/LearningPath";
 import LearningPaths from "../LearningPath/LearningPaths";
 import LearningObjective from "../LearningObjective/LearningObjective";
