@@ -12,8 +12,23 @@ jobs:
           command: |
             cp -r ./service-layer/. ./
             rm -rf ./service-layer ./front-end
+      - restore_cache:
+        keys:
+          - v1-dependencies-{{ checksum "Gemfile.lock" }}
+          # fallback to using the latest cache if no exact match is found
+          - v1-dependencies-
       - run: bundle install --path vendor/bundle
       - run: bundle exec rubocop
+      - save_cache:
+          paths:
+            - .vendor/bundle
+              key: v1-dependencies-{{ checksum "Gemfile.lock" }}
+      # collect reports
+      - store_test_results:
+          path: /tmp/test-results
+      - store_artifacts:
+          path: /tmp/test-results
+          destination: test-results
 
   rspec:
     docker:
