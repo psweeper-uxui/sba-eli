@@ -11,25 +11,27 @@ export default class LearningEventsList extends Component {
     };
   }
 
-  async componentDidMount() {
-    const eventsList = await this.eventsList();
-    this.setState({ eventsList });
+  componentDidMount() {
+    this.eventsList();
   }
 
-  async eventsList() {
-    const course_id = this.props.course_id;
-    const module_id = this.props.module_id;
+  eventsList() {
+    const url = process.env.REACT_APP_SERVICE_HOST + `/learning_events/`;
 
-    const url =
-      process.env.REACT_APP_SERVICE_HOST +
-      `/learning_events/` +
-      `?course_id=${course_id}` +
-      `&module_id=${module_id}`;
+    const eventParams = {
+      course_id: this.props.course_id,
+      module_id: this.props.module_id
+    };
 
-    try {
-      const res = await axios.get(url);
-      return await res.data;
-    } catch (error) {}
+    axios
+      .get(url, { params: eventParams })
+      .then(res => {
+        const eventsList = res.data;
+        this.setState({ eventsList });
+      })
+      .catch(error => {
+        console.log(error);
+      });
   }
 
   renderEventsList(events = []) {
