@@ -28,15 +28,18 @@ class LearningPathsList extends React.Component {
   render() {
     let result = <h3>There are no learning paths available to view at this time</h3>
     if (this.state.learningPaths.length > 0) {
-      result = this.state.learningPaths.map(c => <LearningPathsItem key={c.id} id={c.id} name={c.name}/>)
-    }
+      result = this.state.learningPaths.map(c => <LearningPathsItem key={c.id}
+                                                                    id={c.id} 
+                                                                    name={c.name} 
+                                                                    course_code={c.course_code} />
+        )
+      }
 
     return(
       <div>
         <Card.Group>
           {result}
         </Card.Group>
-
       </div>
     )
   }

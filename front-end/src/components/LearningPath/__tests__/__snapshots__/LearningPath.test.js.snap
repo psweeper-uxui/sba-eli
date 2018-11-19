@@ -26,10 +26,20 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": Array [
-        <h1 />,
-        <h3>
+        <a
+          href="/"
+        >
+          Back to Home
+        </a>,
+        <Header
+          as="h1"
+        />,
+        <Divider />,
+        <Header
+          as="h3"
+        >
           Learning Objectives
-        </h3>,
+        </Header>,
         <LearningObjectivesList
           course_id={1}
         />,
@@ -42,22 +52,45 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "children": undefined,
+          "children": "Back to Home",
+          "href": "/",
         },
         "ref": null,
-        "rendered": null,
-        "type": "h1",
+        "rendered": "Back to Home",
+        "type": "a",
       },
       Object {
         "instance": null,
         "key": undefined,
-        "nodeType": "host",
+        "nodeType": "function",
         "props": Object {
+          "as": "h1",
+          "children": undefined,
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {},
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "as": "h3",
           "children": "Learning Objectives",
         },
         "ref": null,
         "rendered": "Learning Objectives",
-        "type": "h3",
+        "type": [Function],
       },
       Object {
         "instance": null,
@@ -80,10 +113,20 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": Array [
-          <h1 />,
-          <h3>
+          <a
+            href="/"
+          >
+            Back to Home
+          </a>,
+          <Header
+            as="h1"
+          />,
+          <Divider />,
+          <Header
+            as="h3"
+          >
             Learning Objectives
-          </h3>,
+          </Header>,
           <LearningObjectivesList
             course_id={1}
           />,
@@ -96,22 +139,45 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": undefined,
+            "children": "Back to Home",
+            "href": "/",
           },
           "ref": null,
-          "rendered": null,
-          "type": "h1",
+          "rendered": "Back to Home",
+          "type": "a",
         },
         Object {
           "instance": null,
           "key": undefined,
-          "nodeType": "host",
+          "nodeType": "function",
           "props": Object {
+            "as": "h1",
+            "children": undefined,
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {},
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "as": "h3",
             "children": "Learning Objectives",
           },
           "ref": null,
           "rendered": "Learning Objectives",
-          "type": "h3",
+          "type": [Function],
         },
         Object {
           "instance": null,
