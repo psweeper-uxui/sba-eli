@@ -38,5 +38,4 @@ class LearningPathsController < ApplicationController
   def instantiate_learning_path
     @learning_path = LearningPath.new(session_token)
   end
-
 end
