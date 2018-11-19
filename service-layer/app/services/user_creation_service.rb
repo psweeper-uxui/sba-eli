@@ -18,7 +18,7 @@ class UserCreationService
     return false unless valid?
 
     begin
-      cognito_response = CognitoService.sign_up(email, password)
+      CognitoService.sign_up(email, password)
     rescue Aws::CognitoIdentityProvider::Errors::UsernameExistsException
       errors.add(:email, "already exists.")
       return false

@@ -29,5 +29,4 @@ class UsersController < ApplicationController
     user_data = Canvas::User.destroy(params[:id])
     render json: user_data.merge(custom_data)
   end
-
 end
