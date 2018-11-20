@@ -3,27 +3,27 @@ class LearningObjectivesController < ApplicationController
 
   def index
     @learning_objectives = @learning_objective.all(params[:course_id])
-    render json: @learning_objectives, status: 200
+    render json: @learning_objectives, status: :ok
   end
 
   def show
     @learning_objective = @learning_objective.find(params[:course_id], params[:id])
-    render json: @learning_objective, status: 200
+    render json: @learning_objective, status: :ok
   end
 
   def create
     @learning_objective = @learning_objective.create(params[:course_id], params)
-    render json: @learning_objective, status: 200
+    render json: @learning_objective, status: :ok
   end
 
   def update
     @learning_objective = @learning_objective.update(params[:course_id], params[:id], params)
-    render json: @learning_objective, status: 200
+    render json: @learning_objective, status: :ok
   end
 
   def destroy
     @learning_objective = @learning_objective.destroy(params[:course_id], params[:id])
-    render json: @learning_objective, status: 200
+    render json: @learning_objective, status: :ok
   end
 
   private

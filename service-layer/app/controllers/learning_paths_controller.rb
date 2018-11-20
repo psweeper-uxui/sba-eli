@@ -3,12 +3,12 @@ class LearningPathsController < ApplicationController
 
   def index
     @learning_paths = @learning_path.all
-    render json: @learning_paths, status: 200
+    render json: @learning_paths, status: :ok
   end
 
   def show
     @learning_path = @learning_path.find(params[:id])
-    render json: @learning_path, status: 200
+    render json: @learning_path, status: :ok
   end
 
   def create
@@ -38,5 +38,4 @@ class LearningPathsController < ApplicationController
   def instantiate_learning_path
     @learning_path = LearningPath.new(session_token)
   end
-
 end

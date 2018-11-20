@@ -2,14 +2,14 @@ class UsersController < ApplicationController
   require "json"
 
   def index
-    render json: Canvas::User.all, status: 200
+    render json: Canvas::User.all, status: :ok
   end
 
   def show
     user_data = Canvas::User.read_user(params[:id])
     custom_data = Canvas::User.read_user_custom_data(params[:id])
 
-    render json: user_data.merge(custom_data), status: 200
+    render json: user_data.merge(custom_data), status: :ok
   end
 
   def create
@@ -29,5 +29,4 @@ class UsersController < ApplicationController
     user_data = Canvas::User.destroy(params[:id])
     render json: user_data.merge(custom_data)
   end
-
 end
