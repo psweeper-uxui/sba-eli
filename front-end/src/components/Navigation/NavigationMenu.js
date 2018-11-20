@@ -78,8 +78,6 @@ export default class NavigationMenu extends Component {
   }
 
   populateLearningObjectives(courseId) {
-    console.log("course id " + courseId)
-    console.log(this.state.learningObjectives[courseId])
     let lo_nav = ''
     if (this.state.learningObjectives[courseId] && this.state.learningObjectives[courseId].length > 0) {
       lo_nav =
