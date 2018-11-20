@@ -15,11 +15,11 @@ const Navigation = () => {
         <div>
           <Grid>
             <Grid.Row>
-              <Grid.Column width={2}>
+              <Grid.Column mobile={16} tablet={8} computer={3}>
                 <NavigationMenu/>
               </Grid.Column>
-              <Grid.Column width={13}>
-                  <NavigationDisplay />
+              <Grid.Column mobile={16} tablet={8} computer={13}>
+                <NavigationDisplay />
               </Grid.Column>
             </Grid.Row>
           </Grid>
