@@ -1,0 +1,13 @@
+[
+  {
+    "id": 14,
+    "name": "Nick Watson",
+    "created_at": "2018-11-16T05:35:20-07:00",
+    "sortable_name": "Watson, Nick",
+    "short_name": "Nick Watson",
+    "sis_user_id": null,
+    "integration_id" :null,
+    "sis_import_id": null,
+    "login_id": "nick.watson@claritybizsol.com"
+  }
+]

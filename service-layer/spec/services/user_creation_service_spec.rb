@@ -1,7 +1,7 @@
 require "rails_helper"
 
 # rubocop:disable MixinUsage
-include CognitoFactory
+include Mocks::CognitoHelper
 # rubocop:enable MixinUsage
 
 describe "UserCreationService" do
@@ -45,6 +45,14 @@ describe "UserCreationService" do
   end
 
   context do
+    before :context do
+      Aws.config[:cognitoidentityprovider] = {
+        stub_responses: {
+          sign_up: sign_up_existing_user,
+        },
+      }
+    end
+
     it "fails to create a user if the email is already registered" do
       subject.email = "john.doe@doe.com"
       VCR.use_cassette("failed_user_creation") do
@@ -57,7 +65,7 @@ describe "UserCreationService" do
     before :context do
       Aws.config[:cognitoidentityprovider] = {
         stub_responses: {
-          setup_user: sign_up_user("jane.doe@example.com"),
+          sign_up: sign_up_user("jane.doe@example.com"),
         },
       }
     end

@@ -5,7 +5,9 @@ abort("DATABASE_URL environment variable is set") if ENV["DATABASE_URL"]
 
 require "rspec/rails"
 
+# rubocop:disable Rails/FilePath
 Dir[Rails.root.join("spec/support/**/*.rb")].sort.each { |file| require file }
+# rubocop:enable Rails/FilePath
 
 module Features
   # Extend this module in spec/support/features/*.rb

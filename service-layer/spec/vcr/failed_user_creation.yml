@@ -2,45 +2,66 @@
 http_interactions:
 - request:
     method: post
-    uri: https://cognito-idp.us-east-1.amazonaws.com/
+    uri: http://ec2-100-24-107-33.compute-1.amazonaws.com//api/v1/accounts/1/users/
     body:
       encoding: UTF-8
-      string: '{"ClientId":"76jcq337aei27va9q9gtaep0dh","Username":"john.doe@doe.com","Password":"changeME123!","UserAttributes":[{"Name":"email","Value":"john.doe@doe.com"}]}'
+      string: user[name]=Jane%20Doe&user[sortable_name]=Doe%2C%20Jane&user[short_name]=&user[email]=john.doe%40doe.com&pseudonym[unique_id]=john.doe%40doe.com
     headers:
-      Content-Type:
-      - application/x-amz-json-1.1
-      Accept-Encoding:
-      - ''
-      User-Agent:
-      - aws-sdk-ruby3/3.38.0 ruby/2.5.3 x86_64-darwin18 aws-sdk-cognitoidentityprovider/1.10.0
-      X-Amz-Target:
-      - AWSCognitoIdentityProviderService.SignUp
-      Content-Length:
-      - '160'
-      Accept:
-      - "*/*"
+      Authorization:
+      - Bearer ilZiJyoHXsuRFcMo0QU3wH1O54LoJsBvqcE7zbNnKo8TvKOegTnbAEr4Ne1MBdzX
   response:
     status:
       code: 400
       message: Bad Request
     headers:
       Date:
-      - Thu, 15 Nov 2018 04:35:46 GMT
-      Content-Type:
-      - application/x-amz-json-1.1
-      Content-Length:
-      - '68'
+      - Tue, 20 Nov 2018 20:51:55 GMT
+      Server:
+      - Apache/2.4.18 (Ubuntu)
+      X-Request-Cost:
+      - '0.8071446129999972'
+      X-Session-Id:
+      - df27f742bbd21deb7c30b9eacdc9ff5e
+      Cache-Control:
+      - no-cache
+      X-Request-Context-Id:
+      - ea4f1876-bcb6-46dd-b909-800efbdb413a
+      X-Rate-Limit-Remaining:
+      - '600.0'
+      X-Canvas-Meta:
+      - at=10000000000027;dk=10000000000002;o=users;n=create;t=Account;i=1;b=989180;m=989180;u=0.80;y=0.01;d=0.01;
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Canvas-User-Id:
+      - '10000000000001'
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      X-Runtime:
+      - '0.838977'
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      X-Powered-By:
+      - Phusion Passenger 5.3.5
+      Set-Cookie:
+      - _csrf_token=Y7LWIxD%2B0XdQy0r29So33%2Fo1QcMX56ICf6yYh8b1dNxQ%2F7tiaczhJzW4D6%2B8e0G7kFgWtU%2Bo7kFI%2Bunp9bESug%3D%3D;
+        path=/
+      - _normandy_session=sfDZGStnwjurNHeb44bGcA.P-BjKH_qLMzr4aKzIjF9nO-1AGwY_14oJBQBqjQf7t3bY2_MiMiPsvwNf60cDrsBNQe67_GEbMzAiuX5f-GeJhnzW-Xj5_-hyRvQ6-L-xwF5BISFBTU9SeyJdtsWIPZT.l_TaPeg5mm1wjoIAuzuGlezbLLU.W_Rz7A;
+        path=/; HttpOnly
+      - log_session_id=df27f742bbd21deb7c30b9eacdc9ff5e; path=/
+      Status:
+      - 400 Bad Request
       Connection:
-      - keep-alive
-      X-Amzn-Requestid:
-      - eb757195-e88f-11e8-a2e2-93cc7bc5791a
-      X-Amzn-Errortype:
-      - 'UsernameExistsException:'
-      X-Amzn-Errormessage:
-      - User already exists
+      - close
+      Transfer-Encoding:
+      - chunked
+      Content-Type:
+      - application/json; charset=utf-8
     body:
       encoding: UTF-8
-      string: '{"__type":"UsernameExistsException","message":"User already exists"}'
+      string: '{"errors":{"user":{"pseudonyms":[{"attribute":"pseudonyms","type":"invalid","message":"invalid"}]},"pseudonym":{"unique_id":[{"attribute":"unique_id","type":"taken","message":"ID
+        already in use for this account and authentication provider"}]},"observee":{},"pairing_code":{}}}'
     http_version: 
-  recorded_at: Thu, 15 Nov 2018 04:35:46 GMT
+  recorded_at: Tue, 20 Nov 2018 20:52:16 GMT
 recorded_with: VCR 4.0.0
