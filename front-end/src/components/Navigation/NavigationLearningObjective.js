@@ -8,7 +8,6 @@ export default class NavigationLearningObjective extends Component {
     super(props);
 
     this.state = {
-      learningPathId: 1, //TODO: remove hardcode
       learningObjectives: []
     };
   }
@@ -21,7 +20,7 @@ export default class NavigationLearningObjective extends Component {
     const url = process.env.REACT_APP_SERVICE_HOST +
         "/learning_objectives/" +
         "?course_id=" +
-        this.state.learningPathId
+        this.props.learningPathId
 
     axios.get(url)
         .then(res => {
