@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import SemanticUI from 'semantic-ui-react';
 
 import './index.css';
 import App from './App';

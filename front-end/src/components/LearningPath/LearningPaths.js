@@ -1,5 +1,6 @@
 import React from 'react';
 import LearningPathsList from './LearningPathsList';
+import { Container, Header, Divider } from 'semantic-ui-react';
 
 class LearningPaths extends React.Component {
   state  = {}
@@ -7,8 +8,13 @@ class LearningPaths extends React.Component {
   render () {
     return(
       <div>
-        <h2>Learning Paths</h2>
-        <LearningPathsList /> 
+        <Container textAlign="center">
+          <Header as='h1'>Learning Paths</Header>
+        </Container>
+        <Divider hidden/>
+        <Container>
+          <LearningPathsList /> 
+        </Container>
       </div>
     )
   }

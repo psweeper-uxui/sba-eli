@@ -1,6 +1,6 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import Dashboard from './Dashboard';
+import LearningPaths from '../LearningPath/LearningPaths';
 import { shallow, mount } from 'enzyme';
 
 describe('Dashboard', () => {
@@ -14,6 +14,12 @@ describe('Dashboard', () => {
     const wrapper = shallow(<Dashboard/>);
 
     expect(wrapper.find('div').length).toEqual(1);
+  });
+
+  it('should render <LearningPaths>', () => {
+    const wrapper = shallow(<Dashboard/>);
+
+    expect(wrapper.find(LearningPaths).length).toEqual(1);
   });
 });
 
