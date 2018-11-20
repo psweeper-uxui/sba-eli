@@ -1,16 +1,14 @@
-import React, {Component} from 'react'
+import React, { Component } from "react";
 import axios from "axios";
-import {Dropdown} from "semantic-ui-react";
-import {Link} from "react-router-dom";
+import { Dropdown } from "semantic-ui-react";
+import { Link } from "react-router-dom";
 import NavigationLearningEventItem from "./NavigationLearningEventItem";
 
 export default class NavigationLearningEvent extends Component {
-
   constructor(props) {
     super(props);
 
     this.state = {
-      learningObjectiveId: 1, //TODO: remove hardcode
       learningEvents: []
     };
   }
@@ -20,32 +18,53 @@ export default class NavigationLearningEvent extends Component {
   }
 
   fetchData() {
-    const url = process.env.REACT_APP_SERVICE_HOST +
-        "/learning_objectives/" +
-        "?course_id=" +
-        this.state.learningObjectiveId
+    const url = process.env.REACT_APP_SERVICE_HOST + `/learning_events/`;
 
-    axios.get(url)
-        .then(res => {
-          const learningObjectives = res.data;
-          this.setState({learningObjectives})
-        })
-        .catch(error => {
-          console.error(error)
-        })
+    const eventParams = {
+      course_id: this.props.learningPathId,
+      module_id: this.props.learningObjectiveId
+    };
+
+    axios
+      .get(url, { params: eventParams })
+      .then(res => {
+        const learningEvents = res.data;
+        this.setState({ learningEvents });
+      })
+      .catch(error => {
+        console.log(error);
+      });
+  }
+
+  renderLearningEvents(learningEvents = []) {
+    if (learningEvents.length) {
+      const course_id = this.props.learningPathId;
+      const module_id = this.props.learningObjectiveId;
+      return learningEvents.map(event => {
+        const path =
+          `/learning_paths/${course_id}` +
+          `/learning_objectives/${module_id}` +
+          `/learning_events/${event.id}`;
+        return (
+          <NavigationLearningEventItem
+            key={event.id + course_id + module_id}
+            path={path}
+            name={event.title}
+          />
+        );
+      });
+    }
+
+    return <NavigationLearningEventItem path="/" name="No data" />;
   }
 
   render() {
-
-    return <Dropdown item
-                     as={Link}
-                     to={this.props.path}
-                     text={this.props.name}>
-      <Dropdown.Menu>
-        this.state.learningEvents.map(event =>
-          <NavigationLearningEventItem path="/" name="TODO" />
-        )
-      </Dropdown.Menu>
-    </Dropdown>
+    return (
+      <Dropdown item text={this.props.name}>
+        <Dropdown.Menu>
+          {this.renderLearningEvents(this.state.learningEvents)}
+        </Dropdown.Menu>
+      </Dropdown>
+    );
   }
 }
