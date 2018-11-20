@@ -29,7 +29,6 @@ export default class LearningObjective extends Component {
     axios
       .get(url, { params: objectiveParams })
       .then(res => {
-        console.log("res", res);
         const learningObjective = res.data;
 
         this.setState({ learningObjective });
