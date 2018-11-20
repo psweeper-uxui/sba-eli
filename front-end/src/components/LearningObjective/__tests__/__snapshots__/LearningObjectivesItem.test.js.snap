@@ -25,7 +25,7 @@ ShallowWrapper {
     "nodeType": "class",
     "props": Object {
       "children": <a
-        href="/learning_objectives/1"
+        href="/learning_paths/undefined/learning_objectives/1"
       >
         LO 1
       </a>,
@@ -37,7 +37,7 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": "LO 1",
-        "href": "/learning_objectives/1",
+        "href": "/learning_paths/undefined/learning_objectives/1",
       },
       "ref": null,
       "rendered": "LO 1",
@@ -52,7 +52,7 @@ ShallowWrapper {
       "nodeType": "class",
       "props": Object {
         "children": <a
-          href="/learning_objectives/1"
+          href="/learning_paths/undefined/learning_objectives/1"
         >
           LO 1
         </a>,
@@ -64,7 +64,7 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "children": "LO 1",
-          "href": "/learning_objectives/1",
+          "href": "/learning_paths/undefined/learning_objectives/1",
         },
         "ref": null,
         "rendered": "LO 1",

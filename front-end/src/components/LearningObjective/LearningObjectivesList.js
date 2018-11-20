@@ -38,7 +38,7 @@ export default class LearningObjectivesList extends Component {
   renderObjectivesList(objectives = []) {
     if (objectives.length) {
       return objectives.map(objective => {
-        return <LearningObjectivesItem key={objective.id} item={objective} />;
+        return <LearningObjectivesItem key={objective.id} course_id={this.props.course_id} item={objective} />;
       });
     }
     return <List.Item>No data</List.Item>;
