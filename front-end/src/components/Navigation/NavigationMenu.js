@@ -1,16 +1,13 @@
 import React, {Component} from 'react'
 import {Link} from 'react-router-dom'
 import {Menu} from 'semantic-ui-react'
-import NavigationLearningEventItem from "./NavigationLearningEventItem";
 import axios from "axios";
-import {Dropdown} from 'semantic-ui-react'
+import NavigationLearningObjective from "./NavigationLearningObjective";
 
 export default class NavigationMenu extends Component {
   state = {
     activeItem: 'dashboard',
-    learningPaths: [],
-    learningObjectives: [],
-    learningEvents: []
+    learningPaths: []
   }
 
   componentDidMount() {
@@ -25,29 +22,7 @@ export default class NavigationMenu extends Component {
         .then(res => res.data)
         .then(learningPathData => {
           const learningPaths = learningPathData;
-          let learningObjectivesData = []
           this.setState({learningPaths})
-
-          learningPaths.map(lp => {
-
-                const loUrl = process.env.REACT_APP_SERVICE_HOST +
-                    "/learning_objectives/" +
-                    "?course_id=" +
-                    lp.id
-
-                axios.get(loUrl)
-                    .then(res2 => {
-                      learningObjectivesData[lp.id] = res2.data
-                    })
-                    .then(tmp => {
-                      const learningObjectives = learningObjectivesData;
-                      this.setState({learningObjectives})
-                    })
-                    .catch(error => {
-                      console.error(error)
-                    })
-              }
-          )
         })
         .catch(error => {
           console.error(error)
@@ -61,31 +36,20 @@ export default class NavigationMenu extends Component {
       lp_nav =
           this.state.learningPaths.map(lp =>
               <div>
-              <Menu.Item key={lp.id}
-                         as={Link}
-                         to={`/learning_paths/${lp.id}`}
-                  // name={`learning_paths_${lp.id}`}
-                  // active={activeItem === `learning_paths_${lp.id}`}
-                  // onClick={this.handleItemClick}
-                         text={lp.name}>
-                {lp.name}
-              </Menu.Item>
-              {this.populateLearningObjectives(lp.id)}
+                <Menu.Item key={lp.id}
+                           as={Link}
+                           to={`/learning_paths/${lp.id}`}
+                    // name={`learning_paths_${lp.id}`}
+                    // active={activeItem === `learning_paths_${lp.id}`}
+                    // onClick={this.handleItemClick}
+                           text={lp.name}>
+                  {lp.name}
+                </Menu.Item>
+                <NavigationLearningObjective id={lp.id}/>
               </div>
           )
     }
     return lp_nav
-  }
-
-  populateLearningObjectives(courseId) {
-    let lo_nav = ''
-    if (this.state.learningObjectives[courseId] && this.state.learningObjectives[courseId].length > 0) {
-      lo_nav =
-          this.state.learningObjectives[courseId].map(lo =>
-              <NavigationLearningEventItem key={lo.id} path={`/learning_objectives/${lo.id}`} name={lo.name} learningEvents={this.state.learningEvents} />
-          )
-    }
-    return lo_nav
   }
 
   handleItemClick = (e, {name}) => this.setState({
