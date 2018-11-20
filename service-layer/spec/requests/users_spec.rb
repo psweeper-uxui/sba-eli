@@ -1,6 +1,8 @@
 require "rails_helper"
 
 describe UsersController do
+  include Mocks::UsersHelper
+
   describe "GET /users" do
     it "gets a list of all users" do
       VCR.use_cassette("users") do
@@ -16,58 +18,31 @@ describe UsersController do
   end
 
   describe "GET /users/:id" do
-    it "gets a single user" do
-      VCR.use_cassette("users/16") do
-        user_id = 16
+    it "gets a single users" do
+      VCR.turned_off do
+        user_id = 1
+        stub_get_user_request(id: user_id)
+        stub_get_custom_data_request(id: user_id)
+
         get "/users/#{user_id}"
-
         json = JSON.parse(response.body)
-
         expect(response).to be_successful
-        expect(json["name"]).to eq("Brand New User")
-      end
-    end
-  end
-
-  describe "POST /users/" do
-    it "creates a single user" do
-      VCR.use_cassette("users/create_user") do
-        params = "{
-          \"user\": {
-            \"name\":\"Brand New APIUser\",
-            \"sortable_name\": \"New APIUser, Brand\",
-            \"short_name\":\"B\",
-            \"email\": \"email+1234@gmail.com\"
-          },
-          \"pseudonym\":{
-            \"unique_id\": \"email123asdf@gmail.com\"
-          }
-        }"
-        headers "CONTENT_TYPE", "application/json"
-        post "/users/", params: params
-
-        json = JSON.parse(response.body)
-
-        expect(response).to be_successful
-        expect(json["name"]).to eq("Brand New APIUser")
-        expect(json["sortable_name"]).to eq("New APIUser, Brand")
-        expect(json["short_name"]).to eq("B")
-        expect(json["login_id"]).to eq("email123asdf@gmail.com")
+        expect(json["name"]).to eq("canvas@fearless.tech")
       end
     end
   end
 
   describe "UPDATE /users/:id" do
     it "updates a user" do
-      VCR.use_cassette("users/update_user") do
-        user_id = 16
+      VCR.turned_off do
+        user_id = 2
+        stub_update_user_request(id: 2)
+        stub_update_custom_data_request(id: 2)
 
-        # rubocop:disable LineLength
-        params = "{	\"user_data\": {\"user\":{\"name\":\"foo\",\"sortable_name\":\"S,Kelly\",\"short_name\":\"Kelly\",\"email\":\"email+3446@gmail.com\"},\"pseudonym\":{\"unique_id\":\"email+789@gmail.com\"}},\"custom_data\":{\"data\":{\"user\":{\"linked_in\":\"http://www.google.com\",\"zipcode\":\"06320\",\"percent_ownership\":97,\"goal_percent_revenue\":12,\"goal_revenue_amount\":1000,\"goal_percent_increase_employees\":15,\"goal_increase_employee_amount\":160,\"race\":[\"race1\",\"race2\"],\"ethnicity\":\"yes\"},\"company\":{\"company_id\":\"12312\",\"company_name\":\"NewCompany\",\"industry\":[\"one\",\"two\",\"three\"],\"naics\":[\"1234\",\"123123\",\"8976\"],\"num_employees\":40,\"website\":\"http://www.website.com\"}}}}"
-        # rubocop:enable LineLength
+        params = json_hash("users/update_user_request.json")
 
         headers "CONTENT_TYPE", "application/json"
-        put "/users/#{user_id}", params: params
+        put "/users/#{user_id}", params: params.to_json
 
         json = JSON.parse(response.body)
 
@@ -79,14 +54,17 @@ describe UsersController do
 
   describe "DELETE /users/:id" do
     it "deletes a user and their custom data" do
-      VCR.use_cassette("users/delete_user") do
+      VCR.turned_off do
         user_id = 10
+        stub_delete_custom_data_request(id: user_id)
+        stub_delete_user_request(id: user_id)
+
         delete "/users/#{user_id}"
 
         json = JSON.parse(response.body)
 
         expect(response).to be_successful
-        expect(json["data"]).not_to be_nil
+        expect(json["user"]).not_to be_nil
       end
     end
   end

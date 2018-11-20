@@ -1,13 +1,8 @@
-import React from 'react';
-import { List } from 'semantic-ui-react';
+import React, { Component } from "react";
+import { List } from "semantic-ui-react";
 
-
-class LearningObjectivesItem extends React.Component {
+export default class LearningObjectivesItem extends Component {
   render() {
-    return(
-      <List.Item>{this.props.item.name}</List.Item>
-    )
+    return <List.Item>{this.props.item.name}</List.Item>;
   }
 }
-
-export default LearningObjectivesItem;

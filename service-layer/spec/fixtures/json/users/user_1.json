@@ -1,0 +1,17 @@
+{
+  "id": 1,
+  "name": "canvas@fearless.tech",
+  "created_at": "2018-10-22T08:51:52-06:00",
+  "sortable_name": "canvas@fearless.tech",
+  "short_name": "canvas@fearless.tech",
+  "sis_user_id": null,
+  "integration_id": null,
+  "sis_import_id": null,
+  "login_id": "canvas@fearless.tech",
+  "email": "canvas@fearless.tech",
+  "locale": null,
+  "permissions": {
+    "can_update_name": true,
+    "can_update_avatar": false
+  }
+}
