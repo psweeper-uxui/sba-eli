@@ -13,10 +13,10 @@ export default class LearningObjective extends Component {
   }
 
   componentDidMount() {
-    this.learningObjectiveObject();
+    this.setLearningObjective();
   }
 
-  learningObjectiveObject() {
+  setLearningObjective() {
     const objective_id = this.props.match.params.id;
     const url =
       process.env.REACT_APP_SERVICE_HOST +

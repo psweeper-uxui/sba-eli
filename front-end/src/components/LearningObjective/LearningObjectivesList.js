@@ -14,12 +14,6 @@ export default class LearningObjectivesList extends Component {
   }
 
   componentDidMount() {
-    this.eventsList();
-  }
-
-  eventsList() {}
-
-  componentDidMount() {
     this.objectivesList();
   }
 
