@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import { Header, Divider } from 'semantic-ui-react';
 import LearningObjectivesList from '../LearningObjective/LearningObjectivesList'
 
 class LearningPath extends React.Component {
@@ -27,8 +28,10 @@ class LearningPath extends React.Component {
 
     return(
       <div>
-        <h1>{this.state.learningPath.name}</h1>
-        <h3>Learning Objectives</h3>
+        <a href="/">Back to Home</a>
+        <Header as='h1'>{this.state.learningPath.name}</Header>
+        <Divider/>
+        <Header as='h3'>Learning Objectives</Header>
         <LearningObjectivesList course_id= { courseId }/>
       </div>
     )

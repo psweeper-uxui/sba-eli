@@ -17,17 +17,17 @@ ShallowWrapper {
     "key": undefined,
     "nodeType": "host",
     "props": Object {
-      "children": <List>
+      "children": <CardGroup>
         <h3>
           There are no learning paths available to view at this time
         </h3>
-      </List>,
+      </CardGroup>,
     },
     "ref": null,
     "rendered": Object {
       "instance": null,
       "key": undefined,
-      "nodeType": "class",
+      "nodeType": "function",
       "props": Object {
         "children": <h3>
           There are no learning paths available to view at this time
@@ -55,17 +55,17 @@ ShallowWrapper {
       "key": undefined,
       "nodeType": "host",
       "props": Object {
-        "children": <List>
+        "children": <CardGroup>
           <h3>
             There are no learning paths available to view at this time
           </h3>
-        </List>,
+        </CardGroup>,
       },
       "ref": null,
       "rendered": Object {
         "instance": null,
         "key": undefined,
-        "nodeType": "class",
+        "nodeType": "function",
         "props": Object {
           "children": <h3>
             There are no learning paths available to view at this time
