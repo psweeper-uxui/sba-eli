@@ -1,4 +1,5 @@
 import React from 'react';
+import axios from 'axios';
 import './App.css';
 import {Input, Container} from 'semantic-ui-react';
 var AmazonCognitoIdentity = require('amazon-cognito-identity-js');
@@ -11,9 +12,20 @@ var poolData = {
 
 class SignUpForm extends React.Component {
   state = {
+    firstName: '',
+    lastName: '',
     email: '',
     password: '',
+    confirmPassword: ''
   };
+
+  handleFirstNameChange = (e) => {
+    this.setState({firstName: e.target.value});
+  }
+
+  handleLastNameChange = (e) => {
+    this.setState({lastName: e.target.value});
+  }
 
   handleEmailChange = (e) => {
     this.setState({email: e.target.value});
@@ -23,23 +35,24 @@ class SignUpForm extends React.Component {
     this.setState({password: e.target.value});
   }
 
+  handleConfirmPasswordChange = (e) => {
+    this.setState({confirmPassword: e.target.value});
+  }
+
   handleSubmit = (e) => {
     e.preventDefault();
-    const email = this.state.email.trim();
-    const password = this.state.password.trim();
-    const attributeList = [
-      new AmazonCognitoIdentity.CognitoUserAttribute({
-        Name: 'email',
-        Value: email,
-      })
-    ];
-    userPool.signUp(email, password, attributeList, null, (err, result) => {
-      if (err) {
-        console.log(err);
-        return;
-      }
-      console.log('user name is ' + result.user.getUsername());
-      console.log('call result: ', result);
+    const url = process.env.REACT_APP_SERVICE_HOST + "/sign_up"
+
+    axios.post(url, {
+      first_name: this.state.firstName.trim(),
+      last_name: this.state.lastName.trim(),
+      email: this.state.email.trim(),
+      password: this.state.password.trim(),
+      password_confirmation: this.state.confirmPassword.trim(),
+    }).then(() => {
+      console.log('Success!');
+    }).catch((e) => {
+      console.log('Failure!', e);
     });
   }
 
@@ -48,6 +61,14 @@ class SignUpForm extends React.Component {
       <Container>
         <form onSubmit={this.handleSubmit.bind(this)}>
           <Input type="text"
+                 value={this.state.firstName}
+                 placeholder="First Name"
+                 onChange={this.handleFirstNameChange.bind(this)}/> <br />
+          <Input type="text"
+                 value={this.state.lastName}
+                 placeholder="Last Name"
+                 onChange={this.handleLastNameChange.bind(this)}/> <br />
+          <Input type="text"
                  value={this.state.email}
                  placeholder="Email"
                  onChange={this.handleEmailChange.bind(this)}/> <br />
@@ -55,6 +76,10 @@ class SignUpForm extends React.Component {
                  value={this.state.password}
                  placeholder="Password"
                  onChange={this.handlePasswordChange.bind(this)}/><br />
+          <Input type="password"
+                 value={this.state.confirmPassword}
+                 placeholder="Confirm Password"
+                 onChange={this.handleConfirmPasswordChange.bind(this)}/><br />
           <Input type="submit"/>
         </form>
       </Container>

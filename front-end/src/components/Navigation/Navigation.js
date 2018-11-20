@@ -10,6 +10,11 @@ import LearningObjectives from "../LearningObjective/LearningObjectives";
 import NavigationMenu from "./NavigationMenu";
 import LearningEvent from "../LearningEvent/LearningEvent";
 import LearningEvents from "../LearningEvent/LearningEvents";
+<<<<<<< HEAD
+=======
+import SignUpForm from "../../SignUpForm";
+import Error from "../Error";
+>>>>>>> 132-login-form
 
 const Navigation = () => {
   return (
@@ -34,6 +39,7 @@ const NavigationDisplay = () => {
   return (
     <Switch>
       <Route exact path="/" component={Dashboard} />
+      <Route exact path="/signup" component={SignUpForm} />
       <Route exact path="/learning_paths" component={LearningPaths} />
       <Route exact path="/learning_paths/:id" component={LearningPath} />
       <Route
