@@ -1,3 +1,4 @@
+# rubocop:disable BlockLength
 namespace :app do
   ##
   # This task helps bootstrap a development environment by creating
@@ -48,3 +49,4 @@ namespace :app do
     # Add extra seeding files here if needed.
   end
 end
+# rubocop:enable BlockLength

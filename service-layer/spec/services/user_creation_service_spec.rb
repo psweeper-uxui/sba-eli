@@ -1,6 +1,8 @@
 require "rails_helper"
 
+# rubocop:disable MixinUsage
 include CognitoFactory
+# rubocop:enable MixinUsage
 
 describe "UserCreationService" do
   subject do

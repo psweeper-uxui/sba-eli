@@ -1,6 +1,9 @@
 #!/usr/bin/env ruby
 require "fileutils"
+
+# rubocop:disable MixinUsage
 include FileUtils
+# rubocop:enable MixinUsage
 
 # path to your application root.
 APP_ROOT = File.expand_path("..", __dir__)

@@ -1,67 +1,73 @@
-# Ruby CircleCI 2.0 configuration file
-#
-# Check https://circleci.com/docs/2.0/language-ruby/ for more details
-#
 version: 2
+
 jobs:
-  build:
+  rubocop:
     docker:
-      # specify the version you desire here
-       - image: circleci/ruby:2.5.3-node-browsers
-
-      # Specify service dependencies here if necessary
-      # CircleCI maintains a library of pre-built images
-      # documented at https://circleci.com/docs/2.0/circleci-images/
-      # - image: circleci/postgres:9.4
-
+      - image: circleci/ruby:2.5.3-node-browsers
     working_directory: ~/repo
-
     steps:
       - checkout
-
-      # Download and cache dependencies
+      - run:
+          name: Make service layer the base directory
+          command: |
+            cp -r ./service-layer/. ./
+            rm -rf ./service-layer ./front-end
       - restore_cache:
           keys:
-          - v1-dependencies-{{ checksum "service-layer/Gemfile.lock" }}
-          # fallback to using the latest cache if no exact match is found
-          - v1-dependencies-
-
-      - run:
-          name: install dependencies
-          command: |
-            cd ./service-layer
-            bundle install --path vendor/bundle
-
+            - service-layer-dependencies-{{ checksum "Gemfile.lock" }}
+      - run: bundle install --path vendor/bundle
+      - run: bundle exec rubocop
       - save_cache:
+          key: service-layer-dependencies-{{ checksum "Gemfile.lock" }}
           paths:
-            - .service-layer/vendor/bundle
-          key: v1-dependencies-{{ checksum "service-layer/Gemfile.lock" }}
+            - vendor/bundle
 
+  rspec:
+    docker:
+      - image: circleci/ruby:2.5.3-node-browsers
+        environment:
+          PGHOST: 127.0.0.1
+          PGUSER: sbaeli
+          RAILS_ENV: test
+          AWS_REGION: us-east-1
+          AWS_ACCESS_KEY_ID: sbaeli
+          AWS_SECRET_ACCESS_KEY: sbaeli
+          AWS_COGNITO_USER_POOL_ID: sbaeli
+          AWS_COGNITO_CLIENT_ID: sbaeli
+      - image: circleci/postgres:9.4
+        environment:
+          POSTGRES_USER: sbaeli
+          POSTGRES_DB: sba-eli_test
+          POSTGRES_PASSWORD: ""
+    working_directory: ~/repo
+    steps:
+      - checkout
       - run:
-          name: rubocop
+          name: Make service layer the base directory
           command: |
-            cd ./service-layer
-            bundle exec rubocop
-      # Database setup
-      #- run: bundle exec rake db:create
-      #- run: bundle exec rake db:schema:load
-
-      # run tests!
-#      - run:
-#          name: run tests
-#          command: |
-#            mkdir /tmp/test-results
-#            TEST_FILES="$(circleci tests glob "service-layer/spec/**/*_spec.rb" | circleci tests split --split-by=timings)"
-#            cd ./service-layer
-#            bundle exec rspec --format progress \
-#                            --format RspecJunitFormatter \
-#                            --out /tmp/test-results/rspec.xml \
-#                            --format progress \
-#                            $TEST_FILES
-
-      # collect reports
+            mv ./service-layer/* ./
+            rm -rf ./service-layer ./front-end
+      - run: bundle install --path vendor/bundle
+      - run: bundle exec rake db:create
+      - run: bundle exec rake db:schema:load
+      - run:
+          name: rspec
+          command: |
+            mkdir /tmp/test-results
+            TEST_FILES="$(circleci tests glob "spec/**/*_spec.rb")"
+            bundle exec rspec --format progress \
+                --out /tmp/test-results/rspec.xml \
+                --format progress \
+                $TEST_FILES
       - store_test_results:
           path: /tmp/test-results
       - store_artifacts:
           path: /tmp/test-results
           destination: test-results
+
+workflows:
+  version: 2
+  rubocop_and_rspec:
+    jobs:
+      - rubocop
+      #- rspec

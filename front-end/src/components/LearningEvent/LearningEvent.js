@@ -1,27 +1,58 @@
 import React, { Component } from "react";
+import axios from "axios";
+import { Header, Card } from "semantic-ui-react";
 
 export default class LearningEvent extends Component {
-  state = {
-    learningEvent: {}
-  };
+  constructor(props) {
+    super(props);
 
-  //TODO hook into service layer for event objects
-  async componentDidMount() {
-    const learningEvent = await this.learningEventObject();
-    this.setState({ learningEvent });
+    this.state = {
+      learningEvent: {}
+    };
   }
 
-  async learningEventObject() {
-    const res = await fetch(
-      "http://localhost:3000/learning_events/" +
-        this.props.match.params.id +
-        "?course_id=1"
-    );
-
-    return await res.json();
+  componentDidMount() {
+    this.learningEventObject();
   }
-  //How to render the objects we get back?
+
+  learningEventObject() {
+    const event_id = this.props.match.params.id;
+    const url =
+      process.env.REACT_APP_SERVICE_HOST + `/learning_events/${event_id}`;
+
+    const eventParams = {
+      course_id: this.props.match.params.course_id,
+      module_id: this.props.match.params.module_id
+    };
+
+    axios
+      .get(url, { params: eventParams })
+      .then(res => {
+        const learningEvent = res.data;
+        this.setState({ learningEvent });
+      })
+      .catch(error => {
+        console.log(error);
+      });
+  }
+
   render() {
-    return <div>Learning Event</div>;
+    const event = this.state.learningEvent;
+    return (
+      <div>
+        <Card>
+          <Card.Content>
+            <Card.Header>
+              {event.title} {event.id}
+            </Card.Header>
+            <Card.Meta>{event.type}</Card.Meta>
+          </Card.Content>
+          <Card.Content extra>
+            <Header as="h5">Url:</Header> {event.url}
+            <Header as="h5">HTML Url:</Header> {event.html_url}
+          </Card.Content>
+        </Card>
+      </div>
+    );
   }
 }
