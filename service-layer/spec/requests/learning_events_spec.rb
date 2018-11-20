@@ -53,6 +53,7 @@ describe "LearningEvents" do
         module_id = 1
         le_id = 3
         params = { params: { module_item: { "title": "Updated Rspec Title" } } }
+
         put "/learning_events/#{le_id}?course_id=#{course_id}&module_id=#{module_id}", params
         json = JSON.parse(response.body)
 

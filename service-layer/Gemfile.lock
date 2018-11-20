@@ -987,13 +987,13 @@ DEPENDENCIES
   spring-commands-rspec
   spring-watcher-listen (~> 2.0.0)
   sprockets (>= 3.0.0)
-  suspenders
+  suspenders (~> 1.49)
   timecop
   title (~> 0.0.7)
   tzinfo-data
   uglifier (~> 4.1.19)
   vcr
-  webmock
+  webmock (~> 3.4, >= 3.4.2)
 
 RUBY VERSION
    ruby 2.5.3p105
