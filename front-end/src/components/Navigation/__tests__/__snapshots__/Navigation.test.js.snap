@@ -43,7 +43,7 @@ ShallowWrapper {
           <Route
             component={[Function]}
             exact={true}
-            path="/learning_objectives?course_id=:id"
+            path="/learning_objectives/:id"
           />
           <Route
             component={[Function]}
@@ -83,7 +83,7 @@ ShallowWrapper {
             <Route
               component={[Function]}
               exact={true}
-              path="/learning_objectives?course_id=:id"
+              path="/learning_objectives/:id"
             />
             <Route
               component={[Function]}
@@ -131,7 +131,7 @@ ShallowWrapper {
               <Route
                 component={[Function]}
                 exact={true}
-                path="/learning_objectives?course_id=:id"
+                path="/learning_objectives/:id"
               />,
               <Route
                 component={[Function]}
@@ -199,7 +199,7 @@ ShallowWrapper {
               "props": Object {
                 "component": [Function],
                 "exact": true,
-                "path": "/learning_objectives?course_id=:id",
+                "path": "/learning_objectives/:id",
               },
               "ref": null,
               "rendered": null,
@@ -256,7 +256,7 @@ ShallowWrapper {
             <Route
               component={[Function]}
               exact={true}
-              path="/learning_objectives?course_id=:id"
+              path="/learning_objectives/:id"
             />
             <Route
               component={[Function]}
@@ -296,7 +296,7 @@ ShallowWrapper {
               <Route
                 component={[Function]}
                 exact={true}
-                path="/learning_objectives?course_id=:id"
+                path="/learning_objectives/:id"
               />
               <Route
                 component={[Function]}
@@ -344,7 +344,7 @@ ShallowWrapper {
                 <Route
                   component={[Function]}
                   exact={true}
-                  path="/learning_objectives?course_id=:id"
+                  path="/learning_objectives/:id"
                 />,
                 <Route
                   component={[Function]}
@@ -412,7 +412,7 @@ ShallowWrapper {
                 "props": Object {
                   "component": [Function],
                   "exact": true,
-                  "path": "/learning_objectives?course_id=:id",
+                  "path": "/learning_objectives/:id",
                 },
                 "ref": null,
                 "rendered": null,
