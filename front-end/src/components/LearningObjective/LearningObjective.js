@@ -16,19 +16,22 @@ export default class LearningObjective extends Component {
     this.learningObjectiveObject();
   }
 
-  async learningObjectiveObject() {
+  learningObjectiveObject() {
     const objective_id = this.props.match.params.id;
     const url =
-      process.env.REACT_APP_SERVICE_HOST + `/learning_events/${objective_id}`;
+      process.env.REACT_APP_SERVICE_HOST +
+      `/learning_objectives/${objective_id}`;
 
-    const eventParams = {
+    const objectiveParams = {
       course_id: this.props.match.params.course_id
     };
 
     axios
-      .get(url, { params: eventParams })
+      .get(url, { params: objectiveParams })
       .then(res => {
+        console.log("res", res);
         const learningObjective = res.data;
+
         this.setState({ learningObjective });
       })
       .catch(error => {
@@ -38,15 +41,14 @@ export default class LearningObjective extends Component {
 
   render() {
     const learningObjective = this.state.learningObjective;
-
     return (
       <div>
         <Header as="h1">Learning Objective {learningObjective.id}</Header>
         <Header as="h3">{learningObjective.name}</Header>
         <Header as="h4">Micro Learning Events:</Header>
         <LearningEventsList
-          course_id={learningObjective.id}
-          module_id={learningObjective.module_id}
+          course_id={this.props.match.params.id}
+          module_id={this.props.match.params.course_id}
         />
       </div>
     );

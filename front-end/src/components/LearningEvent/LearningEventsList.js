@@ -36,6 +36,7 @@ export default class LearningEventsList extends Component {
 
   renderEventsList(events = []) {
     if (events.length) {
+      console.log("events", events);
       return events.map(event => {
         return <LearningEventsItem key={event.id} item={event} />;
       });

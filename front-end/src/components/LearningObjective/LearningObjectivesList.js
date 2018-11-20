@@ -1,51 +1,56 @@
-import React from 'react';
-import { List } from 'semantic-ui-react';
-import LearningObjectivesItem from './LearningObjectivesItem';
+import React, { Component } from "react";
+import axios from "axios";
+import { List } from "semantic-ui-react";
 
-class LearningObjectivesList extends React.Component {
+import LearningObjectivesItem from "./LearningObjectivesItem";
+
+export default class LearningObjectivesList extends Component {
   constructor(props) {
     super(props);
-    
+
     this.state = {
       objectivesList: []
-    }
+    };
   }
 
-  async componentDidMount() {
-    const objectivesList = await this.objectivesList()
-    this.setState({ objectivesList });
+  componentDidMount() {
+    this.eventsList();
   }
-  
-  async objectivesList() {
-    const courseId = this.props.course_id
-    const res =  await fetch(
-      process.env.REACT_APP_SERVICE_HOST +
-      "/learning_objectives/" +
-      "?course_id=" +
-      courseId
-    )
 
-    return await res.json();
+  eventsList() {}
+
+  componentDidMount() {
+    this.objectivesList();
+  }
+
+  objectivesList() {
+    const url = process.env.REACT_APP_SERVICE_HOST + `/learning_objectives/`;
+
+    const objectiveParams = {
+      course_id: this.props.course_id
+    };
+
+    axios
+      .get(url, { params: objectiveParams })
+      .then(res => {
+        const objectivesList = res.data;
+        this.setState({ objectivesList });
+      })
+      .catch(error => {
+        console.log(error);
+      });
   }
 
   renderObjectivesList(objectives = []) {
-    if(objectives.length) {
+    if (objectives.length) {
       return objectives.map(objective => {
-        return(
-          <LearningObjectivesItem key={objective.id} item={objective} />
-        )
-      })
+        return <LearningObjectivesItem key={objective.id} item={objective} />;
+      });
     }
-    return <List.Item>No data</List.Item>
+    return <List.Item>No data</List.Item>;
   }
 
   render() {
-    return(
-        <List>
-          {this.renderObjectivesList(this.state.objectivesList)}
-        </List>
-    )
+    return <List>{this.renderObjectivesList(this.state.objectivesList)}</List>;
   }
 }
-
-export default LearningObjectivesList;
