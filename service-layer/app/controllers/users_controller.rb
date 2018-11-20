@@ -12,11 +12,6 @@ class UsersController < ApplicationController
     render json: user_data.merge(custom_data), status: :ok
   end
 
-  def create
-    @user = Canvas::User.create_user(request.body)
-    render json: @user
-  end
-
   def update
     post_body = JSON.parse(request.body.string)
     user_data = Canvas::User.update_user(params[:id], post_body["user_data"])

@@ -55,7 +55,7 @@ group :development, :test do
   gem "pry-rails", "~> 0.3.6"
   gem "rspec-rails", "~> 3.6"
   gem "spring-commands-rspec"
-  gem "suspenders"
+  gem "suspenders", "~> 1.49"
 end
 
 group :development do
@@ -74,5 +74,5 @@ group :test do
   gem "shoulda-matchers"
   gem "timecop"
   gem "vcr"
-  gem "webmock"
+  gem "webmock", "~> 3.4", ">= 3.4.2"
 end
