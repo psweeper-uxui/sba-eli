@@ -1,0 +1,13 @@
+{
+  "data": {
+    "fruit": {
+      "apple": "so tasty",
+      "kiwi": "a bit sour"
+    },
+    "veggies": {
+      "root": {
+        "onion": "tear-jerking"
+      }
+    }
+  }
+}

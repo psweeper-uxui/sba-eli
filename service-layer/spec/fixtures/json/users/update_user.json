@@ -1,0 +1,13 @@
+{
+  "id": 16,
+  "name": "foo",
+  "created_at": "2018-11-06T10:49:42-05:00",
+  "sortable_name": "New APIUser, Brand",
+  "short_name": "B",
+  "sis_user_id": null,
+  "integration_id": null,
+  "sis_import_id": null,
+  "email": "email+123456@gmail.com",
+  "locale": null,
+  "time_zone": "Mountain Time (US \u0026 Canada)"
+}
