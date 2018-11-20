@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import {Link} from 'react-router-dom'
 import {Menu} from 'semantic-ui-react'
-import NavigationDropdownItem from "./NavigationDropdownItem";
+import NavigationLearningEventItem from "./NavigationLearningEventItem";
 import axios from "axios";
 import {Dropdown} from 'semantic-ui-react'
 
@@ -84,7 +84,7 @@ export default class NavigationMenu extends Component {
     if (this.state.learningObjectives[courseId] && this.state.learningObjectives[courseId].length > 0) {
       lo_nav =
           this.state.learningObjectives[courseId].map(lo =>
-              <NavigationDropdownItem key={lo.id} path={`/learning_objectives/${lo.id}`} name={lo.name} docs={this.state.learningEvents} />
+              <NavigationLearningEventItem key={lo.id} path={`/learning_objectives/${lo.id}`} name={lo.name} learningEvents={this.state.learningEvents} />
           )
     }
     return lo_nav
