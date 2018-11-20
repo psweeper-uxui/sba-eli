@@ -18,37 +18,20 @@ ShallowWrapper {
     "nodeType": "class",
     "props": Object {
       "children": <div>
-        <NavigationMenu />
-        <Switch>
-          <Route
-            component={[Function]}
-            exact={true}
-            path="/"
-          />
-          <Route
-            component={[Function]}
-            exact={true}
-            path="/learning_paths"
-          />
-          <Route
-            component={[Function]}
-            exact={true}
-            path="/learning_paths/:id"
-          />
-          <Route
-            component={[Function]}
-            exact={true}
-            path="/learning_objectives/"
-          />
-          <Route
-            component={[Function]}
-            exact={true}
-            path="/learning_objectives/:id"
-          />
-          <Route
-            component={[Function]}
-          />
-        </Switch>
+        <Grid>
+          <GridRow>
+            <GridColumn
+              width={2}
+            >
+              <NavigationMenu />
+            </GridColumn>
+            <GridColumn
+              width={13}
+            >
+              <NavigationDisplay />
+            </GridColumn>
+          </GridRow>
+        </Grid>
       </div>,
     },
     "ref": null,
@@ -57,85 +40,57 @@ ShallowWrapper {
       "key": undefined,
       "nodeType": "host",
       "props": Object {
-        "children": Array [
-          <NavigationMenu />,
-          <Switch>
-            <Route
-              component={[Function]}
-              exact={true}
-              path="/"
-            />
-            <Route
-              component={[Function]}
-              exact={true}
-              path="/learning_paths"
-            />
-            <Route
-              component={[Function]}
-              exact={true}
-              path="/learning_paths/:id"
-            />
-            <Route
-              component={[Function]}
-              exact={true}
-              path="/learning_objectives/"
-            />
-            <Route
-              component={[Function]}
-              exact={true}
-              path="/learning_objectives/:id"
-            />
-            <Route
-              component={[Function]}
-            />
-          </Switch>,
-        ],
+        "children": <Grid>
+          <GridRow>
+            <GridColumn
+              width={2}
+            >
+              <NavigationMenu />
+            </GridColumn>
+            <GridColumn
+              width={13}
+            >
+              <NavigationDisplay />
+            </GridColumn>
+          </GridRow>
+        </Grid>,
       },
       "ref": null,
-      "rendered": Array [
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "class",
-          "props": Object {},
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "children": <GridRow>
+            <GridColumn
+              width={2}
+            >
+              <NavigationMenu />
+            </GridColumn>
+            <GridColumn
+              width={13}
+            >
+              <NavigationDisplay />
+            </GridColumn>
+          </GridRow>,
         },
-        Object {
+        "ref": null,
+        "rendered": Object {
           "instance": null,
           "key": undefined,
-          "nodeType": "class",
+          "nodeType": "function",
           "props": Object {
             "children": Array [
-              <Route
-                component={[Function]}
-                exact={true}
-                path="/"
-              />,
-              <Route
-                component={[Function]}
-                exact={true}
-                path="/learning_paths"
-              />,
-              <Route
-                component={[Function]}
-                exact={true}
-                path="/learning_paths/:id"
-              />,
-              <Route
-                component={[Function]}
-                exact={true}
-                path="/learning_objectives/"
-              />,
-              <Route
-                component={[Function]}
-                exact={true}
-                path="/learning_objectives/:id"
-              />,
-              <Route
-                component={[Function]}
-              />,
+              <GridColumn
+                width={2}
+              >
+                <NavigationMenu />
+              </GridColumn>,
+              <GridColumn
+                width={13}
+              >
+                <NavigationDisplay />
+              </GridColumn>,
             ],
           },
           "ref": null,
@@ -143,83 +98,48 @@ ShallowWrapper {
             Object {
               "instance": null,
               "key": undefined,
-              "nodeType": "class",
+              "nodeType": "function",
               "props": Object {
-                "component": [Function],
-                "exact": true,
-                "path": "/",
+                "children": <NavigationMenu />,
+                "width": 2,
               },
               "ref": null,
-              "rendered": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {},
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
               "type": [Function],
             },
             Object {
               "instance": null,
               "key": undefined,
-              "nodeType": "class",
+              "nodeType": "function",
               "props": Object {
-                "component": [Function],
-                "exact": true,
-                "path": "/learning_paths",
+                "children": <NavigationDisplay />,
+                "width": 13,
               },
               "ref": null,
-              "rendered": null,
-              "type": [Function],
-            },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "class",
-              "props": Object {
-                "component": [Function],
-                "exact": true,
-                "path": "/learning_paths/:id",
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "function",
+                "props": Object {},
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
               },
-              "ref": null,
-              "rendered": null,
-              "type": [Function],
-            },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "class",
-              "props": Object {
-                "component": [Function],
-                "exact": true,
-                "path": "/learning_objectives/",
-              },
-              "ref": null,
-              "rendered": null,
-              "type": [Function],
-            },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "class",
-              "props": Object {
-                "component": [Function],
-                "exact": true,
-                "path": "/learning_objectives/:id",
-              },
-              "ref": null,
-              "rendered": null,
-              "type": [Function],
-            },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "class",
-              "props": Object {
-                "component": [Function],
-              },
-              "ref": null,
-              "rendered": null,
               "type": [Function],
             },
           ],
           "type": [Function],
         },
-      ],
+        "type": [Function],
+      },
       "type": "div",
     },
     "type": [Function],
@@ -231,37 +151,20 @@ ShallowWrapper {
       "nodeType": "class",
       "props": Object {
         "children": <div>
-          <NavigationMenu />
-          <Switch>
-            <Route
-              component={[Function]}
-              exact={true}
-              path="/"
-            />
-            <Route
-              component={[Function]}
-              exact={true}
-              path="/learning_paths"
-            />
-            <Route
-              component={[Function]}
-              exact={true}
-              path="/learning_paths/:id"
-            />
-            <Route
-              component={[Function]}
-              exact={true}
-              path="/learning_objectives/"
-            />
-            <Route
-              component={[Function]}
-              exact={true}
-              path="/learning_objectives/:id"
-            />
-            <Route
-              component={[Function]}
-            />
-          </Switch>
+          <Grid>
+            <GridRow>
+              <GridColumn
+                width={2}
+              >
+                <NavigationMenu />
+              </GridColumn>
+              <GridColumn
+                width={13}
+              >
+                <NavigationDisplay />
+              </GridColumn>
+            </GridRow>
+          </Grid>
         </div>,
       },
       "ref": null,
@@ -270,85 +173,57 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "children": Array [
-            <NavigationMenu />,
-            <Switch>
-              <Route
-                component={[Function]}
-                exact={true}
-                path="/"
-              />
-              <Route
-                component={[Function]}
-                exact={true}
-                path="/learning_paths"
-              />
-              <Route
-                component={[Function]}
-                exact={true}
-                path="/learning_paths/:id"
-              />
-              <Route
-                component={[Function]}
-                exact={true}
-                path="/learning_objectives/"
-              />
-              <Route
-                component={[Function]}
-                exact={true}
-                path="/learning_objectives/:id"
-              />
-              <Route
-                component={[Function]}
-              />
-            </Switch>,
-          ],
+          "children": <Grid>
+            <GridRow>
+              <GridColumn
+                width={2}
+              >
+                <NavigationMenu />
+              </GridColumn>
+              <GridColumn
+                width={13}
+              >
+                <NavigationDisplay />
+              </GridColumn>
+            </GridRow>
+          </Grid>,
         },
         "ref": null,
-        "rendered": Array [
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "class",
-            "props": Object {},
-            "ref": null,
-            "rendered": null,
-            "type": [Function],
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "children": <GridRow>
+              <GridColumn
+                width={2}
+              >
+                <NavigationMenu />
+              </GridColumn>
+              <GridColumn
+                width={13}
+              >
+                <NavigationDisplay />
+              </GridColumn>
+            </GridRow>,
           },
-          Object {
+          "ref": null,
+          "rendered": Object {
             "instance": null,
             "key": undefined,
-            "nodeType": "class",
+            "nodeType": "function",
             "props": Object {
               "children": Array [
-                <Route
-                  component={[Function]}
-                  exact={true}
-                  path="/"
-                />,
-                <Route
-                  component={[Function]}
-                  exact={true}
-                  path="/learning_paths"
-                />,
-                <Route
-                  component={[Function]}
-                  exact={true}
-                  path="/learning_paths/:id"
-                />,
-                <Route
-                  component={[Function]}
-                  exact={true}
-                  path="/learning_objectives/"
-                />,
-                <Route
-                  component={[Function]}
-                  exact={true}
-                  path="/learning_objectives/:id"
-                />,
-                <Route
-                  component={[Function]}
-                />,
+                <GridColumn
+                  width={2}
+                >
+                  <NavigationMenu />
+                </GridColumn>,
+                <GridColumn
+                  width={13}
+                >
+                  <NavigationDisplay />
+                </GridColumn>,
               ],
             },
             "ref": null,
@@ -356,83 +231,48 @@ ShallowWrapper {
               Object {
                 "instance": null,
                 "key": undefined,
-                "nodeType": "class",
+                "nodeType": "function",
                 "props": Object {
-                  "component": [Function],
-                  "exact": true,
-                  "path": "/",
+                  "children": <NavigationMenu />,
+                  "width": 2,
                 },
                 "ref": null,
-                "rendered": null,
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {},
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
+                },
                 "type": [Function],
               },
               Object {
                 "instance": null,
                 "key": undefined,
-                "nodeType": "class",
+                "nodeType": "function",
                 "props": Object {
-                  "component": [Function],
-                  "exact": true,
-                  "path": "/learning_paths",
+                  "children": <NavigationDisplay />,
+                  "width": 13,
                 },
                 "ref": null,
-                "rendered": null,
-                "type": [Function],
-              },
-              Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "class",
-                "props": Object {
-                  "component": [Function],
-                  "exact": true,
-                  "path": "/learning_paths/:id",
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "function",
+                  "props": Object {},
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
                 },
-                "ref": null,
-                "rendered": null,
-                "type": [Function],
-              },
-              Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "class",
-                "props": Object {
-                  "component": [Function],
-                  "exact": true,
-                  "path": "/learning_objectives/",
-                },
-                "ref": null,
-                "rendered": null,
-                "type": [Function],
-              },
-              Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "class",
-                "props": Object {
-                  "component": [Function],
-                  "exact": true,
-                  "path": "/learning_objectives/:id",
-                },
-                "ref": null,
-                "rendered": null,
-                "type": [Function],
-              },
-              Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "class",
-                "props": Object {
-                  "component": [Function],
-                },
-                "ref": null,
-                "rendered": null,
                 "type": [Function],
               },
             ],
             "type": [Function],
           },
-        ],
+          "type": [Function],
+        },
         "type": "div",
       },
       "type": [Function],
