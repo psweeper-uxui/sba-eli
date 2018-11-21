@@ -12,17 +12,25 @@ export default class LearningEvent extends Component {
   }
 
   componentDidMount() {
-    this.learningEventObject();
+    this.setLearningEvent();
   }
 
-  learningEventObject() {
-    const event_id = this.props.match.params.id;
+  componentWillReceiveProps(newProps) {
+    //Added this to account for react routing not updating with different props
+    if (this.props !== newProps) {
+      this.props = newProps;
+      this.setLearningEvent();
+    }
+  }
+
+  setLearningEvent() {
+    const { course_id, module_id, id: event_id } = this.props.match.params;
     const url =
       process.env.REACT_APP_SERVICE_HOST + `/learning_events/${event_id}`;
 
     const eventParams = {
-      course_id: this.props.match.params.course_id,
-      module_id: this.props.match.params.module_id
+      course_id,
+      module_id
     };
 
     axios
@@ -38,6 +46,7 @@ export default class LearningEvent extends Component {
 
   render() {
     const event = this.state.learningEvent;
+
     return (
       <div>
         <Card>

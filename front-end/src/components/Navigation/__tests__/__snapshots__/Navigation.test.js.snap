@@ -21,12 +21,16 @@ ShallowWrapper {
         <Grid>
           <GridRow>
             <GridColumn
-              width={2}
+              computer={3}
+              mobile={16}
+              tablet={8}
             >
               <NavigationMenu />
             </GridColumn>
             <GridColumn
-              width={13}
+              computer={13}
+              mobile={16}
+              tablet={8}
             >
               <NavigationDisplay />
             </GridColumn>
@@ -43,12 +47,16 @@ ShallowWrapper {
         "children": <Grid>
           <GridRow>
             <GridColumn
-              width={2}
+              computer={3}
+              mobile={16}
+              tablet={8}
             >
               <NavigationMenu />
             </GridColumn>
             <GridColumn
-              width={13}
+              computer={13}
+              mobile={16}
+              tablet={8}
             >
               <NavigationDisplay />
             </GridColumn>
@@ -63,12 +71,16 @@ ShallowWrapper {
         "props": Object {
           "children": <GridRow>
             <GridColumn
-              width={2}
+              computer={3}
+              mobile={16}
+              tablet={8}
             >
               <NavigationMenu />
             </GridColumn>
             <GridColumn
-              width={13}
+              computer={13}
+              mobile={16}
+              tablet={8}
             >
               <NavigationDisplay />
             </GridColumn>
@@ -82,12 +94,16 @@ ShallowWrapper {
           "props": Object {
             "children": Array [
               <GridColumn
-                width={2}
+                computer={3}
+                mobile={16}
+                tablet={8}
               >
                 <NavigationMenu />
               </GridColumn>,
               <GridColumn
-                width={13}
+                computer={13}
+                mobile={16}
+                tablet={8}
               >
                 <NavigationDisplay />
               </GridColumn>,
@@ -101,7 +117,9 @@ ShallowWrapper {
               "nodeType": "function",
               "props": Object {
                 "children": <NavigationMenu />,
-                "width": 2,
+                "computer": 3,
+                "mobile": 16,
+                "tablet": 8,
               },
               "ref": null,
               "rendered": Object {
@@ -121,7 +139,9 @@ ShallowWrapper {
               "nodeType": "function",
               "props": Object {
                 "children": <NavigationDisplay />,
-                "width": 13,
+                "computer": 13,
+                "mobile": 16,
+                "tablet": 8,
               },
               "ref": null,
               "rendered": Object {
@@ -154,12 +174,16 @@ ShallowWrapper {
           <Grid>
             <GridRow>
               <GridColumn
-                width={2}
+                computer={3}
+                mobile={16}
+                tablet={8}
               >
                 <NavigationMenu />
               </GridColumn>
               <GridColumn
-                width={13}
+                computer={13}
+                mobile={16}
+                tablet={8}
               >
                 <NavigationDisplay />
               </GridColumn>
@@ -176,12 +200,16 @@ ShallowWrapper {
           "children": <Grid>
             <GridRow>
               <GridColumn
-                width={2}
+                computer={3}
+                mobile={16}
+                tablet={8}
               >
                 <NavigationMenu />
               </GridColumn>
               <GridColumn
-                width={13}
+                computer={13}
+                mobile={16}
+                tablet={8}
               >
                 <NavigationDisplay />
               </GridColumn>
@@ -196,12 +224,16 @@ ShallowWrapper {
           "props": Object {
             "children": <GridRow>
               <GridColumn
-                width={2}
+                computer={3}
+                mobile={16}
+                tablet={8}
               >
                 <NavigationMenu />
               </GridColumn>
               <GridColumn
-                width={13}
+                computer={13}
+                mobile={16}
+                tablet={8}
               >
                 <NavigationDisplay />
               </GridColumn>
@@ -215,12 +247,16 @@ ShallowWrapper {
             "props": Object {
               "children": Array [
                 <GridColumn
-                  width={2}
+                  computer={3}
+                  mobile={16}
+                  tablet={8}
                 >
                   <NavigationMenu />
                 </GridColumn>,
                 <GridColumn
-                  width={13}
+                  computer={13}
+                  mobile={16}
+                  tablet={8}
                 >
                   <NavigationDisplay />
                 </GridColumn>,
@@ -234,7 +270,9 @@ ShallowWrapper {
                 "nodeType": "function",
                 "props": Object {
                   "children": <NavigationMenu />,
-                  "width": 2,
+                  "computer": 3,
+                  "mobile": 16,
+                  "tablet": 8,
                 },
                 "ref": null,
                 "rendered": Object {
@@ -254,7 +292,9 @@ ShallowWrapper {
                 "nodeType": "function",
                 "props": Object {
                   "children": <NavigationDisplay />,
-                  "width": 13,
+                  "computer": 13,
+                  "mobile": 16,
+                  "tablet": 8,
                 },
                 "ref": null,
                 "rendered": Object {
