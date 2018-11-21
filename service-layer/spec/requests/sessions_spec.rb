@@ -1,6 +1,9 @@
 require "rails_helper"
 
 describe "Sessions" do
+  include Mocks::CognitoHelper
+  include Mocks::UsersHelper
+
   let (:uri) { "/session" }
   let (:email) { "nick.watson@claritybizsol.com" }
   let (:valid_password) { "changeME123!" }
@@ -14,19 +17,41 @@ describe "Sessions" do
       end
     end
 
-    it "returns a 403 for an invalid password" do
-      VCR.use_cassette("sessions/invalid_password") do
-        params = { email: email, password: "thisIsn'tValid" }
-        post uri, params: params
-        expect(response).to have_http_status(:forbidden)
+    context do
+      before :context do
+        Aws.config[:cognitoidentityprovider] = {
+          stub_responses: {
+            initiate_auth: sign_in_invalid_password,
+          },
+        }
+      end
+      it "returns a 403 for an invalid password" do
+        VCR.turned_off do
+          params = { email: email, password: "thisIsntValid" }
+          stub_fetch_by_email
+
+          post uri, params: params
+          expect(response).to have_http_status(:forbidden)
+        end
       end
     end
 
-    it "returns a 403 with an invalid username" do
-      VCR.use_cassette("sessions/invalid_username") do
-        params = { email: "jack@black.com", password: valid_password }
-        post uri, params: params
-        expect(response).to have_http_status(:forbidden)
+    context do
+      before :context do
+        Aws.config[:cognitoidentityprovider] = {
+          stub_responses: {
+            initiate_auth: sign_in_invalid_usename,
+          },
+        }
+      end
+      it "returns a 403 with an invalid username" do
+        VCR.turned_off do
+          params = { email: "jack@black.com", password: valid_password }
+          stub_fetch_by_email(email: params[:email])
+
+          post uri, params: params
+          expect(response).to have_http_status(:forbidden)
+        end
       end
     end
   end

@@ -1,6 +1,7 @@
 require "rails_helper"
 
 describe "SignUps" do
+  include Mocks::CognitoHelper
   let (:uri) { "/sign_up" }
   let (:first_name) { "Jack" }
   let (:last_name) { "Jill" }
@@ -36,17 +37,26 @@ describe "SignUps" do
       end
     end
 
-    it "returns unprocessable_entity if account already exists" do
-      VCR.use_cassette("sign_ups/duplicate_sign_up") do
-        params = {
-          first_name: "Nick",
-          last_name: "Watson",
-          email: "nick.watson@claritybizsol.com",
-          password: password,
-          password_confirmation: password,
+    context do
+      before :context do
+        Aws.config[:cognitoidentityprovider] = {
+          stub_responses: {
+            sign_up: sign_up_existing_user,
+          },
         }
-        post uri, params: params
-        expect(response).to have_http_status(:unprocessable_entity)
+      end
+      it "returns unprocessable_entity if account already exists" do
+        VCR.use_cassette("sign_ups/duplicate_sign_up") do
+          params = {
+            first_name: "Nick",
+            last_name: "Watson",
+            email: "nick.watson@claritybizsol.com",
+            password: password,
+            password_confirmation: password,
+          }
+          post uri, params: params
+          expect(response).to have_http_status(:unprocessable_entity)
+        end
       end
     end
   end

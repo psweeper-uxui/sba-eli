@@ -54,7 +54,9 @@ describe "LearningEvents" do
         le_id = 3
         params = { params: { module_item: { "title": "Updated Rspec Title" } } }
 
+        # rubocop:disable Rails/HttpPositionalArguments
         put "/learning_events/#{le_id}?course_id=#{course_id}&module_id=#{module_id}", params
+        # rubocop:enable Rails/HttpPositionalArguments
         json = JSON.parse(response.body)
 
         expect(response).to be_successful
