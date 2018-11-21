@@ -33,15 +33,12 @@ export default class NavigationLearningPath extends Component {
 
   render() {
     return this.state.learningPaths.map(lp => (
-      <div>
+      <div key={"lp" + lp.id}>
         <Menu.Item
           header
           key={lp.id}
           as={Link}
           to={`/learning_paths/${lp.id}`}
-          // name={`learning_paths_${lp.id}`}
-          // active={activeItem === `learning_paths_${lp.id}`}
-          // onClick={this.handleItemClick}
           text={lp.name}
         >
           {lp.name}

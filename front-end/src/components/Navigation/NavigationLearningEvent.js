@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
 import { Dropdown } from "semantic-ui-react";
-import { Link } from "react-router-dom";
 import NavigationLearningEventItem from "./NavigationLearningEventItem";
 
 export default class NavigationLearningEvent extends Component {
