@@ -1,6 +1,5 @@
 import React from 'react';
 import axios from 'axios';
-import './App.css';
 import {Input, Container} from 'semantic-ui-react';
 var AmazonCognitoIdentity = require('amazon-cognito-identity-js');
 
