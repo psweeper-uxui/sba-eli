@@ -32,7 +32,7 @@ jobs:
           CANVAS_NAMESPACE: "sba-eli-service"
           CANVAS_HOST: "http://example.canvas.com"
           CANVAS_URI: "http://localhost:3000/auth/canvas/callback"
-          CANVAS_TOKEN: ""
+          CANVAS_TOKEN: "ffffffffffffffffffffffff"
           CANVAS_ACCOUNT_ID: ""
           CANVAS_API_URI: ""
           AWS_ACCESS_KEY_ID: "aws_access_key_id"
