@@ -5,7 +5,6 @@ import LearningEventPage from "./LearningEventPage";
 export default class LearningEventManager extends Component {
   renderEventContentByType() {
     const event = this.props.event;
-    console.log("learning event", event);
 
     if (event.type === "Page") {
       return <LearningEventPage event={event} />;
