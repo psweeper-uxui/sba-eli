@@ -16,7 +16,9 @@ class LearningEvent
   end
 
   def find(course_id, module_id, id)
-    self.class.get("/courses/#{course_id}/modules/#{module_id}/items/#{id}", @options).body
+    @learningEvent = self.class.get("/courses/#{course_id}/modules/#{module_id}/items/#{id}", @options)
+    @learningEvent["eventContent"] = get_content(@learningEvent["url"])
+    @learningEvent
   end
 
   def update(course_id, module_id, id, le_params)
@@ -26,5 +28,11 @@ class LearningEvent
 
   def destroy(course_id, module_id, id)
     self.class.delete("/courses/#{course_id}/modules/#{module_id}/items/#{id}", @options)
+  end
+
+  private
+
+  def get_content(url)
+    HTTParty.get(url, @options)
   end
 end
