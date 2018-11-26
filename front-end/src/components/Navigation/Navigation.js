@@ -10,11 +10,8 @@ import LearningObjectives from "../LearningObjective/LearningObjectives";
 import NavigationMenu from "./NavigationMenu";
 import LearningEvent from "../LearningEvent/LearningEvent";
 import LearningEvents from "../LearningEvent/LearningEvents";
-<<<<<<< HEAD
-=======
-import SignUpForm from "../../SignUpForm";
+import SignUpForm from "../SignUpForm/SignUpForm";
 import Error from "../Error";
->>>>>>> 132-login-form
 
 const Navigation = () => {
   return (
