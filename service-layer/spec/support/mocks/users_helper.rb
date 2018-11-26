@@ -36,7 +36,7 @@ module Mocks
     def stub_get_custom_data_request(options = {})
       id = options.fetch(:id, 1)
       status = options.fetch(:status, 200)
-      url = "#{ENV['CANVAS_HOST']}/api/v1/users/#{id}/custom_data/?ns="
+      url = "#{ENV['CANVAS_HOST']}/api/v1/users/#{id}/custom_data/?ns=#{ENV['CANVAS_NAMESPACE']}"
       response_body = options.fetch(:response_body,
                                   json_string("users/custom_data_1.json"))
 
