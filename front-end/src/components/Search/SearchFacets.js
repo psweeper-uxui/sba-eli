@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import {Form} from 'semantic-ui-react'
+import {Form, Input} from 'semantic-ui-react'
 import MediaTypeFilters from "./MediaTypeFilters"
 
 export default class SearchFacets extends Component {
@@ -17,6 +17,7 @@ export default class SearchFacets extends Component {
             <Form.Button fluid>Cancel</Form.Button>
             <Form.Button fluid type='submit'>Apply</Form.Button>
           </Form.Group>
+          <Input type='hidden' name='searchTerm' value={this.props.searchTerm} />
         </Form>
     )
   }
