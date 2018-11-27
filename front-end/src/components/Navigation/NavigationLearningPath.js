@@ -1,6 +1,5 @@
 import React, { Component } from "react";
-import { Menu } from "semantic-ui-react";
-import { Link } from "react-router-dom";
+import { Dropdown } from "semantic-ui-react";
 import NavigationLearningObjective from "./NavigationLearningObjective";
 import axios from "axios";
 
@@ -34,16 +33,14 @@ export default class NavigationLearningPath extends Component {
   render() {
     return this.state.learningPaths.map(lp => (
       <div key={"lp" + lp.id}>
-        <Menu.Item
-          header
+        <Dropdown.Item
           key={lp.id}
-          as={Link}
-          to={`/learning_paths/${lp.id}`}
+          href={`/learning_paths/${lp.id}`}
           text={lp.name}
         >
           {lp.name}
-        </Menu.Item>
-        <NavigationLearningObjective learningPathId={lp.id} />
+        </Dropdown.Item>
+        {/* <NavigationLearningObjective learningPathId={lp.id} /> */}
       </div>
     ));
   }
