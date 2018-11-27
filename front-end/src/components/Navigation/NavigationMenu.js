@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import {Link} from 'react-router-dom'
-import {Menu} from 'semantic-ui-react'
+import {Menu, Input, Form} from 'semantic-ui-react'
 import NavigationLearningPath from "./NavigationLearningPath";
 
 export default class NavigationMenu extends Component {
@@ -36,6 +36,11 @@ export default class NavigationMenu extends Component {
           <Menu.Menu>
             <NavigationLearningPath />
           </Menu.Menu>
+          <Menu.Item>
+            <Form method='GET' action='/search'>
+            <Input icon='search' placeholder='Search' name='searchTerm' />
+            </Form>
+          </Menu.Item>
         </Menu>
     )
   }
