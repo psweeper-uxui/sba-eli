@@ -12,6 +12,7 @@ import LearningEvent from "../LearningEvent/LearningEvent";
 import LearningEvents from "../LearningEvent/LearningEvents";
 import SignUpForm from "../SignUpForm/SignUpForm";
 import Error from "../Error";
+import SearchPage from "../Search/SearchPage";
 
 const Navigation = () => {
   return (
@@ -59,7 +60,7 @@ const NavigationDisplay = () => {
         path="/learning_paths/:course_id/learning_objectives/:module_id/learning_events"
         component={LearningEvents}
       />
-
+      <Route exact path="/search" component={SearchPage} />
       <Route component={Error} />
     </Switch>
   );
