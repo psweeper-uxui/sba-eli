@@ -7,7 +7,7 @@ module Queries
     private
 
     def prepare
-      check_like_value(:subject, params)
+      check_like_value(:keywords, params)
       check_array_value(:media_type, params)
       check_array_value(:duration, params)
     end
@@ -26,7 +26,7 @@ module Queries
     end
 
     def construct_subject_sql(table = "courses", field = "name")
-      "#{table}.#{field} ILIKE #{sanitize(subject)}" if subject.present?
+      "#{table}.#{field} ILIKE #{sanitize(keywords)}" if keywords.present?
     end
   end
 end
