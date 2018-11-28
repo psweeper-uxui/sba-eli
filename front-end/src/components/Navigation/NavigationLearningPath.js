@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Dropdown } from "semantic-ui-react";
+import { Dropdown, Header } from "semantic-ui-react";
 import NavigationLearningObjective from "./NavigationLearningObjective";
 import axios from "axios";
 
@@ -32,20 +32,17 @@ export default class NavigationLearningPath extends Component {
 
   render() {
     return this.state.learningPaths.map(lp => (
-      <div key={"lp" + lp.id}>
-        <Dropdown.Item
-          key={lp.id}
-          href={`/learning_paths/${lp.id}`}
-        >
-          <Dropdown simple text={lp.name}>
-            <Dropdown.Menu>
-              <Dropdown.Header>Learning Objectives</Dropdown.Header>
-              <Dropdown.Divider/>
-                <NavigationLearningObjective learningPathId={lp.id} />
-            </Dropdown.Menu>
-          </Dropdown>
-        </Dropdown.Item>
-      </div>
+      <Dropdown.Item key={lp.id}>
+        <Dropdown pointing='left' text={lp.name}>
+          <Dropdown.Menu>
+            <Header as='h1'><a  href={`/learning_paths/${lp.id}`}>{lp.name}</a></Header>
+            <Dropdown.Divider/>
+            <Dropdown.Header>Learning Objectives</Dropdown.Header>
+            <Dropdown.Divider/>
+              <NavigationLearningObjective learningPathId={lp.id} />
+          </Dropdown.Menu>
+        </Dropdown>
+      </Dropdown.Item>
     ));
   }
 }
