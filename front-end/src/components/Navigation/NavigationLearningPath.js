@@ -36,11 +36,15 @@ export default class NavigationLearningPath extends Component {
         <Dropdown.Item
           key={lp.id}
           href={`/learning_paths/${lp.id}`}
-          text={lp.name}
         >
-          {lp.name}
+          <Dropdown simple text={lp.name}>
+            <Dropdown.Menu>
+              <Dropdown.Header>Learning Objectives</Dropdown.Header>
+              <Dropdown.Divider/>
+                <NavigationLearningObjective learningPathId={lp.id} />
+            </Dropdown.Menu>
+          </Dropdown>
         </Dropdown.Item>
-        {/* <NavigationLearningObjective learningPathId={lp.id} /> */}
       </div>
     ));
   }
