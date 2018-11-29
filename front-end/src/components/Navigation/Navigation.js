@@ -15,9 +15,9 @@ import LearningEvents from "../LearningEvent/LearningEvents";
 const Navigation = () => {
   return (
     <div>
-      <Navbar/>
       <Router>
         <div>
+          <Navbar/>
           <Grid>
             <Grid.Row>
               <Grid.Column mobile={16} tablet={8} computer={3}>

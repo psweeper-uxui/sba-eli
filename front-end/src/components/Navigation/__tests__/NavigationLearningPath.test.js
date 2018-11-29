@@ -1,4 +1,5 @@
 import React from 'react';
+import { BrowserRouter as Router } from 'react-router-dom';
 import { Dropdown } from 'semantic-ui-react';
 import NavigationLearningPath from '../NavigationLearningPath';
 import { shallow, mount } from 'enzyme';
@@ -11,14 +12,18 @@ describe('NavigationLearningPath', () => {
   });
 
   it('should render a <Dropdown>', () => {
-    const wrapper = mount(<NavigationLearningPath/>);
-    const learningPaths = [
+    const wrapper = mount(
+                      <Router>
+                        <NavigationLearningPath/>
+                      </Router>);
+
+    const learningpaths = [
       {id: 1, name: "Learning Path 1"},
       {id: 2, name: "Learning Path 2"},
       {id: 3, name: "Learning Path 3"}
     ]
 
-    wrapper.setState({learningPaths: learningPaths})
+    wrapper.find(NavigationLearningPath).setState({learningPaths: learningpaths})
 
     expect(wrapper.find(Dropdown.Item).length).toEqual(3);
   });

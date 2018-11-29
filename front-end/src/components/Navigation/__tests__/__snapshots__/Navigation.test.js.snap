@@ -17,76 +17,67 @@ ShallowWrapper {
     "key": undefined,
     "nodeType": "host",
     "props": Object {
-      "children": Array [
-        <Navbar />,
-        <BrowserRouter>
-          <div>
-            <Grid>
-              <GridRow>
-                <GridColumn
-                  computer={3}
-                  mobile={16}
-                  tablet={8}
-                >
-                  <NavigationMenu />
-                </GridColumn>
-                <GridColumn
-                  computer={13}
-                  mobile={16}
-                  tablet={8}
-                >
-                  <NavigationDisplay />
-                </GridColumn>
-              </GridRow>
-            </Grid>
-          </div>
-        </BrowserRouter>,
-      ],
+      "children": <BrowserRouter>
+        <div>
+          <Navbar />
+          <Grid>
+            <GridRow>
+              <GridColumn
+                computer={3}
+                mobile={16}
+                tablet={8}
+              >
+                <NavigationMenu />
+              </GridColumn>
+              <GridColumn
+                computer={13}
+                mobile={16}
+                tablet={8}
+              >
+                <NavigationDisplay />
+              </GridColumn>
+            </GridRow>
+          </Grid>
+        </div>
+      </BrowserRouter>,
     },
     "ref": null,
-    "rendered": Array [
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "class",
-        "props": Object {},
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
+    "rendered": Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {
+        "children": <div>
+          <Navbar />
+          <Grid>
+            <GridRow>
+              <GridColumn
+                computer={3}
+                mobile={16}
+                tablet={8}
+              >
+                <NavigationMenu />
+              </GridColumn>
+              <GridColumn
+                computer={13}
+                mobile={16}
+                tablet={8}
+              >
+                <NavigationDisplay />
+              </GridColumn>
+            </GridRow>
+          </Grid>
+        </div>,
       },
-      Object {
+      "ref": null,
+      "rendered": Object {
         "instance": null,
         "key": undefined,
-        "nodeType": "class",
+        "nodeType": "host",
         "props": Object {
-          "children": <div>
+          "children": Array [
+            <Navbar />,
             <Grid>
-              <GridRow>
-                <GridColumn
-                  computer={3}
-                  mobile={16}
-                  tablet={8}
-                >
-                  <NavigationMenu />
-                </GridColumn>
-                <GridColumn
-                  computer={13}
-                  mobile={16}
-                  tablet={8}
-                >
-                  <NavigationDisplay />
-                </GridColumn>
-              </GridRow>
-            </Grid>
-          </div>,
-        },
-        "ref": null,
-        "rendered": Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": <Grid>
               <GridRow>
                 <GridColumn
                   computer={3}
@@ -104,9 +95,20 @@ ShallowWrapper {
                 </GridColumn>
               </GridRow>
             </Grid>,
+          ],
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {},
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
           },
-          "ref": null,
-          "rendered": Object {
+          Object {
             "instance": null,
             "key": undefined,
             "nodeType": "function",
@@ -202,11 +204,11 @@ ShallowWrapper {
             },
             "type": [Function],
           },
-          "type": "div",
-        },
-        "type": [Function],
+        ],
+        "type": "div",
       },
-    ],
+      "type": [Function],
+    },
     "type": "div",
   },
   Symbol(enzyme.__nodes__): Array [
@@ -215,76 +217,67 @@ ShallowWrapper {
       "key": undefined,
       "nodeType": "host",
       "props": Object {
-        "children": Array [
-          <Navbar />,
-          <BrowserRouter>
-            <div>
-              <Grid>
-                <GridRow>
-                  <GridColumn
-                    computer={3}
-                    mobile={16}
-                    tablet={8}
-                  >
-                    <NavigationMenu />
-                  </GridColumn>
-                  <GridColumn
-                    computer={13}
-                    mobile={16}
-                    tablet={8}
-                  >
-                    <NavigationDisplay />
-                  </GridColumn>
-                </GridRow>
-              </Grid>
-            </div>
-          </BrowserRouter>,
-        ],
+        "children": <BrowserRouter>
+          <div>
+            <Navbar />
+            <Grid>
+              <GridRow>
+                <GridColumn
+                  computer={3}
+                  mobile={16}
+                  tablet={8}
+                >
+                  <NavigationMenu />
+                </GridColumn>
+                <GridColumn
+                  computer={13}
+                  mobile={16}
+                  tablet={8}
+                >
+                  <NavigationDisplay />
+                </GridColumn>
+              </GridRow>
+            </Grid>
+          </div>
+        </BrowserRouter>,
       },
       "ref": null,
-      "rendered": Array [
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "class",
-          "props": Object {},
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "children": <div>
+            <Navbar />
+            <Grid>
+              <GridRow>
+                <GridColumn
+                  computer={3}
+                  mobile={16}
+                  tablet={8}
+                >
+                  <NavigationMenu />
+                </GridColumn>
+                <GridColumn
+                  computer={13}
+                  mobile={16}
+                  tablet={8}
+                >
+                  <NavigationDisplay />
+                </GridColumn>
+              </GridRow>
+            </Grid>
+          </div>,
         },
-        Object {
+        "ref": null,
+        "rendered": Object {
           "instance": null,
           "key": undefined,
-          "nodeType": "class",
+          "nodeType": "host",
           "props": Object {
-            "children": <div>
+            "children": Array [
+              <Navbar />,
               <Grid>
-                <GridRow>
-                  <GridColumn
-                    computer={3}
-                    mobile={16}
-                    tablet={8}
-                  >
-                    <NavigationMenu />
-                  </GridColumn>
-                  <GridColumn
-                    computer={13}
-                    mobile={16}
-                    tablet={8}
-                  >
-                    <NavigationDisplay />
-                  </GridColumn>
-                </GridRow>
-              </Grid>
-            </div>,
-          },
-          "ref": null,
-          "rendered": Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": <Grid>
                 <GridRow>
                   <GridColumn
                     computer={3}
@@ -302,9 +295,20 @@ ShallowWrapper {
                   </GridColumn>
                 </GridRow>
               </Grid>,
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {},
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
             },
-            "ref": null,
-            "rendered": Object {
+            Object {
               "instance": null,
               "key": undefined,
               "nodeType": "function",
@@ -400,11 +404,11 @@ ShallowWrapper {
               },
               "type": [Function],
             },
-            "type": "div",
-          },
-          "type": [Function],
+          ],
+          "type": "div",
         },
-      ],
+        "type": [Function],
+      },
       "type": "div",
     },
   ],
