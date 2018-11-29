@@ -1,5 +1,5 @@
 class SearchesController < ApplicationController
-  def index
+  def show
     @results = Queries::ContentSearch.call(query_parameters)
   end
 
