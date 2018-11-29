@@ -1,13 +1,6 @@
 import React from 'react';
 import axios from 'axios';
 import {Button, Input, Container, Form} from 'semantic-ui-react';
-var AmazonCognitoIdentity = require('amazon-cognito-identity-js');
-
-var poolData = {
-  UserPoolId : 'us-east-1_B8LlfTU7W', // Your user pool id here
-  ClientId : '76jcq337aei27va9q9gtaep0dh' // Your client id here
-};
- var userPool = new AmazonCognitoIdentity.CognitoUserPool(poolData);
 
 class SignUpForm extends React.Component {
   state = {
