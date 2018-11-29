@@ -13,6 +13,6 @@ describe("SignUpForm", () => {
   it("should render a <form>", () => {
     const wrapper = shallow(<SignUpForm />);
 
-    expect(wrapper.find("form").length).toEqual(1);
+    expect(wrapper.find("Form").length).toEqual(1);
   });
 })
