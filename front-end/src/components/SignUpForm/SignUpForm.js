@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from 'axios';
-import {Input, Container} from 'semantic-ui-react';
+import {Button, Input, Container, Form} from 'semantic-ui-react';
 var AmazonCognitoIdentity = require('amazon-cognito-identity-js');
 
 var poolData = {
@@ -58,31 +58,40 @@ class SignUpForm extends React.Component {
   render() {
     return (
       <Container>
-        <form onSubmit={this.handleSubmit.bind(this)}>
-          <Input type="text"
-                 value={this.state.firstName}
-                 placeholder="First Name"
-                 onChange={this.handleFirstNameChange.bind(this)}/> <br />
-          <Input type="text"
-                 value={this.state.lastName}
-                 placeholder="Last Name"
-                 onChange={this.handleLastNameChange.bind(this)}/> <br />
-          <Input type="text"
-                 value={this.state.email}
-                 placeholder="Email"
-                 onChange={this.handleEmailChange.bind(this)}/> <br />
-          <Input type="password"
-                 value={this.state.password}
-                 placeholder="Password"
-                 onChange={this.handlePasswordChange.bind(this)}/><br />
-          <Input type="password"
-                 value={this.state.confirmPassword}
-                 placeholder="Confirm Password"
-                 onChange={this.handleConfirmPasswordChange.bind(this)}/><br />
-          <Input type="submit"/>
-        </form>
+        <Form onSubmit={this.handleSubmit.bind(this)}>
+          <Form.Field>
+            <Input type="text"
+                   value={this.state.firstName}
+                   placeholder="First Name"
+                   onChange={this.handleFirstNameChange.bind(this)}/> <br />
+          </Form.Field>
+          <Form.Field>
+            <Input type="text"
+                   value={this.state.lastName}
+                   placeholder="Last Name"
+                   onChange={this.handleLastNameChange.bind(this)}/> <br />
+          </Form.Field>
+          <Form.Field>
+            <Input type="text"
+                   value={this.state.email}
+                   placeholder="Email"
+                   onChange={this.handleEmailChange.bind(this)}/> <br />
+          </Form.Field>
+          <Form.Field>
+            <Input type="password"
+                   value={this.state.password}
+                   placeholder="Password"
+                   onChange={this.handlePasswordChange.bind(this)}/><br />
+          </Form.Field>
+          <Form.Field>
+            <Input type="password"
+                   value={this.state.confirmPassword}
+                   placeholder="Confirm Password"
+                   onChange={this.handleConfirmPasswordChange.bind(this)}/><br />
+          </Form.Field>
+          <Button type="submit">Submit</Button>
+        </Form>
       </Container>
-      
     );
   }
 }
