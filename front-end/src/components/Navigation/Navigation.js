@@ -10,6 +10,8 @@ import LearningObjectives from "../LearningObjective/LearningObjectives";
 import NavigationMenu from "./NavigationMenu";
 import LearningEvent from "../LearningEvent/LearningEvent";
 import LearningEvents from "../LearningEvent/LearningEvents";
+import SignUpForm from "../SignUpForm/SignUpForm";
+import Error from "../Error";
 
 const Navigation = () => {
   return (
@@ -34,6 +36,7 @@ const NavigationDisplay = () => {
   return (
     <Switch>
       <Route exact path="/" component={Dashboard} />
+      <Route exact path="/signup" component={SignUpForm} />
       <Route exact path="/learning_paths" component={LearningPaths} />
       <Route exact path="/learning_paths/:id" component={LearningPath} />
       <Route
