@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import axios from "axios";
-import { Header, Card } from "semantic-ui-react";
+import LearningEventManager from "./LearningEventManager";
+import "./learningEvent.css";
+import { Header, Container } from "semantic-ui-react";
 
 export default class LearningEvent extends Component {
   constructor(props) {
@@ -48,20 +50,10 @@ export default class LearningEvent extends Component {
     const event = this.state.learningEvent;
 
     return (
-      <div>
-        <Card>
-          <Card.Content>
-            <Card.Header>
-              {event.title} {event.id}
-            </Card.Header>
-            <Card.Meta>{event.type}</Card.Meta>
-          </Card.Content>
-          <Card.Content extra>
-            <Header as="h5">Url:</Header> {event.url}
-            <Header as="h5">HTML Url:</Header> {event.html_url}
-          </Card.Content>
-        </Card>
-      </div>
+      <Container>
+        <Header as="h1">{event.title}</Header>
+        <LearningEventManager event={event} />
+      </Container>
     );
   }
 }

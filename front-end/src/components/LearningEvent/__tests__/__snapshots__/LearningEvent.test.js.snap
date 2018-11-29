@@ -25,62 +25,58 @@ ShallowWrapper {
   Symbol(enzyme.__node__): Object {
     "instance": null,
     "key": undefined,
-    "nodeType": "host",
+    "nodeType": "function",
     "props": Object {
-      "children": <Card>
-        <CardContent>
-          <CardHeader>
-             
-          </CardHeader>
-          <CardMeta />
-        </CardContent>
-        <CardContent
-          extra={true}
-        >
-          <Header
-            as="h5"
-          >
-            Url:
-          </Header>
-           
-          <Header
-            as="h5"
-          >
-            HTML Url:
-          </Header>
-           
-        </CardContent>
-      </Card>,
+      "children": Array [
+        <Header
+          as="h1"
+        />,
+        <LearningEventManager
+          event={Object {}}
+        />,
+      ],
     },
     "ref": null,
-    "rendered": Object {
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "as": "h1",
+          "children": undefined,
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "event": Object {},
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+    ],
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
       "instance": null,
       "key": undefined,
-      "nodeType": "class",
+      "nodeType": "function",
       "props": Object {
         "children": Array [
-          <CardContent>
-            <CardHeader>
-               
-            </CardHeader>
-            <CardMeta />
-          </CardContent>,
-          <CardContent
-            extra={true}
-          >
-            <Header
-              as="h5"
-            >
-              Url:
-            </Header>
-             
-            <Header
-              as="h5"
-            >
-              HTML Url:
-            </Header>
-             
-          </CardContent>,
+          <Header
+            as="h1"
+          />,
+          <LearningEventManager
+            event={Object {}}
+          />,
         ],
       },
       "ref": null,
@@ -90,280 +86,26 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "function",
           "props": Object {
-            "children": Array [
-              <CardHeader>
-                 
-              </CardHeader>,
-              <CardMeta />,
-            ],
+            "as": "h1",
+            "children": undefined,
           },
           "ref": null,
-          "rendered": Array [
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "function",
-              "props": Object {
-                "children": Array [
-                  undefined,
-                  " ",
-                  undefined,
-                ],
-              },
-              "ref": null,
-              "rendered": Array [
-                undefined,
-                " ",
-                undefined,
-              ],
-              "type": [Function],
-            },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "function",
-              "props": Object {
-                "children": undefined,
-              },
-              "ref": null,
-              "rendered": null,
-              "type": [Function],
-            },
-          ],
+          "rendered": null,
           "type": [Function],
         },
         Object {
           "instance": null,
           "key": undefined,
-          "nodeType": "function",
+          "nodeType": "class",
           "props": Object {
-            "children": Array [
-              <Header
-                as="h5"
-              >
-                Url:
-              </Header>,
-              " ",
-              undefined,
-              <Header
-                as="h5"
-              >
-                HTML Url:
-              </Header>,
-              " ",
-              undefined,
-            ],
-            "extra": true,
+            "event": Object {},
           },
           "ref": null,
-          "rendered": Array [
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "function",
-              "props": Object {
-                "as": "h5",
-                "children": "Url:",
-              },
-              "ref": null,
-              "rendered": "Url:",
-              "type": [Function],
-            },
-            " ",
-            undefined,
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "function",
-              "props": Object {
-                "as": "h5",
-                "children": "HTML Url:",
-              },
-              "ref": null,
-              "rendered": "HTML Url:",
-              "type": [Function],
-            },
-            " ",
-            undefined,
-          ],
+          "rendered": null,
           "type": [Function],
         },
       ],
       "type": [Function],
-    },
-    "type": "div",
-  },
-  Symbol(enzyme.__nodes__): Array [
-    Object {
-      "instance": null,
-      "key": undefined,
-      "nodeType": "host",
-      "props": Object {
-        "children": <Card>
-          <CardContent>
-            <CardHeader>
-               
-            </CardHeader>
-            <CardMeta />
-          </CardContent>
-          <CardContent
-            extra={true}
-          >
-            <Header
-              as="h5"
-            >
-              Url:
-            </Header>
-             
-            <Header
-              as="h5"
-            >
-              HTML Url:
-            </Header>
-             
-          </CardContent>
-        </Card>,
-      },
-      "ref": null,
-      "rendered": Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "class",
-        "props": Object {
-          "children": Array [
-            <CardContent>
-              <CardHeader>
-                 
-              </CardHeader>
-              <CardMeta />
-            </CardContent>,
-            <CardContent
-              extra={true}
-            >
-              <Header
-                as="h5"
-              >
-                Url:
-              </Header>
-               
-              <Header
-                as="h5"
-              >
-                HTML Url:
-              </Header>
-               
-            </CardContent>,
-          ],
-        },
-        "ref": null,
-        "rendered": Array [
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "function",
-            "props": Object {
-              "children": Array [
-                <CardHeader>
-                   
-                </CardHeader>,
-                <CardMeta />,
-              ],
-            },
-            "ref": null,
-            "rendered": Array [
-              Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "function",
-                "props": Object {
-                  "children": Array [
-                    undefined,
-                    " ",
-                    undefined,
-                  ],
-                },
-                "ref": null,
-                "rendered": Array [
-                  undefined,
-                  " ",
-                  undefined,
-                ],
-                "type": [Function],
-              },
-              Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "function",
-                "props": Object {
-                  "children": undefined,
-                },
-                "ref": null,
-                "rendered": null,
-                "type": [Function],
-              },
-            ],
-            "type": [Function],
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "function",
-            "props": Object {
-              "children": Array [
-                <Header
-                  as="h5"
-                >
-                  Url:
-                </Header>,
-                " ",
-                undefined,
-                <Header
-                  as="h5"
-                >
-                  HTML Url:
-                </Header>,
-                " ",
-                undefined,
-              ],
-              "extra": true,
-            },
-            "ref": null,
-            "rendered": Array [
-              Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "function",
-                "props": Object {
-                  "as": "h5",
-                  "children": "Url:",
-                },
-                "ref": null,
-                "rendered": "Url:",
-                "type": [Function],
-              },
-              " ",
-              undefined,
-              Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "function",
-                "props": Object {
-                  "as": "h5",
-                  "children": "HTML Url:",
-                },
-                "ref": null,
-                "rendered": "HTML Url:",
-                "type": [Function],
-              },
-              " ",
-              undefined,
-            ],
-            "type": [Function],
-          },
-        ],
-        "type": [Function],
-      },
-      "type": "div",
     },
   ],
   Symbol(enzyme.__options__): Object {
