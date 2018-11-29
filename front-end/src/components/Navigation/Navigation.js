@@ -7,6 +7,7 @@ import LearningPath from "../LearningPath/LearningPath";
 import LearningPaths from "../LearningPath/LearningPaths";
 import LearningObjective from "../LearningObjective/LearningObjective";
 import LearningObjectives from "../LearningObjective/LearningObjectives";
+import Navbar from "./Navbar";
 import NavigationMenu from "./NavigationMenu";
 import LearningEvent from "../LearningEvent/LearningEvent";
 import LearningEvents from "../LearningEvent/LearningEvents";
@@ -15,20 +16,23 @@ import Error from "../Error";
 
 const Navigation = () => {
   return (
-    <Router>
-      <div>
-        <Grid>
-          <Grid.Row>
-            <Grid.Column mobile={16} tablet={8} computer={3}>
-              <NavigationMenu/>
-            </Grid.Column>
-            <Grid.Column mobile={16} tablet={8} computer={13}>
-              <NavigationDisplay />
-            </Grid.Column>
-          </Grid.Row>
-        </Grid>
-      </div>
-    </Router>
+    <div>
+      <Router>
+        <div>
+          <Navbar/>
+          <Grid>
+            <Grid.Row>
+              <Grid.Column mobile={16} tablet={8} computer={3}>
+                <NavigationMenu/>
+              </Grid.Column>
+              <Grid.Column mobile={16} tablet={8} computer={13}>
+                <NavigationDisplay />
+              </Grid.Column>
+            </Grid.Row>
+          </Grid>
+        </div>
+      </Router>
+    </div>
   );
 };
 
