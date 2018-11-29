@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :learning_events
   resources :learning_paths
   resources :learning_objectives
+  resource :search, only: :show
   resource :session, only: %I[create destroy]
   resource :sign_up, only: :create
   resources :users
