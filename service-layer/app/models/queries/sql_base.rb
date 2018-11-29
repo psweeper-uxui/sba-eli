@@ -20,11 +20,6 @@ module Queries
       @properties.has_key?(method_name) || super
     end
 
-    def query
-      []
-    end
-    alias_method :call, :query
-
     private
 
     def check_single_value(field, params, default_value = nil)
