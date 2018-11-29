@@ -26,14 +26,20 @@ jobs:
     docker:
       - image: circleci/ruby:2.5.3-node-browsers
         environment:
-          PGHOST: 127.0.0.1
-          PGUSER: sbaeli
-          RAILS_ENV: test
-          AWS_REGION: us-east-1
-          AWS_ACCESS_KEY_ID: sbaeli
-          AWS_SECRET_ACCESS_KEY: sbaeli
-          AWS_COGNITO_USER_POOL_ID: sbaeli
-          AWS_COGNITO_CLIENT_ID: sbaeli
+          PGHOST: "127.0.0.1"
+          PGUSER: "sbaeli"
+          RAILS_ENV: "test"
+          CANVAS_NAMESPACE: "sba-eli-service"
+          CANVAS_HOST: "http://example.canvas.com"
+          CANVAS_URI: "http://localhost:3000/auth/canvas/callback"
+          CANVAS_TOKEN: "ffffffffffffffffffffffff"
+          CANVAS_ACCOUNT_ID: ""
+          CANVAS_API_URI: ""
+          AWS_ACCESS_KEY_ID: "aws_access_key_id"
+          AWS_SECRET_ACCESS_KEY: "aws_secret_access_key"
+          AWS_REGION: "us-east-1"
+          AWS_COGNITO_USER_POOL_ID: ""
+          AWS_COGNITO_CLIENT_ID: ""
       - image: circleci/postgres:9.4
         environment:
           POSTGRES_USER: sbaeli
@@ -45,9 +51,16 @@ jobs:
       - run:
           name: Make service layer the base directory
           command: |
-            mv ./service-layer/* ./
+            cp -r ./service-layer/. ./
             rm -rf ./service-layer ./front-end
+      - restore_cache:
+          keys:
+            - service-layer-dependencies-{{ checksum "Gemfile.lock" }}
       - run: bundle install --path vendor/bundle
+      - save_cache:
+          key: service-layer-dependencies-{{ checksum "Gemfile.lock" }}
+          paths:
+            - vendor/bundle
       - run: bundle exec rake db:create
       - run: bundle exec rake db:schema:load
       - run:
@@ -59,6 +72,7 @@ jobs:
                 --out /tmp/test-results/rspec.xml \
                 --format progress \
                 $TEST_FILES
+
       - store_test_results:
           path: /tmp/test-results
       - store_artifacts:
@@ -70,4 +84,4 @@ workflows:
   rubocop_and_rspec:
     jobs:
       - rubocop
-      #- rspec
+      - rspec
