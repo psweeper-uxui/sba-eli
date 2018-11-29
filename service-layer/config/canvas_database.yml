@@ -9,7 +9,7 @@ development: &default
 
 test:
   <<: *default
-  database: sba-eli_test
+  database: canvas_test
 
 production: &deploy
   encoding: utf8
