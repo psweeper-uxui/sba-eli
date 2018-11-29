@@ -16,6 +16,14 @@ export default class Navbar extends Component {
               <NavigationLearningPath />
             </Dropdown.Menu>
           </Dropdown>
+          <Menu.Menu position='right'>
+            <Menu.Item>
+              Login
+            </Menu.Item>
+            <Menu.Item>
+              Register
+            </Menu.Item>
+          </Menu.Menu>
         </Menu>
       </div>
     )

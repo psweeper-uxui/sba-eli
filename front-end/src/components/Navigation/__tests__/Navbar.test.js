@@ -15,6 +15,7 @@ describe('Navbar', () => {
     const wrapper = shallow(<Navbar/>);
 
     expect(wrapper.find(Menu).length).toEqual(1);
+    expect(wrapper.find(Menu.Menu).exists()).toBe(true);
   });
 
   it('should render a <Dropdown> of all learning paths', () => {
