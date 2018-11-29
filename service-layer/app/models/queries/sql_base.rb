@@ -23,7 +23,7 @@ module Queries
     private
 
     def check_single_value(field, params, default_value = nil)
-      @properties[field] = params[field].present? ? params[field] : default_value
+      @properties[field] = params[field] || default_value
     end
 
     def check_like_value(field, params, default_value = nil)

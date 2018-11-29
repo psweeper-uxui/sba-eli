@@ -5,7 +5,7 @@ module SearchesHelper
       learning_path_path(result.id)
     when "learning_objective"
       learning_objective_path(result.reference_id)
-    else "learning_event"
+    when "learning_event"
       learning_event_path(result.reference_id)
     end
   end
