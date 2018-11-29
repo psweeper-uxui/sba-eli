@@ -39,9 +39,9 @@ export default class NavigationLearningPath extends Component {
     const {activeItem} = this.state
     
     return this.state.learningPaths.map(lp => (
-      <Dropdown.Item key={lp.id}>
-        <Dropdown pointing='left' text={lp.name}>
-          <Dropdown.Menu>
+      <Dropdown.Item key={lp.id} style={{width: '300px'}}>
+        <Dropdown pointing='left' fluid text={lp.name}>
+          <Dropdown.Menu style={{width: '450px' }}>
             <Header as='h1'><Link to={`/learning_paths/${lp.id}`} onClick={this.handleItemClick}>{lp.name}</Link></Header>
             <Dropdown.Divider/>
             <Dropdown.Header>Learning Objectives</Dropdown.Header>
