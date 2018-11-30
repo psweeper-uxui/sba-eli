@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import { Menu } from "semantic-ui-react";
 import { Link } from "react-router-dom";
+import { Dropdown, Header } from "semantic-ui-react";
 import NavigationLearningObjective from "./NavigationLearningObjective";
 import axios from "axios";
 
@@ -11,7 +11,11 @@ export default class NavigationLearningPath extends Component {
     this.state = {
       learningPaths: []
     };
-  }
+  };
+
+  handleItemClick = (e, {name}) => this.setState({
+    activeItem: name
+  });
 
   componentDidMount() {
     this.fetchData();
@@ -32,19 +36,20 @@ export default class NavigationLearningPath extends Component {
   }
 
   render() {
+    const {activeItem} = this.state
+    
     return this.state.learningPaths.map(lp => (
-      <div key={"lp" + lp.id}>
-        <Menu.Item
-          header
-          key={lp.id}
-          as={Link}
-          to={`/learning_paths/${lp.id}`}
-          text={lp.name}
-        >
-          {lp.name}
-        </Menu.Item>
-        <NavigationLearningObjective learningPathId={lp.id} />
-      </div>
+      <Dropdown.Item key={lp.id} style={{width: '300px'}}>
+        <Dropdown pointing='left' fluid text={lp.name}>
+          <Dropdown.Menu style={{width: '450px' }}>
+            <Header as='h1'><Link to={`/learning_paths/${lp.id}`} onClick={this.handleItemClick}>{lp.name}</Link></Header>
+            <Dropdown.Divider/>
+            <Dropdown.Header>Learning Objectives</Dropdown.Header>
+            <Dropdown.Divider/>
+              <NavigationLearningObjective learningPathId={lp.id} />
+          </Dropdown.Menu>
+        </Dropdown>
+      </Dropdown.Item>
     ));
   }
 }
