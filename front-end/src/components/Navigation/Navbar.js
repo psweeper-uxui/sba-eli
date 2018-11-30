@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Dropdown ,Menu } from 'semantic-ui-react';
+import {Dropdown, Form, Input, Menu} from 'semantic-ui-react';
 import NavigationLearningPath from './NavigationLearningPath';
 
 export default class Navbar extends Component {
@@ -16,6 +16,11 @@ export default class Navbar extends Component {
               <NavigationLearningPath />
             </Dropdown.Menu>
           </Dropdown>
+          <Menu.Item>
+            <Form method='GET' action='/search'>
+              <Input icon='search' placeholder='Search' name='searchTerm' />
+            </Form>
+          </Menu.Item>
         </Menu>
       </div>
     )
