@@ -4,12 +4,10 @@ import { Grid, Header, Button } from "semantic-ui-react";
 export default class DashboardSplash extends Component {
   render() {
     return (
-      <Grid centered style={{ backgroundColor: "#2d78c9" }}>
+      <Grid centered>
         <Grid.Row>
           <Grid.Column mobile={16} tablet={8} computer={8} textAlign="center">
-            <Header as="h1" style={{ color: "#ffffff" }}>
-              Awesome Hero Caption
-            </Header>
+            <Header as="h1">Awesome Hero Caption</Header>
           </Grid.Column>
         </Grid.Row>
         <Grid.Row style={{ fontWeight: "bold" }}>
