@@ -1,4 +1,4 @@
-describe "LearningPath" do
+describe "Canvas::LearningPath" do
   describe "#all" do
     it "gets a list of all the courses" do
       # this test is redundant. Probably want to replace setup with LearningPath.create
