@@ -23,14 +23,7 @@ ShallowWrapper {
           <Grid>
             <GridRow>
               <GridColumn
-                computer={3}
-                mobile={16}
-                tablet={8}
-              >
-                <NavigationMenu />
-              </GridColumn>
-              <GridColumn
-                computer={13}
+                computer={16}
                 mobile={16}
                 tablet={8}
               >
@@ -52,14 +45,7 @@ ShallowWrapper {
           <Grid>
             <GridRow>
               <GridColumn
-                computer={3}
-                mobile={16}
-                tablet={8}
-              >
-                <NavigationMenu />
-              </GridColumn>
-              <GridColumn
-                computer={13}
+                computer={16}
                 mobile={16}
                 tablet={8}
               >
@@ -80,14 +66,7 @@ ShallowWrapper {
             <Grid>
               <GridRow>
                 <GridColumn
-                  computer={3}
-                  mobile={16}
-                  tablet={8}
-                >
-                  <NavigationMenu />
-                </GridColumn>
-                <GridColumn
-                  computer={13}
+                  computer={16}
                   mobile={16}
                   tablet={8}
                 >
@@ -115,14 +94,7 @@ ShallowWrapper {
             "props": Object {
               "children": <GridRow>
                 <GridColumn
-                  computer={3}
-                  mobile={16}
-                  tablet={8}
-                >
-                  <NavigationMenu />
-                </GridColumn>
-                <GridColumn
-                  computer={13}
+                  computer={16}
                   mobile={16}
                   tablet={8}
                 >
@@ -136,70 +108,37 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "function",
               "props": Object {
-                "children": Array [
-                  <GridColumn
-                    computer={3}
-                    mobile={16}
-                    tablet={8}
-                  >
-                    <NavigationMenu />
-                  </GridColumn>,
-                  <GridColumn
-                    computer={13}
-                    mobile={16}
-                    tablet={8}
-                  >
-                    <NavigationDisplay />
-                  </GridColumn>,
-                ],
+                "children": <GridColumn
+                  computer={16}
+                  mobile={16}
+                  tablet={8}
+                >
+                  <NavigationDisplay />
+                </GridColumn>,
               },
               "ref": null,
-              "rendered": Array [
-                Object {
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "function",
+                "props": Object {
+                  "children": <NavigationDisplay />,
+                  "computer": 16,
+                  "mobile": 16,
+                  "tablet": 8,
+                },
+                "ref": null,
+                "rendered": Object {
                   "instance": null,
                   "key": undefined,
                   "nodeType": "function",
-                  "props": Object {
-                    "children": <NavigationMenu />,
-                    "computer": 3,
-                    "mobile": 16,
-                    "tablet": 8,
-                  },
+                  "props": Object {},
                   "ref": null,
-                  "rendered": Object {
-                    "instance": null,
-                    "key": undefined,
-                    "nodeType": "class",
-                    "props": Object {},
-                    "ref": null,
-                    "rendered": null,
-                    "type": [Function],
-                  },
+                  "rendered": null,
                   "type": [Function],
                 },
-                Object {
-                  "instance": null,
-                  "key": undefined,
-                  "nodeType": "function",
-                  "props": Object {
-                    "children": <NavigationDisplay />,
-                    "computer": 13,
-                    "mobile": 16,
-                    "tablet": 8,
-                  },
-                  "ref": null,
-                  "rendered": Object {
-                    "instance": null,
-                    "key": undefined,
-                    "nodeType": "function",
-                    "props": Object {},
-                    "ref": null,
-                    "rendered": null,
-                    "type": [Function],
-                  },
-                  "type": [Function],
-                },
-              ],
+                "type": [Function],
+              },
               "type": [Function],
             },
             "type": [Function],
@@ -223,14 +162,7 @@ ShallowWrapper {
             <Grid>
               <GridRow>
                 <GridColumn
-                  computer={3}
-                  mobile={16}
-                  tablet={8}
-                >
-                  <NavigationMenu />
-                </GridColumn>
-                <GridColumn
-                  computer={13}
+                  computer={16}
                   mobile={16}
                   tablet={8}
                 >
@@ -252,14 +184,7 @@ ShallowWrapper {
             <Grid>
               <GridRow>
                 <GridColumn
-                  computer={3}
-                  mobile={16}
-                  tablet={8}
-                >
-                  <NavigationMenu />
-                </GridColumn>
-                <GridColumn
-                  computer={13}
+                  computer={16}
                   mobile={16}
                   tablet={8}
                 >
@@ -280,14 +205,7 @@ ShallowWrapper {
               <Grid>
                 <GridRow>
                   <GridColumn
-                    computer={3}
-                    mobile={16}
-                    tablet={8}
-                  >
-                    <NavigationMenu />
-                  </GridColumn>
-                  <GridColumn
-                    computer={13}
+                    computer={16}
                     mobile={16}
                     tablet={8}
                   >
@@ -315,14 +233,7 @@ ShallowWrapper {
               "props": Object {
                 "children": <GridRow>
                   <GridColumn
-                    computer={3}
-                    mobile={16}
-                    tablet={8}
-                  >
-                    <NavigationMenu />
-                  </GridColumn>
-                  <GridColumn
-                    computer={13}
+                    computer={16}
                     mobile={16}
                     tablet={8}
                   >
@@ -336,70 +247,37 @@ ShallowWrapper {
                 "key": undefined,
                 "nodeType": "function",
                 "props": Object {
-                  "children": Array [
-                    <GridColumn
-                      computer={3}
-                      mobile={16}
-                      tablet={8}
-                    >
-                      <NavigationMenu />
-                    </GridColumn>,
-                    <GridColumn
-                      computer={13}
-                      mobile={16}
-                      tablet={8}
-                    >
-                      <NavigationDisplay />
-                    </GridColumn>,
-                  ],
+                  "children": <GridColumn
+                    computer={16}
+                    mobile={16}
+                    tablet={8}
+                  >
+                    <NavigationDisplay />
+                  </GridColumn>,
                 },
                 "ref": null,
-                "rendered": Array [
-                  Object {
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "function",
+                  "props": Object {
+                    "children": <NavigationDisplay />,
+                    "computer": 16,
+                    "mobile": 16,
+                    "tablet": 8,
+                  },
+                  "ref": null,
+                  "rendered": Object {
                     "instance": null,
                     "key": undefined,
                     "nodeType": "function",
-                    "props": Object {
-                      "children": <NavigationMenu />,
-                      "computer": 3,
-                      "mobile": 16,
-                      "tablet": 8,
-                    },
+                    "props": Object {},
                     "ref": null,
-                    "rendered": Object {
-                      "instance": null,
-                      "key": undefined,
-                      "nodeType": "class",
-                      "props": Object {},
-                      "ref": null,
-                      "rendered": null,
-                      "type": [Function],
-                    },
+                    "rendered": null,
                     "type": [Function],
                   },
-                  Object {
-                    "instance": null,
-                    "key": undefined,
-                    "nodeType": "function",
-                    "props": Object {
-                      "children": <NavigationDisplay />,
-                      "computer": 13,
-                      "mobile": 16,
-                      "tablet": 8,
-                    },
-                    "ref": null,
-                    "rendered": Object {
-                      "instance": null,
-                      "key": undefined,
-                      "nodeType": "function",
-                      "props": Object {},
-                      "ref": null,
-                      "rendered": null,
-                      "type": [Function],
-                    },
-                    "type": [Function],
-                  },
-                ],
+                  "type": [Function],
+                },
                 "type": [Function],
               },
               "type": [Function],

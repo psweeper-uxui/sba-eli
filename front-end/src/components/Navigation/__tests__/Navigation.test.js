@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Navigation from '../Navigation';
-import NavigationMenu from '../NavigationMenu';
+import Navbar from '../Navbar';
 import { shallow, mount } from 'enzyme';
 
 describe('Navigation', () => {
@@ -17,9 +17,9 @@ describe('Navigation', () => {
     expect(wrapper.find('div').length).toEqual(2);
   });
 
-  it('should render a <NavigationMenu>', () => {
+  it('should render a <Navbar>', () => {
     const wrapper = shallow(<Navigation/>);
 
-    expect(wrapper.find(NavigationMenu).exists()).toBe(true);
+    expect(wrapper.find(Navbar).exists()).toBe(true);
   });
 });

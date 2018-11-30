@@ -1,8 +1,9 @@
 import React from 'react';
-import { Menu, Dropdown } from 'semantic-ui-react';
+import { Link } from 'react-router-dom';
+import { Button, Menu, Dropdown } from 'semantic-ui-react';
 import Navbar from '../Navbar';
 import NavigationLearningPath from '../NavigationLearningPath';
-import { shallow } from 'enzyme';
+import { shallow, mount } from 'enzyme';
 
 describe('Navbar', () => {
   it('should render correctly', () => {
@@ -24,5 +25,17 @@ describe('Navbar', () => {
     expect(wrapper.find(Dropdown).length).toEqual(1);
     expect(wrapper.find(Dropdown.Menu).length).toEqual(1);
     expect(wrapper.find(NavigationLearningPath).length).toEqual(1);
+  });
+
+  it('should render a Login button', () => {
+    const wrapper = mount(<Navbar/>);
+
+    expect(wrapper.find(Link).exists()).toBe(true);
+  });
+
+  it('should render a Register button', () => {
+    const wrapper = shallow(<Navbar/>);
+
+    expect(wrapper.find(Link).exists()).toBe(true);
   });
 });

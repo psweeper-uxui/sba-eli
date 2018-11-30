@@ -1,6 +1,20 @@
 import React, { Component } from 'react';
-import { Dropdown ,Menu } from 'semantic-ui-react';
+import { Link } from 'react-router-dom';
+import { Button, Dropdown ,Menu } from 'semantic-ui-react';
 import NavigationLearningPath from './NavigationLearningPath';
+
+const LoggedOutView = () => {
+  return(
+    <div>
+      <Link to={`#login`}>
+        <Button primary>Login</Button>
+      </Link>
+      <Link to={`/signup`}>
+        <Button secondary >Register</Button>
+      </Link>
+    </div>
+  )
+}
 
 export default class Navbar extends Component {
   state = {}
@@ -18,10 +32,7 @@ export default class Navbar extends Component {
           </Dropdown>
           <Menu.Menu position='right'>
             <Menu.Item>
-              Login
-            </Menu.Item>
-            <Menu.Item>
-              Register
+              <LoggedOutView />
             </Menu.Item>
           </Menu.Menu>
         </Menu>
