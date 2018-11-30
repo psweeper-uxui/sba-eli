@@ -6,16 +6,16 @@ module Canvas
     base_uri ENV["CANVAS_HOST"] + "/api/v1"
 
     def self.all
-      get("/courses", base_options).body
+      JSON.parse get("/courses", base_options).body
     end
 
     def self.find(id)
-      get("/courses/#{id}", base_options).body
+      JSON.parse get("/courses/#{id}", base_options).body
     end
 
     def self.create(account_id, lp_params)
       options = base_options.merge!(body: lp_params)
-      post("/accounts/#{account_id}\/courses", options)
+      JSON.parse post("/accounts/#{account_id}\/courses", options)
     end
 
     def self.update(id, lp_params)
@@ -26,12 +26,12 @@ module Canvas
       }
 
       options = base_options.merge!(body: @params)
-      put("/courses/#{id}", options)
+      JSON.parse put("/courses/#{id}", options).body
     end
 
     def self.destroy(id)
       options = base_options.merge!(body: { "event": "delete" })
-      delete("/courses/#{id}", options)
+      JSON.parse delete("/courses/#{id}", options).body
     end
   end
 end
