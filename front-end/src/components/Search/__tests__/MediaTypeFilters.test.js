@@ -4,12 +4,6 @@ import {Form} from "semantic-ui-react";
 import MediaTypeFilters from "../MediaTypeFilters";
 
 describe('MediaTypeFilters', () => {
-  it('should render correctly', () => {
-    const wrapper = shallow(<MediaTypeFilters/>);
-
-    expect(wrapper).toMatchSnapshot();
-  });
-
   it('should render 6 <Checkboxes> for 6 media types', () => {
     const wrapper = shallow(<MediaTypeFilters/>);
 
