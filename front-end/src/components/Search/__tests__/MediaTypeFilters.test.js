@@ -21,7 +21,7 @@ describe('MediaTypeFilters', () => {
 
     expect(wrapper.find(Form.Checkbox).get(0).key).toEqual('video');
     expect(wrapper.find(Form.Checkbox).get(0).props.value).toEqual('video');
-    expect(wrapper.find(Form.Checkbox).get(0).props.id).toEqual('video');
+    expect(wrapper.find(Form.Checkbox).get(0).props.id).toEqual('mediatype_filter_video');
     expect(wrapper.find(Form.Checkbox).get(0).props.label.children).toEqual('Video');
   });
 

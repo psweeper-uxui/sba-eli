@@ -15,7 +15,7 @@ describe("TimeFilters", () => {
 
     expect(wrapper.find(Form.Checkbox).get(0).key).toEqual("short");
     expect(wrapper.find(Form.Checkbox).get(0).props.value).toEqual("short");
-    expect(wrapper.find(Form.Checkbox).get(0).props.id).toEqual("short");
+    expect(wrapper.find(Form.Checkbox).get(0).props.id).toEqual("time_filter_short");
     expect(wrapper.find(Form.Checkbox).get(0).props.label.children).toEqual(
       "Less than 1 minute"
     );
