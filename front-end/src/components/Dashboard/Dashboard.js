@@ -1,16 +1,17 @@
-import React from 'react';
-import '../../App.css';
-import LearningPaths from '../LearningPath/LearningPaths';
-import { Container, Divider, Header } from 'semantic-ui-react';
+import React from "react";
+import "../../App.css";
+import LearningPaths from "../LearningPath/LearningPaths";
+import { Divider } from "semantic-ui-react";
+import DashboardSplash from "./DashboardSplash";
 
 const Dashboard = () => {
   return (
     <div>
-      <Container textAlign='center'><Header as='h1'>Dashboard</Header></Container>
+      <DashboardSplash />
       <Divider hidden />
       <LearningPaths />
     </div>
-	)
-}
+  );
+};
 
 export default Dashboard;
