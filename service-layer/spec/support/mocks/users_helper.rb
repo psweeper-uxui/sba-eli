@@ -3,6 +3,14 @@ module Mocks
     include JSONFixtures
     include RequestHelper
 
+    def stub_create_user(options = {})
+      url = "#{ENV['CANVAS_HOST']}/api/v1/accounts/1/users/"
+      status = options.fetch(:status, 200)
+      response_body = options.fetch(:response_body, json_string("users/create_user.json"))
+
+      stub_request(:post, url).to_return(status: status, body: response_body)
+    end
+
     def stub_delete_custom_data_request(options = {})
       id = options.fetch(:id, 1)
       status = options.fetch(:status, 200)
