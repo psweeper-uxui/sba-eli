@@ -8,23 +8,25 @@ export default class SearchFacets extends Component {
   render() {
     return (
       <Form method="GET" action="/search">
-        <Form.Group widths="equal">
-          <Form.Field>
-            <label>Subject</label>
-            <SubjectFilters />
-          </Form.Field>
-        </Form.Group>
-        <Form.Group widths="equal">
-          <Form.Field>
-            <label>Media Type</label>
-            <MediaTypeFilters />
-          </Form.Field>
-        </Form.Group>
-        <Form.Group widths="equal">
-          <Form.Field>
-            <label>Time</label>
-            <TimeFilters />
-          </Form.Field>
+        <Form.Group inline>
+          <Form.Group>
+            <Form.Field>
+              <label>Subject</label>
+              <SubjectFilters />
+            </Form.Field>
+          </Form.Group>
+          <Form.Group>
+            <Form.Field>
+              <label>Media Type</label>
+              <MediaTypeFilters />
+            </Form.Field>
+          </Form.Group>
+          <Form.Group>
+            <Form.Field>
+              <label>Time</label>
+              <TimeFilters />
+            </Form.Field>
+          </Form.Group>
         </Form.Group>
         <Form.Group>
           <Form.Button fluid>Cancel</Form.Button>
