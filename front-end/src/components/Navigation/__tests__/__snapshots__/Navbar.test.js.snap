@@ -51,12 +51,24 @@ ShallowWrapper {
             as="form"
             method="GET"
           >
-            <Input
-              icon="search"
-              name="searchTerm"
-              placeholder="Search"
-              type="text"
-            />
+            <FormGroup
+              inline={true}
+            >
+              <FormInput
+                as={[Function]}
+                control={[Function]}
+                icon="search"
+                name="searchTerm"
+                placeholder="Search"
+              />
+              <FormButton
+                as={[Function]}
+                control={[Function]}
+                type="submit"
+              >
+                Submit
+              </FormButton>
+            </FormGroup>
           </Form>
         </MenuItem>
       </Menu>,
@@ -102,12 +114,24 @@ ShallowWrapper {
               as="form"
               method="GET"
             >
-              <Input
-                icon="search"
-                name="searchTerm"
-                placeholder="Search"
-                type="text"
-              />
+              <FormGroup
+                inline={true}
+              >
+                <FormInput
+                  as={[Function]}
+                  control={[Function]}
+                  icon="search"
+                  name="searchTerm"
+                  placeholder="Search"
+                />
+                <FormButton
+                  as={[Function]}
+                  control={[Function]}
+                  type="submit"
+                >
+                  Submit
+                </FormButton>
+              </FormGroup>
             </Form>
           </MenuItem>,
         ],
@@ -183,12 +207,24 @@ ShallowWrapper {
               as="form"
               method="GET"
             >
-              <Input
-                icon="search"
-                name="searchTerm"
-                placeholder="Search"
-                type="text"
-              />
+              <FormGroup
+                inline={true}
+              >
+                <FormInput
+                  as={[Function]}
+                  control={[Function]}
+                  icon="search"
+                  name="searchTerm"
+                  placeholder="Search"
+                />
+                <FormButton
+                  as={[Function]}
+                  control={[Function]}
+                  type="submit"
+                >
+                  Submit
+                </FormButton>
+              </FormGroup>
             </Form>,
           },
           "ref": null,
@@ -199,27 +235,82 @@ ShallowWrapper {
             "props": Object {
               "action": "/search",
               "as": "form",
-              "children": <Input
-                icon="search"
-                name="searchTerm"
-                placeholder="Search"
-                type="text"
-              />,
+              "children": <FormGroup
+                inline={true}
+              >
+                <FormInput
+                  as={[Function]}
+                  control={[Function]}
+                  icon="search"
+                  name="searchTerm"
+                  placeholder="Search"
+                />
+                <FormButton
+                  as={[Function]}
+                  control={[Function]}
+                  type="submit"
+                >
+                  Submit
+                </FormButton>
+              </FormGroup>,
               "method": "GET",
             },
             "ref": null,
             "rendered": Object {
               "instance": null,
               "key": undefined,
-              "nodeType": "class",
+              "nodeType": "function",
               "props": Object {
-                "icon": "search",
-                "name": "searchTerm",
-                "placeholder": "Search",
-                "type": "text",
+                "children": Array [
+                  <FormInput
+                    as={[Function]}
+                    control={[Function]}
+                    icon="search"
+                    name="searchTerm"
+                    placeholder="Search"
+                  />,
+                  <FormButton
+                    as={[Function]}
+                    control={[Function]}
+                    type="submit"
+                  >
+                    Submit
+                  </FormButton>,
+                ],
+                "inline": true,
               },
               "ref": null,
-              "rendered": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "function",
+                  "props": Object {
+                    "as": [Function],
+                    "control": [Function],
+                    "icon": "search",
+                    "name": "searchTerm",
+                    "placeholder": "Search",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "function",
+                  "props": Object {
+                    "as": [Function],
+                    "children": "Submit",
+                    "control": [Function],
+                    "type": "submit",
+                  },
+                  "ref": null,
+                  "rendered": "Submit",
+                  "type": [Function],
+                },
+              ],
               "type": [Function],
             },
             "type": [Function],
@@ -271,12 +362,24 @@ ShallowWrapper {
               as="form"
               method="GET"
             >
-              <Input
-                icon="search"
-                name="searchTerm"
-                placeholder="Search"
-                type="text"
-              />
+              <FormGroup
+                inline={true}
+              >
+                <FormInput
+                  as={[Function]}
+                  control={[Function]}
+                  icon="search"
+                  name="searchTerm"
+                  placeholder="Search"
+                />
+                <FormButton
+                  as={[Function]}
+                  control={[Function]}
+                  type="submit"
+                >
+                  Submit
+                </FormButton>
+              </FormGroup>
             </Form>
           </MenuItem>
         </Menu>,
@@ -322,12 +425,24 @@ ShallowWrapper {
                 as="form"
                 method="GET"
               >
-                <Input
-                  icon="search"
-                  name="searchTerm"
-                  placeholder="Search"
-                  type="text"
-                />
+                <FormGroup
+                  inline={true}
+                >
+                  <FormInput
+                    as={[Function]}
+                    control={[Function]}
+                    icon="search"
+                    name="searchTerm"
+                    placeholder="Search"
+                  />
+                  <FormButton
+                    as={[Function]}
+                    control={[Function]}
+                    type="submit"
+                  >
+                    Submit
+                  </FormButton>
+                </FormGroup>
               </Form>
             </MenuItem>,
           ],
@@ -403,12 +518,24 @@ ShallowWrapper {
                 as="form"
                 method="GET"
               >
-                <Input
-                  icon="search"
-                  name="searchTerm"
-                  placeholder="Search"
-                  type="text"
-                />
+                <FormGroup
+                  inline={true}
+                >
+                  <FormInput
+                    as={[Function]}
+                    control={[Function]}
+                    icon="search"
+                    name="searchTerm"
+                    placeholder="Search"
+                  />
+                  <FormButton
+                    as={[Function]}
+                    control={[Function]}
+                    type="submit"
+                  >
+                    Submit
+                  </FormButton>
+                </FormGroup>
               </Form>,
             },
             "ref": null,
@@ -419,27 +546,82 @@ ShallowWrapper {
               "props": Object {
                 "action": "/search",
                 "as": "form",
-                "children": <Input
-                  icon="search"
-                  name="searchTerm"
-                  placeholder="Search"
-                  type="text"
-                />,
+                "children": <FormGroup
+                  inline={true}
+                >
+                  <FormInput
+                    as={[Function]}
+                    control={[Function]}
+                    icon="search"
+                    name="searchTerm"
+                    placeholder="Search"
+                  />
+                  <FormButton
+                    as={[Function]}
+                    control={[Function]}
+                    type="submit"
+                  >
+                    Submit
+                  </FormButton>
+                </FormGroup>,
                 "method": "GET",
               },
               "ref": null,
               "rendered": Object {
                 "instance": null,
                 "key": undefined,
-                "nodeType": "class",
+                "nodeType": "function",
                 "props": Object {
-                  "icon": "search",
-                  "name": "searchTerm",
-                  "placeholder": "Search",
-                  "type": "text",
+                  "children": Array [
+                    <FormInput
+                      as={[Function]}
+                      control={[Function]}
+                      icon="search"
+                      name="searchTerm"
+                      placeholder="Search"
+                    />,
+                    <FormButton
+                      as={[Function]}
+                      control={[Function]}
+                      type="submit"
+                    >
+                      Submit
+                    </FormButton>,
+                  ],
+                  "inline": true,
                 },
                 "ref": null,
-                "rendered": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "function",
+                    "props": Object {
+                      "as": [Function],
+                      "control": [Function],
+                      "icon": "search",
+                      "name": "searchTerm",
+                      "placeholder": "Search",
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": [Function],
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "function",
+                    "props": Object {
+                      "as": [Function],
+                      "children": "Submit",
+                      "control": [Function],
+                      "type": "submit",
+                    },
+                    "ref": null,
+                    "rendered": "Submit",
+                    "type": [Function],
+                  },
+                ],
                 "type": [Function],
               },
               "type": [Function],

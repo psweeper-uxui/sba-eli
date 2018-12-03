@@ -19,7 +19,7 @@ ShallowWrapper {
     "props": Object {
       "as": [Function],
       "control": [Function],
-      "id": "finance",
+      "id": "subject_filter_finance",
       "label": Object {
         "children": "Finance",
       },
@@ -38,7 +38,7 @@ ShallowWrapper {
       "props": Object {
         "as": [Function],
         "control": [Function],
-        "id": "finance",
+        "id": "subject_filter_finance",
         "label": Object {
           "children": "Finance",
         },
@@ -56,7 +56,7 @@ ShallowWrapper {
       "props": Object {
         "as": [Function],
         "control": [Function],
-        "id": "communications",
+        "id": "subject_filter_communications",
         "label": Object {
           "children": "Communications",
         },
@@ -74,7 +74,7 @@ ShallowWrapper {
       "props": Object {
         "as": [Function],
         "control": [Function],
-        "id": "management",
+        "id": "subject_filter_management",
         "label": Object {
           "children": "Management",
         },
@@ -92,7 +92,7 @@ ShallowWrapper {
       "props": Object {
         "as": [Function],
         "control": [Function],
-        "id": "marketing",
+        "id": "subject_filter_marketing",
         "label": Object {
           "children": "Marketing",
         },
@@ -110,7 +110,7 @@ ShallowWrapper {
       "props": Object {
         "as": [Function],
         "control": [Function],
-        "id": "sales",
+        "id": "subject_filter_sales",
         "label": Object {
           "children": "Sales",
         },
@@ -128,7 +128,7 @@ ShallowWrapper {
       "props": Object {
         "as": [Function],
         "control": [Function],
-        "id": "strategy",
+        "id": "subject_filter_strategy",
         "label": Object {
           "children": "Strategy",
         },
