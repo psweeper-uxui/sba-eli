@@ -33,7 +33,7 @@ jobs:
           CANVAS_HOST: "http://example.canvas.com"
           CANVAS_URI: "http://localhost:3000/auth/canvas/callback"
           CANVAS_TOKEN: "ffffffffffffffffffffffff"
-          CANVAS_ACCOUNT_ID: ""
+          CANVAS_ACCOUNT_ID: "1"
           CANVAS_API_URI: ""
           AWS_ACCESS_KEY_ID: "aws_access_key_id"
           AWS_SECRET_ACCESS_KEY: "aws_secret_access_key"
