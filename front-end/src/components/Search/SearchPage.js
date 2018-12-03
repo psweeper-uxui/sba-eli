@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import "../../App.css";
-import {Container, Divider, Header} from "semantic-ui-react";
+import {Container, Header} from "semantic-ui-react";
 import queryString from 'query-string';
 import SearchFacets from "./SearchFacets";
 import SearchResults from "./SearchResults";
