@@ -18,7 +18,12 @@ export default class Navbar extends Component {
           </Dropdown>
           <Menu.Item>
             <Form method='GET' action='/search'>
-              <Input icon='search' placeholder='Search' name='searchTerm' />
+              <Form.Group inline>
+                <Form.Input icon='search' placeholder='Search' name='searchTerm' />
+                <Form.Button type="submit">
+                  Submit
+                </Form.Button>
+              </Form.Group>
             </Form>
           </Menu.Item>
         </Menu>
