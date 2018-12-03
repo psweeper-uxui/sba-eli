@@ -36,9 +36,9 @@ export default class TopicEventList extends Component {
 
   renderEventsList(events = []) {
     if (events.length) {
-      return events.map(event => {
+      return events.map((event, index) => {
         return (
-          <Item>
+          <Item key={"eventListItem" + index}>
             <Item.Header>
               <Icon name="circle" />
               {event.title}

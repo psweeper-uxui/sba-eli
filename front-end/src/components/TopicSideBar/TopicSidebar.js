@@ -8,7 +8,7 @@ export default class TopicSideBar extends Component {
     super(props);
 
     this.state = {
-      topicsList: [],
+      //topicsList: [],
       activeIndex: 0
     };
   }
@@ -21,35 +21,13 @@ export default class TopicSideBar extends Component {
     this.setState({ activeIndex: newIndex });
   };
 
-  componentDidMount() {
-    this.topicsList();
-  }
-
-  topicsList() {
-    const url = process.env.REACT_APP_SERVICE_HOST + `/learning_objectives/`;
-
-    const objectiveParams = {
-      course_id: this.props.course_id
-    };
-
-    axios
-      .get(url, { params: objectiveParams })
-      .then(res => {
-        const topicsList = res.data;
-        this.setState({ topicsList });
-      })
-      .catch(error => {
-        console.log(error);
-      });
-  }
-
   renderTopicsList(objectives = []) {
     const { activeIndex } = this.state;
 
     if (objectives.length) {
       return objectives.map((objective, i) => {
         return (
-          <React.Fragment>
+          <React.Fragment key={"topicSidebar" + i}>
             <Accordion.Title
               active={activeIndex === i}
               index={i}
@@ -77,10 +55,10 @@ export default class TopicSideBar extends Component {
   }
 
   render() {
-    console.log("props", this.props);
-
     return (
-      <Accordion>{this.renderTopicsList(this.state.topicsList)}</Accordion>
+      <Accordion styled>
+        {this.renderTopicsList(this.props.topicsList)}
+      </Accordion>
     );
   }
 }
