@@ -5,6 +5,13 @@ import MediaTypeFilters from "./MediaTypeFilters";
 import TimeFilters from "./TimeFilters";
 
 export default class SearchFacets extends Component {
+
+  cancelSearch(event) {
+    //TODO what do we want the cancel behavior to be?
+    event.preventDefault();
+    console.log("Cancel Search")
+  }
+
   render() {
     return (
       <Form method="GET" action="/search">
@@ -29,7 +36,7 @@ export default class SearchFacets extends Component {
           </Form.Group>
         </Form.Group>
         <Form.Group>
-          <Form.Button fluid>Cancel</Form.Button>
+          <Form.Button fluid onClick={this.cancelSearch}>Cancel</Form.Button>
           <Form.Button fluid type="submit">
             Apply
           </Form.Button>
