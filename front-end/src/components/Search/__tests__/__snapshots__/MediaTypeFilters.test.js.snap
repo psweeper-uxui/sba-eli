@@ -19,7 +19,7 @@ ShallowWrapper {
     "props": Object {
       "as": [Function],
       "control": [Function],
-      "id": "video",
+      "id": "mediatype_filter_video",
       "label": Object {
         "children": "Video",
       },
@@ -38,7 +38,7 @@ ShallowWrapper {
       "props": Object {
         "as": [Function],
         "control": [Function],
-        "id": "video",
+        "id": "mediatype_filter_video",
         "label": Object {
           "children": "Video",
         },
@@ -56,7 +56,7 @@ ShallowWrapper {
       "props": Object {
         "as": [Function],
         "control": [Function],
-        "id": "podcast",
+        "id": "mediatype_filter_podcast",
         "label": Object {
           "children": "Podcast",
         },
@@ -74,7 +74,7 @@ ShallowWrapper {
       "props": Object {
         "as": [Function],
         "control": [Function],
-        "id": "infographic",
+        "id": "mediatype_filter_infographic",
         "label": Object {
           "children": "Infographic",
         },
@@ -92,7 +92,7 @@ ShallowWrapper {
       "props": Object {
         "as": [Function],
         "control": [Function],
-        "id": "assessment",
+        "id": "mediatype_filter_assessment",
         "label": Object {
           "children": "Assessment",
         },
@@ -110,7 +110,7 @@ ShallowWrapper {
       "props": Object {
         "as": [Function],
         "control": [Function],
-        "id": "discussion",
+        "id": "mediatype_filter_discussion",
         "label": Object {
           "children": "Discussion",
         },
@@ -128,7 +128,7 @@ ShallowWrapper {
       "props": Object {
         "as": [Function],
         "control": [Function],
-        "id": "tools",
+        "id": "mediatype_filter_tools",
         "label": Object {
           "children": "Tools",
         },
