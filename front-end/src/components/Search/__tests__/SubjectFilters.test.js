@@ -21,7 +21,7 @@ describe('SubjectFilters', () => {
 
     expect(wrapper.find(Form.Checkbox).get(0).key).toEqual('finance');
     expect(wrapper.find(Form.Checkbox).get(0).props.value).toEqual('finance');
-    expect(wrapper.find(Form.Checkbox).get(0).props.id).toEqual('finance');
+    expect(wrapper.find(Form.Checkbox).get(0).props.id).toEqual('subject_filter_finance');
     expect(wrapper.find(Form.Checkbox).get(0).props.label.children).toEqual('Finance');
   });
 });
