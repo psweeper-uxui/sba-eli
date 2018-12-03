@@ -4,12 +4,6 @@ import { Form } from 'semantic-ui-react';
 import SubjectFilters from '../SubjectFilters';
 
 describe('SubjectFilters', () => {
-  it('should render correctly', () => {
-    const wrapper = shallow(<SubjectFilters/>);
-
-    expect(wrapper).toMatchSnapshot();
-  });
-  
   it('should render 6 <Checkboxes> for 6 Subjects', () => {
     const wrapper = shallow(<SubjectFilters/>);
 
