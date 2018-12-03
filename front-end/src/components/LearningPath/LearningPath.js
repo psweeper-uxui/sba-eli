@@ -3,6 +3,7 @@ import axios from "axios";
 import { Header, Divider, Grid } from "semantic-ui-react";
 
 import TopicSideBar from "../TopicSideBar/TopicSidebar";
+import TopicContentView from "../TopicContentView/TopicContentView";
 
 class LearningPath extends React.Component {
   state = {
@@ -60,7 +61,10 @@ class LearningPath extends React.Component {
               />
             </Grid.Column>
             <Grid.Column mobile={16} tablet={3} computer={11}>
-              <div />
+              <TopicContentView
+                course_id={courseId}
+                topicsList={this.state.topicsList}
+              />
             </Grid.Column>
           </Grid.Row>
         </Grid>
