@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import "../../App.css";
-import {Grid, Header} from "semantic-ui-react";
+import {Container, Divider, Header} from "semantic-ui-react";
 import queryString from 'query-string';
 import SearchFacets from "./SearchFacets";
 import SearchResults from "./SearchResults";
@@ -12,17 +12,17 @@ export default class SearchPage extends Component {
     let searchTerm = params.searchTerm
 
     return (
-        <Grid>
-          <Grid.Row>
-            <Header as='h3'>Search Results for '{searchTerm}'</Header>
-          </Grid.Row>
-          <Grid.Row>
-            <SearchFacets searchTerm={searchTerm} />
-          </Grid.Row>
-          <Grid.Row>
+        <div>
+          <Container>
+              <Header as='h1'>Search Results for '{searchTerm}'</Header>
+          </Container>
+          <Container>
+            <SearchFacets searchTerm={searchTerm}/>
+          </Container>
+          <Container>
             <SearchResults/>
-          </Grid.Row>
-        </Grid>
+          </Container>
+        </div>
     )
   }
 }
