@@ -17,7 +17,7 @@ export default class SubjectFilters extends Component {
         <Form.Checkbox name='subject'
                       value={filter.key}
                       key={filter.key}
-                      id={filter.key}
+                      id={'subject_filter_' +  filter.key}
                       label={{children: filter.text}}/>
       )
     })

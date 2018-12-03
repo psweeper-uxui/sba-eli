@@ -19,7 +19,7 @@ export default class MediaTypeFilters extends Component {
               <Form.Checkbox name='mediaType'
                              value={filter.key}
                              key={filter.key}
-                             id={filter.key}
+                             id={'mediatype_filter_'+ filter.key}
                              label={{children: filter.text}}/>
           )
         }

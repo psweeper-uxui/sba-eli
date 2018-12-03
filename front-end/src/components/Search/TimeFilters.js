@@ -16,7 +16,7 @@ export default class TimeFilters extends Component {
           name="time"
           value={filter.key}
           key={filter.key}
-          id={filter.key}
+          id={'time_filter_'  + filter.key}
           label={{ children: filter.text }}
         />
       );
