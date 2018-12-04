@@ -15220,7 +15220,7 @@ CREATE INDEX index_submissions_on_cached_due_date ON public.submissions USING bt
 -- Name: index_submissions_on_graded_at; Type: INDEX; Schema: public; Owner: -
 --
 
-CREATE INDEX index_submissions_on_graded_at ON public.submissions USING brin (graded_at);
+CREATE INDEX index_submissions_on_graded_at ON public.submissions USING btree (graded_at);
 
 
 --
