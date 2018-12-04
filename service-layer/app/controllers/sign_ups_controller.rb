@@ -1,5 +1,6 @@
 class SignUpsController < ApplicationController
   def create
+    params.delete(:sign_up)
     new_account = UserCreationService.new(model_params)
 
     if new_account.create

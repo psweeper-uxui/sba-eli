@@ -6,6 +6,14 @@ GIT
       omniauth (~> 1.3)
       omniauth-oauth2 (~> 1.4)
 
+GIT
+  remote: https://github.com/mbleigh/acts-as-taggable-on.git
+  revision: 69322267029b54fe42be9a05e248df9de289a65b
+  ref: 6932226
+  specs:
+    acts-as-taggable-on (6.0.1)
+      activerecord (~> 5.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -951,6 +959,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  acts-as-taggable-on!
   annotate (~> 2.7, >= 2.7.2)
   autoprefixer-rails (~> 9.3.1)
   aws-sdk (~> 3.0, >= 3.0.1)
