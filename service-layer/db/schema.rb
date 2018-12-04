@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 75072935522965904110133) do
+ActiveRecord::Schema.define(version: 2018_12_03_140619) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "hstore"
@@ -776,6 +776,7 @@ ActiveRecord::Schema.define(version: 75072935522965904110133) do
     t.string "workflow_state", limit: 255, null: false
     t.index ["content_id", "content_type", "user_id"], name: "index_content_participations_uniquely", unique: true
     t.index ["user_id"], name: "index_content_participations_on_user_id"
+    t.index ["user_id"], name: "index_content_participations_on_user_id_unread", where: "((workflow_state)::text = 'unread'::text)"
   end
 
   create_table "content_tags", force: :cascade do |t|
