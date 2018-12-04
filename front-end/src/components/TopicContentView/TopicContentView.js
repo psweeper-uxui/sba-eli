@@ -13,6 +13,7 @@ export default class TopicContentView extends Component {
       return topicsList.map(topic => {
         return (
           <div
+            key={"topicContentView" + topic.id}
             style={{
               marginBottom: "20px",
               border: "1px solid rgba(34,36,38,.15)"
