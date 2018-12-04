@@ -3304,7 +3304,7 @@ ActiveRecord::Schema.define(version: 2018_12_03_140619) do
     t.index ["assignment_id"], name: "index_submissions_needs_grading", where: "((submission_type IS NOT NULL) AND ((excused = false) OR (excused IS NULL)) AND (((workflow_state)::text = 'pending_review'::text) OR (((workflow_state)::text = ANY (ARRAY[('submitted'::character varying)::text, ('graded'::character varying)::text])) AND ((score IS NULL) OR (NOT grade_matches_current_submission)))))"
     t.index ["assignment_id"], name: "index_submissions_on_assignment_id", where: "((submission_type IS NOT NULL) AND (((workflow_state)::text = 'pending_review'::text) OR (((workflow_state)::text = 'submitted'::text) AND ((score IS NULL) OR (NOT grade_matches_current_submission)))))"
     t.index ["cached_due_date"], name: "index_submissions_on_cached_due_date"
-    t.index ["graded_at"], name: "index_submissions_on_graded_at", using: :brin
+    t.index ["graded_at"], name: "index_submissions_on_graded_at"
     t.index ["grading_period_id"], name: "index_submissions_on_grading_period_id", where: "(grading_period_id IS NOT NULL)"
     t.index ["group_id"], name: "index_submissions_on_group_id", where: "(group_id IS NOT NULL)"
     t.index ["late_policy_status"], name: "index_submissions_on_late_policy_status", where: "(((workflow_state)::text <> 'deleted'::text) AND (late_policy_status IS NOT NULL))"
