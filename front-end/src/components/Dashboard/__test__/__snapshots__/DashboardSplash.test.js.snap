@@ -28,11 +28,6 @@ ShallowWrapper {
           >
             <Header
               as="h1"
-              style={
-                Object {
-                  "color": "#ffffff",
-                }
-              }
             >
               Awesome Hero Caption
             </Header>
@@ -66,9 +61,6 @@ ShallowWrapper {
           </Button>
         </GridRow>,
       ],
-      "style": Object {
-        "backgroundColor": "#2d78c9",
-      },
     },
     "ref": null,
     "rendered": Array [
@@ -85,11 +77,6 @@ ShallowWrapper {
           >
             <Header
               as="h1"
-              style={
-                Object {
-                  "color": "#ffffff",
-                }
-              }
             >
               Awesome Hero Caption
             </Header>
@@ -103,11 +90,6 @@ ShallowWrapper {
           "props": Object {
             "children": <Header
               as="h1"
-              style={
-                Object {
-                  "color": "#ffffff",
-                }
-              }
             >
               Awesome Hero Caption
             </Header>,
@@ -124,9 +106,6 @@ ShallowWrapper {
             "props": Object {
               "as": "h1",
               "children": "Awesome Hero Caption",
-              "style": Object {
-                "color": "#ffffff",
-              },
             },
             "ref": null,
             "rendered": "Awesome Hero Caption",
@@ -235,11 +214,6 @@ ShallowWrapper {
             >
               <Header
                 as="h1"
-                style={
-                  Object {
-                    "color": "#ffffff",
-                  }
-                }
               >
                 Awesome Hero Caption
               </Header>
@@ -273,9 +247,6 @@ ShallowWrapper {
             </Button>
           </GridRow>,
         ],
-        "style": Object {
-          "backgroundColor": "#2d78c9",
-        },
       },
       "ref": null,
       "rendered": Array [
@@ -292,11 +263,6 @@ ShallowWrapper {
             >
               <Header
                 as="h1"
-                style={
-                  Object {
-                    "color": "#ffffff",
-                  }
-                }
               >
                 Awesome Hero Caption
               </Header>
@@ -310,11 +276,6 @@ ShallowWrapper {
             "props": Object {
               "children": <Header
                 as="h1"
-                style={
-                  Object {
-                    "color": "#ffffff",
-                  }
-                }
               >
                 Awesome Hero Caption
               </Header>,
@@ -331,9 +292,6 @@ ShallowWrapper {
               "props": Object {
                 "as": "h1",
                 "children": "Awesome Hero Caption",
-                "style": Object {
-                  "color": "#ffffff",
-                },
               },
               "ref": null,
               "rendered": "Awesome Hero Caption",
