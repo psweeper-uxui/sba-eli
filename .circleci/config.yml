@@ -40,6 +40,7 @@ jobs:
           AWS_REGION: "us-east-1"
           AWS_COGNITO_USER_POOL_ID: ""
           AWS_COGNITO_CLIENT_ID: ""
+          POSTGRES_DB: "sbaeli"
       - image: circleci/postgres:9.4
         environment:
           POSTGRES_USER: sbaeli
