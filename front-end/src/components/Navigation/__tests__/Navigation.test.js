@@ -1,5 +1,4 @@
 import React from "react";
-import ReactDOM from "react-dom";
 import Navigation from "../Navigation";
 import Navbar from "../Navbar";
 import { shallow, mount } from "enzyme";
