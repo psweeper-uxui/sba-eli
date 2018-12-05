@@ -42,8 +42,7 @@ export default class LearningObjective extends Component {
     const learningObjective = this.state.learningObjective;
     return (
       <div>
-        <Header as="h1">Learning Objective {learningObjective.id}</Header>
-        <Header as="h3">{learningObjective.name}</Header>
+        <Header as="h1">{learningObjective.name}</Header>
         <Header as="h4">Micro Learning Events:</Header>
         <LearningEventsList
           course_id={this.props.match.params.id}
