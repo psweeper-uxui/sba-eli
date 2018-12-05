@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import "../../App.css";
-import {Container, Header} from "semantic-ui-react";
+import {Container, Grid, Header} from "semantic-ui-react";
 import queryString from 'query-string';
 import SearchFacets from "./SearchFacets";
 import SearchResults from "./SearchResults";
@@ -44,7 +44,9 @@ export default class SearchPage extends Component {
             <SearchFacets searchTerm={this.state.searchTerm} urlParams={this.state.urlParams}/>
           </Container>
           <Container>
+            <Grid>
             <SearchResults urlParams={this.state.urlParams}/>
+            </Grid>
           </Container>
         </div>
     )
