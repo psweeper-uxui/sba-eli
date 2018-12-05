@@ -12,6 +12,7 @@ import LearningEvent from "../LearningEvent/LearningEvent";
 import LearningEvents from "../LearningEvent/LearningEvents";
 import SearchPage from "../Search/SearchPage";
 import SignUpForm from "../SignUpForm/SignUpForm";
+import LoginForm from "../LoginForm/LoginForm";
 import Error from "../Error";
 
 const Navigation = () => {
@@ -38,6 +39,7 @@ const NavigationDisplay = () => {
     <Switch>
       <Route exact path="/" component={Dashboard} />
       <Route exact path="/signup" component={SignUpForm} />
+      <Route exact path="/login" component={LoginForm} />
       <Route exact path="/learning_paths" component={LearningPaths} />
       <Route exact path="/learning_paths/:id" component={LearningPath} />
       <Route
