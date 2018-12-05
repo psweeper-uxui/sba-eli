@@ -41,7 +41,7 @@ export default class SearchPage extends Component {
             <Header as='h1'>{this.searchText()}</Header>
           </Container>
           <Container>
-            <SearchFacets searchTerm={this.state.searchTerm} urlParams={this.state.urlParams}/>
+            <SearchFacets urlParams={this.state.urlParams}/>
           </Container>
           <Container>
             <Grid>
