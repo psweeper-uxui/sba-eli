@@ -52,8 +52,8 @@ const NavigationDisplay = () => {
       />
       <Route
         exact
-        path="/learning_paths/:course_id/learning_objectives/:module_id/learning_events/:id"
-        component={LearningEvent}
+        path="/learning_paths/:id/learning_objectives/:topicId/learning_events/:eventId"
+        component={LearningPath}
       />
       <Route
         exact
