@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Item } from "semantic-ui-react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 export default class TopicContentEventList extends Component {
   constructor(props) {
@@ -35,6 +36,8 @@ export default class TopicContentEventList extends Component {
   }
 
   renderEventList(eventList) {
+    const { course_id, module_id } = this.props;
+    const url = `/learning_paths/${course_id}/learning_objectives/${module_id}/learning_events/`;
     if (eventList.length) {
       return eventList.map(event => {
         return (
@@ -42,27 +45,16 @@ export default class TopicContentEventList extends Component {
             <Item.Image size="tiny" src="https://via.placeholder.com/50" />
 
             <Item.Content>
-              <Item.Header>{event.title}</Item.Header>
+              <Item.Header>
+                <Link to={url + event.id}>{event.title}</Link>
+              </Item.Header>
               <Item.Meta>Event Type</Item.Meta>
             </Item.Content>
           </Item>
         );
       });
     } else {
-      return (
-        <div>
-          <Item.Group divided>
-            <Item>
-              <Item.Image size="tiny" src="https://via.placeholder.com/50" />
-
-              <Item.Content>
-                <Item.Header>Learning Event Test Title</Item.Header>
-                <Item.Meta>No Data</Item.Meta>
-              </Item.Content>
-            </Item>
-          </Item.Group>
-        </div>
-      );
+      return <div />;
     }
   }
 

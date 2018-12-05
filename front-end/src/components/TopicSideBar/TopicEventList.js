@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import { Item, Icon } from "semantic-ui-react";
+import { Link } from "react-router-dom";
 
 export default class TopicEventList extends Component {
   constructor(props) {
@@ -35,13 +36,16 @@ export default class TopicEventList extends Component {
   }
 
   renderEventsList(events = []) {
+    const { course_id, module_id } = this.props;
+    const url = `/learning_paths/${course_id}/learning_objectives/${module_id}/learning_events/`;
+
     if (events.length) {
       return events.map((event, index) => {
         return (
           <Item key={"eventListItem" + index}>
             <Item.Header>
               <Icon name="circle" />
-              {event.title}
+              <Link to={url + event.id}>{event.title}</Link>
             </Item.Header>
           </Item>
         );

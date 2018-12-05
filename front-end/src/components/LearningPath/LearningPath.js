@@ -13,6 +13,14 @@ class LearningPath extends React.Component {
   };
 
   componentDidMount() {
+    this.initialFunctions();
+  }
+
+  componentWillReceiveProps() {
+    this.initialFunctions();
+  }
+
+  initialFunctions() {
     const id = this.props.match.params.id;
     this.fetchLearningPath(id);
     this.fetchTopics(id);
