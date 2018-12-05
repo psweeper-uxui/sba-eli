@@ -1,4 +1,4 @@
 %I[Finance Communications Management Marketing Strategy Video Podcast
-   Infographic Assessment Discussion Tools].each do |tag|
-  ActsAsTaggableOn::Tag.create!(name: tag)
+   Infographic Assessment Discussion Tools Short Medium Long].each do |tag|
+  ActsAsTaggableOn::Tag.find_or_create_by!(name: tag)
 end
