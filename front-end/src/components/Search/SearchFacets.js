@@ -19,19 +19,19 @@ export default class SearchFacets extends Component {
           <Form.Group>
             <Form.Field>
               <label>Subject</label>
-              <SubjectFilters />
+              <SubjectFilters filters={this.props.urlParams.subject} />
             </Form.Field>
           </Form.Group>
           <Form.Group>
             <Form.Field>
               <label>Media Type</label>
-              <MediaTypeFilters />
+              <MediaTypeFilters filters={this.props.urlParams.mediaType} />
             </Form.Field>
           </Form.Group>
           <Form.Group>
             <Form.Field>
               <label>Time</label>
-              <TimeFilters />
+              <TimeFilters filters={this.props.urlParams.time} />
             </Form.Field>
           </Form.Group>
         </Form.Group>

@@ -11,6 +11,12 @@ export default class TimeFilters extends Component {
     ];
 
     return staticTimeFilters.map(filter => {
+      let selected = false
+      if (this.props.filters !== undefined
+          && this.props.filters.includes(filter.key)) {
+        selected = true
+      }
+
       return (
         <Form.Checkbox
           name="time"
@@ -18,6 +24,7 @@ export default class TimeFilters extends Component {
           key={filter.key}
           id={'time_filter_'  + filter.key}
           label={{ children: filter.text }}
+          defaultChecked={selected}
         />
       );
     });
