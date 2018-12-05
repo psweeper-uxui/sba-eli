@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { BrowserRouter as Router,Link } from 'react-router-dom';
 import { Button, Menu, Dropdown } from 'semantic-ui-react';
 import Navbar from '../Navbar';
 import NavigationLearningPath from '../NavigationLearningPath';
@@ -28,13 +28,13 @@ describe('Navbar', () => {
   });
 
   it('should render a Login button', () => {
-    const wrapper = mount(<Navbar/>);
+    const wrapper = mount(<Router><Navbar/></Router>);
 
     expect(wrapper.find(Link).exists()).toBe(true);
   });
 
   it('should render a Register button', () => {
-    const wrapper = shallow(<Navbar/>);
+    const wrapper = mount(<Router><Navbar/></Router>);
 
     expect(wrapper.find(Link).exists()).toBe(true);
   });

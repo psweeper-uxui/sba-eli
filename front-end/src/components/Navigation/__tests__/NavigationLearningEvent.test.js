@@ -1,6 +1,6 @@
 import React from 'react';
 import NavigationLearningEvent from '../NavigationLearningEvent'
-import { shallow, mount } from 'enzyme';
+import { shallow } from 'enzyme';
 
 describe('NavigationLearningEvent', () => {
   it('should render correctly', () => {
