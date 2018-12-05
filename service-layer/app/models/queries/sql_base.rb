@@ -31,7 +31,11 @@ module Queries
     end
 
     def check_array_value(field, params)
-      @properties[field] = params[field].present? ? params[field].split(",") : nil
+      @properties[field] = params[field].present? ? params[field].split(",") : []
+    end
+
+    def array_to_string(arr)
+      arr.map { |e| "'#{sanitize(e)}'" }.join(",")
     end
 
     def sanitize(value)
