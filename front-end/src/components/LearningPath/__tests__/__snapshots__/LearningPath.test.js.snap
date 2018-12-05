@@ -178,6 +178,8 @@ ShallowWrapper {
                 "nodeType": "class",
                 "props": Object {
                   "course_id": 1,
+                  "event_id": undefined,
+                  "module_id": undefined,
                   "topicsList": Array [],
                 },
                 "ref": null,
@@ -381,6 +383,8 @@ ShallowWrapper {
                   "nodeType": "class",
                   "props": Object {
                     "course_id": 1,
+                    "event_id": undefined,
+                    "module_id": undefined,
                     "topicsList": Array [],
                   },
                   "ref": null,

@@ -1,7 +1,7 @@
 import React from "react";
 import { Header } from "semantic-ui-react";
 import LearningPath from "../LearningPath";
-import LearningObjectivesList from "../../LearningObjective/LearningObjectivesList";
+import LearningEvent from "../../LearningEvent/LearningEvent";
 import { shallow } from "enzyme";
 import TopicContentView from "../../TopicContentView/TopicContentView";
 
@@ -13,12 +13,22 @@ describe("LearningPath", () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  it("should render all parts", () => {
+  it("should render all parts for base landing page", () => {
     const match = { params: { id: 1 } };
     const wrapper = shallow(<LearningPath match={match} />);
 
     expect(wrapper.find("div").length).toEqual(1);
     expect(wrapper.find(Header).exists()).toBe(true);
     expect(wrapper.find(TopicContentView).exists()).toBe(true);
+  });
+
+  it("should render all parts for navigating into a learning event", () => {
+    const match = { params: { id: 1, eventId: 1, topicId: 1 } };
+
+    const wrapper = shallow(<LearningPath match={match} />);
+
+    expect(wrapper.find("div").length).toEqual(1);
+    expect(wrapper.find(Header).exists()).toBe(true);
+    expect(wrapper.find(LearningEvent).exists()).toBe(true);
   });
 });

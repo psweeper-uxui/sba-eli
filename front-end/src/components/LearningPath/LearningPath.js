@@ -4,6 +4,7 @@ import { Header, Divider, Grid } from "semantic-ui-react";
 
 import TopicSideBar from "../TopicSideBar/TopicSidebar";
 import TopicContentView from "../TopicContentView/TopicContentView";
+import LearningEvent from "../LearningEvent/LearningEvent";
 
 class LearningPath extends React.Component {
   state = {
@@ -15,6 +16,14 @@ class LearningPath extends React.Component {
     const id = this.props.match.params.id;
     this.fetchLearningPath(id);
     this.fetchTopics(id);
+    this.showLearningEvent();
+  }
+
+  showLearningEvent() {
+    this.setState({
+      isLearningEvent:
+        this.props.match.params.topicId && this.props.match.params.eventId
+    });
   }
 
   fetchLearningPath(id) {
@@ -44,8 +53,39 @@ class LearningPath extends React.Component {
       });
   }
 
+  renderRightColumnContent() {
+    const isLearningEvent = this.state.isLearningEvent;
+
+    if (isLearningEvent) {
+      //This is to mimic react routing for the learning event. Learning event component
+      //should be refactored to pass props
+      const match = {
+        params: {
+          id: this.props.match.params.eventId,
+          module_id: this.props.match.params.topicId,
+          course_id: this.props.match.params.id
+        }
+      };
+      return <LearningEvent match={match} />;
+    } else {
+      return (
+        <TopicContentView
+          course_id={this.props.match.params.id}
+          topicsList={this.state.topicsList}
+        />
+      );
+    }
+  }
+
   render() {
     const courseId = this.props.match.params.id;
+
+    const sideBarProps = {
+      course_id: courseId,
+      topicsList: this.state.topicsList,
+      module_id: this.props.match.params.topicId,
+      event_id: this.props.match.params.eventId
+    };
 
     return (
       <div>
@@ -55,16 +95,10 @@ class LearningPath extends React.Component {
         <Grid centered>
           <Grid.Row>
             <Grid.Column mobile={16} tablet={3} computer={3}>
-              <TopicSideBar
-                course_id={courseId}
-                topicsList={this.state.topicsList}
-              />
+              <TopicSideBar {...sideBarProps} />
             </Grid.Column>
             <Grid.Column mobile={16} tablet={3} computer={11}>
-              <TopicContentView
-                course_id={courseId}
-                topicsList={this.state.topicsList}
-              />
+              {this.renderRightColumnContent()}
             </Grid.Column>
           </Grid.Row>
         </Grid>
