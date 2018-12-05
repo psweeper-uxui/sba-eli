@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Dropdown, Form, Input, Menu} from 'semantic-ui-react';
+import {Dropdown, Form, Menu} from 'semantic-ui-react';
 import NavigationLearningPath from './NavigationLearningPath';
 
 export default class Navbar extends Component {
