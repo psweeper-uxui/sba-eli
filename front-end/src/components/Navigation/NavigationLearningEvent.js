@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
-import { Dropdown } from "semantic-ui-react";
+import { Link } from "react-router-dom";
+import { Dropdown, List } from "semantic-ui-react";
 import NavigationLearningEventItem from "./NavigationLearningEventItem";
 
 export default class NavigationLearningEvent extends Component {
@@ -58,12 +59,11 @@ export default class NavigationLearningEvent extends Component {
   }
 
   render() {
+    // const learningObjectivePath = `learning_paths/${this.props.learningPathId}` + this.props.path;
+    const learningObjectivePath = this.props.learningPathId + this.props.path;
+
     return (
-      <Dropdown item text={this.props.name}>
-        <Dropdown.Menu>
-          {this.renderLearningEvents(this.state.learningEvents)}
-        </Dropdown.Menu>
-      </Dropdown>
+      <List.Item><Link to={learningObjectivePath}>{this.props.name}</Link></List.Item>
     );
   }
 }

@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import NavigationLearningEvent from "./NavigationLearningEvent";
+import { Link } from 'react-router-dom';
+import { Divider, List } from "semantic-ui-react";
 import axios from "axios";
 
 export default class NavigationLearningObjective extends Component {
@@ -10,6 +12,10 @@ export default class NavigationLearningObjective extends Component {
       learningObjectives: []
     };
   }
+
+  handleItemClick = (e, {name}) => this.setState({
+    activeItem: name
+  });
 
   componentDidMount() {
     this.fetchData();
@@ -33,15 +39,30 @@ export default class NavigationLearningObjective extends Component {
       });
   }
 
+  topicNumber() {
+    const topicNumber = this.state.learningObjectives.length;
+
+    if (topicNumber === 1) {
+      return topicNumber + " Topic";
+    } else {
+      return topicNumber + " Topics";
+    }
+  }
+
   render() {
-    return this.state.learningObjectives.map(lo => (
-      <NavigationLearningEvent
-        key={lo.id}
-        path={`/learning_objectives/${lo.id}`}
-        name={lo.name}
-        learningPathId={this.props.learningPathId}
-        learningObjectiveId={lo.id}
-      />
+    const {activeItem} = this.state
+    const learningObjectivePath = `/learning_paths/${this.props.learningPathId}/learning_objectives/`
+
+    const topics = this.state.learningObjectives.map(lo => (
+      <List.Item><Link to={learningObjectivePath + lo.id} onClick={this.handleItemClick}>{lo.name}</Link></List.Item>
     ));
+
+    return (
+      <div>
+        <em>{this.topicNumber()}</em>
+        <Divider />
+        { topics }
+      </div>
+    )
   }
 }

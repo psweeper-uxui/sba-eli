@@ -71,6 +71,13 @@ ShallowWrapper {
             </FormGroup>
           </Form>
         </MenuItem>
+        <MenuMenu
+          position="right"
+        >
+          <MenuItem>
+            <LoggedOutView />
+          </MenuItem>
+        </MenuMenu>
       </Menu>,
       "className": "navbar",
     },
@@ -134,6 +141,13 @@ ShallowWrapper {
               </FormGroup>
             </Form>
           </MenuItem>,
+          <MenuMenu
+            position="right"
+          >
+            <MenuItem>
+              <LoggedOutView />
+            </MenuItem>
+          </MenuMenu>,
         ],
       },
       "ref": null,
@@ -317,6 +331,38 @@ ShallowWrapper {
           },
           "type": [Function],
         },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "children": <MenuItem>
+              <LoggedOutView />
+            </MenuItem>,
+            "position": "right",
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "children": <LoggedOutView />,
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {},
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            "type": [Function],
+          },
+          "type": [Function],
+        },
       ],
       "type": [Function],
     },
@@ -382,6 +428,13 @@ ShallowWrapper {
               </FormGroup>
             </Form>
           </MenuItem>
+          <MenuMenu
+            position="right"
+          >
+            <MenuItem>
+              <LoggedOutView />
+            </MenuItem>
+          </MenuMenu>
         </Menu>,
         "className": "navbar",
       },
@@ -445,6 +498,13 @@ ShallowWrapper {
                 </FormGroup>
               </Form>
             </MenuItem>,
+            <MenuMenu
+              position="right"
+            >
+              <MenuItem>
+                <LoggedOutView />
+              </MenuItem>
+            </MenuMenu>,
           ],
         },
         "ref": null,
@@ -622,6 +682,38 @@ ShallowWrapper {
                     "type": [Function],
                   },
                 ],
+                "type": [Function],
+              },
+              "type": [Function],
+            },
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "children": <MenuItem>
+                <LoggedOutView />
+              </MenuItem>,
+              "position": "right",
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "children": <LoggedOutView />,
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "function",
+                "props": Object {},
+                "ref": null,
+                "rendered": null,
                 "type": [Function],
               },
               "type": [Function],
