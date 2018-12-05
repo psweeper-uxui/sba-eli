@@ -66,13 +66,13 @@ describe('SearchPage', () => {
   });
 
   it('should render a <SearchFacets> component', () => {
-    const wrapper = mount(<SearchPage location={{search: ''}}/>);
+    const wrapper = shallow(<SearchPage location={{search: ''}}/>);
 
     expect(wrapper.find(SearchFacets).exists()).toBe(true);
   });
 
   it('should render a <SearchResults> component', () => {
-    const wrapper = mount(<SearchPage location={{search: ''}}/>);
+    const wrapper = shallow(<SearchPage location={{search: ''}}/>);
 
     expect(wrapper.find(SearchResults).exists()).toBe(true);
   });
