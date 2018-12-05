@@ -28,11 +28,6 @@ ShallowWrapper {
       "children": Array [
         <Header
           as="h1"
-        >
-          Learning Objective 
-        </Header>,
-        <Header
-          as="h3"
         />,
         <Header
           as="h4"
@@ -52,24 +47,6 @@ ShallowWrapper {
         "nodeType": "function",
         "props": Object {
           "as": "h1",
-          "children": Array [
-            "Learning Objective ",
-            undefined,
-          ],
-        },
-        "ref": null,
-        "rendered": Array [
-          "Learning Objective ",
-          undefined,
-        ],
-        "type": [Function],
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "function",
-        "props": Object {
-          "as": "h3",
           "children": undefined,
         },
         "ref": null,
@@ -112,11 +89,6 @@ ShallowWrapper {
         "children": Array [
           <Header
             as="h1"
-          >
-            Learning Objective 
-          </Header>,
-          <Header
-            as="h3"
           />,
           <Header
             as="h4"
@@ -136,24 +108,6 @@ ShallowWrapper {
           "nodeType": "function",
           "props": Object {
             "as": "h1",
-            "children": Array [
-              "Learning Objective ",
-              undefined,
-            ],
-          },
-          "ref": null,
-          "rendered": Array [
-            "Learning Objective ",
-            undefined,
-          ],
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "function",
-          "props": Object {
-            "as": "h3",
             "children": undefined,
           },
           "ref": null,
