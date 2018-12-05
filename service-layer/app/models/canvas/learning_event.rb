@@ -14,7 +14,7 @@ module Canvas
       learning_event = get(url, base_options)
 
       if learning_event["url"]
-        learning_event["eventContent"] = get(learning_event["url"])
+        learning_event["eventContent"] = get(learning_event["url"], base_options)
       end
 
       learning_event
