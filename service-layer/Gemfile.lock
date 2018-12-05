@@ -979,7 +979,7 @@ DEPENDENCIES
   hirb (~> 0.7.3)
   honeybadger (~> 4.1.0)
   httparty (~> 0.16.2)
-  jbuilder (~> 2.5)
+  jbuilder (= 2.8.0)
   jquery-rails (~> 4.3.3)
   listen (>= 3.0.5, < 3.2)
   omniauth-canvas!
