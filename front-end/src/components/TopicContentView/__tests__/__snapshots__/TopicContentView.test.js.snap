@@ -1,15 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`LearningEventsItem should render correctly 1`] = `
+exports[`TopicContentView should render correctly 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <LearningEventsItem
-    item={
-      Object {
-        "id": 1,
-        "title": "LE 1",
-      }
-    }
+  Symbol(enzyme.__unrendered__): <TopicContentView
+    topicsList={Array []}
   />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
@@ -22,25 +17,21 @@ ShallowWrapper {
   Symbol(enzyme.__node__): Object {
     "instance": null,
     "key": undefined,
-    "nodeType": "class",
-    "props": Object {
-      "children": "LE 1",
-    },
+    "nodeType": "host",
+    "props": Object {},
     "ref": null,
-    "rendered": "LE 1",
-    "type": [Function],
+    "rendered": null,
+    "type": "div",
   },
   Symbol(enzyme.__nodes__): Array [
     Object {
       "instance": null,
       "key": undefined,
-      "nodeType": "class",
-      "props": Object {
-        "children": "LE 1",
-      },
+      "nodeType": "host",
+      "props": Object {},
       "ref": null,
-      "rendered": "LE 1",
-      "type": [Function],
+      "rendered": null,
+      "type": "div",
     },
   ],
   Symbol(enzyme.__options__): Object {

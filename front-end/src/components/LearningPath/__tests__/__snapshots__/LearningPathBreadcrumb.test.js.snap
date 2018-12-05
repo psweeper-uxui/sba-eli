@@ -1,16 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`LearningObjective should render correctly 1`] = `
+exports[`LearningPathBreadcrumb should render correctly 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <LearningObjective
-    match={
-      Object {
-        "params": Object {
-          "id": 1,
-        },
-      }
-    }
+  Symbol(enzyme.__unrendered__): <LearningPathBreadCrumb
+    id={1}
+    pathName="LP 1"
   />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
@@ -23,20 +18,22 @@ ShallowWrapper {
   Symbol(enzyme.__node__): Object {
     "instance": null,
     "key": undefined,
-    "nodeType": "host",
+    "nodeType": "function",
     "props": Object {
       "children": Array [
-        <Header
-          as="h1"
-        />,
-        <Header
-          as="h4"
+        <BreadcrumbSection
+          href="/"
         >
-          Micro Learning Events:
-        </Header>,
-        <LearningEventsList
-          course_id={1}
+          Home
+        </BreadcrumbSection>,
+        <BreadcrumbDivider
+          icon="right angle"
         />,
+        <BreadcrumbSection
+          href="/learning_paths/1"
+        >
+          LP 1
+        </BreadcrumbSection>,
       ],
     },
     "ref": null,
@@ -44,13 +41,13 @@ ShallowWrapper {
       Object {
         "instance": null,
         "key": undefined,
-        "nodeType": "function",
+        "nodeType": "class",
         "props": Object {
-          "as": "h1",
-          "children": undefined,
+          "children": "Home",
+          "href": "/",
         },
         "ref": null,
-        "rendered": null,
+        "rendered": "Home",
         "type": [Function],
       },
       Object {
@@ -58,11 +55,10 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "function",
         "props": Object {
-          "as": "h4",
-          "children": "Micro Learning Events:",
+          "icon": "right angle",
         },
         "ref": null,
-        "rendered": "Micro Learning Events:",
+        "rendered": null,
         "type": [Function],
       },
       Object {
@@ -70,34 +66,36 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "class",
         "props": Object {
-          "course_id": 1,
-          "module_id": undefined,
+          "children": "LP 1",
+          "href": "/learning_paths/1",
         },
         "ref": null,
-        "rendered": null,
+        "rendered": "LP 1",
         "type": [Function],
       },
     ],
-    "type": "div",
+    "type": [Function],
   },
   Symbol(enzyme.__nodes__): Array [
     Object {
       "instance": null,
       "key": undefined,
-      "nodeType": "host",
+      "nodeType": "function",
       "props": Object {
         "children": Array [
-          <Header
-            as="h1"
-          />,
-          <Header
-            as="h4"
+          <BreadcrumbSection
+            href="/"
           >
-            Micro Learning Events:
-          </Header>,
-          <LearningEventsList
-            course_id={1}
+            Home
+          </BreadcrumbSection>,
+          <BreadcrumbDivider
+            icon="right angle"
           />,
+          <BreadcrumbSection
+            href="/learning_paths/1"
+          >
+            LP 1
+          </BreadcrumbSection>,
         ],
       },
       "ref": null,
@@ -105,13 +103,13 @@ ShallowWrapper {
         Object {
           "instance": null,
           "key": undefined,
-          "nodeType": "function",
+          "nodeType": "class",
           "props": Object {
-            "as": "h1",
-            "children": undefined,
+            "children": "Home",
+            "href": "/",
           },
           "ref": null,
-          "rendered": null,
+          "rendered": "Home",
           "type": [Function],
         },
         Object {
@@ -119,11 +117,10 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "function",
           "props": Object {
-            "as": "h4",
-            "children": "Micro Learning Events:",
+            "icon": "right angle",
           },
           "ref": null,
-          "rendered": "Micro Learning Events:",
+          "rendered": null,
           "type": [Function],
         },
         Object {
@@ -131,15 +128,15 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "class",
           "props": Object {
-            "course_id": 1,
-            "module_id": undefined,
+            "children": "LP 1",
+            "href": "/learning_paths/1",
           },
           "ref": null,
-          "rendered": null,
+          "rendered": "LP 1",
           "type": [Function],
         },
       ],
-      "type": "div",
+      "type": [Function],
     },
   ],
   Symbol(enzyme.__options__): Object {
