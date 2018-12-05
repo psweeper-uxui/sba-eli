@@ -5,6 +5,7 @@ import { Header, Divider, Grid } from "semantic-ui-react";
 import TopicSideBar from "../TopicSideBar/TopicSidebar";
 import TopicContentView from "../TopicContentView/TopicContentView";
 import LearningEvent from "../LearningEvent/LearningEvent";
+import LearningPathBreadCrumb from "./LearningPathBreadcrumb";
 
 class LearningPath extends React.Component {
   state = {
@@ -95,9 +96,14 @@ class LearningPath extends React.Component {
       event_id: this.props.match.params.eventId
     };
 
+    const breadCrumbProps = this.props.match.params;
+
     return (
       <div>
-        <a href="/">Back to Home</a>
+        <LearningPathBreadCrumb
+          pathName={this.state.learningPath.name}
+          {...breadCrumbProps}
+        />
         <Header as="h1">{this.state.learningPath.name}</Header>
         <Divider />
         <Grid centered>
