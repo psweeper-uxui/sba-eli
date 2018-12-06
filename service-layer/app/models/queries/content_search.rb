@@ -13,9 +13,11 @@ module Queries
     def prepare(params)
       check_like_value(:keywords, params)
       check_array_value(:subjects, params)
-      check_array_value(:media_type, params)
+      check_array_value(:media_types, params)
       check_array_value(:durations, params)
       check_single_value(:account_id, params)
+      check_numeric_value(:per_page, params)
+      check_numeric_value(:page, params)
       check_single_value(:workflow_state, params, "active")
     end
 
@@ -37,7 +39,7 @@ module Queries
           #{construct_account_clause}
           #{construct_course_worklow_clause}
           #{construct_name_sql}
-          #{construct_ilike_search('t', 'name', subjects + durations)}
+          #{construct_all_tags_serach('t', 'name')}
         UNION ALL
         -- Search learning objectives
         SELECT DISTINCT
@@ -51,14 +53,14 @@ module Queries
             ON courses.id = context_modules.context_id
               AND context_modules.context_type = 'Course'
           LEFT OUTER JOIN fearless_taggings ts
-            ON ts.taggable_id = courses.id AND ts.taggable_type = 'LearningPath'
+            ON ts.taggable_id = context_modules.id AND ts.taggable_type = 'LearningObjective'
           LEFT OUTER JOIN fearless_tags t
             ON t.id = ts.tag_id
         WHERE 0=0
           #{construct_account_clause}
           #{construct_generic_workflow_clause('context_modules')}
           #{construct_name_sql('context_modules')}
-          #{construct_tag_search('t', 'name', subjects)}
+          #{construct_all_tags_serach('t', 'name')}
         UNION ALL
         -- Search learning learning_event
         SELECT DISTINCT
@@ -72,19 +74,29 @@ module Queries
             ON courses.id = content_tags.context_id
               AND content_tags.context_type = 'Course'
           LEFT OUTER JOIN fearless_taggings ts
-            ON ts.taggable_id = courses.id AND ts.taggable_type = 'LearningPath'
+            ON ts.taggable_id = content_tags.id AND ts.taggable_type = 'LearningEvent'
           LEFT OUTER JOIN fearless_tags t
             ON t.id = ts.tag_id
         WHERE 0=0
           #{construct_account_clause}
           #{construct_generic_workflow_clause('content_tags')}
           #{construct_name_sql('content_tags', 'title')}
-          #{construct_ilike_search('t', 'name', subjects)}
+          #{construct_all_tags_serach('t', 'name')}
+        #{construct_limit}
+        #{construct_offset}
       SQL
     end
 
-    def construct_name_sql(table = "courses", field = "name")
-      construct_ilike_search(table, field, keywords)
+    def construct_all_tags_serach(table, field)
+      sql_array = [subjects, media_types, durations].map { |a| a if a.any? }.compact
+      sql_strings = sql_array.map do |values|
+        "(#{construct_tag_search(table, field, values)})"
+      end
+      "AND " + sql_strings.join(" AND ") unless sql_strings.empty?
+    end
+
+    def construct_account_clause(table = "courses")
+      "AND #{table}.account_id = #{sanitize(account_id)}" if account_id.present?
     end
 
     def construct_course_worklow_clause
@@ -103,16 +115,27 @@ module Queries
       end
     end
 
-    def construct_account_clause(table = "courses")
-      "AND #{table}.account_id = #{sanitize(account_id)}" if account_id.present?
+    def construct_ilike_search(table, field, value, concat = "AND")
+      "#{concat} #{table}.#{field} ILIKE '#{sanitize(value)}'" if value.present?
+    end
+
+    def construct_limit
+      "LIMIT #{sanitize(per_page.to_i)}" if per_page.present?
+    end
+
+    def construct_name_sql(table = "courses", field = "name")
+      construct_ilike_search(table, field, keywords)
+    end
+
+    def construct_offset
+      if per_page.present?
+        current_offset = page.present? ? ((page - 1) * per_page) : 0
+        "OFFSET #{sanitize(current_offset)}" if [page].present?
+      end
     end
 
     def construct_tag_search(table, field, values)
-      "AND #{table}.#{field} IN (#{array_to_string(values)})" unless values.empty?
-    end
-
-    def construct_ilike_search(table, field, value)
-      "AND #{table}.#{field} ILIKE '#{sanitize(value)}'" if value.present?
+      values.map { |v| construct_ilike_search(table, field, v, "") }.join(" OR ")
     end
   end
 end
