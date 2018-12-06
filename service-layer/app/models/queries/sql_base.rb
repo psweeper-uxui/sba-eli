@@ -22,16 +22,20 @@ module Queries
 
     private
 
-    def check_single_value(field, params, default_value = nil)
-      @properties[field] = params[field] || default_value
+    def check_array_value(field, params)
+      @properties[field] = params[field].present? ? params[field].split(",") : []
     end
 
     def check_like_value(field, params, default_value = nil)
       @properties[field] = params[field].present? ? "%#{params[field]}%" : default_value
     end
 
-    def check_array_value(field, params)
-      @properties[field] = params[field].present? ? params[field].split(",") : []
+    def check_numeric_value(field, params, default_value = nil)
+      @properties[field] = params[field].present? ? params[field].to_i : default_value
+    end
+
+    def check_single_value(field, params, default_value = nil)
+      @properties[field] = params[field] || default_value
     end
 
     def array_to_string(arr)
