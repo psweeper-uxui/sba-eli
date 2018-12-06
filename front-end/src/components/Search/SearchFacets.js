@@ -41,7 +41,7 @@ export default class SearchFacets extends Component {
             Apply
           </Form.Button>
         </Form.Group>
-        <Input type="hidden" name="searchTerm" value={this.props.searchTerm} />
+        <Input type="hidden" name="searchTerm" value={this.props.urlParams.searchTerm} />
       </Form>
     );
   }
