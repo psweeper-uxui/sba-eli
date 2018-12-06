@@ -8,6 +8,8 @@ class SearchesController < ApplicationController
   def query_parameters
     params.permit(
       :keywords,
+      :page,
+      :per_page,
       subjects: [],
       media_types: [],
       durations: [],
