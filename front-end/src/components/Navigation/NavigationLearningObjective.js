@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import NavigationLearningEvent from "./NavigationLearningEvent";
 import { Link } from 'react-router-dom';
 import { Divider, List } from "semantic-ui-react";
 import axios from "axios";
@@ -50,7 +49,6 @@ export default class NavigationLearningObjective extends Component {
   }
 
   render() {
-    const {activeItem} = this.state
     const learningObjectivePath = `/learning_paths/${this.props.learningPathId}/learning_objectives/`
 
     const topics = this.state.learningObjectives.map(lo => (
