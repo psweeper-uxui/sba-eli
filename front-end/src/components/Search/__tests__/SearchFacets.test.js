@@ -19,9 +19,9 @@ describe('SearchFacets', () => {
     const wrapper = mount(<SearchFacets urlParams={{searchTerm: 'hello'}}/>);
 
     expect(wrapper.find(Input).exists()).toBe(true);
-    //expect(wrapper.find(Input).type()).toBe('hidden');
-    //expect(wrapper.find(Input).html()).toBe('searchTerm');
-    //expect(wrapper.find(Input).value()).toBe('hello');
+    expect(wrapper.find(Input).get(0).props.type).toBe('hidden');
+    expect(wrapper.find(Input).get(0).props.name).toBe('searchTerm');
+    expect(wrapper.find(Input).get(0).props.value).toBe('hello');
   });
 
   it('should render a <MediaTypeFilters> component', () => {
