@@ -33,28 +33,23 @@ const NavigationDisplay = () => {
         <Route
             exact
             path="/learning_paths/:course_id/learning_objectives/"
-            component={LearningObjectives}
-        />
+            component={LearningObjectives} />
         <Route
             exact
             path="/learning_paths/:course_id/learning_objectives/:id"
-            component={LearningObjective}
-        />
+            component={LearningObjective} />
         <Route
             exact
-            path="/learning_paths/:course_id/learning_objectives/:module_id/learning_events/:id"
-            component={LearningEvent}
-        />
+            path="/learning_paths/:id/learning_objectives/:topicId/learning_events/:eventId"
+            component={LearningEvent} />
         <Route
             exact
             path="/learning_paths/:course_id/learning_objectives/:module_id/learning_events"
-            component={LearningEvents}
-        />
+            component={LearningEvents} />
         <Route
             exact
             path="/search"
-            component={SearchPage}
-        />
+            component={SearchPage} />
         <Route component={Error} />
       </Switch>
   );
