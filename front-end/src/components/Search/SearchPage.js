@@ -27,8 +27,9 @@ export default class SearchPage extends Component {
   }
 
   searchText() {
-    if (this.state.searchTerm !== '') {
-      return `Search Results for '${this.state.searchTerm}'`
+    if (this.state.searchTerm !== undefined
+        && this.state.searchTerm !== '') {
+      return `# Search Results for "${this.state.searchTerm}"`
     }
     //TODO: What do we want to do when no search term is available?
     return 'No search term entered'
