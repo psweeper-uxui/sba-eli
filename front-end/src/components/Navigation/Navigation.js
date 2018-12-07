@@ -8,7 +8,7 @@ import NavigationDisplay from "./NavigationDisplay";
 const Navigation = () => {
   return (
       <Router>
-        <Grid>
+        <Grid className='sba'>
           <Grid.Row>
             <Navbar />
           </Grid.Row>
