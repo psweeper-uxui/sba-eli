@@ -1,6 +1,7 @@
 import React, {Component} from "react";
 import "../../App.css";
-import {Container, Grid, Header} from "semantic-ui-react";
+import "../../assets/style/search.css"
+import {Button, Container, Grid, Header, Icon, Segment, Sidebar} from "semantic-ui-react";
 import queryString from 'query-string';
 import SearchFacets from "./SearchFacets";
 import SearchResults from "./SearchResults";
@@ -14,9 +15,13 @@ export default class SearchPage extends Component {
 
     this.state = {
       searchTerm: this.clean(params.searchTerm),
-      urlParams: params
+      urlParams: params,
+      visibleDrawer: false
     };
   };
+
+  handleToggle = animation => () =>
+      this.setState({animation, visibleDrawer: !this.state.visibleDrawer})
 
   clean(text) {
     if (text !== undefined && text.length > 0) {
@@ -36,14 +41,33 @@ export default class SearchPage extends Component {
   }
 
   render() {
+    const {visibleDrawer} = this.state
+
     return (
-        <div>
+        <Container className='search_page'>
           <Grid.Row>
             <Header as='h1'>{this.searchText()}</Header>
-            <SearchFacets urlParams={this.state.urlParams}/>
-            <SearchResults urlParams={this.state.urlParams}/>
+            <Button icon labelPosition='left'
+                    basic floated='right'
+                    type='submit'
+                    id='add_filters'
+                    onClick={this.handleToggle('HELLO')}>
+              <Icon name='sliders'/>
+              Add Filters
+            </Button>
           </Grid.Row>
-        </div>
+          <Grid.Row>
+          <Sidebar.Pushable>
+            <Sidebar as={Segment} animation='overlay' direction='top' visible={visibleDrawer}>
+                <SearchFacets urlParams={this.state.urlParams}/>
+            </Sidebar>
+            <Sidebar.Pusher>
+                <SearchResults urlParams={this.state.urlParams}/>
+              <SearchResults urlParams={this.state.urlParams}/>
+            </Sidebar.Pusher>
+          </Sidebar.Pushable>
+          </Grid.Row>
+        </Container>
     )
   }
 }

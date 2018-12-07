@@ -17,7 +17,7 @@ export default class SearchResults extends Component {
     this.fetchData();
   }
 
-  buildUrl() {
+  fetchData() {
     let url = process.env.REACT_APP_SERVICE_HOST + "/searches?";
     //TODO: verify that malicious data isn't being passed via the params
     if (this.props.urlParams.searchTerm !== undefined) {
@@ -32,12 +32,9 @@ export default class SearchResults extends Component {
     if (this.props.urlParams.time !== undefined) {
       url += "&duration=" + this.props.urlParams.time
     }
-    return url
-  }
 
-  fetchData() {
     axios
-        .get(this.buildUrl())
+        .get(url)
         .then(res => {
           const searchResults = res.data;
           this.setState({searchResults});
@@ -57,25 +54,35 @@ export default class SearchResults extends Component {
           "Chocolate bar jelly beans cheesecake cake cupcake. Liquorice icing tootsie roll chupa chups" +
           "fruitcake gingerbread. Sesame snaps tart pastry sweet roll cupcake. ",
       "content_type": "learning-objective",
-      "uri": "/learning_paths/7/learning_objectives/3",
-      "meta_data": {},
+      "meta_data": {
+        "learning_path_id": 1,
+        "learning_objective_id": 1
+      },
       "thumbnail": "https://picsum.photos/200"
     }]
     this.setState({searchResults});
   }
 
+  constructUri(id, metadataObject, contentType) {
+    //TODO: construct the URL
+    //learning_paths/:course_id/learning_objectives/:module_id/learning_events/:id
+    return "/learning_paths" + id
+  }
+
   render() {
+
     return this.state.searchResults.map((sr, index) => (
-        <Grid.Row key={'search_result' + index}>
+        <Grid.Row className="search_result_item" key={'search_result' + index}>
           <Grid.Column width={3}>
-            <Link to={sr.uri}>
+            <Link to={this.constructUri(sr.id, sr.meta_data, sr.content_type)}>
               <img src={sr.thumbnail} title={sr.name} alt={sr.name}/>
             </Link>
           </Grid.Column>
           <Grid.Column width={11}>
-            <div>Type: {sr.content_type}</div>
             <Header as='h3'>
-              <Link to={sr.uri}>{sr.name}</Link>
+              <Link to={this.constructUri(sr.id, sr.meta_data, sr.content_type)}>
+                {sr.name}
+              </Link>
             </Header>
             <div>{sr.description}</div>
           </Grid.Column>
