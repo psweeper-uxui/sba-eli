@@ -14,7 +14,7 @@ describe('SearchPage', () => {
     const wrapper = shallow(<SearchPage location={urlString}/>);
 
     expect(wrapper.find(Header).exists()).toBe(true);
-    expect(wrapper.find(Header).render().text()).toEqual("Search Results for '" + searchTerm + "'");
+    expect(wrapper.find(Header).render().text()).toEqual("# Search Results for \"" + searchTerm + "\"");
   });
 
   it('should display blank, without an error, if no search term is available', () => {
@@ -40,7 +40,7 @@ describe('SearchPage', () => {
     const wrapper = shallow(<SearchPage location={urlString}/>);
 
     expect(wrapper.find(Header).exists()).toBe(true);
-    expect(wrapper.find(Header).render().text()).toEqual("Search Results for '" + searchTerm + "'");
+    expect(wrapper.find(Header).render().text()).toEqual("# Search Results for \"" + searchTerm + "\"");
   });
 
   it('should not execute XSS code with single quotes in the search input box', () => {
@@ -51,7 +51,7 @@ describe('SearchPage', () => {
     const wrapper = shallow(<SearchPage location={urlString}/>);
 
     expect(wrapper.find(Header).exists()).toBe(true);
-    expect(wrapper.find(Header).render().text()).toEqual("Search Results for '" + displayTerm + "'");
+    expect(wrapper.find(Header).render().text()).toEqual("# Search Results for \"" + displayTerm + "\"");
   });
 
   it('should not execute XSS code with double quotes in the search input box', () => {
@@ -62,7 +62,7 @@ describe('SearchPage', () => {
     const wrapper = shallow(<SearchPage location={urlString}/>);
 
     expect(wrapper.find(Header).exists()).toBe(true);
-    expect(wrapper.find(Header).render().text()).toEqual("Search Results for '" + displayTerm + "'");
+    expect(wrapper.find(Header).render().text()).toEqual("# Search Results for \"" + displayTerm + "\"");
   });
 
   it('should render a <SearchFacets> component', () => {
