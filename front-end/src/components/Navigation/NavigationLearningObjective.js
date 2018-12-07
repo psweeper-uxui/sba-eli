@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import NavigationLearningEvent from "./NavigationLearningEvent";
 import { Link } from 'react-router-dom';
 import { Divider, List } from "semantic-ui-react";
 import axios from "axios";
