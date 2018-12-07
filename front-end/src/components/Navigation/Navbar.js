@@ -22,7 +22,7 @@ export default class Navbar extends Component {
   render() {
 
     return(
-        <Menu fluid>
+        <Menu className="navbar" fluid>
           <Menu.Item header href={`/`}>Dashboard</Menu.Item>
           <Dropdown text='Learning Paths' item>
             <Dropdown.Menu>
