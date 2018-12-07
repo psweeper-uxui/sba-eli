@@ -22,8 +22,7 @@ export default class Navbar extends Component {
   render() {
 
     return(
-      <div className="navbar">
-        <Menu>
+        <Menu fluid>
           <Menu.Item header href={`/`}>Dashboard</Menu.Item>
           <Dropdown text='Learning Paths' item>
             <Dropdown.Menu>
@@ -46,7 +45,6 @@ export default class Navbar extends Component {
             </Menu.Item>
           </Menu.Menu>
         </Menu>
-      </div>
     )
   }
 };

@@ -5,11 +5,6 @@ import NavigationDisplay from "../NavigationDisplay";
 import { shallow } from "enzyme";
 
 describe("Navigation", () => {
-  it("should render a <div>", () => {
-    const wrapper = shallow(<Navigation />);
-
-    expect(wrapper.find("div").length).toEqual(2);
-  });
 
   it('should render a <Navbar>', () => {
     const wrapper = shallow(<Navigation/>);

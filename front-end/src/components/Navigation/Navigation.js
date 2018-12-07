@@ -7,20 +7,20 @@ import NavigationDisplay from "./NavigationDisplay";
 
 const Navigation = () => {
   return (
-    <div>
       <Router>
-        <div>
-          <Navbar />
-          <Grid>
-            <Grid.Row>
-              <Grid.Column mobile={16} tablet={8} computer={16}>
-                <NavigationDisplay />
-              </Grid.Column>
-            </Grid.Row>
-          </Grid>
-        </div>
+        <Grid>
+          <Grid.Row>
+            <Navbar />
+          </Grid.Row>
+          <Grid.Row>
+            <Grid.Column width={1}/>
+            <Grid.Column mobile={16} tablet={8} computer={14}>
+              <NavigationDisplay/>
+            </Grid.Column>
+            <Grid.Column width={1}/>
+          </Grid.Row>
+        </Grid>
       </Router>
-    </div>
   );
 };
 

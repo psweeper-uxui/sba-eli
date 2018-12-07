@@ -37,17 +37,11 @@ export default class SearchPage extends Component {
   render() {
     return (
         <div>
-          <Container>
+          <Grid.Row>
             <Header as='h1'>{this.searchText()}</Header>
-          </Container>
-          <Container>
             <SearchFacets urlParams={this.state.urlParams}/>
-          </Container>
-          <Container>
-            <Grid>
             <SearchResults urlParams={this.state.urlParams}/>
-            </Grid>
-          </Container>
+          </Grid.Row>
         </div>
     )
   }
