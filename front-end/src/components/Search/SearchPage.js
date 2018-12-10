@@ -45,7 +45,7 @@ export default class SearchPage extends Component {
 
     return (
         <Container className='search_page'>
-          <Grid.Row>
+          <Grid.Row className='search_page_header'>
             <Header as='h1'>{this.searchText()}</Header>
             <Button icon labelPosition='left'
                     basic floated='right'
