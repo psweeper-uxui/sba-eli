@@ -119,11 +119,19 @@ export default class SearchPage extends Component {
   }
 
   searchText() {
+    //TODO: what is the correct text for these states?
     if (this.state.searchTerm !== undefined
         && this.state.searchTerm !== '') {
-      return `# Search Results for "${this.state.searchTerm}"`
+      if (this.state.searchMetadata
+          && this.state.searchMetadata.pagination
+          && this.state.searchMetadata.pagination.total_count
+          && this.state.searchMetadata.pagination.total_count > 0) {
+        return `${this.state.searchMetadata.pagination.total_count} Search Results for "${this.state.searchTerm}"`
+      }
+      //TODO: nothing to filter so hide the filter button
+      return `No Search Results were found for "${this.state.searchTerm}"`
     }
-    //TODO: What do we want to do when no search term is available?
+    //TODO: nothing to filter so hide the filter button
     return 'No search term entered'
   }
 
