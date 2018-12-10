@@ -34,12 +34,12 @@ export default class SearchResults extends Component {
             </Link>
           </Grid.Column>
           <Grid.Column className="search_result_content" width={11}>
-            <Header className="search_result_title" as='h3'>
+            <Header as='h3' className="search_result_title" >
               <Link to={this.constructUri(sr.id, sr.meta_data)}>
                 {sr.name}
               </Link>
             </Header>
-            <div className="search_result_description">{sr.description}</div>
+            <div tabindex="0" className="search_result_description">{sr.description}</div>
           </Grid.Column>
         </Grid.Row>
     ));
