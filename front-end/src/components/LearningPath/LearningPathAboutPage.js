@@ -13,7 +13,7 @@ const LearningPathAboutPage = (props) => {
           { placeholderText }
         </p>        
       </Container>,
-      controls: [ <Button onClick={props.nextPage}>Next</Button> ]
+      controls: <Button onClick={props.nextPage}>Next</Button>
     },
     2: {
       title: "About",
@@ -23,7 +23,7 @@ const LearningPathAboutPage = (props) => {
           { placeholderText }
         </p>
       </Container>,
-      controls: [ <Button onClick={props.nextPage}>Next</Button> ]
+      controls: <Button onClick={props.nextPage}>Next</Button>
     },
     3: {
       title: "Save Your Progress",
@@ -36,10 +36,10 @@ const LearningPathAboutPage = (props) => {
           
         </Container>
       </Container>,
-      controls: [ 
-        <Button>Register</Button>,
+      controls: <div>
+        <Button>Register</Button>
         <Button onClick={props.nextPage}>Skip For Now</Button> 
-      ]
+      </div>
     },
     4: {
       title: "Start Your Path",
@@ -52,12 +52,11 @@ const LearningPathAboutPage = (props) => {
           
         </Container>
       </Container>,
-      controls: [
+      controls:
         <Button icon labelPosition='right'>
           Start First Learning Path
           <Icon name='right arrow' />
-        </Button>
-      ]
+        </Button>    
     }
   }
   

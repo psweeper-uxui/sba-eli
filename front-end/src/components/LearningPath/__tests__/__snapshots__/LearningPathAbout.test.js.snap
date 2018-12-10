@@ -103,9 +103,7 @@ ShallowWrapper {
         as="button"
         onClick={[Function]}
         role="button"
-      >
-        About
-      </Button>,
+      />,
     },
     "ref": null,
     "rendered": Array [
@@ -594,9 +592,7 @@ ShallowWrapper {
           as="button"
           onClick={[Function]}
           role="button"
-        >
-          About
-        </Button>,
+        />,
       },
       "ref": null,
       "rendered": Array [

@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Grid, Header, Button } from "semantic-ui-react";
+import LearningPathAbout from "../LearningPath/LearningPathAbout";
 
 export default class DashboardSplash extends Component {
   render() {
@@ -28,7 +29,7 @@ export default class DashboardSplash extends Component {
           </Grid.Column>
         </Grid.Row>
         <Grid.Row>
-          <Button size="huge">Begin Your Journey</Button>
+          <LearningPathAbout buttonSize="huge">Begin Your Journey</LearningPathAbout>
         </Grid.Row>
       </Grid>
     );

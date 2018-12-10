@@ -13,14 +13,21 @@ class LearningPathAbout extends React.Component {
   
   setPage = (page) => this.setState({ page: page })
   
-  handleOpen = () => this.setState({ modalOpen: true, page: 1 })
+  handleOpen = (onOpen) => {
+    if(onOpen) {
+      onOpen();
+    }
+    
+    this.setState({ modalOpen: true, page: 1 });
+  }
+
 
   handleClose = () => this.setState({ modalOpen: false })
 
   render() {
     return (
       <Modal
-        trigger={<Button onClick={this.handleOpen}>About</Button>}
+        trigger={<Button size={this.props.buttonSize} onClick={() => this.handleOpen(this.props.onOpen)}>{this.props.children}</Button>}
         open={this.state.modalOpen}
         onClose={this.handleClose}
       >

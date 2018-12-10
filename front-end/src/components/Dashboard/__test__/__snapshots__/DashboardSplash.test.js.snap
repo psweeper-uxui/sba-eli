@@ -52,13 +52,11 @@ ShallowWrapper {
           </GridColumn>
         </GridRow>,
         <GridRow>
-          <Button
-            as="button"
-            role="button"
-            size="huge"
+          <LearningPathAbout
+            buttonSize="huge"
           >
             Begin Your Journey
-          </Button>
+          </LearningPathAbout>
         </GridRow>,
       ],
     },
@@ -169,13 +167,11 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "function",
         "props": Object {
-          "children": <Button
-            as="button"
-            role="button"
-            size="huge"
+          "children": <LearningPathAbout
+            buttonSize="huge"
           >
             Begin Your Journey
-          </Button>,
+          </LearningPathAbout>,
         },
         "ref": null,
         "rendered": Object {
@@ -183,10 +179,8 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "class",
           "props": Object {
-            "as": "button",
+            "buttonSize": "huge",
             "children": "Begin Your Journey",
-            "role": "button",
-            "size": "huge",
           },
           "ref": null,
           "rendered": "Begin Your Journey",
@@ -238,13 +232,11 @@ ShallowWrapper {
             </GridColumn>
           </GridRow>,
           <GridRow>
-            <Button
-              as="button"
-              role="button"
-              size="huge"
+            <LearningPathAbout
+              buttonSize="huge"
             >
               Begin Your Journey
-            </Button>
+            </LearningPathAbout>
           </GridRow>,
         ],
       },
@@ -355,13 +347,11 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "function",
           "props": Object {
-            "children": <Button
-              as="button"
-              role="button"
-              size="huge"
+            "children": <LearningPathAbout
+              buttonSize="huge"
             >
               Begin Your Journey
-            </Button>,
+            </LearningPathAbout>,
           },
           "ref": null,
           "rendered": Object {
@@ -369,10 +359,8 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "class",
             "props": Object {
-              "as": "button",
+              "buttonSize": "huge",
               "children": "Begin Your Journey",
-              "role": "button",
-              "size": "huge",
             },
             "ref": null,
             "rendered": "Begin Your Journey",

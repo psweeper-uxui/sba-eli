@@ -10,7 +10,7 @@ class LearningPaths extends React.Component {
     return(
       <div>
         <Container textAlign="center">
-          <Header as='h1'>Learning Paths <LearningPathAbout /></Header>
+          <Header as='h1'>Learning Paths</Header>
         </Container>
         <Divider hidden/>
         <Container>
