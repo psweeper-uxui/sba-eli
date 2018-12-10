@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import "../../App.css";
 import "../../assets/style/search.css"
-import {Button, Container, Grid, Header, Icon, Segment, Sidebar} from "semantic-ui-react";
+import {Button, Container, Grid, Header, Icon, Pagination, Segment, Sidebar} from "semantic-ui-react";
 import axios from "axios";
 import queryString from 'query-string';
 import SearchFacets from "./SearchFacets";
@@ -135,6 +135,25 @@ export default class SearchPage extends Component {
     return 'No search term entered'
   }
 
+  getPagination() {
+    if (this.state.searchMetadata
+        && this.state.searchMetadata.pagination
+        && this.state.searchMetadata.pagination.total_pages
+        && this.state.searchMetadata.pagination.total_pages > 1) {
+      return <Pagination
+                boundaryRange={0}
+                ellipsisItem={null}
+                prevItem={null}
+                nextItem={null}
+                firstItem={null}
+                lastItem={null}
+                activePage={this.state.searchMetadata.pagination.current_page}
+                siblingRange={1}
+                totalPages={this.state.searchMetadata.pagination.total_pages}
+            />
+    }
+  }
+
   render() {
     const {visibleDrawer} = this.state
 
@@ -160,6 +179,9 @@ export default class SearchPage extends Component {
                 <SearchResults searchResults={this.state.searchResults}/>
               </Sidebar.Pusher>
             </Sidebar.Pushable>
+          </Grid.Row>
+          <Grid.Row>
+            {this.getPagination()}
           </Grid.Row>
         </Container>
     )
