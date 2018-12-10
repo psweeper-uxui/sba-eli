@@ -4,9 +4,6 @@
     background-color: #F8F8F8;
 }
 
-.search_page {
-}
-
 .search_page h1 {
     display: inline;
 }
@@ -22,4 +19,8 @@
     padding: 20px;
     margin-bottom: 25px;
     border-radius: 7px;
+}
+
+.search_page .search_result_content {
+    padding-top: 60px;
 }
