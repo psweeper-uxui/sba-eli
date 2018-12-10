@@ -1,86 +1,41 @@
 import React, {Component} from 'react'
-import axios from "axios";
 import {Grid, Header} from "semantic-ui-react";
 import {Link} from "react-router-dom";
 
 export default class SearchResults extends Component {
 
-  constructor(props) {
-    super(props);
+  constructUri(id, metadataObject) {
+    if (id === undefined
+        && metadataObject !== undefined) {
 
-    this.state = {
-      searchResults: []
-    };
-  };
-
-  componentDidMount() {
-    this.fetchData();
-  }
-
-  fetchData() {
-    let url = process.env.REACT_APP_SERVICE_HOST + "/searches?";
-    //TODO: verify that malicious data isn't being passed via the params
-    if (this.props.urlParams.searchTerm !== undefined) {
-      url += "keywords=" + this.props.urlParams.searchTerm
+      let uri = '/learning_paths/'
+      if (metadataObject.learning_path_id !== undefined) {
+        uri += metadataObject.learning_path_id
+        if (metadataObject.learning_objective_id !== undefined) {
+          uri += `/learning_objectives/` + metadataObject.learning_objective_id
+          uri += `/learning_events/` + id
+        } else {
+          uri += `/learning_objectives/` + id
+        }
+      } else {
+        uri += id
+      }
+      return uri
     }
-    if (this.props.urlParams.subject !== undefined) {
-      url += "&subject=" + this.props.urlParams.subject
-    }
-    if (this.props.urlParams.mediaType !== undefined) {
-      url += "&media_types=" + this.props.urlParams.mediaType
-    }
-    if (this.props.urlParams.time !== undefined) {
-      url += "&duration=" + this.props.urlParams.time
-    }
-
-    axios
-        .get(url)
-        .then(res => {
-          const searchResults = res.data;
-          this.setState({searchResults});
-        })
-        .catch(error => {
-          console.error(error);
-        });
-
-    //TODO: static results should be removed when API is finalized
-    const searchResults = [{
-      "id": 1,
-      "name": "Title of Content",
-      "description": "Sesame snaps tart pastry sweet roll cupcake. " +
-          "Chocolate bar jelly beans cheesecake cake cupcake. Liquorice icing tootsie roll chupa chups" +
-          "fruitcake gingerbread. Sesame snaps tart pastry sweet roll cupcake. " +
-          "Sesame snaps tart pastry sweet roll cupcake. " +
-          "Chocolate bar jelly beans cheesecake cake cupcake. Liquorice icing tootsie roll chupa chups" +
-          "fruitcake gingerbread. Sesame snaps tart pastry sweet roll cupcake. ",
-      "content_type": "learning-objective",
-      "meta_data": {
-        "learning_path_id": 1,
-        "learning_objective_id": 1
-      },
-      "thumbnail": "https://picsum.photos/200"
-    }]
-    this.setState({searchResults});
-  }
-
-  constructUri(id, metadataObject, contentType) {
-    //TODO: construct the URL
-    //learning_paths/:course_id/learning_objectives/:module_id/learning_events/:id
-    return "/learning_paths" + id
+    return ''
   }
 
   render() {
-
-    return this.state.searchResults.map((sr, index) => (
-        <Grid.Row className="search_result_item" key={'search_result' + index}>
+    return this.props.searchResults.map((sr, index) => (
+        <Grid.Row className="search_result_item" key={'search_result' + index} id={'search_result' + index}>
           <Grid.Column width={3}>
-            <Link to={this.constructUri(sr.id, sr.meta_data, sr.content_type)}>
+            <Link to={this.constructUri(sr.id, sr.meta_data)}>
               <img src={sr.thumbnail} title={sr.name} alt={sr.name}/>
             </Link>
           </Grid.Column>
           <Grid.Column width={11}>
             <Header as='h3'>
-              <Link to={this.constructUri(sr.id, sr.meta_data, sr.content_type)}>
+              <Link to={this.constructUri(sr.id, sr.meta_data)}>
                 {sr.name}
               </Link>
             </Header>

@@ -2,6 +2,7 @@ import React, {Component} from "react";
 import "../../App.css";
 import "../../assets/style/search.css"
 import {Button, Container, Grid, Header, Icon, Segment, Sidebar} from "semantic-ui-react";
+import axios from "axios";
 import queryString from 'query-string';
 import SearchFacets from "./SearchFacets";
 import SearchResults from "./SearchResults";
@@ -16,9 +17,15 @@ export default class SearchPage extends Component {
     this.state = {
       searchTerm: this.clean(params.searchTerm),
       urlParams: params,
-      visibleDrawer: false
+      visibleDrawer: false,
+      searchResults: [],
+      searchMetadata: []
     };
   };
+
+  componentDidMount() {
+    this.fetchData();
+  }
 
   handleToggle = animation => () =>
       this.setState({animation, visibleDrawer: !this.state.visibleDrawer})
@@ -28,8 +35,87 @@ export default class SearchPage extends Component {
         ? text.trim()
         : '');
   }
+
+  fetchData() {
+    let url = process.env.REACT_APP_SERVICE_HOST + "/searches?";
+
+    //TODO: verify that malicious data isn't being passed via the params
+    if (this.state.urlParams !== undefined) {
+      if (this.state.urlParams.searchTerm !== undefined) {
+        url += "keywords=" + this.state.urlParams.searchTerm
+      }
+      if (this.state.urlParams.subject !== undefined) {
+        url += "&subject=" + this.state.urlParams.subject
+      }
+      if (this.state.urlParams.mediaType !== undefined) {
+        url += "&media_types=" + this.state.urlParams.mediaType
+      }
+      if (this.state.urlParams.time !== undefined) {
+        url += "&duration=" + this.state.urlParams.time
+      }
     }
-    return ''
+
+    axios
+        .get(encodeURI(url))
+        .then(res => {
+          const searchResultsResponse = res.data;
+          if (searchResultsResponse) {
+            const searchResults = searchResultsResponse.data;
+            const searchMetadata = searchResultsResponse.meta;
+            this.setState({searchResults});
+            this.setState({searchMetadata});
+          } else {
+            console.error(searchResultsResponse);
+          }
+        })
+        .catch(error => {
+          console.error(error);
+        });
+
+    //TODO: static results should be removed when API is finalized
+    const searchResults = [
+      {
+        "id": 1,
+        "name": "Title of a learning path",
+        "description": "Short description of the content",
+        "content_type": "learning-path",
+        "meta_data": {},
+        "thumbnail": "http://picsum.photos/200"
+      },
+      {
+        "id": 1,
+        "name": "Title of a learning objective",
+        "description": "Sesame snaps tart pastry sweet roll cupcake. Chocolate bar jelly beans cheesecake cake cupcake. Liquorice icing tootsie roll chupa chupsfruitcake gingerbread. Sesame snaps tart pastry sweet roll cupcake. Sesame snaps tart pastry sweet roll cupcake. Sesame snaps tart pastry sweet roll cupcake. Chocolate bar jelly beans cheesecake cake cupcake. Liquorice icing tootsie roll chupa chupsfruitcake gingerbread. Sesame snaps tart pastry sweet roll cupcake. Sesame snaps tart pastry sweet roll cupcake.",
+        "content_type": "learning-objective",
+        "meta_data": {
+          "learning_path_id": 1
+        },
+        "thumbnail": "http://picsum.photos/200"
+      },
+      {
+        "id": 2,
+        "name": "Title of Learning Event",
+        "description": "Short description of the content",
+        "content_type": "learning-event",
+        "meta_data": {
+          "learning_path_id": 1,
+          "learning_objective_id": 1
+        },
+        "thumbnail": "http://picsum.photos/200"
+      }
+    ]
+    //TODO: static results should be removed when API is finalized
+    const searchMetadata = {
+      "pagination": {
+        "current_page": 1,
+        "total_pages": 2,
+        "total_count": 10
+      }
+    }
+    //TODO: should be removed when API is finalized
+    this.setState({searchResults});
+    //TODO: should be removed when API is finalized
+    this.setState({searchMetadata});
   }
 
   searchText() {
@@ -58,14 +144,14 @@ export default class SearchPage extends Component {
             </Button>
           </Grid.Row>
           <Grid.Row>
-          <Sidebar.Pushable>
-            <Sidebar as={Segment} animation='overlay' direction='top' visible={visibleDrawer}>
+            <Sidebar.Pushable>
+              <Sidebar as={Segment} animation='overlay' direction='top' visible={visibleDrawer}>
                 <SearchFacets urlParams={this.state.urlParams}/>
-            </Sidebar>
-            <Sidebar.Pusher>
-                <SearchResults urlParams={this.state.urlParams}/>
-            </Sidebar.Pusher>
-          </Sidebar.Pushable>
+              </Sidebar>
+              <Sidebar.Pusher>
+                <SearchResults searchResults={this.state.searchResults}/>
+              </Sidebar.Pusher>
+            </Sidebar.Pushable>
           </Grid.Row>
         </Container>
     )
