@@ -63,7 +63,6 @@ export default class SearchPage extends Component {
             </Sidebar>
             <Sidebar.Pusher>
                 <SearchResults urlParams={this.state.urlParams}/>
-              <SearchResults urlParams={this.state.urlParams}/>
             </Sidebar.Pusher>
           </Sidebar.Pushable>
           </Grid.Row>
