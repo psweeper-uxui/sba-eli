@@ -24,9 +24,10 @@ export default class SearchPage extends Component {
       this.setState({animation, visibleDrawer: !this.state.visibleDrawer})
 
   clean(text) {
-    if (text !== undefined && text.length > 0) {
-      //TODO: do we want to remove special characters?
-      return text.trim()
+    return ((text !== undefined && text.length > 0)
+        ? text.trim()
+        : '');
+  }
     }
     return ''
   }
