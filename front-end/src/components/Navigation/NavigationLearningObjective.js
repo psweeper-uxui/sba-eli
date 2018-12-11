@@ -51,8 +51,8 @@ export default class NavigationLearningObjective extends Component {
   render() {
     const learningObjectivePath = `/learning_paths/${this.props.learningPathId}/learning_objectives/`
 
-    const topics = this.state.learningObjectives.map(lo => (
-      <List.Item><Link to={learningObjectivePath + lo.id} onClick={this.handleItemClick}>{lo.name}</Link></List.Item>
+    const topics = this.state.learningObjectives.map((lo, index) => (
+      <List.Item key={'learning_objective_' + index}><Link to={learningObjectivePath + lo.id} onClick={this.handleItemClick}>{lo.name}</Link></List.Item>
     ));
 
     return (
