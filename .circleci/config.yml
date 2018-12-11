@@ -40,6 +40,7 @@ jobs:
           AWS_REGION: "us-east-1"
           AWS_COGNITO_USER_POOL_ID: ""
           AWS_COGNITO_CLIENT_ID: ""
+          POSTGRES_DB: "sbaeli"
       - image: circleci/postgres:9.4
         environment:
           POSTGRES_USER: sbaeli
@@ -78,6 +79,29 @@ jobs:
       - store_artifacts:
           path: /tmp/test-results
           destination: test-results
+  frontend-deploy:
+    docker:
+      - image: circleci/python:2.7-stretch
+    working_directory: ~/repo
+    steps:
+      - checkout
+      - run:
+          name: Install dependencies
+          command: |
+            sudo pip install awscli
+      - run:
+          name: Make front-end the base directory
+          command: |
+            cp -r ./front-end/. ./
+            rm -rf ./service-layer ./front-end
+      - run:
+        name: Build the app in the build folder
+        command: |
+          yarn run build
+      - run:
+        name: Download Test environment configuration files from S3
+        command: |
+          aws s3 sync build/ s3://${FRONTEND_BUCKET}
 
 workflows:
   version: 2
@@ -85,3 +109,4 @@ workflows:
     jobs:
       - rubocop
       - rspec
+      - frontend-deploy

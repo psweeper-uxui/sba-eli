@@ -4,7 +4,12 @@
 *.swp
 .byebug_history
 /.bundle
-/.env.local
+
+# Ignore environment dotfiles
+/.env
+/.env.*.local
+
+
 /coverage/*
 /db/*.sqlite3
 /db/*.sqlite3-journal
@@ -19,7 +24,3 @@
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
-
-
-# Ignore application configuration
-/config/application.yml
