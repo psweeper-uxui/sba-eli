@@ -79,7 +79,7 @@ jobs:
       - store_artifacts:
           path: /tmp/test-results
           destination: test-results
-  frontend-deploy:
+  build-images:
     docker:
       - image: circleci/python:2.7-stretch
     working_directory: ~/repo
@@ -90,23 +90,50 @@ jobs:
           command: |
             sudo pip install awscli
       - run:
-          name: Make front-end the base directory
+          name: Generate AWS ECR Login
           command: |
-            cp -r ./front-end/. ./
-            rm -rf ./service-layer ./front-end
+            login="$(aws ecr get-login --no-include-email)"
+            ${login}
       - run:
-        name: Build the app in the build folder
-        command: |
-          yarn run build
+          name: Build Images with Docker-Compose
+          command: |
+            docker-compose build
+          no_output_timeout: 30m
       - run:
-        name: Download Test environment configuration files from S3
-        command: |
-          aws s3 sync build/ s3://${FRONTEND_BUCKET}
-
+          name: Configure AWS
+          command: |
+            echo "Configuring AWS..."
+            aws --version
+            aws configure set default.region $AWS_DEFAULT_REGION
+            aws configure set default.output json
+            echo "AWS configured!"
+      - run:
+          name: Tag Images
+          command: |
+            echo "Tagging images..."
+            images=$(cat docker-compose.yml | grep 'image: ' | cut -d':' -f 2 | tr -d '"')
+            for image in $images
+            do
+              aws ecr create-repository --region "${AWS_DEFAULT_REGION}" --repository "${image}" || true
+              docker tag "${image}" "${image}":"${TAG}
+              docker tag "${image}":"${TAG}" "${ECR_URI}"/"${image}":"${TAG}"
+              docker tag "${image}" "${image}":"${CIRCLE_SHA1}
+              docker tag "${image}":"${CIRCLE_SHA1}" "${ECR_URI}"/"${image}":"${CIRCLE_SHA1}"
+            done
+      - run:
+          name: Push Images
+          command: |
+            echo "Pushing images..."
+            images=$(cat docker-compose.yml | grep 'image: ' | cut -d':' -f 2 | tr -d '"')
+            for image in $images
+            do
+              docker push "${ECR_URI}"/"${image}":"${TAG}"
+              docker push "${ECR_URI}"/"${image}":"${CIRCLE_SHA1}"
+            done
 workflows:
   version: 2
   rubocop_and_rspec:
     jobs:
       - rubocop
       - rspec
-      - frontend-deploy
+      - build-images
