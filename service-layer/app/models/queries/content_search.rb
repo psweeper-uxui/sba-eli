@@ -5,7 +5,11 @@ module Queries
     end
 
     def call
-      LearningPath.find_by_sql(sql)
+      if per_page.present?
+        LearningPath.paginate_by_sql(sql, page: page, per_page: per_page)
+      else
+        LearningPath.find_by_sql(sql)
+      end
     end
 
     private
@@ -29,7 +33,8 @@ module Queries
           courses.name,
           courses.course_code,
           'learning_path' AS content_type,
-          courses.id AS reference_id
+          courses.id AS learning_path_id,
+          0 AS learning_objective_id
         FROM courses
           LEFT OUTER JOIN fearless_taggings ts
             ON ts.taggable_id = courses.id AND ts.taggable_type = 'LearningPath'
@@ -43,11 +48,12 @@ module Queries
         UNION ALL
         -- Search learning objectives
         SELECT DISTINCT
-          context_modules.context_id AS id,
+          context_modules.id,
           context_modules.name,
           courses.course_code,
           'learning_objective' AS content_type,
-          context_modules.id::bigint AS reference_id
+          context_modules.context_id::bigint AS learning_path_id,
+          context_modules.id::bigint AS learning_objective_id
         FROM context_modules
           INNER JOIN courses
             ON courses.id = context_modules.context_id
@@ -64,11 +70,12 @@ module Queries
         UNION ALL
         -- Search learning learning_event
         SELECT DISTINCT
-          content_tags.context_id,
+          content_tags.id,
           content_tags.title AS name,
           courses.course_code,
           'learning_event' AS content_type,
-          content_tags.id::bigint AS reference_id
+          content_tags.context_id::bigint AS learning_path_id,
+          content_tags.context_module_id::bigint AS learning_objective_id
         FROM content_tags
           INNER JOIN courses
             ON courses.id = content_tags.context_id
@@ -82,8 +89,6 @@ module Queries
           #{construct_generic_workflow_clause('content_tags')}
           #{construct_name_sql('content_tags', 'title')}
           #{construct_all_tags_serach('t', 'name')}
-        #{construct_limit}
-        #{construct_offset}
       SQL
     end
 
@@ -119,19 +124,8 @@ module Queries
       "#{concat} #{table}.#{field} ILIKE '#{sanitize(value)}'" if value.present?
     end
 
-    def construct_limit
-      "LIMIT #{sanitize(per_page.to_i)}" if per_page.present?
-    end
-
     def construct_name_sql(table = "courses", field = "name")
       construct_ilike_search(table, field, keywords)
-    end
-
-    def construct_offset
-      if per_page.present?
-        current_offset = page.present? ? ((page - 1) * per_page) : 0
-        "OFFSET #{sanitize(current_offset)}" if [page].present?
-      end
     end
 
     def construct_tag_search(table, field, values)
