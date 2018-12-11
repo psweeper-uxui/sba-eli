@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import "../../App.css";
 import "../../assets/style/search.css"
-import {Button, Container, Grid, Header, Icon, Pagination, Segment, Sidebar} from "semantic-ui-react";
+import {Button, Container, Grid, Header, Icon, Pagination, Segment, Sidebar, GridColumn} from "semantic-ui-react";
 import axios from "axios";
 import queryString from 'query-string';
 import SearchFacets from "./SearchFacets";
@@ -155,17 +155,21 @@ export default class SearchPage extends Component {
     const {visibleDrawer} = this.state
 
     return (
-        <Container className='search_page'>
+        <Grid className='search_page'>
           <Grid.Row className='search_page_header'>
-            <Header tabIndex="0" as='h1'>{this.searchText()}</Header>
-            <Button icon labelPosition='left'
-                    basic floated='right'
-                    type='submit'
-                    id='add_filters'
-                    onClick={this.handleToggle('HELLO')}>
-              <Icon name='sliders'/>
-              Add Filters
-            </Button>
+            <Grid.Column width={13}>
+              <Header tabIndex="0" as='h1'>{this.searchText()}</Header>
+            </Grid.Column>
+            <Grid.Column width={3}>
+              <Button icon labelPosition='left'
+                      basic floated='right'
+                      type='submit'
+                      id='add_filters'
+                      onClick={this.handleToggle('HELLO')}>
+                <Icon name='sliders'/>
+                Add Filters
+              </Button>
+            </Grid.Column>
           </Grid.Row>
           <Grid.Row>
             <Sidebar.Pushable>
@@ -173,14 +177,16 @@ export default class SearchPage extends Component {
                 <SearchFacets urlParams={this.state.urlParams}/>
               </Sidebar>
               <Sidebar.Pusher>
-                <SearchResults searchResults={this.state.searchResults}/>
+                <Grid>
+                  <SearchResults searchResults={this.state.searchResults}/>
+                </Grid>
               </Sidebar.Pusher>
             </Sidebar.Pushable>
           </Grid.Row>
           <Grid.Row>
             {this.getPagination()}
           </Grid.Row>
-        </Container>
+        </Grid>
     )
   }
 }
