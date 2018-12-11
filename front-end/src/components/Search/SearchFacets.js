@@ -18,14 +18,14 @@ export default class SearchFacets extends Component {
         <Form.Group inline>
           <Form.Group>
             <Form.Field>
-              <Label>Subject</Label>
-              <SubjectFilters filters={this.props.urlParams.subject} />
+              <Label>Media Type</Label>
+              <MediaTypeFilters filters={this.props.urlParams.mediaType} />
             </Form.Field>
           </Form.Group>
           <Form.Group>
             <Form.Field>
-              <Label>Media Type</Label>
-              <MediaTypeFilters filters={this.props.urlParams.mediaType} />
+              <Label>Subject</Label>
+              <SubjectFilters filters={this.props.urlParams.subject} />
             </Form.Field>
           </Form.Group>
           <Form.Group>
@@ -37,7 +37,7 @@ export default class SearchFacets extends Component {
         </Form.Group>
         <Form.Group>
           <Form.Button fluid id='cancel_search' onClick={this.cancelSearch}>
-            Cancel
+            Reset
           </Form.Button>
           <Form.Button fluid type='submit' id='submit_search'>
             Apply
