@@ -155,21 +155,23 @@ export default class SearchPage extends Component {
     const {visibleDrawer} = this.state
 
     return (
-        <Grid className='search_page'>
-          <Grid.Row className='search_page_header'>
-            <Grid.Column width={13}>
-              <Header tabIndex="0" as='h1'>{this.searchText()}</Header>
-            </Grid.Column>
-            <Grid.Column width={3}>
-              <Button icon labelPosition='left'
-                      basic floated='right'
-                      type='submit'
-                      id='add_filters'
-                      onClick={this.handleToggle('HELLO')}>
-                <Icon name='sliders'/>
-                Add Filters
-              </Button>
-            </Grid.Column>
+        <div className='search_page'>
+          <Grid.Row>
+            <div className='search_page_header'>
+              <Grid.Column>
+                <Header tabIndex="0" as='h1'>{this.searchText()}</Header>
+              </Grid.Column>
+              <Grid.Column>
+                <Button icon labelPosition='left'
+                        basic
+                        type='submit'
+                        id='add_filters'
+                        onClick={this.handleToggle('HELLO')}>
+                  <Icon name='sliders'/>
+                  Add Filters
+                </Button>
+              </Grid.Column>
+            </div>
           </Grid.Row>
           <Grid.Row>
             <Sidebar.Pushable>
@@ -177,16 +179,14 @@ export default class SearchPage extends Component {
                 <SearchFacets urlParams={this.state.urlParams}/>
               </Sidebar>
               <Sidebar.Pusher>
-                <Grid>
-                  <SearchResults searchResults={this.state.searchResults}/>
-                </Grid>
+                <SearchResults searchResults={this.state.searchResults}/>
               </Sidebar.Pusher>
             </Sidebar.Pushable>
           </Grid.Row>
           <Grid.Row>
             {this.getPagination()}
           </Grid.Row>
-        </Grid>
+        </div>
     )
   }
 }

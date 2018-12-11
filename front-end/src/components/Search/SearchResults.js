@@ -27,23 +27,25 @@ export default class SearchResults extends Component {
 
   render() {
     return this.props.searchResults.map((sr, index) => (
-        <Grid.Row className="search_result_item" key={'search_result_' + index} id={'search_result_' + index}>
-          <Grid.Column className="search_result_image" width={3}>
-            <Link to={this.constructUri(sr.id, sr.meta_data)}>
-              <img src={sr.thumbnail} title={sr.name} alt={sr.name}/>
-            </Link>
-          </Grid.Column>
-          <Grid.Column width={13}>
-            <div className="search_result_content" >
-              <Header as='h3' className="search_result_title" >
-                <Link to={this.constructUri(sr.id, sr.meta_data)}>
-                  {sr.name}
-                </Link>
-              </Header>
-              <div tabIndex="0" className="search_result_description">{sr.description}</div>
-            </div>
-          </Grid.Column>
-        </Grid.Row>
+        <div className="search_result_item" id={'search_result_' + index}>
+          <Grid.Row key={'search_result_' + index}>
+            <Grid.Column>
+              <Link to={this.constructUri(sr.id, sr.meta_data)}>
+                <img className="search_result_image" src={sr.thumbnail} title={sr.name} alt={sr.name}/>
+              </Link>
+            </Grid.Column>
+            <Grid.Column>
+              <div className="search_result_content">
+                <Header as='h3' className="search_result_title">
+                  <Link to={this.constructUri(sr.id, sr.meta_data)}>
+                    {sr.name}
+                  </Link>
+                </Header>
+                <div tabIndex="0" className="search_result_description">{sr.description}</div>
+              </div>
+            </Grid.Column>
+          </Grid.Row>
+        </div>
     ));
   }
 }

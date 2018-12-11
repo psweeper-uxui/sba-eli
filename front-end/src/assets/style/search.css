@@ -20,8 +20,8 @@
     border-radius: 10px;
 }
 
-.search_page .search_result_image img {
-    padding-left: 15px;
+.search_page .search_result_image {
+    padding: 15px;
 }
 
 .search_page .search_result_content {
