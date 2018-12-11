@@ -139,6 +139,14 @@ jobs:
       - checkout
       - setup_remote_docker:
           docker_layer_caching: true
+      - run:
+          name: Install ecs-deploy
+          command: |
+            pip install ecs-deploy
+      - run:
+        name: Run database migration
+        command: |
+          ecs run $ECS_CLUSTER $BACKEND_TASK -c $BACKEND_CONTAINER "bin/rails db:migrate RAILS_ENV=development"
 workflows:
   version: 2
   rubocop_and_rspec:
