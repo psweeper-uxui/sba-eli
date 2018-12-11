@@ -117,7 +117,7 @@ jobs:
             for image in $images
             do
               aws ecr create-repository --region "${AWS_DEFAULT_REGION}" --repository "${image}" || true
-              docker tag "${image}" "${image}":"${TAG}
+              docker tag "${image}" "${image}":"${TAG}"
               docker tag "${image}":"${TAG}" "${ECR_URI}"/"${image}":"${TAG}"
             done
       - run:
