@@ -27,7 +27,7 @@ export default class SearchResults extends Component {
 
   render() {
     return this.props.searchResults.map((sr, index) => (
-        <Grid.Row className="search_result_item" key={'search_result_' + index} id={'search_result' + index}>
+        <Grid.Row className="search_result_item" key={'search_result_' + index} id={'search_result_' + index}>
           <Grid.Column className="search_result_image" width={3}>
             <Link to={this.constructUri(sr.id, sr.meta_data)}>
               <img src={sr.thumbnail} title={sr.name} alt={sr.name}/>
@@ -39,7 +39,7 @@ export default class SearchResults extends Component {
                 {sr.name}
               </Link>
             </Header>
-            <div tabindex="0" className="search_result_description">{sr.description}</div>
+            <div tabIndex="0" className="search_result_description">{sr.description}</div>
           </Grid.Column>
         </Grid.Row>
     ));
