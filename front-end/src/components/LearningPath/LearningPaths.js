@@ -18,7 +18,7 @@ class LearningPaths extends React.Component {
   }
   
   componentDidUpdate(prevProp, prevState) {
-    if(prevProp.location.pathname !== this.props.location.pathname) {
+    if(prevProp.location.pathname !== this.props.location.pathname) {cd 
       if(this.props.location.pathname === "/learning_paths" && this.props.location.state && this.props.location.state.showModal) {
         this.setState({displayModal: true})
       } else {
@@ -32,9 +32,9 @@ class LearningPaths extends React.Component {
   render () {
     return(
       <div>
-        <LearningPathAbout open={this.state.displayModal} handleClose={this.handleModalClose} />
         <Container textAlign="center">
           <Header as='h1'>Learning Paths</Header>
+          <LearningPathAbout open={this.state.displayModal} handleClose={this.handleModalClose} />
         </Container>
         <Divider hidden/>
         <Container>
