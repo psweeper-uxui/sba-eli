@@ -142,7 +142,7 @@ jobs:
       - run:
           name: Install ecs-deploy
           command: |
-            pip install ecs-deploy
+            pip install ecs-deploy --user
       - run:
           name: Run database migration
           command: |
