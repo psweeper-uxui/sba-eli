@@ -85,4 +85,6 @@ class LearningPath < ApplicationRecord
 
   acts_as_taggable_on :subjects
   acts_as_taggable_on :duration
+
+  serialize :settings
 end

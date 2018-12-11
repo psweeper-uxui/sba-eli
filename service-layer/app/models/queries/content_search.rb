@@ -32,6 +32,7 @@ module Queries
           courses.id,
           courses.name,
           courses.course_code,
+          courses.settings,
           'learning_path' AS content_type,
           courses.id AS learning_path_id,
           0 AS learning_objective_id
@@ -51,6 +52,7 @@ module Queries
           context_modules.id,
           context_modules.name,
           courses.course_code,
+          courses.settings,
           'learning_objective' AS content_type,
           context_modules.context_id::bigint AS learning_path_id,
           context_modules.id::bigint AS learning_objective_id
@@ -73,6 +75,7 @@ module Queries
           content_tags.id,
           content_tags.title AS name,
           courses.course_code,
+          courses.settings,
           'learning_event' AS content_type,
           content_tags.context_id::bigint AS learning_path_id,
           content_tags.context_module_id::bigint AS learning_objective_id
