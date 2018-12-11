@@ -78,7 +78,6 @@ export default class SearchPage extends Component {
         "id": 1,
         "name": "Title of a learning path",
         "description": "Short description of the content",
-        "content_type": "learning-path",
         "meta_data": {},
         "thumbnail": "http://picsum.photos/200"
       },
@@ -86,7 +85,6 @@ export default class SearchPage extends Component {
         "id": 1,
         "name": "Title of a learning objective",
         "description": "Sesame snaps tart pastry sweet roll cupcake. Chocolate bar jelly beans cheesecake cake cupcake. Liquorice icing tootsie roll chupa chupsfruitcake gingerbread. Sesame snaps tart pastry sweet roll cupcake. Sesame snaps tart pastry sweet roll cupcake. Sesame snaps tart pastry sweet roll cupcake. Chocolate bar jelly beans cheesecake cake cupcake. Liquorice icing tootsie roll chupa chupsfruitcake gingerbread. Sesame snaps tart pastry sweet roll cupcake. Sesame snaps tart pastry sweet roll cupcake.",
-        "content_type": "learning-objective",
         "meta_data": {
           "learning_path_id": 1
         },
@@ -96,7 +94,6 @@ export default class SearchPage extends Component {
         "id": 2,
         "name": "Title of Learning Event",
         "description": "Short description of the content",
-        "content_type": "learning-event",
         "meta_data": {
           "learning_path_id": 1,
           "learning_objective_id": 1
