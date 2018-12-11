@@ -128,7 +128,6 @@ jobs:
             for image in $images
             do
               docker push "${ECR_URI}"/"${image}":"${git_hash}"
-              docker push "${ECR_URI}"/"${image}":unstable
             done
   deploy:
     docker:
