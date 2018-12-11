@@ -17,155 +17,16 @@ ShallowWrapper {
     "key": undefined,
     "nodeType": "function",
     "props": Object {
-      "children": <div>
-        <ItemGroup
-          divided={true}
-        >
-          <Item>
-            <ItemImage
-              size="tiny"
-              src="https://via.placeholder.com/50"
-            />
-            <ItemContent>
-              <ItemHeader>
-                Learning Event Test Title
-              </ItemHeader>
-              <ItemMeta>
-                No Data
-              </ItemMeta>
-            </ItemContent>
-          </Item>
-        </ItemGroup>
-      </div>,
+      "children": <div />,
     },
     "ref": null,
     "rendered": Object {
       "instance": null,
       "key": undefined,
       "nodeType": "host",
-      "props": Object {
-        "children": <ItemGroup
-          divided={true}
-        >
-          <Item>
-            <ItemImage
-              size="tiny"
-              src="https://via.placeholder.com/50"
-            />
-            <ItemContent>
-              <ItemHeader>
-                Learning Event Test Title
-              </ItemHeader>
-              <ItemMeta>
-                No Data
-              </ItemMeta>
-            </ItemContent>
-          </Item>
-        </ItemGroup>,
-      },
+      "props": Object {},
       "ref": null,
-      "rendered": Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "function",
-        "props": Object {
-          "children": <Item>
-            <ItemImage
-              size="tiny"
-              src="https://via.placeholder.com/50"
-            />
-            <ItemContent>
-              <ItemHeader>
-                Learning Event Test Title
-              </ItemHeader>
-              <ItemMeta>
-                No Data
-              </ItemMeta>
-            </ItemContent>
-          </Item>,
-          "divided": true,
-        },
-        "ref": null,
-        "rendered": Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "function",
-          "props": Object {
-            "children": Array [
-              <ItemImage
-                size="tiny"
-                src="https://via.placeholder.com/50"
-              />,
-              <ItemContent>
-                <ItemHeader>
-                  Learning Event Test Title
-                </ItemHeader>
-                <ItemMeta>
-                  No Data
-                </ItemMeta>
-              </ItemContent>,
-            ],
-          },
-          "ref": null,
-          "rendered": Array [
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "function",
-              "props": Object {
-                "size": "tiny",
-                "src": "https://via.placeholder.com/50",
-              },
-              "ref": null,
-              "rendered": null,
-              "type": [Function],
-            },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "function",
-              "props": Object {
-                "children": Array [
-                  <ItemHeader>
-                    Learning Event Test Title
-                  </ItemHeader>,
-                  <ItemMeta>
-                    No Data
-                  </ItemMeta>,
-                ],
-              },
-              "ref": null,
-              "rendered": Array [
-                Object {
-                  "instance": null,
-                  "key": undefined,
-                  "nodeType": "function",
-                  "props": Object {
-                    "children": "Learning Event Test Title",
-                  },
-                  "ref": null,
-                  "rendered": "Learning Event Test Title",
-                  "type": [Function],
-                },
-                Object {
-                  "instance": null,
-                  "key": undefined,
-                  "nodeType": "function",
-                  "props": Object {
-                    "children": "No Data",
-                  },
-                  "ref": null,
-                  "rendered": "No Data",
-                  "type": [Function],
-                },
-              ],
-              "type": [Function],
-            },
-          ],
-          "type": [Function],
-        },
-        "type": [Function],
-      },
+      "rendered": null,
       "type": "div",
     },
     "type": [Function],
@@ -176,155 +37,16 @@ ShallowWrapper {
       "key": undefined,
       "nodeType": "function",
       "props": Object {
-        "children": <div>
-          <ItemGroup
-            divided={true}
-          >
-            <Item>
-              <ItemImage
-                size="tiny"
-                src="https://via.placeholder.com/50"
-              />
-              <ItemContent>
-                <ItemHeader>
-                  Learning Event Test Title
-                </ItemHeader>
-                <ItemMeta>
-                  No Data
-                </ItemMeta>
-              </ItemContent>
-            </Item>
-          </ItemGroup>
-        </div>,
+        "children": <div />,
       },
       "ref": null,
       "rendered": Object {
         "instance": null,
         "key": undefined,
         "nodeType": "host",
-        "props": Object {
-          "children": <ItemGroup
-            divided={true}
-          >
-            <Item>
-              <ItemImage
-                size="tiny"
-                src="https://via.placeholder.com/50"
-              />
-              <ItemContent>
-                <ItemHeader>
-                  Learning Event Test Title
-                </ItemHeader>
-                <ItemMeta>
-                  No Data
-                </ItemMeta>
-              </ItemContent>
-            </Item>
-          </ItemGroup>,
-        },
+        "props": Object {},
         "ref": null,
-        "rendered": Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "function",
-          "props": Object {
-            "children": <Item>
-              <ItemImage
-                size="tiny"
-                src="https://via.placeholder.com/50"
-              />
-              <ItemContent>
-                <ItemHeader>
-                  Learning Event Test Title
-                </ItemHeader>
-                <ItemMeta>
-                  No Data
-                </ItemMeta>
-              </ItemContent>
-            </Item>,
-            "divided": true,
-          },
-          "ref": null,
-          "rendered": Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "function",
-            "props": Object {
-              "children": Array [
-                <ItemImage
-                  size="tiny"
-                  src="https://via.placeholder.com/50"
-                />,
-                <ItemContent>
-                  <ItemHeader>
-                    Learning Event Test Title
-                  </ItemHeader>
-                  <ItemMeta>
-                    No Data
-                  </ItemMeta>
-                </ItemContent>,
-              ],
-            },
-            "ref": null,
-            "rendered": Array [
-              Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "function",
-                "props": Object {
-                  "size": "tiny",
-                  "src": "https://via.placeholder.com/50",
-                },
-                "ref": null,
-                "rendered": null,
-                "type": [Function],
-              },
-              Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "function",
-                "props": Object {
-                  "children": Array [
-                    <ItemHeader>
-                      Learning Event Test Title
-                    </ItemHeader>,
-                    <ItemMeta>
-                      No Data
-                    </ItemMeta>,
-                  ],
-                },
-                "ref": null,
-                "rendered": Array [
-                  Object {
-                    "instance": null,
-                    "key": undefined,
-                    "nodeType": "function",
-                    "props": Object {
-                      "children": "Learning Event Test Title",
-                    },
-                    "ref": null,
-                    "rendered": "Learning Event Test Title",
-                    "type": [Function],
-                  },
-                  Object {
-                    "instance": null,
-                    "key": undefined,
-                    "nodeType": "function",
-                    "props": Object {
-                      "children": "No Data",
-                    },
-                    "ref": null,
-                    "rendered": "No Data",
-                    "type": [Function],
-                  },
-                ],
-                "type": [Function],
-              },
-            ],
-            "type": [Function],
-          },
-          "type": [Function],
-        },
+        "rendered": null,
         "type": "div",
       },
       "type": [Function],
