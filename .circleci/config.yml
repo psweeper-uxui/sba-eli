@@ -79,7 +79,8 @@ jobs:
       - store_artifacts:
           path: /tmp/test-results
           destination: test-results
-  build-images:
+
+  build:
     docker:
       - image: circleci/python:2.7-stretch
     working_directory: ~/repo
@@ -94,6 +95,9 @@ jobs:
       - run:
           name: Generate AWS ECR Login
           command: |
+            echo "Configuring AWS..."
+            aws configure set default.region $AWS_DEFAULT_REGION
+            aws configure set default.output json
             login="$(aws ecr get-login --no-include-email)"
             ${login}
       - run:
@@ -101,14 +105,6 @@ jobs:
           command: |
             docker-compose build
           no_output_timeout: 30m
-      - run:
-          name: Configure AWS
-          command: |
-            echo "Configuring AWS..."
-            aws --version
-            aws configure set default.region $AWS_DEFAULT_REGION
-            aws configure set default.output json
-            echo "AWS configured!"
       - run:
           name: Tag Images
           command: |
@@ -135,4 +131,7 @@ workflows:
     jobs:
       - rubocop
       - rspec
-      - build-images
+  build_and_deploy:
+    jobs:
+      - build
+      - deploy
