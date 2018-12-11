@@ -18,7 +18,7 @@ class LearningPaths extends React.Component {
   }
   
   componentDidUpdate(prevProp, prevState) {
-    if(prevProp.location.pathname !== this.props.location.pathname) {cd 
+    if(prevProp.location.pathname !== this.props.location.pathname) {
       if(this.props.location.pathname === "/learning_paths" && this.props.location.state && this.props.location.state.showModal) {
         this.setState({displayModal: true})
       } else {
