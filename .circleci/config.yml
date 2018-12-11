@@ -119,8 +119,6 @@ jobs:
               aws ecr create-repository --region "${AWS_DEFAULT_REGION}" --repository "${image}" || true
               docker tag "${image}" "${image}":"${TAG}
               docker tag "${image}":"${TAG}" "${ECR_URI}"/"${image}":"${TAG}"
-              docker tag "${image}" "${image}":"${CIRCLE_SHA1}
-              docker tag "${image}":"${CIRCLE_SHA1}" "${ECR_URI}"/"${image}":"${CIRCLE_SHA1}"
             done
       - run:
           name: Push Images
@@ -130,7 +128,6 @@ jobs:
             for image in $images
             do
               docker push "${ECR_URI}"/"${image}":"${TAG}"
-              docker push "${ECR_URI}"/"${image}":"${CIRCLE_SHA1}"
             done
 workflows:
   version: 2
