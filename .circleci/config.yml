@@ -125,9 +125,11 @@ jobs:
           command: |
             echo "Pushing images..."
             images=$(cat docker-compose.yml | grep 'image: ' | cut -d':' -f 2 | tr -d '"')
+            git_hash=$(git rev-parse --short HEAD)
             for image in $images
             do
               docker push "${ECR_URI}"/"${image}":"${git_hash}"
+              ddocker push "${ECR_URI}"/"${image}":unstable
             done
   deploy:
     docker:
