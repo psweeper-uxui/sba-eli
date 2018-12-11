@@ -110,11 +110,15 @@ jobs:
           command: |
             echo "Tagging images..."
             images=$(cat docker-compose.yml | grep 'image: ' | cut -d':' -f 2 | tr -d '"')
+            git_hash=$(git rev-parse --short HEAD)
             for image in $images
             do
               aws ecr create-repository --region "${AWS_DEFAULT_REGION}" --repository "${image}" || true
-              docker tag "${image}" "${image}":"${TAG}"
-              docker tag "${image}":"${TAG}" "${ECR_URI}"/"${image}":"${TAG}"
+              docker tag "${image}" "${image}":"${git_hash}"
+              docker tag "${image}":"${git_hash}" "${ECR_URI}"/"${image}":"${git_hash}"
+              docker tag "${image}" "${image}":unstable
+              docker tag "${image}":unstable "${ECR_URI}"/"${image}":unstable
+
             done
       - run:
           name: Push Images
@@ -123,8 +127,17 @@ jobs:
             images=$(cat docker-compose.yml | grep 'image: ' | cut -d':' -f 2 | tr -d '"')
             for image in $images
             do
-              docker push "${ECR_URI}"/"${image}":"${TAG}"
+              docker push "${ECR_URI}"/"${image}":"${git_hash}"
+              docker push "${ECR_URI}"/"${image}":unstable
             done
+  deploy:
+    docker:
+      - image: circleci/python:2.7-stretch
+    working_directory: ~/repo
+    steps:
+      - checkout
+      - setup_remote_docker:
+          docker_layer_caching: true
 workflows:
   version: 2
   rubocop_and_rspec:
