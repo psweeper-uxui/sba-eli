@@ -1,7 +1,7 @@
 /* TODO: Need to pick a CSS framework
  faking a namespace for now */
 .sba {
-    background-color: #F8F8F8;
+    background-color: #FAFBFD;
 }
 
 .search_page h1 {
@@ -14,8 +14,8 @@
 
 .search_page .search_result_item {
     background-color: white;
-    border: 1px solid #E8E8E8;
-    box-shadow: 5px 6px 8px #E8E8E8;
+    border: 1px solid #ced6e1;
+    box-shadow: 5px 6px 8px #b2b9c4;
     margin-bottom: 25px;
     border-radius: 10px;
 }
