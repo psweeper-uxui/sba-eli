@@ -53,7 +53,7 @@ const LearningPathAboutPage = (props) => {
         </Container>
       </Container>,
       controls:
-        <Button icon labelPosition='right'>
+        <Button icon labelPosition='right' onClick={props.handleClose}>
           Start First Learning Path
           <Icon name='right arrow' />
         </Button>    
