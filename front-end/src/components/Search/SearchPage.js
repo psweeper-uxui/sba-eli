@@ -64,9 +64,7 @@ export default class SearchPage extends Component {
             const searchMetadata = searchResultsResponse.meta;
             this.setState({searchResults});
             this.setState({searchMetadata});
-          } else {
-            console.error(searchResultsResponse);
-          }
+          } 
         })
         .catch(error => {
           console.error(error);
@@ -125,10 +123,8 @@ export default class SearchPage extends Component {
           && this.state.searchMetadata.pagination.total_count > 0) {
         return `${this.state.searchMetadata.pagination.total_count} Search Results for "${this.state.searchTerm}"`
       }
-      //TODO: nothing to filter so hide the filter button
       return `No Search Results were found for "${this.state.searchTerm}"`
     }
-    //TODO: nothing to filter so hide the filter button
     return 'No search term entered'
   }
 
