@@ -157,13 +157,22 @@ jobs:
             /home/circleci/.local/bin/ecs deploy $ECS_CLUSTER $FRONTEND_SERVICE --timeout 600
 workflows:
   version: 2
-  rubocop_and_rspec:
+  test-build-deploy:
     jobs:
       - rubocop
       - rspec
-  build_and_deploy:
-    jobs:
-      - build
+      - build:
+          requires:
+            - rubocop
+            - rspec
+          filters:
+            branches:
+              only: master
       - deploy:
           requires:
+            - rubocop
+            - rspec
             - build
+          filters:
+            branches:
+              only: master            
