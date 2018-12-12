@@ -163,5 +163,12 @@ workflows:
       - rspec
   build_and_deploy:
     jobs:
-      - build
-      - deploy
+      - build:
+          requires:
+            - rubocop
+            - rspec
+      - deploy:
+          requires:
+            - rubocop
+            - rspec
+            - build
