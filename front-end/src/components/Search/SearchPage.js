@@ -150,38 +150,38 @@ export default class SearchPage extends Component {
     const {visibleDrawer} = this.state
 
     return (
-        <div className='search_page'>
-          <Grid.Row>
-            <div className='search_page_header'>
-              <Grid.Column>
+        <Grid stackable className='search_page'>
+          <Grid.Row centered className='search_page_header'>
+              <Grid.Column width={12}>
                 <Header tabIndex="0" as='h1'>{this.searchText()}</Header>
               </Grid.Column>
-              <Grid.Column>
+              <Grid.Column width={3}>
                 <Button icon labelPosition='left'
                         basic
                         type='submit'
                         id='add_filters'
                         onClick={this.handleToggle('HELLO')}>
                   <Icon name='sliders'/>
-                  Add Filters
+                  <span mobile hidden>Add Filters</span>
                 </Button>
               </Grid.Column>
-            </div>
           </Grid.Row>
-          <Grid.Row>
-            <Sidebar.Pushable>
-              <Sidebar as={Segment} animation='overlay' direction='top' visible={visibleDrawer}>
-                <SearchFacets urlParams={this.state.urlParams}/>
-              </Sidebar>
-              <Sidebar.Pusher>
-                <SearchResults searchResults={this.state.searchResults}/>
-              </Sidebar.Pusher>
-            </Sidebar.Pushable>
+          <Grid.Row centered>
+            <Grid.Column width={14}>
+              <Sidebar.Pushable>
+                <Sidebar as={Segment} animation='overlay' direction='top' visible={visibleDrawer}>
+                  <SearchFacets urlParams={this.state.urlParams}/>
+                </Sidebar>
+                <Sidebar.Pusher>
+                  <SearchResults searchResults={this.state.searchResults}/>
+                </Sidebar.Pusher>
+              </Sidebar.Pushable>
+            </Grid.Column>
           </Grid.Row>
-          <Grid.Row>
-            {this.getPagination()}
+          <Grid.Row centered>
+              {this.getPagination()}
           </Grid.Row>
-        </div>
+        </Grid>
     )
   }
 }

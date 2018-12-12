@@ -4,26 +4,24 @@
     background-color: #FAFBFD;
 }
 
-.search_page h1 {
-    display: inline;
-}
-
-.search_page .search_page_header {
-    padding-bottom: 15px;
+.search_page_header {
+    background-color: white;
+    box-shadow: 0 1px 2px 0 #b2b9c4;
 }
 
 .search_page .search_result_item {
     background-color: white;
     border: 1px solid #ced6e1;
     box-shadow: 5px 6px 8px #b2b9c4;
-    margin-bottom: 25px;
-    border-radius: 10px;
+    border-radius: 7px;
+    margin: 10px;
 }
 
 .search_page .search_result_image {
-    padding: 15px;
+    padding: 10px;
 }
 
 .search_page .search_result_content {
-    padding: 40px 0 20px 0;
+    padding: 40px 0 0 0;
+
 }
