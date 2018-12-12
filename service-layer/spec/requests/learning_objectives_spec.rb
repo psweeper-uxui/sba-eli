@@ -32,6 +32,8 @@
 require "rails_helper"
 
 describe "LearningObjectives" do
+  fixtures :context_modules
+
   describe "GET /learning_objectives" do
     it "gets a list of all learning objectives" do
       VCR.use_cassette("learning_objectives/get_learning_objectives") do
@@ -101,6 +103,54 @@ describe "LearningObjectives" do
         expect(response).to be_successful
         expect(json["name"]).to eq("Rspec Test Updated Module Name")
       end
+    end
+  end
+
+  describe "GET /learning_objectives/:learning_path_id/custom_content" do
+    it "gets an empty content object if there is not content found" do
+      learning_path_id = 1
+      get "/learning_objectives/#{learning_path_id}/custom_content"
+      json = JSON.parse(response.body)
+
+      expect(response).to be_successful
+      expect(json["content"]).to be_nil
+    end
+
+    it "gets the custom content if it exists" do
+      content = create(:custom_content, contentable_type: "LearningObjective", contentable_id: 2)
+
+      get "/learning_objectives/#{content.contentable_id}/custom_content"
+      json = JSON.parse(response.body)
+
+      expect(response).to be_successful
+      expect(json["content"]).to eq(content.content)
+    end
+  end
+
+  describe "POST /learning_objectives/:learning_path_id/custom_content" do
+    it "creates custom content for a learning path" do
+      content = build(:custom_content, contentable_type: "LearningObjective", contentable_id: 3)
+      params = { custom_content: { content: content.content } }
+
+      post "/learning_objectives/#{content.contentable_id}/custom_content", params: params
+      json = JSON.parse(response.body)
+
+      expect(response).to be_successful
+      expect(json["content"]).to eq(content.content)
+    end
+  end
+
+  describe "PUT /learning_objectives/:learning_path_id/custom_content" do
+    it "updates custom content for a learning path" do
+      content = create(:custom_content, contentable_type: "LearningObjective", contentable_id: 4)
+      new_content = "This is the new content to be written"
+      params = { custom_content: { content: new_content } }
+
+      put "/learning_objectives/#{content.contentable_id}/custom_content", params: params
+      json = JSON.parse(response.body)
+
+      expect(response).to be_successful
+      expect(json["content"]).to eq(new_content)
     end
   end
 end
