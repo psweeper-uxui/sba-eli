@@ -89,7 +89,7 @@ jobs:
       - setup_remote_docker:
           docker_layer_caching: true
       - run:
-          name: Install dependencies
+          name: Install Dependencies
           command: |
             sudo pip install awscli
       - run:
@@ -140,13 +140,21 @@ jobs:
       - setup_remote_docker:
           docker_layer_caching: true
       - run:
-          name: Install ecs-deploy
+          name: Install Ecs-Deploy
           command: |
             pip install ecs-deploy --user
       - run:
-          name: Run database migration
+          name: Run Database Migration
           command: |
             /home/circleci/.local/bin/ecs run $ECS_CLUSTER $BACKEND_TASK -c $BACKEND_CONTAINER "bin/rails db:migrate RAILS_ENV=development"
+      - run:
+          name: Deploy Service Layer
+          command: |
+            /home/circleci/.local/bin/ecs deploy $ECS_CLUSTER $BACKEND_SERVICE
+      - run:
+          name: Deploy Front End
+          command: |
+            /home/circleci/.local/bin/ecs deploy $ECS_CLUSTER $FRONTEND_SERVICE
 workflows:
   version: 2
   rubocop_and_rspec:
