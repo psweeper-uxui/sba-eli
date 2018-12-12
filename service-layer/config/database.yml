@@ -1,6 +1,10 @@
 development: &default
   adapter: postgresql
-  database: sba-eli_development
+  database: <%= ENV.fetch("POSTGRES_DB", "sba-eli_development") %>
+  username: <%= ENV.fetch("POSTGRES_USER", "") %>
+  password: <%= ENV.fetch("POSTGRES_PASSWORD", "") %>
+  host: <%= ENV.fetch("POSTGRES_HOST", "localhost") %>
+  port: <%= ENV.fetch("POSTGRES_PORT", "5432") %>
   encoding: utf8
   min_messages: warning
   pool: <%= Integer(ENV.fetch("DB_POOL", 5)) %>
