@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   end
 
   resource :cofirmation_code, only: :create
-  resources :learning_events
+  resources :learning_events, concerns: :contentable
   resources :learning_paths, concerns: :contentable
   resources :learning_objectives, concerns: :contentable
   resource :search, only: :show
