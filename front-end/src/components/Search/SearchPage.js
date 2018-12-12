@@ -37,7 +37,7 @@ export default class SearchPage extends Component {
   }
 
   fetchData() {
-    let url = process.env.REACT_APP_SERVICE_HOST + "/searches?";
+    let url = process.env.REACT_APP_SERVICE_HOST + "/search?";
     var parameters = {
       keywords: this.state.urlParams && this.state.urlParams.searchTerm
         ? this.state.urlParams.searchTerm 
@@ -68,48 +68,6 @@ export default class SearchPage extends Component {
         .catch(error => {
           console.error(error);
         });
-
-    //TODO: static results should be removed when API is finalized
-    const searchResults = [
-      {
-        "id": 1,
-        "name": "Title of a learning path",
-        "description": "Short description of the content",
-        "meta_data": {},
-        "thumbnail": "http://picsum.photos/200"
-      },
-      {
-        "id": 1,
-        "name": "Title of a learning objective",
-        "description": "Sesame snaps tart pastry sweet roll cupcake. Chocolate bar jelly beans cheesecake cake cupcake. Liquorice icing tootsie roll chupa chupsfruitcake gingerbread. Sesame snaps tart pastry sweet roll cupcake. Sesame snaps tart pastry sweet roll cupcake. Sesame snaps tart pastry sweet roll cupcake. Chocolate bar jelly beans cheesecake cake cupcake. Liquorice icing tootsie roll chupa chupsfruitcake gingerbread. Sesame snaps tart pastry sweet roll cupcake. Sesame snaps tart pastry sweet roll cupcake.",
-        "meta_data": {
-          "learning_path_id": 1
-        },
-        "thumbnail": "http://picsum.photos/200"
-      },
-      {
-        "id": 2,
-        "name": "Title of Learning Event",
-        "description": "Short description of the content",
-        "meta_data": {
-          "learning_path_id": 1,
-          "learning_objective_id": 1
-        },
-        "thumbnail": "http://picsum.photos/200"
-      }
-    ]
-    //TODO: static results should be removed when API is finalized
-    const searchMetadata = {
-      "pagination": {
-        "current_page": 1,
-        "total_pages": 2,
-        "total_count": 10
-      }
-    }
-    //TODO: should be removed when API is finalized
-    this.setState({searchResults});
-    //TODO: should be removed when API is finalized
-    this.setState({searchMetadata});
   }
 
   searchText() {
