@@ -144,4 +144,15 @@ describe "LearningPaths" do
       end
     end
   end
+
+  describe "GET /learning_paths/:id/custom_content" do
+    it "gets an empty content object if there is not content found" do
+      learning_path_id = 1
+      get "/learning_paths/#{learning_path_id}/custom_content"
+      json = JSON.parse(response.body)
+
+      expect(response).to be_successful
+      expect(json["content"]).to be_nil
+    end
+  end
 end

@@ -5,4 +5,8 @@ class ApplicationController < ActionController::Base
   def render_error(resource, status)
     render json: resource.to_json, status: status
   end
+
+  def errors_for(object)
+    { json: { errors: object.errors }, status: :unprocessable_entity }
+  end
 end
