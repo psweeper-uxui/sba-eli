@@ -150,11 +150,11 @@ jobs:
       - run:
           name: Deploy Service Layer
           command: |
-            /home/circleci/.local/bin/ecs deploy $ECS_CLUSTER $BACKEND_SERVICE
+            /home/circleci/.local/bin/ecs deploy $ECS_CLUSTER $BACKEND_SERVICE --timeout 600
       - run:
           name: Deploy Front End
           command: |
-            /home/circleci/.local/bin/ecs deploy $ECS_CLUSTER $FRONTEND_SERVICE
+            /home/circleci/.local/bin/ecs deploy $ECS_CLUSTER $FRONTEND_SERVICE --timeout 600
 workflows:
   version: 2
   rubocop_and_rspec:
