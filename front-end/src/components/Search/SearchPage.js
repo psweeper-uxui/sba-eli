@@ -38,23 +38,22 @@ export default class SearchPage extends Component {
 
   fetchData() {
     let url = process.env.REACT_APP_SERVICE_HOST + "/searches?";
-
-    //TODO: verify that malicious data isn't being passed via the params
-    if (this.state.urlParams !== undefined) {
-      if (this.state.urlParams.searchTerm !== undefined) {
-        url += "keywords=" + this.state.urlParams.searchTerm
-      }
-      if (this.state.urlParams.subject !== undefined) {
-        url += "&subject=" + this.state.urlParams.subject
-      }
-      if (this.state.urlParams.mediaType !== undefined) {
-        url += "&media_types=" + this.state.urlParams.mediaType
-      }
-      if (this.state.urlParams.time !== undefined) {
-        url += "&duration=" + this.state.urlParams.time
-      }
+    var parameters = {
+      keywords: this.state.urlParams && this.state.urlParams.searchTerm
+        ? this.state.urlParams.searchTerm 
+        : '',
+      subject: this.state.urlParams && this.state.urlParams.subject
+        ? this.state.urlParams.subject 
+        : '',
+      media_types: this.state.urlParams && this.state.urlParams.mediaType
+        ? this.state.urlParams.mediaType 
+        : '',
+      duration: this.state.urlParams && this.state.urlParams.time
+        ? this.state.urlParams.time 
+        : ''
     }
-
+    url += Object.keys(parameters).map(key => key + '=' + parameters[key]).join('&');
+    
     axios
         .get(encodeURI(url))
         .then(res => {
