@@ -162,7 +162,7 @@ export default class SearchPage extends Component {
                         id='add_filters'
                         onClick={this.handleToggle('HELLO')}>
                   <Icon name='sliders'/>
-                  <span mobile hidden>Add Filters</span>
+                  <span>Add Filters</span>
                 </Button>
               </Grid.Column>
           </Grid.Row>
