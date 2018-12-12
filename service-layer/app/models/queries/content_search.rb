@@ -6,9 +6,9 @@ module Queries
 
     def call
       if per_page.present?
-        LearningPath.paginate_by_sql(sql, page: page, per_page: per_page)
+        SearchResult.paginate_by_sql(sql, page: page, per_page: per_page)
       else
-        LearningPath.find_by_sql(sql)
+        SearchResult.find_by_sql(sql)
       end
     end
 
