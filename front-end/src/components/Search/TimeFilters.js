@@ -11,11 +11,7 @@ export default class TimeFilters extends Component {
     ];
 
     return staticTimeFilters.map(filter => {
-      let selected = false
-      if (this.props.filters !== undefined
-          && this.props.filters.includes(filter.key)) {
-        selected = true
-      }
+      let selected = this.props.filters && this.props.filters.includes(filter.key)
 
       return (
         <Form.Checkbox

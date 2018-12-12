@@ -13,11 +13,7 @@ export default class SubjectFilters extends Component {
     ]
 
     return subjectFilters.map(filter => {
-      let selected = false
-      if (this.props.filters !== undefined
-          && this.props.filters.includes(filter.key)) {
-        selected = true
-      }
+      let selected = this.props.filters && this.props.filters.includes(filter.key)
 
       return (
         <Form.Checkbox name='subject'
