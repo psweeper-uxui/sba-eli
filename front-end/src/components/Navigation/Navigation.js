@@ -8,17 +8,9 @@ import NavigationDisplay from "./NavigationDisplay";
 const Navigation = () => {
   return (
       <Router>
-        <Grid className='sba'>
-          <Grid.Row>
+        <Grid stackable className='sba'>
             <Navbar />
-          </Grid.Row>
-          <Grid.Row>
-            <Grid.Column width={1}/>
-            <Grid.Column mobile={16} tablet={8} computer={14}>
-              <NavigationDisplay/>
-            </Grid.Column>
-            <Grid.Column width={1}/>
-          </Grid.Row>
+            <NavigationDisplay />
         </Grid>
       </Router>
   );
