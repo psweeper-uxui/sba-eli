@@ -20,6 +20,8 @@ This application is for the SBA ELI program.
 
 ## Getting Started
 
+Create a .env file using the .env.example file as a template and update its values.
+
 If bundle is not installed, do that now:
 ```bash
 gem install bundler
