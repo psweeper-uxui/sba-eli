@@ -28,11 +28,12 @@ export default class LearningEventFile extends Component {
 
   renderFileByType() {
     const file = this.state.fileInfo;
+    const title = this.props.event.title;
 
     if (file.mime_class === "video") {
-      return <LearningEventVideo file={file} />;
+      return <LearningEventVideo title={title} file={file} />;
     } else {
-      return <LearningEventVideo />;
+      return <LearningEventVideo title={title} />;
     }
   };
 

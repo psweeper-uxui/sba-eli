@@ -2,7 +2,9 @@ import React, {Component} from "react";
 import ReactPlayer from "react-player";
 import { Button, Header, Icon } from "semantic-ui-react";
 import { findDOMNode } from "react-dom";
-import screenfull from "screenfull"; 
+import Duration from "./LearningEventVideo/Duration";
+import screenfull from "screenfull";
+import "./Slider.css"
 
 export default class LearningEventVideo extends Component {
   state = {
@@ -16,13 +18,6 @@ export default class LearningEventVideo extends Component {
     duration: 0,
     playbbackRate: 1.0,
     loop: false
-  }
-
-  handleKeyEvent = (e) => {
-    if (e.keyCode == 32) {
-      console.log("Space Pressed");
-      this.playPause();
-    }
   }
 
   playPause = () => {
@@ -70,19 +65,27 @@ export default class LearningEventVideo extends Component {
 
   render() {
     const learningObjective = "Learning Objective";
-    const title = "Video Name";
-    const vidLength = "12 minutes";
+    const title = this.props.title 
     const { url, playing, volume, muted,  pip, played, loaded, duration, playbackRate, loop } = this.state
+    const vidLength = <Duration seconds={duration} />;
+
+    const seekStyle = {
+      width: '640px'
+    };
+
+    const volStyle = {
+      width: '50px'
+    };
 
     return(
       <div>
         <h3>{learningObjective}</h3>
         <Header as="h1">{title}</Header>
-        <em>Exercise ({vidLength})</em>
+        <em>Exercise ({vidLength} minutes)</em>
         <div className="player-wrapper">
-          <ReactPlayer 
+          <ReactPlayer
             ref={this.ref}
-            url={url} 
+            url={url}
             pip={pip}
             playing= {playing}
             loop={loop}
@@ -93,7 +96,7 @@ export default class LearningEventVideo extends Component {
             onDuration={this.onDuration}
           />
         </div>
-        <div className="player-controls">
+        <div className="player-controls" style={{width: '640px'}}>
           <div className="seek-controls">
             <input
               type='range' min={0} max={1} step='any'
@@ -101,35 +104,37 @@ export default class LearningEventVideo extends Component {
               onMouseDown={this.onSeekMouseDown}
               onChange={this.onSeekChange}
               onMouseUp={this.onSeekMouseUp}
+              style={seekStyle}
+              class="slider"
             />
           </div>
-          <Button icon basic onClick={this.toggleMuted}>
-            {muted ? <Icon name='volume off' size='large'/> : <Icon name='volume up' size='large'/>}
-          </Button>
-          <input type='range' min={0} max={1} step='any' value={volume} onChange={this.setVolume} />
-          <Button.Group basic icon>
-            <Button>
-              <Icon name='angle double left'/>
+          <div className="elapsed-time" style={{float: 'right'}}>
+            <Duration seconds={duration * played} />/<Duration seconds={duration} />
+          </div>
+          <div className="bottom-controls" style={{paddingTop: "30px"}}>
+            <Button.Group basic icon>
+              <Button onClick={this.playPause}>
+                {playing ? <Icon name='pause' size='big'/> : <Icon name='play' size='big' />}
+              </Button>
+            </Button.Group>
+            <Button icon basic onClick={this.toggleMuted}>
+              {muted ? <Icon name='volume off' size='big'/> : <Icon name='volume up' size='big'/>}
             </Button>
-            <Button onClick={this.playPause}>
-              {playing ? <Icon name='pause circle outline' size='big'/> : <Icon name='play circle outline' size='big' />}
-            </Button>
-            <Button>
-              <Icon name='angle double right'/>
-            </Button>
-          </Button.Group>
-          <Button.Group basic icon>
-            <Button>
-              <Icon name='closed captioning outline'/>
-            </Button>
-            <Button onClick={this.onClickFullscreen}>
-              <Icon name='expand arrows alternate' />
-            </Button>
-          </Button.Group>
-          <span>
-            Muted
-            <input id="muted" type="checkbox" checked={muted} onChange={this.toggleMuted} />
-          </span>
+            <input type='range' min={0} max={1} step='any'
+              value={volume}
+              onChange={this.setVolume}
+              style={volStyle}
+              class="slider"
+            />
+            <Button.Group basic icon floated='right'>
+              <Button>
+                <Icon name='closed captioning outline' size='big'/>
+              </Button>
+              <Button onClick={this.onClickFullscreen}>
+                <Icon name='expand' size='big' />
+              </Button>
+            </Button.Group>
+          </div>
         </div>
       </div>
     )
