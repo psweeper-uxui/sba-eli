@@ -75,5 +75,13 @@ describe "Searches" do
       expect(response).to be_successful
       expect(json["data"].size).to eq(2)
     end
+
+    it "gets results that are assigned to a specific subject" do
+      get "/search?subjects=Finance"
+      json = JSON.parse(response.body)
+
+      expect(response).to be_successful
+      expect(json["data"].size).to eq(1)
+    end
   end
 end
