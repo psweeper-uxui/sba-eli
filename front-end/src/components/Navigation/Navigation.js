@@ -8,7 +8,6 @@ import LearningPaths from "../LearningPath/LearningPaths";
 import LearningObjective from "../LearningObjective/LearningObjective";
 import LearningObjectives from "../LearningObjective/LearningObjectives";
 import Navbar from "./Navbar";
-import LearningEvent from "../LearningEvent/LearningEvent";
 import LearningEvents from "../LearningEvent/LearningEvents";
 import SearchPage from "../Search/SearchPage";
 import SignUpForm from "../SignUpForm/SignUpForm";
@@ -22,7 +21,7 @@ const Navigation = () => {
           <Navbar />
           <Grid>
             <Grid.Row>
-              <Grid.Column mobile={16} tablet={8} computer={16}>
+              <Grid.Column mobile={16} tablet={16} computer={16}>
                 <NavigationDisplay />
               </Grid.Column>
             </Grid.Row>
