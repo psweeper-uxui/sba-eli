@@ -5,20 +5,16 @@ import {Link} from "react-router-dom";
 export default class SearchResults extends Component {
 
   constructUri(id, metadataObject) {
-    if (id === undefined
-        && metadataObject !== undefined) {
-
+    if (id && metadataObject) {
       let uri = '/learning_paths/'
-      if (metadataObject.learning_path_id !== undefined) {
+      if (metadataObject.learning_path_id) {
         uri += metadataObject.learning_path_id
-        if (metadataObject.learning_objective_id !== undefined) {
+        if (metadataObject.learning_objective_id) {
           uri += `/learning_objectives/` + metadataObject.learning_objective_id
-          uri += `/learning_events/` + id
-        } else {
-          uri += `/learning_objectives/` + id
-        }
-      } else {
-        uri += id
+          if (metadataObject.learning_event_id) {
+            uri += `/learning_events/` + metadataObject.learning_event_id
+          }
+        } 
       }
       return uri
     }
