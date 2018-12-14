@@ -27,5 +27,53 @@ describe "Searches" do
       expect(response).to be_successful
       expect(json["data"].size).to eq(1)
     end
+
+    it "gets results for learning objectives that contains keywords" do
+      get "/search?keywords=Apply%20Best%20Practices%20of%20Communication."
+      json = JSON.parse(response.body)
+
+      expect(response).to be_successful
+      expect(json["data"].size).to eq(1)
+    end
+
+    it "gets results for llearning events that contains keywords" do
+      get "/search?keywords=Test%20Topic"
+      json = JSON.parse(response.body)
+
+      expect(response).to be_successful
+      expect(json["data"].size).to eq(1)
+    end
+
+    it "gets results that are signed to a specific duration" do
+      get "/search?durations=long"
+      json = JSON.parse(response.body)
+
+      expect(response).to be_successful
+      expect(json["data"].size).to eq(1)
+    end
+
+    it "gets results that are assigned for a list of durations" do
+      get "/search?durations=long,short"
+      json = JSON.parse(response.body)
+
+      expect(response).to be_successful
+      expect(json["data"].size).to eq(2)
+    end
+
+    it "gets results that are signed to a specific media_type" do
+      get "/search?media_types=video"
+      json = JSON.parse(response.body)
+
+      expect(response).to be_successful
+      expect(json["data"].size).to eq(1)
+    end
+
+    it "gets results that are assigned for a list of media_types" do
+      get "/search?media_types=video,podcast"
+      json = JSON.parse(response.body)
+
+      expect(response).to be_successful
+      expect(json["data"].size).to eq(2)
+    end
   end
 end

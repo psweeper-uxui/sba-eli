@@ -12,9 +12,9 @@ class SearchesController < ApplicationController
       :keywords,
       :page,
       :per_page,
-      subjects: [],
-      media_types: [],
-      durations: [],
+      :durations,
+      :subjects,
+      :media_types,
     )
   end
 end
