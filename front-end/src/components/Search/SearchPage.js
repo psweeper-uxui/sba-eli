@@ -50,7 +50,8 @@ export default class SearchPage extends Component {
         : '',
       duration: this.state.urlParams && this.state.urlParams.time
         ? this.state.urlParams.time 
-        : ''
+        : '',
+      per_page: 20
     }
     url += Object.keys(parameters).map(key => key + '=' + parameters[key]).join('&');
     
