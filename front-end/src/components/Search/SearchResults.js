@@ -25,13 +25,17 @@ export default class SearchResults extends Component {
     return ''
   }
 
+  getImage(thumbnail) {
+    return thumbnail ? thumbnail : "https://picsum.photos/200"
+  }
+
   render() {
     return this.props.searchResults.map((sr, index) => (
         <Grid stackable className="search_result_item" id={'search_result_' + index} key={'search_result_' + index}>
           <Grid.Column width={5}>
             <div className="search_result_image">
               <Link to={this.constructUri(sr.id, sr.meta_data)}>
-                <img className="search_result_image" src={sr.thumbnail} title={sr.name} alt={sr.name}/>
+                <img className="search_result_image" src={this.getImage(sr.thumbnail)} title={sr.name} alt={sr.name}/>
               </Link>
             </div>
           </Grid.Column>
