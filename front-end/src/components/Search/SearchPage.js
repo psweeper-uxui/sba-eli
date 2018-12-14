@@ -125,7 +125,7 @@ export default class SearchPage extends Component {
                 </Button>
               </Grid.Column>
           </Grid.Row>
-          <Grid.Row centered>
+          <Grid.Row centered className="search_results">
             <Grid.Column width={14}>
               <Sidebar.Pushable>
                 <Sidebar as={Segment} animation='overlay' direction='top' visible={visibleDrawer}>
