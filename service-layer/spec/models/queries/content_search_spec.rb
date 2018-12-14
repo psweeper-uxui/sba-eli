@@ -3,12 +3,6 @@ require "rails_helper"
 describe Queries::ContentSearch do
   fixtures :all
 
-  it "returns all content by default" do
-    params = { per_page: "" }
-    results = described_class.call(params)
-    expect(results.count).to eq(31)
-  end
-
   context "when per_page is included in the params" do
     it "returns the correct amount of records when per_page is 10" do
       params = { "per_page": "10" }

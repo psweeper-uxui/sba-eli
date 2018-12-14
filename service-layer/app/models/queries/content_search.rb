@@ -5,11 +5,7 @@ module Queries
     end
 
     def call
-      if per_page.present?
-        SearchResult.paginate_by_sql(sql, page: page, per_page: per_page)
-      else
-        SearchResult.find_by_sql(sql)
-      end
+      SearchResult.paginate_by_sql(sql, page: page, per_page: per_page)
     end
 
     private
@@ -20,8 +16,8 @@ module Queries
       check_array_value(:media_types, params)
       check_array_value(:durations, params)
       check_single_value(:account_id, params)
-      check_numeric_value(:per_page, params)
-      check_numeric_value(:page, params)
+      check_numeric_value(:per_page, params, 20)
+      check_numeric_value(:page, params, 1)
       check_single_value(:workflow_state, params, "active")
     end
 

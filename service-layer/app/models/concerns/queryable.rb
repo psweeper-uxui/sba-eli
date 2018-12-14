@@ -1,3 +1,34 @@
+# Queryable provides a way to easily query and populate result objects, where
+# the result sets may contain multiple data types. It provides functionality similar
+# to ActiveRecords `find_by_sql` method. For example, lets say you have a query
+# that you want to union together results from two different tables.
+#
+#   SELECT id, name, 'learning_path' AS content_type FROM learning_paths
+#   UNION ALL
+#   SELECT if, name, 'learning_objective' AS content_type FROM learning_objectives
+#
+# For this query, you would not want to use the ActiveRecord find_by_sql method
+# because the result set would contain more than just one model type. Queryable
+# addressese this by letting you create a generic Ruby class and including the
+# Querable concern. For example:
+#
+#   class Result
+#     include Queryable
+#     attr_accessor :id, :name, :learning_path
+#   end
+#
+#   sql = <<-SQL
+#     SELECT id, name, 'learning_path' AS content_type FROM learning_paths
+#     UNION ALL
+#     SELECT if, name, 'learning_objective' AS content_type FROM learning_objectives
+#   SQL
+#
+#   Result.find_by_sql(sql)
+#
+# The concern also has a method of pagination that mimics WillPaginate's
+# `paginate_by_sql` method. This is an example of paginating records
+#
+#   Result.paginate_by_sql(sql, page: page, per_page: per_page)
 module Queryable
   extend ActiveSupport::Concern
 

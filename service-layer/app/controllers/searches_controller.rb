@@ -5,6 +5,8 @@ class SearchesController < ApplicationController
 
   private
 
+  # The query param method ensurs that only the following parameters are passed
+  # to the ContentSearch method
   def query_parameters
     params.permit(
       :keywords,
