@@ -41,14 +41,23 @@ export default class TopicContentEventList extends Component {
     if (eventList.length) {
       return eventList.map(event => {
         return (
-          <Item>
-            <Item.Image size="tiny" src="https://via.placeholder.com/50" />
+          <Item
+            className={"topic-content-event-item"}
+            key={"topicContentItem" + event.id}
+          >
+            <Item.Image
+              size="mini"
+              verticalAlign={"middle"}
+              src="https://via.placeholder.com/50"
+            />
 
             <Item.Content>
-              <Item.Header>
+              <Item.Header className={"topic-content-event-item-header"}>
                 <Link to={url + event.id}>{event.title}</Link>
               </Item.Header>
-              <Item.Meta>Event Type</Item.Meta>
+              <Item.Meta className={"topic-content-event-item-meta"}>
+                Event Type
+              </Item.Meta>
             </Item.Content>
           </Item>
         );
@@ -60,7 +69,9 @@ export default class TopicContentEventList extends Component {
 
   render() {
     return (
-      <Item.Group>{this.renderEventList(this.state.eventsList)}</Item.Group>
+      <Item.Group className={"event-list-item-group"}>
+        {this.renderEventList(this.state.eventsList)}
+      </Item.Group>
     );
   }
 }
