@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
   include SecurityConcern
+  before_action :set_default_response_format
   skip_before_action :verify_authenticity_token
 
   def render_error(resource, status)
@@ -18,5 +19,9 @@ class ApplicationController < ActionController::Base
   #  end
   def errors_for(object)
     { json: { errors: object.errors }, status: :unprocessable_entity }
+  end
+
+  def set_default_response_format
+    request.format = :json
   end
 end
