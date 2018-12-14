@@ -83,7 +83,7 @@ export default class SearchPage extends Component {
       }
       return `No Search Results were found for "${this.state.searchTerm}"`
     }
-    return 'No search term entered'
+    return 'All Results'
   }
 
   getPagination() {
