@@ -10,13 +10,6 @@ describe('LearningPathAbout', () => {
     expect(wrapper).toMatchSnapshot();
   });
   
-  it('should display a button with provided text that opens window', () => {
-    const wrapper = shallow(<LearningPathAbout>TEST</LearningPathAbout>);
-    
-    expect(wrapper.find(Modal).exists()).toBe(true);
-    expect(wrapper.find(Modal).prop("trigger").props["children"]).toContain("TEST");
-  });
-  
   it('should properly page by icon clicks', () => {
     const wrapper = shallow(<LearningPathAbout />);
     
@@ -38,10 +31,10 @@ describe('LearningPathAbout', () => {
     
     expect(wrapper.find(Button).length).toEqual(1);
     wrapper.find(Icon).at(1).simulate('click');
-    expect(wrapper.find(Button).length).toEqual(1);
+    expect(wrapper.find(Button).length).toEqual(2);
     wrapper.find(Icon).at(2).simulate('click');
-    expect(wrapper.find(Button).length).toEqual(1);
+    expect(wrapper.find(Button).length).toEqual(2);
     wrapper.find(Icon).at(3).simulate('click');
-    expect(wrapper.find(Button).length).toEqual(0);
+    expect(wrapper.find(Button).length).toEqual(1);
   });
 });

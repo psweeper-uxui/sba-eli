@@ -20,7 +20,6 @@ ShallowWrapper {
       "centered": true,
       "children": Array [
         <LearningPathAboutPage
-          handleClose={[Function]}
           nextPage={[Function]}
           page={1}
         />,
@@ -33,13 +32,7 @@ ShallowWrapper {
                 textAlign="left"
                 width={4}
               >
-                <Button
-                  as="button"
-                  onClick={[Function]}
-                  role="button"
-                >
-                  Skip
-                </Button>
+                
               </GridColumn>
               <GridColumn
                 textAlign="center"
@@ -47,63 +40,50 @@ ShallowWrapper {
               >
                 <Icon
                   as="i"
+                  className="learning-path-about-icon learning-path-about-icon-selected"
                   name="circle"
                   onClick={[Function]}
-                  style={
-                    Object {
-                      "color": "green",
-                      "marginRight": "10px",
-                    }
-                  }
                 />
                 <Icon
                   as="i"
+                  className="learning-path-about-icon learning-path-about-icon-unselected"
                   name="circle"
                   onClick={[Function]}
-                  style={
-                    Object {
-                      "color": "gray",
-                      "marginRight": "10px",
-                    }
-                  }
                 />
                 <Icon
                   as="i"
+                  className="learning-path-about-icon learning-path-about-icon-unselected"
                   name="circle"
                   onClick={[Function]}
-                  style={
-                    Object {
-                      "color": "gray",
-                      "marginRight": "10px",
-                    }
-                  }
                 />
                 <Icon
                   as="i"
+                  className="learning-path-about-icon-unselected"
                   name="circle"
                   onClick={[Function]}
-                  style={
-                    Object {
-                      "color": "gray",
-                    }
-                  }
                 />
+              </GridColumn>
+              <GridColumn
+                textAlign="right"
+                width={4}
+              >
+                <Button
+                  as="button"
+                  role="button"
+                >
+                  Skip
+                </Button>
               </GridColumn>
             </GridRow>
           </Grid>
         </ModalActions>,
       ],
-      "closeOnDimmerClick": true,
+      "closeOnDimmerClick": false,
       "closeOnDocumentClick": false,
       "dimmer": true,
       "eventPool": "Modal",
-      "onClose": [Function],
-      "open": false,
-      "trigger": <Button
-        as="button"
-        onClick={[Function]}
-        role="button"
-      />,
+      "onClose": undefined,
+      "open": undefined,
     },
     "ref": null,
     "rendered": Array [
@@ -112,7 +92,7 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "function",
         "props": Object {
-          "handleClose": [Function],
+          "handleClose": undefined,
           "nextPage": [Function],
           "page": 1,
         },
@@ -133,13 +113,7 @@ ShallowWrapper {
                 textAlign="left"
                 width={4}
               >
-                <Button
-                  as="button"
-                  onClick={[Function]}
-                  role="button"
-                >
-                  Skip
-                </Button>
+                
               </GridColumn>
               <GridColumn
                 textAlign="center"
@@ -147,47 +121,39 @@ ShallowWrapper {
               >
                 <Icon
                   as="i"
+                  className="learning-path-about-icon learning-path-about-icon-selected"
                   name="circle"
                   onClick={[Function]}
-                  style={
-                    Object {
-                      "color": "green",
-                      "marginRight": "10px",
-                    }
-                  }
                 />
                 <Icon
                   as="i"
+                  className="learning-path-about-icon learning-path-about-icon-unselected"
                   name="circle"
                   onClick={[Function]}
-                  style={
-                    Object {
-                      "color": "gray",
-                      "marginRight": "10px",
-                    }
-                  }
                 />
                 <Icon
                   as="i"
+                  className="learning-path-about-icon learning-path-about-icon-unselected"
                   name="circle"
                   onClick={[Function]}
-                  style={
-                    Object {
-                      "color": "gray",
-                      "marginRight": "10px",
-                    }
-                  }
                 />
                 <Icon
                   as="i"
+                  className="learning-path-about-icon-unselected"
                   name="circle"
                   onClick={[Function]}
-                  style={
-                    Object {
-                      "color": "gray",
-                    }
-                  }
                 />
+              </GridColumn>
+              <GridColumn
+                textAlign="right"
+                width={4}
+              >
+                <Button
+                  as="button"
+                  role="button"
+                >
+                  Skip
+                </Button>
               </GridColumn>
             </GridRow>
           </Grid>,
@@ -203,13 +169,7 @@ ShallowWrapper {
                 textAlign="left"
                 width={4}
               >
-                <Button
-                  as="button"
-                  onClick={[Function]}
-                  role="button"
-                >
-                  Skip
-                </Button>
+                
               </GridColumn>
               <GridColumn
                 textAlign="center"
@@ -217,47 +177,39 @@ ShallowWrapper {
               >
                 <Icon
                   as="i"
+                  className="learning-path-about-icon learning-path-about-icon-selected"
                   name="circle"
                   onClick={[Function]}
-                  style={
-                    Object {
-                      "color": "green",
-                      "marginRight": "10px",
-                    }
-                  }
                 />
                 <Icon
                   as="i"
+                  className="learning-path-about-icon learning-path-about-icon-unselected"
                   name="circle"
                   onClick={[Function]}
-                  style={
-                    Object {
-                      "color": "gray",
-                      "marginRight": "10px",
-                    }
-                  }
                 />
                 <Icon
                   as="i"
+                  className="learning-path-about-icon learning-path-about-icon-unselected"
                   name="circle"
                   onClick={[Function]}
-                  style={
-                    Object {
-                      "color": "gray",
-                      "marginRight": "10px",
-                    }
-                  }
                 />
                 <Icon
                   as="i"
+                  className="learning-path-about-icon-unselected"
                   name="circle"
                   onClick={[Function]}
-                  style={
-                    Object {
-                      "color": "gray",
-                    }
-                  }
                 />
+              </GridColumn>
+              <GridColumn
+                textAlign="right"
+                width={4}
+              >
+                <Button
+                  as="button"
+                  role="button"
+                >
+                  Skip
+                </Button>
               </GridColumn>
             </GridRow>,
             "verticalAlign": "middle",
@@ -273,13 +225,7 @@ ShallowWrapper {
                   textAlign="left"
                   width={4}
                 >
-                  <Button
-                    as="button"
-                    onClick={[Function]}
-                    role="button"
-                  >
-                    Skip
-                  </Button>
+                  
                 </GridColumn>,
                 <GridColumn
                   textAlign="center"
@@ -287,47 +233,39 @@ ShallowWrapper {
                 >
                   <Icon
                     as="i"
+                    className="learning-path-about-icon learning-path-about-icon-selected"
                     name="circle"
                     onClick={[Function]}
-                    style={
-                      Object {
-                        "color": "green",
-                        "marginRight": "10px",
-                      }
-                    }
                   />
                   <Icon
                     as="i"
+                    className="learning-path-about-icon learning-path-about-icon-unselected"
                     name="circle"
                     onClick={[Function]}
-                    style={
-                      Object {
-                        "color": "gray",
-                        "marginRight": "10px",
-                      }
-                    }
                   />
                   <Icon
                     as="i"
+                    className="learning-path-about-icon learning-path-about-icon-unselected"
                     name="circle"
                     onClick={[Function]}
-                    style={
-                      Object {
-                        "color": "gray",
-                        "marginRight": "10px",
-                      }
-                    }
                   />
                   <Icon
                     as="i"
+                    className="learning-path-about-icon-unselected"
                     name="circle"
                     onClick={[Function]}
-                    style={
-                      Object {
-                        "color": "gray",
-                      }
-                    }
                   />
+                </GridColumn>,
+                <GridColumn
+                  textAlign="right"
+                  width={4}
+                >
+                  <Button
+                    as="button"
+                    role="button"
+                  >
+                    Skip
+                  </Button>
                 </GridColumn>,
               ],
             },
@@ -338,31 +276,12 @@ ShallowWrapper {
                 "key": undefined,
                 "nodeType": "function",
                 "props": Object {
-                  "children": <Button
-                    as="button"
-                    onClick={[Function]}
-                    role="button"
-                  >
-                    Skip
-                  </Button>,
+                  "children": "",
                   "textAlign": "left",
                   "width": 4,
                 },
                 "ref": null,
-                "rendered": Object {
-                  "instance": null,
-                  "key": undefined,
-                  "nodeType": "class",
-                  "props": Object {
-                    "as": "button",
-                    "children": "Skip",
-                    "onClick": [Function],
-                    "role": "button",
-                  },
-                  "ref": null,
-                  "rendered": "Skip",
-                  "type": [Function],
-                },
+                "rendered": "",
                 "type": [Function],
               },
               Object {
@@ -373,46 +292,27 @@ ShallowWrapper {
                   "children": Array [
                     <Icon
                       as="i"
+                      className="learning-path-about-icon learning-path-about-icon-selected"
                       name="circle"
                       onClick={[Function]}
-                      style={
-                        Object {
-                          "color": "green",
-                          "marginRight": "10px",
-                        }
-                      }
                     />,
                     <Icon
                       as="i"
+                      className="learning-path-about-icon learning-path-about-icon-unselected"
                       name="circle"
                       onClick={[Function]}
-                      style={
-                        Object {
-                          "color": "gray",
-                          "marginRight": "10px",
-                        }
-                      }
                     />,
                     <Icon
                       as="i"
+                      className="learning-path-about-icon learning-path-about-icon-unselected"
                       name="circle"
                       onClick={[Function]}
-                      style={
-                        Object {
-                          "color": "gray",
-                          "marginRight": "10px",
-                        }
-                      }
                     />,
                     <Icon
                       as="i"
+                      className="learning-path-about-icon-unselected"
                       name="circle"
                       onClick={[Function]}
-                      style={
-                        Object {
-                          "color": "gray",
-                        }
-                      }
                     />,
                   ],
                   "textAlign": "center",
@@ -426,12 +326,9 @@ ShallowWrapper {
                     "nodeType": "class",
                     "props": Object {
                       "as": "i",
+                      "className": "learning-path-about-icon learning-path-about-icon-selected",
                       "name": "circle",
                       "onClick": [Function],
-                      "style": Object {
-                        "color": "green",
-                        "marginRight": "10px",
-                      },
                     },
                     "ref": null,
                     "rendered": null,
@@ -443,12 +340,9 @@ ShallowWrapper {
                     "nodeType": "class",
                     "props": Object {
                       "as": "i",
+                      "className": "learning-path-about-icon learning-path-about-icon-unselected",
                       "name": "circle",
                       "onClick": [Function],
-                      "style": Object {
-                        "color": "gray",
-                        "marginRight": "10px",
-                      },
                     },
                     "ref": null,
                     "rendered": null,
@@ -460,12 +354,9 @@ ShallowWrapper {
                     "nodeType": "class",
                     "props": Object {
                       "as": "i",
+                      "className": "learning-path-about-icon learning-path-about-icon-unselected",
                       "name": "circle",
                       "onClick": [Function],
-                      "style": Object {
-                        "color": "gray",
-                        "marginRight": "10px",
-                      },
                     },
                     "ref": null,
                     "rendered": null,
@@ -477,17 +368,46 @@ ShallowWrapper {
                     "nodeType": "class",
                     "props": Object {
                       "as": "i",
+                      "className": "learning-path-about-icon-unselected",
                       "name": "circle",
                       "onClick": [Function],
-                      "style": Object {
-                        "color": "gray",
-                      },
                     },
                     "ref": null,
                     "rendered": null,
                     "type": [Function],
                   },
                 ],
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "function",
+                "props": Object {
+                  "children": <Button
+                    as="button"
+                    role="button"
+                  >
+                    Skip
+                  </Button>,
+                  "textAlign": "right",
+                  "width": 4,
+                },
+                "ref": null,
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "as": "button",
+                    "children": "Skip",
+                    "onClick": undefined,
+                    "role": "button",
+                  },
+                  "ref": null,
+                  "rendered": "Skip",
+                  "type": [Function],
+                },
                 "type": [Function],
               },
             ],
@@ -509,7 +429,6 @@ ShallowWrapper {
         "centered": true,
         "children": Array [
           <LearningPathAboutPage
-            handleClose={[Function]}
             nextPage={[Function]}
             page={1}
           />,
@@ -522,13 +441,7 @@ ShallowWrapper {
                   textAlign="left"
                   width={4}
                 >
-                  <Button
-                    as="button"
-                    onClick={[Function]}
-                    role="button"
-                  >
-                    Skip
-                  </Button>
+                  
                 </GridColumn>
                 <GridColumn
                   textAlign="center"
@@ -536,63 +449,50 @@ ShallowWrapper {
                 >
                   <Icon
                     as="i"
+                    className="learning-path-about-icon learning-path-about-icon-selected"
                     name="circle"
                     onClick={[Function]}
-                    style={
-                      Object {
-                        "color": "green",
-                        "marginRight": "10px",
-                      }
-                    }
                   />
                   <Icon
                     as="i"
+                    className="learning-path-about-icon learning-path-about-icon-unselected"
                     name="circle"
                     onClick={[Function]}
-                    style={
-                      Object {
-                        "color": "gray",
-                        "marginRight": "10px",
-                      }
-                    }
                   />
                   <Icon
                     as="i"
+                    className="learning-path-about-icon learning-path-about-icon-unselected"
                     name="circle"
                     onClick={[Function]}
-                    style={
-                      Object {
-                        "color": "gray",
-                        "marginRight": "10px",
-                      }
-                    }
                   />
                   <Icon
                     as="i"
+                    className="learning-path-about-icon-unselected"
                     name="circle"
                     onClick={[Function]}
-                    style={
-                      Object {
-                        "color": "gray",
-                      }
-                    }
                   />
+                </GridColumn>
+                <GridColumn
+                  textAlign="right"
+                  width={4}
+                >
+                  <Button
+                    as="button"
+                    role="button"
+                  >
+                    Skip
+                  </Button>
                 </GridColumn>
               </GridRow>
             </Grid>
           </ModalActions>,
         ],
-        "closeOnDimmerClick": true,
+        "closeOnDimmerClick": false,
         "closeOnDocumentClick": false,
         "dimmer": true,
         "eventPool": "Modal",
-        "onClose": [Function],
-        "open": false,
-        "trigger": <Button
-          as="button"
-          onClick={[Function]}
-          role="button"
-        />,
+        "onClose": undefined,
+        "open": undefined,
       },
       "ref": null,
       "rendered": Array [
@@ -601,7 +501,7 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "function",
           "props": Object {
-            "handleClose": [Function],
+            "handleClose": undefined,
             "nextPage": [Function],
             "page": 1,
           },
@@ -622,13 +522,7 @@ ShallowWrapper {
                   textAlign="left"
                   width={4}
                 >
-                  <Button
-                    as="button"
-                    onClick={[Function]}
-                    role="button"
-                  >
-                    Skip
-                  </Button>
+                  
                 </GridColumn>
                 <GridColumn
                   textAlign="center"
@@ -636,47 +530,39 @@ ShallowWrapper {
                 >
                   <Icon
                     as="i"
+                    className="learning-path-about-icon learning-path-about-icon-selected"
                     name="circle"
                     onClick={[Function]}
-                    style={
-                      Object {
-                        "color": "green",
-                        "marginRight": "10px",
-                      }
-                    }
                   />
                   <Icon
                     as="i"
+                    className="learning-path-about-icon learning-path-about-icon-unselected"
                     name="circle"
                     onClick={[Function]}
-                    style={
-                      Object {
-                        "color": "gray",
-                        "marginRight": "10px",
-                      }
-                    }
                   />
                   <Icon
                     as="i"
+                    className="learning-path-about-icon learning-path-about-icon-unselected"
                     name="circle"
                     onClick={[Function]}
-                    style={
-                      Object {
-                        "color": "gray",
-                        "marginRight": "10px",
-                      }
-                    }
                   />
                   <Icon
                     as="i"
+                    className="learning-path-about-icon-unselected"
                     name="circle"
                     onClick={[Function]}
-                    style={
-                      Object {
-                        "color": "gray",
-                      }
-                    }
                   />
+                </GridColumn>
+                <GridColumn
+                  textAlign="right"
+                  width={4}
+                >
+                  <Button
+                    as="button"
+                    role="button"
+                  >
+                    Skip
+                  </Button>
                 </GridColumn>
               </GridRow>
             </Grid>,
@@ -692,13 +578,7 @@ ShallowWrapper {
                   textAlign="left"
                   width={4}
                 >
-                  <Button
-                    as="button"
-                    onClick={[Function]}
-                    role="button"
-                  >
-                    Skip
-                  </Button>
+                  
                 </GridColumn>
                 <GridColumn
                   textAlign="center"
@@ -706,47 +586,39 @@ ShallowWrapper {
                 >
                   <Icon
                     as="i"
+                    className="learning-path-about-icon learning-path-about-icon-selected"
                     name="circle"
                     onClick={[Function]}
-                    style={
-                      Object {
-                        "color": "green",
-                        "marginRight": "10px",
-                      }
-                    }
                   />
                   <Icon
                     as="i"
+                    className="learning-path-about-icon learning-path-about-icon-unselected"
                     name="circle"
                     onClick={[Function]}
-                    style={
-                      Object {
-                        "color": "gray",
-                        "marginRight": "10px",
-                      }
-                    }
                   />
                   <Icon
                     as="i"
+                    className="learning-path-about-icon learning-path-about-icon-unselected"
                     name="circle"
                     onClick={[Function]}
-                    style={
-                      Object {
-                        "color": "gray",
-                        "marginRight": "10px",
-                      }
-                    }
                   />
                   <Icon
                     as="i"
+                    className="learning-path-about-icon-unselected"
                     name="circle"
                     onClick={[Function]}
-                    style={
-                      Object {
-                        "color": "gray",
-                      }
-                    }
                   />
+                </GridColumn>
+                <GridColumn
+                  textAlign="right"
+                  width={4}
+                >
+                  <Button
+                    as="button"
+                    role="button"
+                  >
+                    Skip
+                  </Button>
                 </GridColumn>
               </GridRow>,
               "verticalAlign": "middle",
@@ -762,13 +634,7 @@ ShallowWrapper {
                     textAlign="left"
                     width={4}
                   >
-                    <Button
-                      as="button"
-                      onClick={[Function]}
-                      role="button"
-                    >
-                      Skip
-                    </Button>
+                    
                   </GridColumn>,
                   <GridColumn
                     textAlign="center"
@@ -776,47 +642,39 @@ ShallowWrapper {
                   >
                     <Icon
                       as="i"
+                      className="learning-path-about-icon learning-path-about-icon-selected"
                       name="circle"
                       onClick={[Function]}
-                      style={
-                        Object {
-                          "color": "green",
-                          "marginRight": "10px",
-                        }
-                      }
                     />
                     <Icon
                       as="i"
+                      className="learning-path-about-icon learning-path-about-icon-unselected"
                       name="circle"
                       onClick={[Function]}
-                      style={
-                        Object {
-                          "color": "gray",
-                          "marginRight": "10px",
-                        }
-                      }
                     />
                     <Icon
                       as="i"
+                      className="learning-path-about-icon learning-path-about-icon-unselected"
                       name="circle"
                       onClick={[Function]}
-                      style={
-                        Object {
-                          "color": "gray",
-                          "marginRight": "10px",
-                        }
-                      }
                     />
                     <Icon
                       as="i"
+                      className="learning-path-about-icon-unselected"
                       name="circle"
                       onClick={[Function]}
-                      style={
-                        Object {
-                          "color": "gray",
-                        }
-                      }
                     />
+                  </GridColumn>,
+                  <GridColumn
+                    textAlign="right"
+                    width={4}
+                  >
+                    <Button
+                      as="button"
+                      role="button"
+                    >
+                      Skip
+                    </Button>
                   </GridColumn>,
                 ],
               },
@@ -827,31 +685,12 @@ ShallowWrapper {
                   "key": undefined,
                   "nodeType": "function",
                   "props": Object {
-                    "children": <Button
-                      as="button"
-                      onClick={[Function]}
-                      role="button"
-                    >
-                      Skip
-                    </Button>,
+                    "children": "",
                     "textAlign": "left",
                     "width": 4,
                   },
                   "ref": null,
-                  "rendered": Object {
-                    "instance": null,
-                    "key": undefined,
-                    "nodeType": "class",
-                    "props": Object {
-                      "as": "button",
-                      "children": "Skip",
-                      "onClick": [Function],
-                      "role": "button",
-                    },
-                    "ref": null,
-                    "rendered": "Skip",
-                    "type": [Function],
-                  },
+                  "rendered": "",
                   "type": [Function],
                 },
                 Object {
@@ -862,46 +701,27 @@ ShallowWrapper {
                     "children": Array [
                       <Icon
                         as="i"
+                        className="learning-path-about-icon learning-path-about-icon-selected"
                         name="circle"
                         onClick={[Function]}
-                        style={
-                          Object {
-                            "color": "green",
-                            "marginRight": "10px",
-                          }
-                        }
                       />,
                       <Icon
                         as="i"
+                        className="learning-path-about-icon learning-path-about-icon-unselected"
                         name="circle"
                         onClick={[Function]}
-                        style={
-                          Object {
-                            "color": "gray",
-                            "marginRight": "10px",
-                          }
-                        }
                       />,
                       <Icon
                         as="i"
+                        className="learning-path-about-icon learning-path-about-icon-unselected"
                         name="circle"
                         onClick={[Function]}
-                        style={
-                          Object {
-                            "color": "gray",
-                            "marginRight": "10px",
-                          }
-                        }
                       />,
                       <Icon
                         as="i"
+                        className="learning-path-about-icon-unselected"
                         name="circle"
                         onClick={[Function]}
-                        style={
-                          Object {
-                            "color": "gray",
-                          }
-                        }
                       />,
                     ],
                     "textAlign": "center",
@@ -915,12 +735,9 @@ ShallowWrapper {
                       "nodeType": "class",
                       "props": Object {
                         "as": "i",
+                        "className": "learning-path-about-icon learning-path-about-icon-selected",
                         "name": "circle",
                         "onClick": [Function],
-                        "style": Object {
-                          "color": "green",
-                          "marginRight": "10px",
-                        },
                       },
                       "ref": null,
                       "rendered": null,
@@ -932,12 +749,9 @@ ShallowWrapper {
                       "nodeType": "class",
                       "props": Object {
                         "as": "i",
+                        "className": "learning-path-about-icon learning-path-about-icon-unselected",
                         "name": "circle",
                         "onClick": [Function],
-                        "style": Object {
-                          "color": "gray",
-                          "marginRight": "10px",
-                        },
                       },
                       "ref": null,
                       "rendered": null,
@@ -949,12 +763,9 @@ ShallowWrapper {
                       "nodeType": "class",
                       "props": Object {
                         "as": "i",
+                        "className": "learning-path-about-icon learning-path-about-icon-unselected",
                         "name": "circle",
                         "onClick": [Function],
-                        "style": Object {
-                          "color": "gray",
-                          "marginRight": "10px",
-                        },
                       },
                       "ref": null,
                       "rendered": null,
@@ -966,17 +777,46 @@ ShallowWrapper {
                       "nodeType": "class",
                       "props": Object {
                         "as": "i",
+                        "className": "learning-path-about-icon-unselected",
                         "name": "circle",
                         "onClick": [Function],
-                        "style": Object {
-                          "color": "gray",
-                        },
                       },
                       "ref": null,
                       "rendered": null,
                       "type": [Function],
                     },
                   ],
+                  "type": [Function],
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "function",
+                  "props": Object {
+                    "children": <Button
+                      as="button"
+                      role="button"
+                    >
+                      Skip
+                    </Button>,
+                    "textAlign": "right",
+                    "width": 4,
+                  },
+                  "ref": null,
+                  "rendered": Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "class",
+                    "props": Object {
+                      "as": "button",
+                      "children": "Skip",
+                      "onClick": undefined,
+                      "role": "button",
+                    },
+                    "ref": null,
+                    "rendered": "Skip",
+                    "type": [Function],
+                  },
                   "type": [Function],
                 },
               ],

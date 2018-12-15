@@ -52,11 +52,14 @@ ShallowWrapper {
           </GridColumn>
         </GridRow>,
         <GridRow>
-          <LearningPathAbout
-            buttonSize="huge"
+          <Button
+            as="button"
+            onClick={[Function]}
+            role="button"
+            size="huge"
           >
             Begin Your Journey
-          </LearningPathAbout>
+          </Button>
         </GridRow>,
       ],
     },
@@ -167,11 +170,14 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "function",
         "props": Object {
-          "children": <LearningPathAbout
-            buttonSize="huge"
+          "children": <Button
+            as="button"
+            onClick={[Function]}
+            role="button"
+            size="huge"
           >
             Begin Your Journey
-          </LearningPathAbout>,
+          </Button>,
         },
         "ref": null,
         "rendered": Object {
@@ -179,8 +185,11 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "class",
           "props": Object {
-            "buttonSize": "huge",
+            "as": "button",
             "children": "Begin Your Journey",
+            "onClick": [Function],
+            "role": "button",
+            "size": "huge",
           },
           "ref": null,
           "rendered": "Begin Your Journey",
@@ -232,11 +241,14 @@ ShallowWrapper {
             </GridColumn>
           </GridRow>,
           <GridRow>
-            <LearningPathAbout
-              buttonSize="huge"
+            <Button
+              as="button"
+              onClick={[Function]}
+              role="button"
+              size="huge"
             >
               Begin Your Journey
-            </LearningPathAbout>
+            </Button>
           </GridRow>,
         ],
       },
@@ -347,11 +359,14 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "function",
           "props": Object {
-            "children": <LearningPathAbout
-              buttonSize="huge"
+            "children": <Button
+              as="button"
+              onClick={[Function]}
+              role="button"
+              size="huge"
             >
               Begin Your Journey
-            </LearningPathAbout>,
+            </Button>,
           },
           "ref": null,
           "rendered": Object {
@@ -359,8 +374,11 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "class",
             "props": Object {
-              "buttonSize": "huge",
+              "as": "button",
               "children": "Begin Your Journey",
+              "onClick": [Function],
+              "role": "button",
+              "size": "huge",
             },
             "ref": null,
             "rendered": "Begin Your Journey",

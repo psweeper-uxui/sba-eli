@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { withRouter } from 'react-router-dom';
 import { Grid, Header, Button } from "semantic-ui-react";
-import LearningPathAbout from "../LearningPath/LearningPathAbout";
 
 class DashboardSplash extends Component {
   render() {
